@@ -3,21 +3,21 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   darkMode: 'class',
-  content: ['./src/pages/**/*.{js,jsx,ts,tsx}', './src/components/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        ice: '#e8ebf5', // dce4f0
-        navy: '#18222e',
+        ice: '#e8eef2', // dce4f0
+        navy: '#162027',
         dark: '#252832',
         darker: '#1e2028',
         darkest: '#1a1c23',
         light: '#f2f4f7',
         lighter: '#f7f7f7',
         lightest: '#ffffff',
-        primary: '#124c8e',
-        secondary: '#149ddd',
-        tertiary: '#9f7aea',
+        primary: '#0f642b',
+        secondary: '#df803f',
+        tertiary: '#18222e',
       },
       maxWidth: {
         screen: '100vw',

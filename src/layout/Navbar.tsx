@@ -54,12 +54,12 @@ const Hamburger = ({ open }: { open: boolean }) => (
         <span className="sr-only">Open nav menu</span>
         {open ? (
           <XMarkIcon
-            className="ease group-hover:text-primary/75 dark:group-hover:text-primary/75 block h-6 w-6 transition duration-200"
+            className="ease block h-6 w-6 transition duration-200 group-hover:text-primary/75 dark:group-hover:text-primary/75"
             aria-hidden="true"
           />
         ) : (
           <Bars3Icon
-            className="ease group-hover:text-primary/75 dark:group-hover:text-primary/75 block h-6 w-6 transition duration-200"
+            className="ease block h-6 w-6 transition duration-200 group-hover:text-primary/75 dark:group-hover:text-primary/75"
             aria-hidden="true"
           />
         )}
@@ -86,7 +86,7 @@ const Header = ({ title, location }: { title: string; location: string }) => (
         <Link to={link.location} key={`nav-${index}`} className="relative py-1">
           <button
             type="button"
-            className={`flex h-12 items-center justify-center font-medium capitalize tracking-wide transition ${
+            className={`flex h-12 items-center justify-center font-medium lowercase tracking-wide transition ${
               location === link.title
                 ? 'text-primary dark:text-white'
                 : 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white'
@@ -98,7 +98,7 @@ const Header = ({ title, location }: { title: string; location: string }) => (
             </span>
           </button>
           {location === link.title ? (
-            <span className="bg-primary dark:bg-tertiary absolute bottom-0 h-1 w-full rounded-t-sm" />
+            <span className="absolute bottom-0 h-1 w-full rounded-t-sm bg-primary dark:bg-tertiary" />
           ) : null}
         </Link>
       ))}
@@ -116,7 +116,7 @@ const Mobile = ({ location }: { location: string }) => (
       <Link to={link.location} className="relative h-auto" key={`mobile-nav-${index}`}>
         <button
           type="button"
-          className={`flex h-auto items-center justify-center font-medium capitalize tracking-wide transition ${
+          className={`flex h-auto items-center justify-center font-medium lowercase tracking-wide transition ${
             location === link.title
               ? 'text-primary dark:text-white'
               : 'text-gray-800/70 hover:text-gray-800 dark:text-white/60 dark:hover:text-white'
@@ -127,7 +127,7 @@ const Mobile = ({ location }: { location: string }) => (
             {link.title}
           </span>
           {location === link.title ? (
-            <span className="bg-primary dark:bg-tertiary absolute -left-4 h-full w-1 rounded-sm" />
+            <span className="absolute -left-4 h-full w-1 rounded-sm bg-primary dark:bg-tertiary" />
           ) : null}
         </button>
       </Link>

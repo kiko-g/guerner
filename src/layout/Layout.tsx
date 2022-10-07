@@ -1,7 +1,6 @@
 import React from 'react'
-import { classNames } from '../utils'
+import { Seo, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Navbar, Footer, Background } from '.'
 
 type Props = {
   children: any
@@ -20,11 +19,14 @@ const Layout = ({ children, location }: Props) => {
   `)
 
   return (
-    <div className="layout">
-      <Navbar location={location} siteTitle={data.site.siteMetadata?.title} />
-      <div className="content">{children}</div>
-      <Footer siteTitle={data.site.siteMetadata?.title} />
-    </div>
+    <>
+      <Seo title={location} />
+      <div className="layout">
+        <Navbar location={location} siteTitle={data.site.siteMetadata?.title} />
+        <div className="content">{children}</div>
+        <Footer siteTitle={data.site.siteMetadata?.title} />
+      </div>
+    </>
   )
 }
 
