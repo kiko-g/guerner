@@ -54,12 +54,12 @@ const Hamburger = ({ open }: { open: boolean }) => (
         <span className="sr-only">Open nav menu</span>
         {open ? (
           <XMarkIcon
-            className="ease block h-6 w-6 transition duration-200 group-hover:text-primary/75 dark:group-hover:text-primary/75"
+            className="ease block h-6 w-6 transition duration-200 group-hover:text-tertiary/75 dark:group-hover:text-secondary/75"
             aria-hidden="true"
           />
         ) : (
           <Bars3Icon
-            className="ease block h-6 w-6 transition duration-200 group-hover:text-primary/75 dark:group-hover:text-primary/75"
+            className="ease block h-6 w-6 transition duration-200 group-hover:text-tertiary/75 dark:group-hover:text-secondary/75"
             aria-hidden="true"
           />
         )}
@@ -88,7 +88,7 @@ const Header = ({ title, location }: { title: string; location: string }) => (
             type="button"
             className={`flex h-12 items-center justify-center font-medium lowercase tracking-wide transition ${
               location === link.title
-                ? 'text-primary dark:text-white'
+                ? 'text-tertiary dark:text-white'
                 : 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white'
             }`}
           >
@@ -98,7 +98,7 @@ const Header = ({ title, location }: { title: string; location: string }) => (
             </span>
           </button>
           {location === link.title ? (
-            <span className="absolute bottom-0 h-1 w-full rounded-t-sm bg-primary dark:bg-tertiary" />
+            <span className="absolute bottom-0 h-1 w-full rounded-t-sm bg-tertiary dark:bg-secondary" />
           ) : null}
         </Link>
       ))}
@@ -118,7 +118,7 @@ const Mobile = ({ location }: { location: string }) => (
           type="button"
           className={`flex h-auto items-center justify-center font-medium lowercase tracking-wide transition ${
             location === link.title
-              ? 'text-primary dark:text-white'
+              ? 'text-tertiary dark:text-white'
               : 'text-gray-800/70 hover:text-gray-800 dark:text-white/60 dark:hover:text-white'
           }`}
         >
@@ -127,7 +127,7 @@ const Mobile = ({ location }: { location: string }) => (
             {link.title}
           </span>
           {location === link.title ? (
-            <span className="absolute -left-4 h-full w-1 rounded-sm bg-primary dark:bg-tertiary" />
+            <span className="absolute -left-4 h-full w-1 rounded-sm bg-tertiary dark:bg-secondary" />
           ) : null}
         </button>
       </Link>
