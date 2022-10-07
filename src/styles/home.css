@@ -1,0 +1,146 @@
+.home {
+  @apply container mx-auto flex-1 flex-col justify-between space-y-6 px-4 py-4 2xl:px-0;
+}
+
+.home > header {
+  @apply mt-2 flex items-start justify-between px-2 py-2 2xl:px-0;
+}
+
+.home > header > .body {
+  @apply mt-0;
+}
+
+.home > header > .body > h2 {
+  @apply text-4xl font-extrabold tracking-tight sm:text-5xl;
+}
+
+.home > header > .body > p {
+  @apply mt-4 text-lg font-normal;
+}
+
+.home > header > .buttons {
+  @apply flex items-center justify-center space-x-2 text-primary dark:text-light;
+}
+
+.home > header > .buttons > button {
+  @apply transition hover:opacity-75 dark:hover:text-tertiary;
+}
+
+/* Tabs View */
+.home .tabs {
+  @apply w-full px-2 py-8 md:px-2 2xl:px-0;
+}
+
+.home .tabs .tab-list {
+  @apply flex space-x-2 rounded-xl bg-primary p-1 shadow dark:bg-light/5 md:space-x-3 md:p-1.5;
+}
+
+.home .tabs .tab {
+  @apply w-full rounded-lg px-2 py-2 text-xs font-medium uppercase leading-5 tracking-tight text-primary 
+  md:py-2.5 md:text-sm md:tracking-wide xl:text-base;
+}
+
+.home .tabs .tab-selected {
+  @apply bg-lighter shadow;
+}
+
+.home .tabs .tab-not-selected {
+  @apply text-[#fff] transition hover:bg-white/[0.12];
+}
+
+.home .tabs .tab-panels {
+  @apply mt-3;
+}
+
+.home .tabs .tab-panel {
+  @apply overflow-hidden rounded-xl bg-lightest p-1 dark:bg-light/5 md:p-2;
+}
+
+.home .tabs .tab-focus-ring {
+  @apply ring-white ring-opacity-60 ring-offset-2 ring-offset-primary/75 focus:outline-none focus:ring-2;
+}
+
+/* Blocks Column View */
+.home .blocks {
+  @apply w-full px-2 py-8 md:px-2 2xl:px-0;
+}
+
+.home .blocks .block-list {
+  @apply flex w-full flex-col space-y-8;
+}
+
+.home .blocks .block-content {
+  @apply overflow-hidden rounded-xl bg-lightest p-1 dark:bg-light/5 md:p-2;
+}
+
+/* Panel */
+.home .tab-panel-inner {
+  @apply grid grid-cols-12 grid-rows-1 gap-x-4 rounded-2xl px-2 py-2 text-2xl transition md:gap-x-8;
+}
+
+.home .tab-panel-inner-left {
+  @apply order-2 col-span-12 sm:order-1 sm:col-span-6 md:col-span-7 lg:col-span-9 xl:col-span-9 2xl:col-span-9;
+}
+
+.home .tab-panel-inner-right {
+  @apply order-1 col-span-12 h-min sm:order-2 sm:col-span-6 md:col-span-5 lg:col-span-3 xl:col-span-3 2xl:col-span-3;
+}
+
+.home .tab-inner-header {
+  @apply hidden text-xl font-semibold uppercase tracking-wide text-primary dark:text-tertiary md:flex;
+}
+
+.home .tab-inner-subheader {
+  @apply mt-3 block text-lg font-medium leading-tight md:mt-1;
+}
+
+.home .tab-inner-prose {
+  @apply mt-3 text-base font-normal md:mt-1;
+}
+
+.home .tab-inner-prose {
+  @apply mt-2 text-sm font-normal text-gray-600 dark:text-light md:text-base;
+}
+
+.home .tab-inner-prose p {
+  @apply mt-1;
+}
+
+.home .tab-inner-bullet-facts {
+  @apply mt-3 text-sm md:text-lg;
+}
+
+.home .tab-inner-image {
+  @apply mb-1 aspect-square w-full rounded-lg shadow-xl md:mb-2;
+}
+
+.home .tab-inner-image-subbox {
+  @apply flex flex-wrap items-center justify-between space-x-0 md:space-x-2;
+}
+
+.home .tab-inner-image-header {
+  @apply my-1.5 flex-1 text-base font-bold tracking-tighter md:my-2 md:text-left md:text-base xl:text-lg;
+}
+
+/* See More */
+.home .see-more-wrapper {
+  @apply mt-4 flex items-center justify-between;
+}
+
+.home .see-more-left {
+  @apply space-x-5;
+}
+
+.home .see-more-left {
+  @apply space-x-0;
+}
+
+.home .see-more-button {
+  @apply inline-flex rounded bg-gradient-to-r from-tertiary via-indigo-400 to-secondary p-[2px] 
+  transition focus:outline-none focus:ring active:text-opacity-75;
+}
+
+.home .see-more-button > span {
+  @apply flex items-center justify-center space-x-2 rounded-sm bg-white px-6 py-3 
+  font-medium transition hover:bg-transparent hover:text-white dark:text-gray-800 dark:hover:text-white;
+}
