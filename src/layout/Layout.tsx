@@ -1,5 +1,5 @@
 import React from 'react'
-import { Seo, Navbar, Footer } from '.'
+import { Seo, Hero, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {
@@ -17,14 +17,16 @@ const Layout = ({ children, location }: Props) => {
       }
     }
   `)
+  const title = data.site.siteMetadata?.title || 'Site Title'
 
   return (
     <>
       <Seo title={location} />
       <div className="layout">
-        <Navbar location={location} siteTitle={data.site.siteMetadata?.title} />
+        <Hero location={location} title={title} />
+        <Navbar location={location} siteTitle={title} />
         <div className="content">{children}</div>
-        <Footer siteTitle={data.site.siteMetadata?.title} />
+        <Footer siteTitle={title} />
       </div>
     </>
   )
