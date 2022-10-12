@@ -25,7 +25,7 @@ const Layout = ({ children, location, home }: Props) => {
       <Seo title={location} />
       <div className="layout">
         {home ? <Hero location={location} title={title} /> : null}
-        {children ? <div className="content">{children}</div> : null}
+        {children ? <div className={home ? '' : 'content'}>{children}</div> : null}
         <Footer siteTitle={title} />
       </div>
     </>
