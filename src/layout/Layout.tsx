@@ -1,5 +1,5 @@
 import React from 'react'
-import { Seo, Hero, Navbar, Footer } from '.'
+import { Seo, Hero, BackToTopButton, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {
@@ -23,9 +23,10 @@ const Layout = ({ children, location, home }: Props) => {
   return (
     <>
       <Seo title={location} />
-      <div className="layout">
+      <div id="layout" className="layout">
         {home ? <Hero location={location} title={title} /> : null}
         {children ? <div className={home ? '' : 'content'}>{children}</div> : null}
+        <BackToTopButton />
         <Footer siteTitle={title} />
       </div>
     </>
