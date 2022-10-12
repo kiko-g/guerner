@@ -18,7 +18,7 @@ const NavbarCondensed = ({ location }: Props) => {
   return (
     <Disclosure
       as="nav"
-      className="top-0 z-20 space-x-4 bg-ice px-3 py-2 text-gray-800 dark:bg-navy dark:text-white md:py-0 md:px-3"
+      className="absolute top-0 w-[50vw] z-20 space-x-4 bg-ice/60 px-3 py-2 text-gray-800 dark:bg-navy/50 dark:text-white md:py-0 md:px-3"
     >
       {({ open }) => {
         return (
