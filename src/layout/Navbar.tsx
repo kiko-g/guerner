@@ -44,9 +44,9 @@ const Hamburger = ({ open }: { open: boolean }) => (
   >
     <Link to="/">
       {open ? (
-        <img className="avatar top-0.5 h-5 w-5" src={'/images/avatar.png'} alt="Francisco Gonçalves" />
+        <img className="avatar top-0.5 h-5 w-5" src={'/images/avatar.png'} alt="Guerner" />
       ) : (
-        <img className="avatar h-6 w-6" src={'/images/avatar.png'} alt="Francisco Gonçalves" />
+        <img className="avatar h-6 w-6" src={'/images/avatar.png'} alt="Guerner" />
       )}
     </Link>
 
@@ -76,7 +76,7 @@ const Header = ({ title, location }: { title: string; location: string }) => (
       <Link to="/" className="flex items-center space-x-2">
         <img
           src={'/images/avatar.png'}
-          alt="Francisco Gonçalves"
+          alt="Guerner"
           className="z-20 inline-flex h-6 w-6 rounded-full transition"
         />
         <h2 className="text-xs font-bold tracking-tighter duration-150 lg:text-base">{title}</h2>

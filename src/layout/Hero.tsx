@@ -14,7 +14,7 @@ const Hero = ({ title, location }: Props) => {
         {/* Heading and gradient */}
         <div className="hidden h-full w-full flex-col bg-primary py-12 px-12 lg:flex">
           <Link to="/" className="flex items-center justify-start gap-x-4 p-2 transition hover:opacity-80">
-            <img className="h-16 w-16 rounded-full shadow" src={'/images/avatar.png'} alt="Francisco Gonçalves" />
+            <img className="h-16 w-16 rounded-full shadow" src={'/images/avatar.png'} alt={title} />
             <h2 className="font-headings text-3xl font-bold text-white">{title ? title : 'Unknown'}</h2>
           </Link>
 
