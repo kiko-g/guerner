@@ -9,11 +9,15 @@ type Props = {
 const Footer = ({ siteTitle }: Props) => {
   return (
     <footer className="z-10 flex flex-col bg-primary text-sm text-white md:text-base">
-      <div className="mx-24">
+      <div className="mx-4 md:mx-24">
         <div className="flex items-center justify-between border-b py-4 md:py-8">
-          <div className="flex flex-col items-start gap-y-8">
-            <Link to="/">
+          <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
+            <Link to="/" className="flex items-center justify-center gap-x-2">
               <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={siteTitle} />
+              <h5 className="flex max-w-xs flex-col font-headings text-sm font-medium md:text-base md:font-bold">
+                <span>Guerner &</span>
+                <span>Irmãos S.A.</span>
+              </h5>
             </Link>
             <div className="flex space-x-1 sm:justify-center md:mt-0 md:space-x-2">
               {socials
@@ -41,7 +45,7 @@ const Footer = ({ siteTitle }: Props) => {
             </div>
           </div>
 
-          <ul className="flex flex-col gap-y-1 text-right">
+          <ul className="flex flex-col gap-y-0 text-right tracking-tight md:gap-y-1 md:tracking-normal">
             <li>
               <Link to="/" className="transition hover:underline hover:opacity-80">
                 Sobre nós
@@ -68,9 +72,9 @@ const Footer = ({ siteTitle }: Props) => {
           </ul>
         </div>
 
-        <div className="flex items-center justify-between py-4 md:py-8">
+        <div className="flex md:flex-row flex-col md:gap-y-0 gap-y-2 items-center justify-between py-4 md:py-8">
           <span className="sm:text-center">© 2022 {siteTitle}™</span>
-          <ul className="flex gap-x-8">
+          <ul className="flex flex-col md:flex-row md:gap-x-8">
             <Link to="/" className="transition hover:underline hover:opacity-80">
               Política de Privacidade
             </Link>
@@ -80,10 +84,7 @@ const Footer = ({ siteTitle }: Props) => {
           </ul>
           <span className="text-secondary">
             Made by{' '}
-            <a
-              href="https://kikogoncalves.com"
-              className="font-bold transition-all hover:underline hover:opacity-80"
-            >
+            <a href="https://kikogoncalves.com" className="font-bold transition-all hover:underline hover:opacity-80">
               Francisco Gonçalves
             </a>
           </span>
