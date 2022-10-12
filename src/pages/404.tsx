@@ -3,8 +3,10 @@ import { Layout } from '../layout'
 
 const NotFoundPage = () => (
   <Layout location="Oops">
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className="mx-auto max-w-3xl text-center">
+      <h1 className="text-3xl tracking-tight font-headings">Oops!</h1>
+      <p>Parece que não há nada para ver aqui...</p>
+    </div>
   </Layout>
 )
 

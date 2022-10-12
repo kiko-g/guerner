@@ -16,7 +16,10 @@ type Props = {
 
 const NavbarCondensed = ({ location }: Props) => {
   return (
-    <Disclosure as="nav" className="navbar">
+    <Disclosure
+      as="nav"
+      className="top-0 z-20 space-x-4 bg-ice px-3 py-2 text-gray-800 dark:bg-navy dark:text-white md:py-0 md:px-3"
+    >
       {({ open }) => {
         return (
           <>
@@ -40,17 +43,9 @@ const Hamburger = ({ open }: { open: boolean }) => (
         : 'flex w-full items-center justify-between'
     }`}
   >
-    <Link to="/">
-      {open ? (
-        <img className="avatar top-0.5 h-5 w-5" src={'/images/avatar.png'} alt="Francisco Gonçalves" />
-      ) : (
-        <img className="avatar h-6 w-6" src={'/images/avatar.png'} alt="Francisco Gonçalves" />
-      )}
-    </Link>
-
     <div className="flex items-center space-x-1">
       <DarkModeSwitch />
-      <Disclosure.Button className="hamburger group">
+      <Disclosure.Button className="group text-gray-800 transition duration-200 ease-in dark:text-white md:hidden">
         <span className="sr-only">Open nav menu</span>
         {open ? (
           <XMarkIcon
@@ -69,7 +64,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
 )
 
 const Header = ({ location }: { location: string }) => (
-  <div className="header px-4 py-4">
+  <div className="flex flex-1 items-center justify-between p-0 md:items-stretch md:justify-between lg:p-4">
     <div className="hidden space-x-8 self-center md:inline-flex">
       {navigation.map((link, index) => (
         <Link to={link.location} key={`nav-${index}`} className="relative py-1">

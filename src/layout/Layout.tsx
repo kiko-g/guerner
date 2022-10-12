@@ -5,9 +5,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 type Props = {
   children: any
   location: string
+  home?: boolean
 }
 
-const Layout = ({ children, location }: Props) => {
+const Layout = ({ children, location, home }: Props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,7 +24,7 @@ const Layout = ({ children, location }: Props) => {
     <>
       <Seo title={location} />
       <div className="layout">
-        <Hero location={location} title={title} />
+        {home ? <Hero location={location} title={title} /> : null}
         <Navbar location={location} siteTitle={title} />
         <div className="content">{children}</div>
         <Footer siteTitle={title} />

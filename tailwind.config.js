@@ -33,8 +33,7 @@ module.exports = {
       },
       fontFamily: {
         prose: ['Inter', ...defaultTheme.fontFamily.sans],
-        headings: ['Inter', ...defaultTheme.fontFamily.sans],
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        headings: ['Montserrat', ...defaultTheme.fontFamily.sans],
         code: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
         mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
         source: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import DarkModeSwitch from './DarkModeSwitch'
@@ -15,6 +15,8 @@ type Props = {
 }
 
 const Navbar = ({ siteTitle, location }: Props) => {
+  const [shown, setShown] = useState(false)
+
   return (
     <Disclosure as="nav" className="navbar">
       {({ open }) => {
