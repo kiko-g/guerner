@@ -27,7 +27,7 @@ const Mural = () => {
         let odd = cardIdx % 2 === 1
         return (
           <div id={id} className="flex flex-col p-4 md:p-16">
-            <h2 className="mb-4 text-3xl font-bold tracking-wider">
+            <h2 className="mb-2 md:mb-4 text-2xl md:text-3xl font-bold md:tracking-wider">
               <a className="transition hover:underline hover:opacity-80" href={`#${id}`}>
                 {card.title}
               </a>

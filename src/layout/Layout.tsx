@@ -25,7 +25,7 @@ const Layout = ({ children, location, home }: Props) => {
       <Seo title={location} />
       <div id="layout" className="layout">
         {home ? <Hero location={location} title={title} /> : null}
-        {children ? <div className={home ? '' : 'content'}>{children}</div> : null}
+        {children ? <div className={home ? 'py-4' : 'content'}>{children}</div> : null}
         <BackToTopButton />
         <Footer siteTitle={title} />
       </div>

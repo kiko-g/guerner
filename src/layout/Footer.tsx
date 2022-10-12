@@ -8,7 +8,7 @@ type Props = {
 
 const Footer = ({ siteTitle }: Props) => {
   return (
-    <footer className="z-10 flex flex-col bg-primary text-sm text-white md:text-base">
+    <footer className="z-10 flex flex-col bg-primary dark:bg-navy text-sm text-white md:text-base">
       <div className="mx-4 md:mx-24">
         <div className="flex items-center justify-between border-b py-4 md:py-8">
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">

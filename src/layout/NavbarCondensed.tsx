@@ -43,7 +43,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
         : 'flex w-full items-center justify-between'
     }`}
   >
-    <div className="flex items-center space-x-1">
+    <div className="flex items-center w-full justify-between space-x-1">
       <DarkModeSwitch />
       <Disclosure.Button className="group text-gray-800 transition duration-200 ease-in dark:text-white md:hidden">
         <span className="sr-only">Open nav menu</span>
