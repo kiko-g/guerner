@@ -8,7 +8,6 @@ import { StaticImage } from 'gatsby-plugin-image'
 const IndexPage = () => {
   return (
     <Layout location="Home" home>
-      <div></div>
     </Layout>
   )
 }
