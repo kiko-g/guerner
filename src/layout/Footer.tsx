@@ -8,7 +8,7 @@ type Props = {
 
 const Footer = ({ siteTitle }: Props) => {
   return (
-    <footer className="z-10 flex flex-col bg-primary dark:bg-navy text-sm text-white md:text-base">
+    <footer className="z-10 flex flex-col bg-primary text-sm text-white dark:bg-darker md:text-base">
       <div className="mx-4 md:mx-24">
         <div className="flex items-center justify-between border-b py-4 md:py-8">
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
@@ -45,7 +45,10 @@ const Footer = ({ siteTitle }: Props) => {
             </div>
           </div>
 
-          <ul className="flex flex-col gap-y-0 text-right tracking-tight md:gap-y-1 md:tracking-normal">
+          <ul
+            className="flex flex-col gap-y-0 text-right text-sm tracking-tight 
+            md:gap-y-1 md:text-base md:tracking-normal"
+          >
             <li>
               <Link to="/" className="transition hover:underline hover:opacity-80">
                 Sobre nós
@@ -60,28 +63,20 @@ const Footer = ({ siteTitle }: Props) => {
 
             <li>
               <Link to="/" className="transition hover:underline hover:opacity-80">
-                Outras coisas
+                Termos e Condições
               </Link>
             </li>
 
             <li>
               <Link to="/" className="transition hover:underline hover:opacity-80">
-                Mais cenas
+                Política de Privacidade
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className="flex md:flex-row flex-col md:gap-y-0 gap-y-2 items-center justify-between py-4 md:py-8">
+        <div className="flex flex-col items-center justify-between gap-y-2 py-4 md:flex-row md:gap-y-0 md:py-8">
           <span className="sm:text-center">© 2022 {siteTitle}™</span>
-          <ul className="flex flex-col md:flex-row md:gap-x-8">
-            <Link to="/" className="transition hover:underline hover:opacity-80">
-              Política de Privacidade
-            </Link>
-            <Link to="/" className="transition hover:underline hover:opacity-80">
-              Termos e Condições
-            </Link>
-          </ul>
           <span className="text-secondary">
             Made by{' '}
             <a href="https://kikogoncalves.com" className="font-bold transition-all hover:underline hover:opacity-80">

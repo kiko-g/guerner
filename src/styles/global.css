@@ -32,7 +32,7 @@ code {
 
 /* Layout */
 .layout {
-  @apply flex min-h-screen flex-col overflow-clip bg-ice font-prose font-medium text-gray-800 opacity-[99%] dark:bg-navy dark:text-white;
+  @apply flex min-h-screen flex-col overflow-clip bg-light font-prose font-medium text-gray-800 opacity-[99%] dark:bg-darker dark:text-white;
 }
 
 .content {
@@ -41,7 +41,7 @@ code {
 
 /* Navbar */
 .navbar {
-  @apply sticky top-0 z-20 space-x-4 bg-ice px-3 py-2 text-gray-800 dark:bg-navy dark:text-white md:py-0 md:px-3;
+  @apply sticky top-0 z-20 space-x-4 bg-ice px-3 py-2 text-gray-800 dark:bg-darker dark:text-white md:py-0 md:px-3;
 }
 
 .hamburger {

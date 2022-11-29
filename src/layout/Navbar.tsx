@@ -3,10 +3,20 @@ import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import DarkModeSwitch from './DarkModeSwitch'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { HomeIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, QuestionMarkCircleIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { title: 'Home', location: '/', icon: <HomeIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" /> },
+  {
+    title: 'FAQs',
+    location: '/faqs',
+    icon: <QuestionMarkCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" />,
+  },
+  {
+    title: 'About',
+    location: '/about',
+    icon: <InformationCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" />,
+  },
 ]
 
 type Props = {
@@ -74,11 +84,7 @@ const Header = ({ title, location }: { title: string; location: string }) => (
   <div className="header">
     <div className="relative hidden h-auto space-x-12 self-center duration-200 hover:opacity-75 md:inline-flex">
       <Link to="/" className="flex items-center space-x-2">
-        <img
-          src={'/images/avatar.png'}
-          alt="Guerner"
-          className="z-20 inline-flex h-6 w-6 rounded-full transition"
-        />
+        <img src={'/images/avatar.png'} alt="Guerner" className="z-20 inline-flex h-6 w-6 rounded-full transition" />
         <h2 className="text-xs font-bold tracking-tighter duration-150 lg:text-base">{title}</h2>
       </Link>
     </div>

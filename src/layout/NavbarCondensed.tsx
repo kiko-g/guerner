@@ -3,11 +3,20 @@ import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import DarkModeSwitch from './DarkModeSwitch'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { HomeIcon, ExclamationCircleIcon } from '@heroicons/react/24/outline'
+import { HomeIcon, QuestionMarkCircleIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { title: 'Home', location: '/', icon: <HomeIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" /> },
-  { title: 'Oops', location: '/404', icon: <ExclamationCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" /> },
+  { title: 'Home', location: '/', icon: <HomeIcon className="mr-2 h-[1.2rem] w-[1.2rem]" /> },
+  {
+    title: 'FAQs',
+    location: '/faqs',
+    icon: <QuestionMarkCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" />,
+  },
+  {
+    title: 'About',
+    location: '/about',
+    icon: <InformationCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" />,
+  },
 ]
 
 type Props = {
@@ -18,7 +27,7 @@ const NavbarCondensed = ({ location }: Props) => {
   return (
     <Disclosure
       as="nav"
-      className="absolute top-0 z-20 w-full space-x-4 bg-ice/60 px-3 py-2 text-gray-800 dark:bg-navy/50 dark:text-white md:w-[50vw] md:py-0 md:px-3"
+      className="absolute top-0 z-20 w-full space-x-4 bg-ice/75 px-3 py-2 text-gray-800 dark:bg-darker/75 dark:text-white md:w-[50vw] md:py-0 md:px-3"
     >
       {({ open }) => {
         return (
@@ -43,7 +52,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
         : 'flex w-full items-center justify-between'
     }`}
   >
-    <div className="flex items-center w-full justify-between space-x-1">
+    <div className="flex w-full items-center justify-between space-x-1">
       <DarkModeSwitch />
       <Disclosure.Button className="group text-gray-800 transition duration-200 ease-in dark:text-white md:hidden">
         <span className="sr-only">Open nav menu</span>
@@ -72,7 +81,7 @@ const Header = ({ location }: { location: string }) => (
             type="button"
             className={`flex h-12 items-center justify-center font-medium lowercase tracking-wide transition ${
               location === link.title
-                ? 'text-tertiary dark:text-white'
+                ? 'font-bold text-tertiary dark:text-white'
                 : 'text-gray-400 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white'
             }`}
           >

@@ -1,7 +1,3 @@
-const classNames = (...classes: any[]) => {
-  return classes.filter(Boolean).join(' ')
-}
-
 type Social = {
   shown: boolean
   label: string
@@ -40,4 +36,4 @@ const socials: Social[] = [
   },
 ]
 
-export { classNames, socials }
+export { socials }
