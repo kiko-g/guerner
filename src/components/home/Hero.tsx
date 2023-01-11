@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import Navbar from './Navbar'
+import Navbar from '../layout/Navbar'
 
 type Props = {
   title: string
@@ -10,17 +10,12 @@ type Props = {
 const Hero = ({ title, location }: Props) => {
   return (
     <div className="m-0 h-screen w-screen p-0">
-      <div className="grid h-full w-full grid-cols-1 lg:grid-cols-2">
+      <div className="grid h-full w-full grid-cols-1 md:grid-cols-2">
         {/* Heading and gradient */}
-        <div className="hidden h-full w-full flex-col bg-primary py-12 px-12 dark:bg-dark lg:flex">
-          <Link
-            to="/"
-            className="flex items-center justify-start gap-x-4 p-2 transition hover:opacity-80"
-          >
+        <div className="hidden h-full w-full flex-col bg-primary py-12 px-12 dark:bg-dark md:flex">
+          <Link to="/" className="flex items-center justify-start gap-x-4 p-2 transition hover:opacity-80">
             <img className="h-16 w-16 rounded-full shadow" src={'/images/avatar.png'} alt={title} />
-            <h2 className="font-headings text-3xl font-bold text-white">
-              {title ? title : 'Unknown'}
-            </h2>
+            <h2 className="font-headings text-3xl font-bold text-white">{title ? title : 'Unknown'}</h2>
           </Link>
 
           <div className="my-auto max-w-sm text-white">

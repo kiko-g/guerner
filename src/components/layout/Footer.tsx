@@ -1,5 +1,4 @@
 import React from 'react'
-import { socials } from '../utils'
 import { Link } from 'gatsby'
 
 type Props = {
@@ -8,9 +7,10 @@ type Props = {
 
 const Footer = ({ title }: Props) => {
   return (
-    <footer className="z-10 flex flex-col bg-primary text-sm text-white dark:bg-darker md:text-base">
-      <div className="mx-4 md:mx-24">
-        <div className="flex items-center justify-between border-b py-4 md:py-8">
+    <footer className="z-10 flex flex-col bg-primary pt-0 text-sm text-white dark:bg-navy md:pt-2 md:text-base">
+      <div className="mx-4 md:mx-8">
+        <div className="flex items-center justify-between border-b py-3 md:py-4">
+          {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
             <Link to="/" className="flex items-center justify-center gap-x-2">
               <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={title} />
@@ -19,37 +19,9 @@ const Footer = ({ title }: Props) => {
                 <span>Irmãos S.A.</span>
               </h5>
             </Link>
-            <div className="flex space-x-1 sm:justify-center md:mt-0 md:space-x-2">
-              {socials
-                .filter(social => social.shown)
-                .map((social, socialIdx) => (
-                  <a
-                    target="_blank"
-                    href={social.url}
-                    key={`social-${socialIdx}`}
-                    aria-labelledby={social.label}
-                    className={`transition ${social.label}`}
-                  >
-                    <svg
-                      className="h-5 w-5"
-                      fill="currentColor"
-                      viewBox={social.viewBox ? social.viewBox : '0 0 24 24'}
-                      aria-hidden="true"
-                    >
-                      {social.svg.map((d, dIdx) => (
-                        <path
-                          fillRule="evenodd"
-                          d={d}
-                          clipRule="evenodd"
-                          key={`social-${socialIdx}-svg-${dIdx}`}
-                        />
-                      ))}
-                    </svg>
-                  </a>
-                ))}
-            </div>
           </div>
 
+          {/* Right column */}
           <ul
             className="flex flex-col gap-y-0 text-right text-sm tracking-tight 
             md:gap-y-1 md:text-base md:tracking-normal"
@@ -80,13 +52,15 @@ const Footer = ({ title }: Props) => {
           </ul>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-y-2 py-4 md:flex-row md:gap-y-0 md:py-8">
-          <span className="sm:text-center">© 2022 {title}™</span>
-          <span className="text-secondary">
+        <div className="flex flex-col items-center justify-between gap-y-1 py-2 md:flex-row md:gap-y-0 md:py-4">
+          <span className="md:text-center">© 2022 {title}™</span>
+          <span className="text-white/50">
             Made by{' '}
             <a
+              target="_blank"
+              rel="noreferrer"
               href="https://kikogoncalves.com"
-              className="font-bold transition-all hover:underline hover:opacity-80"
+              className="font-bold transition-all hover:text-white hover:underline"
             >
               Francisco Gonçalves
             </a>

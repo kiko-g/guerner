@@ -33,37 +33,3 @@ code {
 .avatar {
   @apply rounded-full transition hover:opacity-80 md:hidden;
 }
-
-/* Utilities */
-.youtube:hover {
-  color: #ff0000;
-}
-
-.spotify:hover {
-  color: #1db954;
-}
-
-.linktree:hover {
-  color: #39e09b;
-}
-
-.twitter:hover {
-  color: #1da1f2;
-}
-
-.linkedin:hover {
-  color: #0a66c2;
-}
-
-.github {
-  border-radius: 100px;
-}
-
-.github:hover {
-  color: #333;
-  background: white;
-}
-
-.instagram:hover {
-  color: #c13584;
-}

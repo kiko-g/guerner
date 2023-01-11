@@ -1,7 +1,8 @@
 import React from 'react'
+import classNames from 'classnames'
+import useDarkMode from '../../hooks/useDarkMode'
 import { Switch } from '@headlessui/react'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
-import useDarkMode from '../hooks/useDarkMode'
 
 const DarkModeSwitch = () => {
   const [enabled, setEnabled] = useDarkMode()
@@ -10,7 +11,7 @@ const DarkModeSwitch = () => {
     <Switch.Group>
       <div className="flex items-center">
         <Switch
-          className={`${enabled ? 'animate-dark' : 'animate-light'} rounded-full`}
+          className={classNames('rounded-full', enabled ? 'animate-dark' : 'animate-light')}
           checked={enabled}
           onChange={() => setEnabled(!enabled)}
         >

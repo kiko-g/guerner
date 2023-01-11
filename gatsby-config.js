@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Guerner`,
-    description: `Guerner website`,
+    title: `Guerner & Irmãos S.A.`,
+    description: `Guerner & Irmãos S.A. website`,
     author: `@kikogoncalves`,
     siteUrl: `https://guerner.netlify.app`,
   },
