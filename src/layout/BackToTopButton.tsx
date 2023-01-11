@@ -5,8 +5,10 @@ import { ChevronUpIcon } from '@heroicons/react/24/outline'
 const BackToTopButton = () => {
   const [hidden, setHidden] = useState(true)
 
-  window.onscroll = () => {
-    setHidden(window.scrollY < 500)
+  if (typeof window !== 'undefined') {
+    window.onscroll = () => {
+      setHidden(window.scrollY < 500)
+    }
   }
 
   return (
