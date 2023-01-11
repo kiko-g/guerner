@@ -3,7 +3,7 @@ import { Layout } from '../components/layout'
 
 const ContactsPagePT = () => {
   return (
-    <Layout location="Contactos" language="pt">
+    <Layout location="Contactos">
       <div></div>
     </Layout>
   )

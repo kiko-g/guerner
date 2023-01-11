@@ -4,7 +4,7 @@ import { Layout } from '../components/layout'
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
 
 const NotFoundPage = () => (
-  <Layout location="Oops" language="pt">
+  <Layout location="Oops">
     <div className="mx-auto flex flex-col gap-y-4 text-center">
       <div>
         <h1 className="mb-4 font-headings text-4xl font-extrabold tracking-tight">Oops!</h1>

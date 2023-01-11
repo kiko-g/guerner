@@ -7,7 +7,7 @@ import { StaticImage } from 'gatsby-plugin-image'
 
 const ProductsPagePT = () => {
   return (
-    <Layout location="Produtos" language="pt">
+    <Layout location="Produtos">
       <div className="bg-red-400"></div>
     </Layout>
   )

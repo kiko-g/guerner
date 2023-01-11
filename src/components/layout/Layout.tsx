@@ -6,11 +6,10 @@ import classNames from 'classnames'
 type Props = {
   children: any
   location: string
-  language: 'pt' | 'en'
   home?: boolean
 }
 
-const Layout = ({ children, location, language = 'pt', home }: Props) => {
+const Layout = ({ children, location, home }: Props) => {
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -44,8 +43,7 @@ const Layout = ({ children, location, language = 'pt', home }: Props) => {
 }
 
 Layout.defaultProps = {
-  location: 'Unknown',
-  language: 'pt',
+  location: 'Unknown'
 }
 
 export default Layout

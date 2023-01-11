@@ -8,7 +8,7 @@ import { Mural } from '../components/home'
 
 const IndexPagePT = () => {
   return (
-    <Layout location="Início" language="pt" home>
+    <Layout location="Início" home>
       <div className=""></div>
     </Layout>
   )

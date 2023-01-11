@@ -3,7 +3,7 @@ import { Layout } from '../components/layout'
 
 const CompanyPagePT = () => {
   return (
-    <Layout location="Empresa" language="pt">
+    <Layout location="Empresa">
       <div></div>
     </Layout>
   )

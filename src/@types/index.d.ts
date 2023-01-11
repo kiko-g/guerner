@@ -1,3 +1,5 @@
+export type Language = 'en' | 'pt'
+
 export type Card = {
   title: string
   image: string
