@@ -3,17 +3,17 @@ import { socials } from '../utils'
 import { Link } from 'gatsby'
 
 type Props = {
-  siteTitle: string
+  title: string
 }
 
-const Footer = ({ siteTitle }: Props) => {
+const Footer = ({ title }: Props) => {
   return (
     <footer className="z-10 flex flex-col bg-primary text-sm text-white dark:bg-darker md:text-base">
       <div className="mx-4 md:mx-24">
         <div className="flex items-center justify-between border-b py-4 md:py-8">
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
             <Link to="/" className="flex items-center justify-center gap-x-2">
-              <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={siteTitle} />
+              <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={title} />
               <h5 className="flex max-w-xs flex-col font-headings text-sm font-medium md:text-base md:font-bold">
                 <span>Guerner &</span>
                 <span>Irmãos S.A.</span>
@@ -37,7 +37,12 @@ const Footer = ({ siteTitle }: Props) => {
                       aria-hidden="true"
                     >
                       {social.svg.map((d, dIdx) => (
-                        <path fillRule="evenodd" d={d} clipRule="evenodd" key={`social-${socialIdx}-svg-${dIdx}`} />
+                        <path
+                          fillRule="evenodd"
+                          d={d}
+                          clipRule="evenodd"
+                          key={`social-${socialIdx}-svg-${dIdx}`}
+                        />
                       ))}
                     </svg>
                   </a>
@@ -76,10 +81,13 @@ const Footer = ({ siteTitle }: Props) => {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-y-2 py-4 md:flex-row md:gap-y-0 md:py-8">
-          <span className="sm:text-center">© 2022 {siteTitle}™</span>
+          <span className="sm:text-center">© 2022 {title}™</span>
           <span className="text-secondary">
             Made by{' '}
-            <a href="https://kikogoncalves.com" className="font-bold transition-all hover:underline hover:opacity-80">
+            <a
+              href="https://kikogoncalves.com"
+              className="font-bold transition-all hover:underline hover:opacity-80"
+            >
               Francisco Gonçalves
             </a>
           </span>

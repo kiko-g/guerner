@@ -3,7 +3,11 @@ import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import DarkModeSwitch from './DarkModeSwitch'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { HomeIcon, QuestionMarkCircleIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  QuestionMarkCircleIcon,
+  InformationCircleIcon,
+} from '@heroicons/react/24/outline'
 
 const navigation = [
   { title: 'Home', location: '/', icon: <HomeIcon className="mr-2 h-[1.2rem] w-[1.2rem]" /> },
@@ -32,7 +36,11 @@ const NavbarCondensed = ({ location }: Props) => {
       {({ open }) => {
         return (
           <>
-            <div className={`${open ? 'p-0' : 'p-2'} relative flex items-center justify-between md:py-0`}>
+            <div
+              className={`${
+                open ? 'p-0' : 'p-2'
+              } relative flex items-center justify-between md:py-0`}
+            >
               <Hamburger open={open} />
               <Header location={location} />
             </div>

@@ -3,38 +3,46 @@ import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import DarkModeSwitch from './DarkModeSwitch'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { HomeIcon, QuestionMarkCircleIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  QuestionMarkCircleIcon,
+  InformationCircleIcon,
+} from '@heroicons/react/24/outline'
+import classNames from 'classnames'
 
 const navigation = [
-  { title: 'Home', location: '/', icon: <HomeIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" /> },
-  {
-    title: 'FAQs',
-    location: '/faqs',
-    icon: <QuestionMarkCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" />,
-  },
-  {
-    title: 'About',
-    location: '/about',
-    icon: <InformationCircleIcon className="mr-1.5 mt-0.5 h-[1.2rem] w-[1.2rem]" />,
-  },
+  { title: 'Home', location: '/', icon: <HomeIcon className="h-5 w-5" /> },
+  { title: 'FAQs', location: '/faqs', icon: <QuestionMarkCircleIcon className="h-5 w-5" /> },
+  { title: 'About', location: '/about', icon: <InformationCircleIcon className="h-5 w-5" /> },
 ]
 
 type Props = {
-  siteTitle: string
+  title: string
   location: string
+  special?: boolean
 }
 
-const Navbar = ({ siteTitle, location }: Props) => {
-  const [shown, setShown] = useState(false)
-
+const Navbar = ({ title, location, special }: Props) => {
   return (
-    <Disclosure as="nav" className="navbar">
+    <Disclosure
+      as="nav"
+      className={classNames(
+        'sticky top-0 px-3 z-20 w-full space-x-4 py-2 md:py-0',
+        'text-white dark:bg-darker dark:text-white',
+        special ? 'bg-primary' : 'bg-darker'
+      )}
+    >
       {({ open }) => {
         return (
           <>
-            <div className={`${open ? 'p-0' : 'p-2'} relative flex items-center justify-between md:py-0`}>
+            <div
+              className={classNames(
+                'relative flex w-full items-center justify-between md:py-0',
+                open ? 'p-0' : 'p-2'
+              )}
+            >
               <Hamburger open={open} />
-              <Header title={siteTitle} location={location} />
+              <Header title={title} location={location} />
             </div>
             <Mobile location={location} />
           </>
@@ -46,23 +54,24 @@ const Navbar = ({ siteTitle, location }: Props) => {
 
 const Hamburger = ({ open }: { open: boolean }) => (
   <div
-    className={`z-50 md:hidden ${
+    className={classNames(
+      'z-50 md:hidden',
       open
         ? 'absolute top-2 right-2 my-auto flex h-6 items-center justify-end space-x-2'
         : 'flex w-full items-center justify-between'
-    }`}
+    )}
   >
     <Link to="/">
-      {open ? (
-        <img className="avatar top-0.5 h-5 w-5" src={'/images/avatar.png'} alt="Guerner" />
-      ) : (
-        <img className="avatar h-6 w-6" src={'/images/avatar.png'} alt="Guerner" />
-      )}
+      <img
+        className={classNames('avatar', open ? 'top-0.5 h-5 w-5' : 'h-6 w-6')}
+        src={'/images/avatar.png'}
+        alt="Guerner"
+      />
     </Link>
 
     <div className="flex items-center space-x-1">
       <DarkModeSwitch />
-      <Disclosure.Button className="hamburger group">
+      <Disclosure.Button className="group text-gray-800 transition duration-200 ease-in dark:text-white md:hidden">
         <span className="sr-only">Open nav menu</span>
         {open ? (
           <XMarkIcon
@@ -80,34 +89,36 @@ const Hamburger = ({ open }: { open: boolean }) => (
   </div>
 )
 
-const Header = ({ title, location }: { title: string; location: string }) => (
-  <div className="header">
+const Header = ({ title, location }: Props) => (
+  <div className="flex w-full items-center justify-between md:items-stretch md:justify-between">
     <div className="relative hidden h-auto space-x-12 self-center duration-200 hover:opacity-75 md:inline-flex">
       <Link to="/" className="flex items-center space-x-2">
-        <img src={'/images/avatar.png'} alt="Guerner" className="z-20 inline-flex h-6 w-6 rounded-full transition" />
+        <img
+          src={'/images/avatar.png'}
+          alt="Guerner"
+          className="z-20 inline-flex h-6 w-6 rounded-full transition"
+        />
         <h2 className="text-xs font-bold tracking-tighter duration-150 lg:text-base">{title}</h2>
       </Link>
     </div>
 
-    <div className="hidden space-x-8 self-center md:inline-flex">
+    <div className="hidden gap-x-8 self-center md:inline-flex">
       {navigation.map((link, index) => (
         <Link to={link.location} key={`nav-${index}`} className="relative py-1">
           <button
             type="button"
-            className={`flex h-12 items-center justify-center font-medium lowercase tracking-wide transition ${
+            className={classNames(
+              'flex h-12 items-center justify-center font-medium lowercase tracking-wide transition',
               location === link.title
-                ? 'text-tertiary dark:text-white'
-                : 'text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white'
-            }`}
+                ? 'font-bold text-white dark:text-white'
+                : 'font-normal text-white/30 hover:text-white dark:text-white/50 dark:hover:text-white'
+            )}
           >
-            <span className="flex items-center justify-center">
+            <span className="flex items-center justify-center gap-x-1.5">
               {link.icon}
               {link.title}
             </span>
           </button>
-          {location === link.title ? (
-            <span className="absolute bottom-0 h-1 w-full rounded-t-sm bg-tertiary dark:bg-secondary" />
-          ) : null}
         </Link>
       ))}
     </div>
@@ -124,11 +135,12 @@ const Mobile = ({ location }: { location: string }) => (
       <Link to={link.location} className="relative h-auto" key={`mobile-nav-${index}`}>
         <button
           type="button"
-          className={`flex h-auto items-center justify-center font-medium lowercase tracking-wide transition ${
+          className={classNames(
+            'flex h-auto items-center justify-center font-medium lowercase tracking-wide transition',
             location === link.title
               ? 'text-tertiary dark:text-white'
               : 'text-gray-800/70 hover:text-gray-800 dark:text-white/60 dark:hover:text-white'
-          }`}
+          )}
         >
           <span className="flex items-center justify-center">
             {link.icon}

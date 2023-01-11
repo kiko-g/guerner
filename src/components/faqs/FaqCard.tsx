@@ -42,7 +42,9 @@ const FaqCard = ({ faq, faqIdx }: Props) => {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Disclosure.Panel className="w-full px-2 py-3 text-gray-700 dark:text-white">{faq.answer}</Disclosure.Panel>
+            <Disclosure.Panel className="w-full px-2 py-3 text-gray-700 dark:text-white">
+              {faq.answer}
+            </Disclosure.Panel>
           </Transition>
         </>
       )}

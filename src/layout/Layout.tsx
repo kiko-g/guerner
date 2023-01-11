@@ -10,7 +10,7 @@ type Props = {
 
 const Layout = ({ children, location, home }: Props) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query titleQuery {
       site {
         siteMetadata {
           title
@@ -23,11 +23,17 @@ const Layout = ({ children, location, home }: Props) => {
   return (
     <>
       <Seo title={location} />
-      <div id="layout" className="layout">
-        {home ? <Hero location={location} title={title} /> : <Navbar location={location} siteTitle={title} />}
-        {children ? <div className={home ? 'py-4' : 'content'}>{children}</div> : null}
+      <div
+        id="layout"
+        className="flex min-h-screen flex-col overflow-clip bg-ice font-prose font-medium text-gray-800 opacity-[99%] dark:bg-darkest dark:text-white"
+      >
+        <Navbar location={location} title={title} special={home} />
+        {home ? <Hero location={location} title={title} /> : null}
+        {children ? (
+          <div className="container z-10 mx-auto my-auto px-0 py-2 lg:px-4 lg:py-4">{children}</div>
+        ) : null}
         <BackToTopButton />
-        <Footer siteTitle={title} />
+        <Footer title={title} />
       </div>
     </>
   )
