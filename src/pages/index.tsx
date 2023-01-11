@@ -8,8 +8,8 @@ import { Mural } from '../components/home'
 
 const IndexPagePT = () => {
   return (
-    <Layout location="Início" home>
-      <div className="bg-red-400"></div>
+    <Layout location="Início" language="pt" home>
+      <div className=""></div>
     </Layout>
   )
 }
