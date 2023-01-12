@@ -6,5 +6,6 @@ import Footer from './Footer'
 import DarkModeSwitch from './DarkModeSwitch'
 import LanguageSwitch from './LanguageSwitch'
 import BackToTopButton from './BackToTopButton'
+import GoogleMapsLocation from './GoogleMapsLocation'
 
-export { Seo, Hero, Layout, Navbar, Footer, DarkModeSwitch, LanguageSwitch, BackToTopButton }
+export { Seo, Hero, Layout, Navbar, Footer, DarkModeSwitch, LanguageSwitch, BackToTopButton, GoogleMapsLocation }

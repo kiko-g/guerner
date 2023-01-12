@@ -7,7 +7,7 @@ type Props = {
 
 const Footer = ({ title }: Props) => {
   return (
-    <footer className="z-10 flex flex-col bg-primary pt-0 text-sm text-white dark:bg-navy md:pt-2 md:text-base">
+    <footer className="z-10 flex flex-col bg-navy pt-0 text-sm text-white dark:bg-navy md:pt-2 md:text-base">
       <div className="mx-4 md:mx-8">
         <div className="flex items-center justify-between border-b py-3 md:py-4">
           {/* Left column */}

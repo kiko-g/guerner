@@ -23,7 +23,8 @@ code {
 }
 
 .link {
-  @apply font-medium text-[#0a66c2] transition hover:underline hover:opacity-90 dark:text-tertiary;
+  @apply transition hover:text-teal-600 hover:underline 
+  dark:text-white/75 dark:hover:text-secondary;
 }
 
 .min-h-adjusted {
