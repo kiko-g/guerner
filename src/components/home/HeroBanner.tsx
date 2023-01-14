@@ -11,17 +11,20 @@ export default function HeroBanner({}: Props) {
     <section className="relative w-full bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
       <div
         className="absolute inset-0 bg-transparent 
-        bg-gradient-to-r from-white/30 to-white/10 text-gray-800 dark:from-black/60 dark:to-black/40 dark:text-white"
+        bg-gradient-to-r from-black/25 to-black/50 dark:from-black/50 dark:to-black/75"
       />
 
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
-        <div className="max-w-xl text-center sm:text-left">
+      <div
+        className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex 
+        lg:h-screen lg:items-center lg:px-8"
+      >
+        <div className="mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             Bem vindo à
-            <strong className="block font-extrabold tracking-tighter text-primary dark:text-secondary">{title}</strong>
+            <strong className="block font-extrabold tracking-tighter text-teal-500 dark:text-secondary">{title}</strong>
           </h1>
-          <p className="mt-4 max-w-lg sm:text-xl sm:leading-relaxed">{introduction}</p>
-          <div className="mt-8 flex flex-wrap gap-4 text-center">
+          <p className="mx-auto mt-4 sm:text-xl sm:leading-relaxed">{introduction}</p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center">
             <Link
               to="/produtos"
               className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow transition 

@@ -26,7 +26,7 @@ const Navbar = ({ title, location, special }: Props) => {
   return (
     <Disclosure
       as="nav"
-      defaultOpen={isMobile}
+      defaultOpen={false}
       className={classNames(
         'sticky top-0 z-20 w-full px-3 py-3 md:px-6 md:py-4',
         special ? 'bg-transparent text-white' : 'bg-primary text-white dark:bg-navy dark:text-white'
@@ -59,7 +59,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
     )}
   >
     <Link to="/">
-      <img alt="Guerner" src={'/images/avatar.png'} className={classNames('avatar', open ? 'h-5 w-5' : 'h-6 w-6')} />
+      <img alt="Guerner" src={'/images/avatar.png'} className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')} />
     </Link>
 
     <div className="flex items-center gap-x-1">
@@ -104,7 +104,7 @@ const Header = ({ title, location }: Props) => (
                 'flex items-center justify-center lowercase tracking-wide transition',
                 location === link.title
                   ? 'font-bold text-white dark:text-white'
-                  : 'font-normal text-white/30 hover:text-white dark:text-white/25 dark:hover:text-white'
+                  : 'font-normal text-white/30 hover:text-white dark:text-white/30 dark:hover:text-white'
               )}
             >
               <span className="flex items-center justify-center gap-x-1.5">

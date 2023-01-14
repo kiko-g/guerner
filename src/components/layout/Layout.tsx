@@ -27,7 +27,7 @@ const Layout = ({ children, location, home }: Props) => {
       <div
         id="layout"
         className={classNames(
-          'flex min-h-screen flex-col overflow-clip font-prose font-medium',
+          'flex min-h-screen mb-auto flex-col overflow-clip font-prose font-medium',
           home
             ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
             : 'bg-ice text-gray-800 dark:bg-navy dark:text-white'
