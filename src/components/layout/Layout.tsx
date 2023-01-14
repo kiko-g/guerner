@@ -36,7 +36,7 @@ const Layout = ({ children, location, home }: Props) => {
         <Navbar location={location} title={title} special={home} />
         <div
           className={classNames(
-            'z-10 mx-auto my-auto',
+            'z-10 mx-auto mb-auto',
             home ? 'w-full' : 'container max-w-7xl px-3 py-3 md:px-2 md:py-2'
           )}
         >
