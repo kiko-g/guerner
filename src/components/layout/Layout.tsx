@@ -26,12 +26,19 @@ const Layout = ({ children, location, home }: Props) => {
       <Seo title={location} />
       <div
         id="layout"
-        className="flex min-h-screen flex-col overflow-clip bg-ice font-prose font-medium 
-        text-gray-800 opacity-[99%] dark:bg-navy dark:text-white"
+        className={classNames(
+          'flex min-h-screen flex-col overflow-clip font-prose font-medium',
+          home
+            ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
+            : 'bg-ice text-gray-800 dark:bg-navy dark:text-white'
+        )}
       >
         <Navbar location={location} title={title} special={home} />
         <div
-          className={classNames('container z-10 mx-auto my-auto px-3 py-3 md:px-2 md:py-2', home ? '' : 'max-w-7xl')}
+          className={classNames(
+            'z-10 mx-auto my-auto',
+            home ? 'w-full' : 'container max-w-7xl px-3 py-3 md:px-2 md:py-2'
+          )}
         >
           {children}
         </div>

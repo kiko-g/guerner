@@ -29,9 +29,7 @@ const Navbar = ({ title, location, special }: Props) => {
       defaultOpen={isMobile}
       className={classNames(
         'sticky top-0 z-20 w-full px-3 py-3 md:px-6 md:py-4',
-        special
-          ? 'bg-primary text-white dark:bg-navy dark:text-white'
-          : 'bg-primary text-white dark:bg-navy dark:text-white'
+        special ? 'bg-transparent text-white' : 'bg-primary text-white dark:bg-navy dark:text-white'
       )}
     >
       {({ open }) => {

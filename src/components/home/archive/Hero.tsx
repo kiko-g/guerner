@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import Navbar from '../layout/Navbar'
+import Navbar from '../../layout/Navbar'
 
 type Props = {
   title: string

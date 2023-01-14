@@ -1,5 +1,5 @@
 import Seo from './Seo'
-import Hero from '../home/Hero'
+import Hero from '../home/archive/Hero'
 import Layout from './Layout'
 import Navbar from './Navbar'
 import Footer from './Footer'

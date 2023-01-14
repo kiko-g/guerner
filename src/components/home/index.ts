@@ -1,3 +1,3 @@
-import Mural from './Mural'
+import HeroBanner from './HeroBanner'
 
-export { Mural }
+export { HeroBanner }
