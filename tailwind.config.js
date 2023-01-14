@@ -52,12 +52,18 @@ module.exports = {
           '0%, 100%': { transform: 'rotate(5deg)' },
           '50%': { transform: 'rotate(-5deg)' },
         },
+        lava: {
+          '0%': { backgroundPosition: '0% 90%' },
+          '50%': { backgroundPosition: '100% 45%' },
+          '100%': { backgroundPosition: '0% 90%' },
+        },
       },
       animation: {
+        lava: 'lava 5s ease infinite',
         dark: 'dark 400ms ease-in-out',
         light: 'light 400ms ease-in-out',
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

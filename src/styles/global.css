@@ -18,19 +18,23 @@ h6 {
   @apply font-headings;
 }
 
-code {
-  @apply rounded-md px-1 font-code text-pink-600;
+textarea,
+input[type='tel'],
+input[type='text'],
+input[type='email'] {
+  @apply w-full rounded border border-transparent bg-white dark:bg-white/10 text-sm shadow placeholder:font-normal placeholder:text-gray-400 
+  focus:border-primary focus:ring-primary dark:focus:border-secondary dark:focus:ring-secondary;
+}
+
+input[type='checkbox'] {
+  @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary 
+  dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
 }
 
 .link {
-  @apply transition hover:text-teal-600 hover:underline 
-  dark:text-white/75 dark:hover:text-secondary;
+  @apply transition hover:text-teal-600 hover:underline dark:text-white/75 dark:hover:text-secondary;
 }
 
 .min-h-adjusted {
   min-height: calc(100vh - 3.5rem);
-}
-
-.avatar {
-  @apply rounded-full transition hover:opacity-80 md:hidden;
 }

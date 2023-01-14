@@ -86,8 +86,8 @@ const Hamburger = ({ open }: { open: boolean }) => (
 
 const Header = ({ title, location }: Props) => (
   <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
-    <div className="relative hidden h-auto transition hover:opacity-75 md:flex md:items-center">
-      <Link to="/" className="group flex items-center gap-x-3">
+    <div className="relative hidden h-auto transition md:flex md:items-center">
+      <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
         <img src={'/images/avatar.png'} alt="Guerner" className="z-20 inline-flex h-8 w-8 rounded-full transition" />
         <h2 className="text-xs font-bold tracking-tighter duration-150 group-hover:underline md:text-lg">{title}</h2>
       </Link>

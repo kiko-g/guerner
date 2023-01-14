@@ -4,7 +4,9 @@ import { Layout } from '../components/layout'
 const CompanyPagePT = () => {
   return (
     <Layout location="Empresa">
-      <div></div>
+      <div>
+        <h1>Empresa</h1>
+      </div>
     </Layout>
   )
 }

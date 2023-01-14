@@ -31,7 +31,7 @@ const Layout = ({ children, location, home }: Props) => {
       >
         <Navbar location={location} title={title} special={home} />
         <div
-          className={classNames('container z-10 mx-auto my-auto px-0 py-2 md:px-4 md:py-4', home ? '' : 'max-w-7xl')}
+          className={classNames('container z-10 mx-auto my-auto px-3 py-3 md:px-2 md:py-2', home ? '' : 'max-w-7xl')}
         >
           {children}
         </div>
@@ -43,7 +43,7 @@ const Layout = ({ children, location, home }: Props) => {
 }
 
 Layout.defaultProps = {
-  location: 'Unknown'
+  location: 'Unknown',
 }
 
 export default Layout
