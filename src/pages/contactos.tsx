@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMediaQuery } from 'usehooks-ts'
-import { Layout } from '../../components/layout'
-import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../../components/contacts'
+import { Layout } from '../components/layout'
+import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../components/contacts'
 
 const ContactsPagePT = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')

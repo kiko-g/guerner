@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import { Layout } from '../../../components/layout'
-import { FeaturedAgriculture, FeaturedGardening } from '../../../components/products'
+import { Layout } from '../../components/layout'
+import { FeaturedAgriculture, FeaturedGardening } from '../../components/products'
 
 const ProductsPagePT = () => {
   const title = `Produtos`
