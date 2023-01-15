@@ -9,7 +9,7 @@ export default function FeaturedAgriculture({}: Props) {
   architecto quae voluptatum beatae excepturi dolores.`
 
   return (
-    <section className="w-full overflow-hidden rounded bg-[url(https://images.unsplash.com/photo-1602810319428-019690571b5b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
+    <section className="w-full overflow-hidden rounded bg-[url(https://images.unsplash.com/photo-1672803949246-85b33371c7ab)] bg-cover bg-center bg-no-repeat">
       <div className="bg-gradient-to-r from-black/60 to-black/20 p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-left md:items-start">
           <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">{title}</h2>
