@@ -59,7 +59,11 @@ const Hamburger = ({ open }: { open: boolean }) => (
     )}
   >
     <Link to="/">
-      <img alt="Guerner" src={'/images/avatar.png'} className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')} />
+      <img
+        alt="Guerner"
+        src={'/images/avatar.png'}
+        className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
+      />
     </Link>
 
     <div className="flex items-center gap-x-1">

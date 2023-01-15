@@ -12,7 +12,6 @@ const ProductsGardeningPagePT = () => {
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
           <p className="text-left font-normal md:text-justify">{text}</p>
         </header>
-
       </main>
     </Layout>
   )

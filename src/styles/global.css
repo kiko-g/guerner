@@ -22,8 +22,8 @@ textarea,
 input[type='tel'],
 input[type='text'],
 input[type='email'] {
-  @apply w-full rounded border border-transparent bg-white dark:bg-white/10 text-sm shadow placeholder:font-normal placeholder:text-gray-400 
-  focus:border-primary focus:ring-primary dark:focus:border-secondary dark:focus:ring-secondary;
+  @apply w-full rounded border border-transparent bg-white text-sm shadow placeholder:font-normal placeholder:text-gray-400 focus:border-primary 
+  focus:ring-primary dark:bg-white/10 dark:focus:border-secondary dark:focus:ring-secondary;
 }
 
 input[type='checkbox'] {
