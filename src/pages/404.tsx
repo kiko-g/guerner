@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { Layout } from '../components/layout'
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
