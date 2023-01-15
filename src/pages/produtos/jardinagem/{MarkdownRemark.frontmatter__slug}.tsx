@@ -52,7 +52,7 @@ export const pageQuery = graphql`
 
 const GoBack = () => (
   <Link
-    to="/produtos/agricultura"
+    to="/produtos/jardinagem"
     className="flex rounded-full text-sm font-semibold text-gray-700 transition hover:opacity-75 dark:text-tertiary"
   >
     <svg viewBox="0 -7 3 24" className="mr-2.5 h-6 w-auto overflow-visible">
