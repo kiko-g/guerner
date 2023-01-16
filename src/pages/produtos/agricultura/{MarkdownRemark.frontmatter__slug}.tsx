@@ -1,7 +1,8 @@
 import React from 'react'
-import { Layout } from '../../../components/layout'
+import { GoBack, Layout } from '../../../components/layout'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import '../../../styles/product.css'
 
 export default function Template({ data }) {
   const { markdownRemark } = data
@@ -9,22 +10,35 @@ export default function Template({ data }) {
   const coverImage = getImage(frontmatter.featuredImage)
 
   return (
-    <Layout location={frontmatter.title}>
-      <main className="">
-        <header>
-          <h1>{frontmatter.title}</h1>
-          <div>
-            <GoBack />
-            <span className="date">{frontmatter.date}</span>
-          </div>
+    <Layout location={frontmatter.name}>
+      <main className="product">
+        <header className="flex w-full items-center justify-between">
+          <GoBack />
+          <h1 className="text-lg font-bold tracking-tight">Agricultura</h1>
         </header>
 
-        <article dangerouslySetInnerHTML={{ __html: html }} />
+        <div className="flex w-full gap-4 rounded-xl bg-white p-4 dark:bg-white/10">
+          {coverImage ? (
+            <GatsbyImage image={coverImage} alt="product-cover" className="rounded" />
+          ) : null}
+          <ul className="whitespace-nowrap pr-16 text-sm">
+            <li>
+              Destaque:{' '}
+              <span className="font-bold">{frontmatter.pinned === true ? 'Sim' : 'Não'}</span>
+            </li>
+            <li>
+              Nome: <span className="font-bold">{frontmatter.name}</span>
+            </li>
+            <li>
+              Cor: <span className="font-bold">{frontmatter.color}</span>
+            </li>
+            <li>
+              Categoria: <span className="font-bold">{frontmatter.category}</span>
+            </li>
+          </ul>
+        </div>
 
-        <footer>
-          <span>{frontmatter.title}</span>
-          <span>{frontmatter.date}</span>
-        </footer>
+        <article dangerouslySetInnerHTML={{ __html: html }} />
       </main>
     </Layout>
   )
@@ -36,8 +50,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         name
-        pinned
         slug
+        pinned
+        color
+        category
         featuredImage {
           childImageSharp {
             gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
@@ -49,22 +65,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const GoBack = () => (
-  <Link
-    to="/produtos/agricultura"
-    className="flex rounded-full text-sm font-semibold text-gray-700 transition hover:opacity-75 dark:text-tertiary"
-  >
-    <svg viewBox="0 -7 3 24" className="mr-2.5 h-6 w-auto overflow-visible">
-      <path
-        d="M3 0L0 3L3 6"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></path>
-    </svg>
-    Voltar
-  </Link>
-)

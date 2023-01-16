@@ -54,7 +54,7 @@ const ProductsAgriculturePagePT = ({
                 let pinnedMatch = true
 
                 if (searchQuery !== '') {
-                  textMatch = strIncludes(product.frontmatter.title, searchQuery)
+                  textMatch = strIncludes(product.frontmatter.name, searchQuery)
                 }
 
                 if (pickedColor !== '') {

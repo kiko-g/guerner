@@ -1,7 +1,7 @@
 ---
 pinned: true
 name: Cgefygfre
-slug: produto2
+slug: produto4
 color: red
 category: all
 featuredImage: ./featured.png
