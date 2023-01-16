@@ -5,13 +5,22 @@ import { useMediaQuery } from 'usehooks-ts'
 import { Link } from 'gatsby'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { HomeIcon, BriefcaseIcon, ShoppingCartIcon, PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline'
+import {
+  HomeIcon,
+  BriefcaseIcon,
+  ShoppingCartIcon,
+  PhoneArrowDownLeftIcon,
+} from '@heroicons/react/24/outline'
 
 const navigation = [
   { title: 'Início', location: '/', icon: <HomeIcon className="h-5 w-5" /> },
   { title: 'Empresa', location: '/empresa', icon: <BriefcaseIcon className="h-5 w-5" /> },
   { title: 'Produtos', location: '/produtos', icon: <ShoppingCartIcon className="h-5 w-5" /> },
-  { title: 'Contactos', location: '/contactos', icon: <PhoneArrowDownLeftIcon className="h-5 w-5" /> },
+  {
+    title: 'Contactos',
+    location: '/contactos',
+    icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
+  },
 ]
 
 type Props = {
@@ -36,7 +45,10 @@ const Navbar = ({ title, location, special }: Props) => {
         return (
           <>
             <div
-              className={classNames('relative flex w-full items-center justify-between md:py-0', open ? 'p-0' : 'p-2')}
+              className={classNames(
+                'relative flex w-full items-center justify-between md:py-0',
+                open ? 'p-0' : 'p-2'
+              )}
             >
               <Hamburger open={open} />
               <Header title={title} location={location} />
@@ -90,8 +102,14 @@ const Header = ({ title, location }: Props) => (
   <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
     <div className="relative hidden h-auto transition md:flex md:items-center">
       <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
-        <img src={'/images/avatar.png'} alt="Guerner" className="z-20 inline-flex h-8 w-8 rounded-full transition" />
-        <h2 className="text-xs font-bold tracking-tighter duration-150 group-hover:underline md:text-lg">{title}</h2>
+        <img
+          src={'/images/avatar.png'}
+          alt="Guerner"
+          className="z-20 inline-flex h-8 w-8 rounded-full transition"
+        />
+        <h2 className="text-xs font-bold tracking-tighter duration-150 group-hover:underline md:text-lg">
+          {title}
+        </h2>
       </Link>
     </div>
 
@@ -135,7 +153,11 @@ const FoldableMobileMenu = ({ location }: { location: string }) => (
   >
     <Disclosure.Panel className="flex flex-col space-y-3 py-2 md:hidden">
       {navigation.map((link, index) => (
-        <Link to={link.location} className="relative z-50 h-auto w-min px-4" key={`mobile-nav-${index}`}>
+        <Link
+          to={link.location}
+          className="relative z-50 h-auto w-min px-4"
+          key={`mobile-nav-${index}`}
+        >
           <button
             type="button"
             className={classNames(

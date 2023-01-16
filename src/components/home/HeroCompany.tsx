@@ -16,7 +16,9 @@ export default function HeroCompany({}: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="w-full bg-[url('https://images.unsplash.com/photo-1572971443669-3be9a4085180')] p-8 md:p-12 lg:px-16 lg:py-24">
             <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center">
-              <h2 className="text-center text-2xl font-bold text-primary dark:text-secondary md:text-3xl">{header}</h2>
+              <h2 className="text-center text-2xl font-bold text-primary dark:text-secondary md:text-3xl">
+                {header}
+              </h2>
               <p className="hidden text-center text-white/90 sm:mt-4 sm:block">{text}</p>
               <div className="mt-4 md:mt-8">
                 <Link
@@ -31,7 +33,7 @@ export default function HeroCompany({}: Props) {
             </div>
           </div>
 
-          <div className="grid -cols-2 md:grid-cols-1 lg:grid-cols-2">
+          <div className="-cols-2 grid md:grid-cols-1 lg:grid-cols-2">
             <img
               alt="Student"
               src="https://images.unsplash.com/photo-1621274790572-7c32596bc67f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=654&q=80"

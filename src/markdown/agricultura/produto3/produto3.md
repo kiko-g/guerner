@@ -1,7 +1,7 @@
 ---
 pinned: true
-name: Awjirhv
-slug: produto2
+name: Dieufqhfr
+slug: produto3
 featuredImage: ./featured.png
 ---
 

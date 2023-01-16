@@ -24,7 +24,9 @@ export default function ContactsBanner({}: Props) {
       name: 'Email',
       text: email,
       link: `mailto:${email}`,
-      icon: <InboxArrowDownIcon className="h-6 w-6 text-primary dark:text-secondary md:h-7 md:w-7" />,
+      icon: (
+        <InboxArrowDownIcon className="h-6 w-6 text-primary dark:text-secondary md:h-7 md:w-7" />
+      ),
     },
     {
       name: 'Location',

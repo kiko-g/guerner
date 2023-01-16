@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import classNames from 'classnames'
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../../../components/layout'
-import { ViewToggler } from '../../../components/products/agriculture'
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { strIncludes, tx } from '../../../utils'
+import { ColorFilter, Search, ViewToggler } from '../../../components/products'
+import { ArrowTopRightOnSquareIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const ProductsAgriculturePagePT = ({
   data: {
@@ -11,8 +13,11 @@ const ProductsAgriculturePagePT = ({
 }) => {
   const title = `Agricultura`
   const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
+  const colorPreText = `Cor`
+  const categoryPreText = `Categoria`
 
   const [viewType, setViewType] = useState(false)
+  const [pickedColor, setPickedColor] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
@@ -25,44 +30,96 @@ const ProductsAgriculturePagePT = ({
 
         <div className="flex w-full flex-col gap-y-6">
           {/* Filters */}
-          <div className="flex items-center justify-between gap-x-2">
+          <div className="flex items-center justify-between gap-x-3">
+            <Search hook={[searchQuery, setSearchQuery]} />
+            <ColorFilter hook={[pickedColor, setPickedColor]} />
             <ViewToggler hook={[viewType, setViewType]} />
-            <input
-              type="search"
-              id="searchProduct"
-              name="searchProduct"
-              title="Enter your search string here"
-              placeholder="Search"
-              className=""
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-            />
           </div>
 
           {/* Listing */}
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {nodes.map((product: any, productIdx: any) => (
-              <li key={`product-${productIdx}`}>
-                <Link
-                  to={product.frontmatter.slug}
-                  className="group block overflow-hidden rounded transition hover:opacity-80"
-                >
-                  <img
-                    alt={`product-${productIdx}`}
-                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                    className="h-[350px] w-full overflow-hidden object-cover transition 
-                      duration-500 sm:h-[450px]"
-                  />
+          <ul
+            className={classNames(
+              viewType
+                ? 'grid grid-cols-1 gap-x-6 gap-y-6'
+                : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
+            )}
+          >
+            {nodes
+              .filter((product: any) => {
+                let textMatch = true
+                let colorMatch = true
 
-                  <div className="flex items-center justify-between bg-white px-3 py-2">
-                    <span className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                      {product.frontmatter.name}
-                    </span>
-                    <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                if (searchQuery !== '')
+                  textMatch = strIncludes(product.frontmatter.title, searchQuery)
+
+                if (pickedColor !== '') colorMatch = product.frontmatter.color === pickedColor
+
+                return textMatch && colorMatch
+              })
+              .map((product: any, productIdx: any) => (
+                <li key={`product-${productIdx}`} className="group">
+                  <Link
+                    to={product.frontmatter.slug}
+                    className="block h-60 w-full overflow-hidden rounded-t-xl"
+                  >
+                    <img
+                      alt={`product-${productIdx}`}
+                      src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b"
+                      className="duration-400 aspect-square h-full w-full 
+                      object-cover transition hover:scale-110 hover:opacity-80"
+                    />
+                  </Link>
+
+                  {/* Card footer */}
+                  <div
+                    className="flex w-full flex-col gap-y-2 rounded-b-xl bg-white 
+                    px-3.5 py-2 font-normal dark:bg-white/10"
+                  >
+                    {/* Top line */}
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={product.frontmatter.slug}
+                        className="underline transition hover:text-primary hover:opacity-80 dark:hover:text-secondary"
+                      >
+                        {product.frontmatter.name}
+                      </Link>
+                      <Link to={product.frontmatter.slug}>
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-80 dark:text-secondary" />
+                      </Link>
+                    </div>
+
+                    {/* Bottom line */}
+                    <div className="flex items-center justify-between text-sm">
+                      {/* Color */}
+                      <div className="flex items-center gap-x-1">
+                        <span>{colorPreText}</span>
+                        {product.frontmatter.color ? (
+                          <span
+                            className={classNames(
+                              product.frontmatter.color.toLowerCase(),
+                              'h-4 w-4 rounded-full shadow'
+                            )}
+                          />
+                        ) : (
+                          <span className="font-bold text-red-700 dark:text-rose-500">N/A</span>
+                        )}
+                      </div>
+
+                      {/* Category */}
+                      <div>
+                        <span>{categoryPreText}: </span>
+                        {product.frontmatter.category ? (
+                          <span className="font-bold">
+                            {tx('category', product.frontmatter.category, 'pt')}
+                          </span>
+                        ) : (
+                          <span className="font-bold text-red-700 dark:text-rose-500">N/A</span>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </li>
-            ))}
+                </li>
+              ))}
           </ul>
         </div>
       </main>
@@ -85,6 +142,8 @@ export const pageQuery = graphql`
           name
           slug
           pinned
+          color
+          category
           featuredImage {
             childImageSharp {
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

@@ -16,7 +16,9 @@ export default function LanguageSwitch({ languageHook }: Props) {
       <Switch
         checked={language === 'pt'}
         onChange={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
-        className={classNames('group flex items-center justify-center gap-x-0.5 rounded-full text-sm')}
+        className={classNames(
+          'group flex items-center justify-center gap-x-0.5 rounded-full text-sm'
+        )}
       >
         <LanguageIcon className="ease block h-5 w-5 text-white transition-all group-hover:opacity-80 dark:text-white md:h-7 md:w-7" />
         <div className="flex flex-col -space-y-1 group-hover:opacity-80">

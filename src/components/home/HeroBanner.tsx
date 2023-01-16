@@ -21,7 +21,9 @@ export default function HeroBanner({}: Props) {
         <div className="mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             Bem vindo à
-            <strong className="block font-extrabold tracking-tighter text-teal-500 dark:text-secondary">{title}</strong>
+            <strong className="block font-extrabold tracking-tighter text-teal-500 dark:text-secondary">
+              {title}
+            </strong>
           </h1>
           <p className="mx-auto mt-4 sm:text-xl sm:leading-relaxed">{introduction}</p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center">
