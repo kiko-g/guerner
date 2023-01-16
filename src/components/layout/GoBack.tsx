@@ -1,11 +1,16 @@
 import React from 'react'
+import config from '../../config'
 import { Link } from 'gatsby'
 import { ArrowSmallLeftIcon } from '@heroicons/react/24/outline'
 
-export default function GoBack() {
+type Props = {
+  url: string
+}
+
+export default function GoBack({url}: Props) {
   return (
     <Link
-      to="/produtos/agricultura"
+      to={url}
       className="flex items-center justify-center gap-x-1 
       text-primary transition hover:opacity-80 dark:text-secondary"
     >

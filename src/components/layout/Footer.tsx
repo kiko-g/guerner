@@ -1,4 +1,5 @@
 import React from 'react'
+import config from '../../config'
 import { Link } from 'gatsby'
 
 type Props = {
@@ -6,13 +7,23 @@ type Props = {
 }
 
 const Footer = ({ title }: Props) => {
+  const links = [
+    { name: 'Sobre Nós', route: config.pt.routes.home },
+    { name: 'Localizações', route: config.pt.routes.home },
+    { name: 'Termos e Condições', route: config.pt.routes.home },
+    { name: 'Política de Privacidade', route: config.pt.routes.home },
+  ]
+
   return (
     <footer className="z-10 flex flex-col bg-navy text-sm text-white dark:bg-navy md:text-base">
       <div className="mx-4 py-1 md:mx-8 md:py-2">
         <div className="flex items-center justify-between border-b py-2 md:py-3">
           {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
-            <Link to="/" className="group flex items-center justify-center gap-x-2">
+            <Link
+              to={config.pt.routes.home}
+              className="group flex items-center justify-center gap-x-2"
+            >
               <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={title} />
               <h5
                 className="flex max-w-xs flex-col font-headings text-sm font-medium 
@@ -29,29 +40,16 @@ const Footer = ({ title }: Props) => {
             className="flex flex-col gap-y-0 text-right text-sm font-normal 
             tracking-tight md:gap-y-0.5 md:text-base md:tracking-tight"
           >
-            <li>
-              <Link to="/" className="transition hover:text-secondary hover:underline">
-                Sobre nós
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/" className="transition hover:text-secondary hover:underline">
-                Localizações
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/" className="transition hover:text-secondary hover:underline">
-                Termos e Condições
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/" className="transition hover:text-secondary hover:underline">
-                Política de Privacidade
-              </Link>
-            </li>
+            {links.map((link, linkIdx) => (
+              <li key={`link-${linkIdx}`}>
+                <Link
+                  to={link.route}
+                  className="transition hover:text-tertiary hover:underline dark:hover:text-secondary"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

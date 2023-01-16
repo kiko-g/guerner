@@ -1,4 +1,5 @@
 import React from 'react'
+import config from '../../config'
 import { Link } from 'gatsby'
 
 type Props = {}
@@ -21,7 +22,7 @@ export default function FeaturedAgriculture({}: Props) {
           </p>
           <div className="mt-4 sm:mt-8">
             <Link
-              to="agricultura"
+              to={config.pt.routes.products.agriculture}
               className="inline-flex items-center rounded-full bg-primary px-8 py-3 text-white shadow-lg 
               transition hover:opacity-80 focus:outline-none focus:ring dark:bg-secondary"
             >

@@ -1,5 +1,6 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
+import config from '../../config'
 
 type Props = {}
 
@@ -27,7 +28,7 @@ export default function SendEmailForm({}: Props) {
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
-              to="/"
+              to={config.pt.routes.home}
               className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-2 sm:h-20 sm:w-20"
             >
               <img
@@ -48,7 +49,7 @@ export default function SendEmailForm({}: Props) {
             {/* Mobile header */}
             <div className="relative -mt-16 block lg:hidden">
               <Link
-                to="/"
+                to={config.pt.routes.home}
                 className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-2 sm:h-20 sm:w-20"
               >
                 <img
@@ -162,7 +163,7 @@ export default function SendEmailForm({}: Props) {
 
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     Li e aceito os{' '}
-                    <Link to="/" className="link font-bold">
+                    <Link to={config.pt.routes.home} className="link font-bold">
                       termos e condições
                     </Link>
                     .

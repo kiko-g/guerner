@@ -34,7 +34,7 @@ input[type='checkbox'] {
 }
 
 .link {
-  @apply transition hover:text-teal-600 hover:underline dark:text-white/75 dark:hover:text-secondary;
+  @apply transition hover:text-tertiary hover:underline dark:text-white/75 dark:hover:text-secondary;
 }
 
 .min-h-adjusted {

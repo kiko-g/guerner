@@ -1,6 +1,7 @@
 import React from 'react'
+import config from '../../../config'
 import { GoBack, Layout } from '../../../components/layout'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import '../../../styles/product.css'
 
@@ -13,7 +14,7 @@ export default function Template({ data }) {
     <Layout location={frontmatter.name}>
       <main className="product">
         <header className="flex w-full items-center justify-between">
-          <GoBack />
+          <GoBack url={config.pt.routes.products.agriculture} />
           <h1 className="text-lg font-bold tracking-tight">Agricultura</h1>
         </header>
 

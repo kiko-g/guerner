@@ -7,7 +7,7 @@
 }
 
 .product article a {
-  @apply font-semibold text-teal-500 transition hover:underline dark:text-secondary;
+  @apply font-semibold text-tertiary transition hover:underline dark:text-secondary;
 }
 
 .product article p {

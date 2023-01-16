@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import config from '../../config'
 import classNames from 'classnames'
 import DarkModeSwitch from './DarkModeSwitch'
 import { useMediaQuery } from 'usehooks-ts'
@@ -6,19 +7,31 @@ import { Link } from 'gatsby'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {
-  HomeIcon,
+  HomeModernIcon,
   BriefcaseIcon,
   ShoppingCartIcon,
   PhoneArrowDownLeftIcon,
 } from '@heroicons/react/24/outline'
 
 const navigation = [
-  { title: 'Início', location: '/', icon: <HomeIcon className="h-5 w-5" /> },
-  { title: 'Empresa', location: '/empresa', icon: <BriefcaseIcon className="h-5 w-5" /> },
-  { title: 'Produtos', location: '/produtos', icon: <ShoppingCartIcon className="h-5 w-5" /> },
+  {
+    title: 'Início',
+    location: config.pt.routes.home,
+    icon: <HomeModernIcon className="h-5 w-5" />,
+  },
+  {
+    title: 'Empresa',
+    location: config.pt.routes.company,
+    icon: <BriefcaseIcon className="h-5 w-5" />,
+  },
+  {
+    title: 'Produtos',
+    location: config.pt.routes.products.main,
+    icon: <ShoppingCartIcon className="h-5 w-5" />,
+  },
   {
     title: 'Contactos',
-    location: '/contactos',
+    location: config.pt.routes.contacts,
     icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
   },
 ]
@@ -37,8 +50,10 @@ const Navbar = ({ title, location, special }: Props) => {
       as="nav"
       defaultOpen={false}
       className={classNames(
-        'sticky top-0 z-20 w-full px-3 py-3 md:px-6 md:py-4',
-        special ? 'bg-transparent text-white' : 'bg-primary text-white dark:bg-navy dark:text-white'
+        'sticky top-0 z-20 w-full px-3 py-2 shadow-xl dark:shadow-none md:px-6 md:py-4',
+        special
+          ? 'bg-black/30 text-white dark:bg-black/30'
+          : 'bg-primary text-white dark:bg-navy dark:text-white'
       )}
     >
       {({ open }) => {
@@ -70,7 +85,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
         : 'flex w-full items-center justify-between'
     )}
   >
-    <Link to="/">
+    <Link to={config.pt.routes.home}>
       <img
         alt="Guerner"
         src={'/images/avatar.png'}
@@ -101,7 +116,10 @@ const Hamburger = ({ open }: { open: boolean }) => (
 const Header = ({ title, location }: Props) => (
   <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
     <div className="relative hidden h-auto transition md:flex md:items-center">
-      <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
+      <Link
+        to={config.pt.routes.home}
+        className="group flex items-center gap-x-3 transition hover:opacity-80"
+      >
         <img
           src={'/images/avatar.png'}
           alt="Guerner"
