@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react'
 import classNames from 'classnames'
 import { XMarkIcon, PaintBrushIcon } from '@heroicons/react/24/outline'
 import { Menu, Transition } from '@headlessui/react'
+import translations from '../../../static/translations.json'
 import '../../styles/colors.css'
 
 type Props = {
@@ -9,20 +10,7 @@ type Props = {
 }
 
 export default function ColorFilter({ hook }: Props) {
-  const colors = [
-    'white',
-    'black',
-    'gray',
-    'red',
-    'green',
-    'blue',
-    'orange',
-    'brown',
-    'yellow',
-    'purple',
-    'pink',
-  ]
-
+  const colors = Object.keys(translations['en'].colors)
   const [pickedColor, setPickedColor] = hook
 
   return (

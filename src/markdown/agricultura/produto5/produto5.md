@@ -1,7 +1,9 @@
 ---
-pinned: true
+pinned: false
 name: Bereiuhe
 slug: produto5
+color: red
+category: all
 featuredImage: ./featured.png
 ---
 

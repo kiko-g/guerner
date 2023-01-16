@@ -1,7 +1,35 @@
 {
+  "en": {
+    "colors": {
+      "black": "black",
+      "white": "white",
+      "red": "red",
+      "blue": "blue",
+      "green": "green",
+      "gray": "gray",
+      "brown": "brown",
+      "yellow": "yellow",
+      "orange": "orange",
+      "pink": "pink",
+      "purple": "purple"
+    },
+    "category": {
+      "all": "all"
+    }
+  },
   "pt": {
     "colors": {
-      "blue": "azul"
+      "black": "preto",
+      "white": "branco",
+      "red": "vermelho",
+      "blue": "azul",
+      "green": "verde",
+      "gray": "cinzento",
+      "brown": "castanho",
+      "yellow": "amarelo",
+      "orange": "laranja",
+      "pink": "rosa",
+      "purple": "roxo"
     },
     "category": {
       "all": "todos"

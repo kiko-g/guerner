@@ -3,8 +3,9 @@ import classNames from 'classnames'
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../../../components/layout'
 import { strIncludes, tx } from '../../../utils'
-import { ColorFilter, Search, ViewToggler } from '../../../components/products'
+import { ColorFilter, PinToggler, Search, ViewToggler } from '../../../components/products'
 import { ArrowTopRightOnSquareIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { StarIcon } from '@heroicons/react/24/solid'
 
 const ProductsAgriculturePagePT = ({
   data: {
@@ -17,6 +18,7 @@ const ProductsAgriculturePagePT = ({
   const categoryPreText = `Categoria`
 
   const [viewType, setViewType] = useState(false)
+  const [pinnedOnly, setPinnedOnly] = useState(false)
   const [pickedColor, setPickedColor] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
 
@@ -33,6 +35,7 @@ const ProductsAgriculturePagePT = ({
           <div className="flex items-center justify-between gap-x-3">
             <Search hook={[searchQuery, setSearchQuery]} />
             <ColorFilter hook={[pickedColor, setPickedColor]} />
+            <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
             <ViewToggler hook={[viewType, setViewType]} />
           </div>
 
@@ -40,7 +43,7 @@ const ProductsAgriculturePagePT = ({
           <ul
             className={classNames(
               viewType
-                ? 'grid grid-cols-1 gap-x-6 gap-y-6'
+                ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
                 : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
             )}
           >
@@ -48,16 +51,32 @@ const ProductsAgriculturePagePT = ({
               .filter((product: any) => {
                 let textMatch = true
                 let colorMatch = true
+                let pinnedMatch = true
 
-                if (searchQuery !== '')
+                if (searchQuery !== '') {
                   textMatch = strIncludes(product.frontmatter.title, searchQuery)
+                }
 
-                if (pickedColor !== '') colorMatch = product.frontmatter.color === pickedColor
+                if (pickedColor !== '') {
+                  colorMatch = product.frontmatter.color === pickedColor
+                }
 
-                return textMatch && colorMatch
+                if (pinnedOnly) {
+                  pinnedMatch = product.frontmatter.pinned
+                }
+
+                return textMatch && colorMatch && pinnedMatch
               })
               .map((product: any, productIdx: any) => (
-                <li key={`product-${productIdx}`} className="group">
+                <li key={`product-${productIdx}`} className="group relative">
+                  {/* Floating items */}
+                  {product.frontmatter.pinned ? (
+                    <div className="absolute top-2 left-2 z-10 rounded-full bg-primary p-1 shadow dark:bg-secondary">
+                      <StarIcon className="h-5 w-5 text-white" />
+                    </div>
+                  ) : null}
+
+                  {/* Card body */}
                   <Link
                     to={product.frontmatter.slug}
                     className="block h-60 w-full overflow-hidden rounded-t-xl"
@@ -132,7 +151,7 @@ export default ProductsAgriculturePagePT
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      sort: [{ frontmatter: { pinned: DESC } }, { frontmatter: { name: ASC } }]
+      sort: [{ frontmatter: { name: ASC } }]
       filter: { fileAbsolutePath: { regex: "/(agricultura)/" } }
     ) {
       nodes {

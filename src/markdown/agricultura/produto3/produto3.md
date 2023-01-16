@@ -1,7 +1,9 @@
 ---
-pinned: true
+pinned: false
 name: Dieufqhfr
 slug: produto3
+color: black
+category: all
 featuredImage: ./featured.png
 ---
 

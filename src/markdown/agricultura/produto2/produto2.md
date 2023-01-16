@@ -1,7 +1,9 @@
 ---
-pinned: true
+pinned: false
 name: Awjirhv
 slug: produto2
+color: green
+category: all
 featuredImage: ./featured.png
 ---
 
