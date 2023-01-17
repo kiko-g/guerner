@@ -1,4 +1,6 @@
 ---
+lang: pt
+lang: pt
 pinned: true
 name: Abciehefrhrfs
 slug: produto

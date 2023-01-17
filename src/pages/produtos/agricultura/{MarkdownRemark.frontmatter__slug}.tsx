@@ -5,7 +5,11 @@ import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import '../../../styles/product.css'
 
-export default function Template({ data }) {
+type Props = {
+  data: any
+}
+
+export default function Template({ data }: Props) {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)

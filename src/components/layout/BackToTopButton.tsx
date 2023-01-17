@@ -17,7 +17,7 @@ const BackToTopButton = () => {
     <button
       hidden={hidden || isMobile}
       onClick={() => document.getElementById('layout')!.scrollIntoView()}
-      className="fixed bottom-2 left-1/2 z-50 rounded-full p-1 text-white transition-all hover:-translate-y-1"
+      className="fixed bottom-3 left-1/2 z-50 rounded p-1 text-white transition-all hover:-translate-y-1 hover:bg-black/50"
     >
       <ChevronDoubleUpIcon className="h-6 w-6" />
     </button>

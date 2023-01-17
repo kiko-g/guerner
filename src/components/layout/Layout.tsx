@@ -1,15 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import { Seo, BackToTopButton, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
 import classNames from 'classnames'
 
 type Props = {
-  children: any
-  location: string
+  children: ReactNode
+  location?: string
   home?: boolean
 }
 
-const Layout = ({ children, location, home }: Props) => {
+const Layout = ({ children, location = 'Unknown', home = false }: Props) => {
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -37,20 +37,16 @@ const Layout = ({ children, location, home }: Props) => {
         <div
           className={classNames(
             'z-10 mx-auto mb-auto',
-            home ? 'w-full' : 'container max-w-7xl px-3 py-3 md:px-2 md:py-2'
+            home ? 'w-full' : 'container max-w-7xl px-4 py-4 md:px-3 md:py-3'
           )}
         >
           {children}
         </div>
-        {home ? <BackToTopButton /> : null}
+        <BackToTopButton />
         <Footer title={title} />
       </div>
     </>
   )
-}
-
-Layout.defaultProps = {
-  location: 'Unknown',
 }
 
 export default Layout

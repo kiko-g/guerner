@@ -1,4 +1,5 @@
 ---
+lang: pt
 pinned: false
 name: Bereiuhe
 slug: produto5

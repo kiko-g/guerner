@@ -12,13 +12,13 @@ import { useStaticQuery, graphql } from 'gatsby'
 type MetaProps = JSX.IntrinsicElements['meta']
 
 interface Props {
-  description?: string
+  title: string
   lang?: string
   meta?: MetaProps[]
-  title: string
+  description?: string
 }
 
-const Seo = ({ description, lang, meta, title }: Props) => {
+const Seo = ({ title, lang = `en`, meta = [], description = `` }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -80,12 +80,6 @@ const Seo = ({ description, lang, meta, title }: Props) => {
       ].concat(meta)}
     />
   )
-}
-
-Seo.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 }
 
 export default Seo

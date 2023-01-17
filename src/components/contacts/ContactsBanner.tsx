@@ -11,7 +11,7 @@ interface Contact {
 type Props = {}
 
 export default function ContactsBanner({}: Props) {
-  const email = process.env.GATSBY_GUERNER_EMAIL!
+  const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
 
   const contact: Contact[] = [
     {

@@ -12,7 +12,9 @@ export default function FeaturedGardening({}: Props) {
     <section className="w-full overflow-hidden rounded bg-[url(https://images.unsplash.com/photo-1672357868651-687c364ca15b)] bg-cover bg-center bg-no-repeat">
       <div className="bg-gradient-to-l from-black/60 to-black/20 p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-right md:items-end">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl">{title}</h2>
+          <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl md:mb-1 md:text-5xl">
+            {title}
+          </h2>
           <p
             className="max-w-md text-sm font-normal leading-tight text-white/90 
             md:mt-6 md:block md:text-lg md:leading-relaxed"

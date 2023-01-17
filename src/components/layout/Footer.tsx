@@ -22,7 +22,7 @@ const Footer = ({ title }: Props) => {
   return (
     <footer className="z-10 flex flex-col bg-navy text-sm text-white dark:bg-navy md:text-base">
       <div className="mx-4 py-1 md:mx-8 md:py-2">
-        <div className="flex items-center justify-between border-b py-2 md:py-3">
+        <div className="flex items-center justify-between py-2 md:py-3">
           {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
             <Link
