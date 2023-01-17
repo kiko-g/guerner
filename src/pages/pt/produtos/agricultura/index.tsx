@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { Link, graphql } from 'gatsby'
-import { Layout } from '../../../components/layout'
-import { strIncludes, tx } from '../../../utils'
+import { Layout } from '../../../../components/layout'
+import { strIncludes, tx } from '../../../../utils'
 import {
   ColorFilter,
   PinToggler,
   Search,
   ViewToggler,
   CategoryFilter,
-} from '../../../components/products'
+} from '../../../../components/products'
 import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
 
 const ProductsAgriculturePagePT = ({

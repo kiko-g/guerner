@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
-import { Layout } from '../../../components/layout'
-import { ViewToggler } from '../../../components/products'
+import { Layout } from '../../../../components/layout'
+import { ViewToggler } from '../../../../components/products'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 
 const ProductsGardeningPagePT = ({

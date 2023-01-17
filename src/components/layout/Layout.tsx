@@ -6,10 +6,11 @@ import classNames from 'classnames'
 type Props = {
   children: ReactNode
   location?: string
+  language?: string
   home?: boolean
 }
 
-const Layout = ({ children, location = 'Unknown', home = false }: Props) => {
+const Layout = ({ children, location = 'Unknown', language = 'pt', home = false }: Props) => {
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -23,7 +24,7 @@ const Layout = ({ children, location = 'Unknown', home = false }: Props) => {
 
   return (
     <>
-      <Seo title={location} />
+      <Seo title={location} lang={language} />
       <div
         id="layout"
         className={classNames(

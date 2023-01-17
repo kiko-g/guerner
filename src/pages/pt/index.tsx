@@ -1,6 +1,6 @@
 import React from 'react'
-import { Layout } from '../components/layout'
-import { HeroBanner, HeroCompany } from '../components/home'
+import { Layout } from '../../components/layout'
+import { HeroBanner, HeroCompany } from '../../components/home'
 
 const IndexPagePT = () => {
   // See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/

@@ -1,5 +1,5 @@
 import React from 'react'
-import config from '../../config'
+import { routes } from '../../config'
 import { Link } from 'gatsby'
 import { ArrowSmallLeftIcon } from '@heroicons/react/24/outline'
 

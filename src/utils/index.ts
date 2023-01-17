@@ -1,4 +1,4 @@
-import translations from '../../static/translations.json'
+import { translations } from '../config'
 
 export const strIncludes = (str: string, query: string, simple?: boolean) =>
   simple

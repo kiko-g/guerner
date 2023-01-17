@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../../components/layout'
-import translations from '../../../static/translations.json'
+import { Layout } from '../../../components/layout'
+import { translations } from '../../../config'
 
 type MarkdownData = {
   html: string
@@ -18,17 +18,18 @@ type Props = {
   }
 }
 
-export default function TermsAndConditions({ data }: Props) {
-  const title = translations.pt.phrases.footer['Terms and Conditions']
+export default function PrivacyPolicy({ data }: Props) {
+  const title = translations.pt.phrases.footer['Privacy Policy']
+  const info = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === 'pt')!
 
   return (
-    <Layout location="Terms">
+    <Layout location="Privacy">
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
         </header>
 
-        <article dangerouslySetInnerHTML={{ __html: data.allMarkdownRemark.nodes[0].html }} />
+        <article dangerouslySetInnerHTML={{ __html: info.html }} />
       </main>
     </Layout>
   )
@@ -36,7 +37,7 @@ export default function TermsAndConditions({ data }: Props) {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(termos-e-condicoes)/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(politica-de-privacidade)/" } }) {
       nodes {
         id
         html

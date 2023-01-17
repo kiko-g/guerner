@@ -1,0 +1,18 @@
+{
+  "pt": {
+    "routes": {
+      "home": "/pt",
+      "company": "/pt/empresa",
+      "products": {
+        "main": "/pt/produtos",
+        "agriculture": "/pt/produtos/agricultura",
+        "gardening": "/pt/produtos/jardinagem"
+      },
+      "contacts": "/pt/contactos",
+      "footer": {
+        "privacyPolicy": "/pt/info/politica-de-privacidade",
+        "termsAndConditions": "/pt/info/termos-e-condicoes"
+      }
+    }
+  }
+}

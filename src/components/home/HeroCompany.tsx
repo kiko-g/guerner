@@ -1,5 +1,5 @@
 import React from 'react'
-import config from '../../config'
+import { routes } from '../../config'
 import { Link } from 'gatsby'
 
 type Props = {}
@@ -23,7 +23,7 @@ export default function HeroCompany({}: Props) {
               <p className="hidden text-center text-white/90 sm:mt-4 sm:block">{text}</p>
               <div className="mt-4 md:mt-8">
                 <Link
-                  to={config.pt.routes.company}
+                  to={routes.pt.routes.company}
                   className="inline-block rounded bg-primary px-12 py-3 text-sm font-medium
                   text-white transition hover:opacity-80 dark:bg-secondary"
                 >

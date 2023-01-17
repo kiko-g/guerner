@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import config from '../../config'
+import { routes } from '../../config'
 import classNames from 'classnames'
 import DarkModeSwitch from './DarkModeSwitch'
 import { useMediaQuery } from 'usehooks-ts'
@@ -16,22 +16,22 @@ import {
 const navigation = [
   {
     title: 'Início',
-    location: config.pt.routes.home,
+    location: routes.pt.routes.home,
     icon: <HomeModernIcon className="h-5 w-5" />,
   },
   {
     title: 'Empresa',
-    location: config.pt.routes.company,
+    location: routes.pt.routes.company,
     icon: <BriefcaseIcon className="h-5 w-5" />,
   },
   {
     title: 'Produtos',
-    location: config.pt.routes.products.main,
+    location: routes.pt.routes.products.main,
     icon: <ShoppingCartIcon className="h-5 w-5" />,
   },
   {
     title: 'Contactos',
-    location: config.pt.routes.contacts,
+    location: routes.pt.routes.contacts,
     icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
   },
 ]
@@ -85,7 +85,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
         : 'flex w-full items-center justify-between'
     )}
   >
-    <Link to={config.pt.routes.home}>
+    <Link to={routes.pt.routes.home}>
       <img
         alt="Guerner"
         src={'/images/avatar.png'}
@@ -117,7 +117,7 @@ const Header = ({ title, location }: Props) => (
   <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
     <div className="relative hidden h-auto transition md:flex md:items-center">
       <Link
-        to={config.pt.routes.home}
+        to={routes.pt.routes.home}
         className="group flex items-center gap-x-3 transition hover:opacity-80"
       >
         <img

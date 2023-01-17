@@ -1,9 +1,9 @@
 import React from 'react'
-import config from '../../../config'
-import { GoBack, Layout } from '../../../components/layout'
+import { routes } from '../../../../config'
+import { GoBack, Layout } from '../../../../components/layout'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import '../../../styles/product.css'
+import '../../../../styles/product.css'
 
 type Props = {
   data: any
@@ -18,7 +18,7 @@ export default function Template({ data }: Props) {
     <Layout location={frontmatter.name}>
       <main className="product">
         <header className="flex w-full items-center justify-between">
-          <GoBack url={config.pt.routes.products.agriculture} />
+          <GoBack url={routes.pt.routes.products.agriculture} />
           <h1 className="text-lg font-bold tracking-tight">Agricultura</h1>
         </header>
 

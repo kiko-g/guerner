@@ -1,6 +1,5 @@
 import React from 'react'
-import config from '../../config'
-import translations from '../../../static/translations.json'
+import { routes, translations } from '../../config'
 import { Link } from 'gatsby'
 
 type Props = {
@@ -11,11 +10,11 @@ const Footer = ({ title }: Props) => {
   const links = [
     {
       name: translations.pt.phrases.footer['Terms and Conditions'],
-      route: config.pt.routes.footer.termsAndConditions,
+      route: routes.pt.routes.footer.termsAndConditions,
     },
     {
       name: translations.pt.phrases.footer['Privacy Policy'],
-      route: config.pt.routes.footer.privacyPolicy,
+      route: routes.pt.routes.footer.privacyPolicy,
     },
   ]
 
@@ -26,7 +25,7 @@ const Footer = ({ title }: Props) => {
           {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
             <Link
-              to={config.pt.routes.home}
+              to={routes.pt.routes.home}
               className="group flex items-center justify-center gap-x-2"
             >
               <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={title} />

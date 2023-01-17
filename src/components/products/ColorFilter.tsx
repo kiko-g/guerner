@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
 import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import translations from '../../../static/translations.json'
+import { translations } from '../../config'
 import '../../styles/colors.css'
 
 type Props = {

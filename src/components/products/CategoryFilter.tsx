@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import translations from '../../../static/translations.json'
+import { translations } from '../../config'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
