@@ -9,6 +9,10 @@ export default {
         gardening: '/produtos/jardinagem',
       },
       contacts: '/contactos',
+      footer: {
+        privacyPolicy: '/info/politica-de-privacidade',
+        termsAndConditions: '/info/termos-e-condicoes',
+      }
     },
   },
 }

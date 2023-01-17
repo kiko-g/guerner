@@ -24,9 +24,8 @@ export default function HeroCompany({}: Props) {
               <div className="mt-4 md:mt-8">
                 <Link
                   to={config.pt.routes.company}
-                  className="inline-block rounded bg-white px-12 py-3 text-sm font-medium
-                  text-primary transition hover:bg-primary hover:text-white 
-                  dark:text-secondary dark:hover:bg-secondary dark:hover:text-white"
+                  className="inline-block rounded bg-primary px-12 py-3 text-sm font-medium
+                  text-white transition hover:opacity-80 dark:bg-secondary"
                 >
                   {link}
                 </Link>

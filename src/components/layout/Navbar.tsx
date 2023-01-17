@@ -147,7 +147,7 @@ const Header = ({ title, location }: Props) => (
                   : 'font-normal text-white/30 hover:text-white dark:text-white/30 dark:hover:text-white'
               )}
             >
-              <span className="flex items-center justify-center gap-x-1.5">
+              <span className="flex items-center justify-center gap-x-1 tracking-tight">
                 {link.icon}
                 {link.title}
               </span>

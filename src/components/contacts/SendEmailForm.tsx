@@ -181,7 +181,10 @@ export default function SendEmailForm({}: Props) {
 
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     Li e aceito os{' '}
-                    <Link to={config.pt.routes.home} className="link font-bold">
+                    <Link
+                      to={config.pt.routes.footer.termsAndConditions}
+                      className="link font-bold"
+                    >
                       termos e condições
                     </Link>
                     .

@@ -1,5 +1,6 @@
 import React from 'react'
 import config from '../../config'
+import translations from '../../../static/translations.json'
 import { Link } from 'gatsby'
 
 type Props = {
@@ -8,10 +9,14 @@ type Props = {
 
 const Footer = ({ title }: Props) => {
   const links = [
-    { name: 'Sobre Nós', route: config.pt.routes.home },
-    { name: 'Localizações', route: config.pt.routes.home },
-    { name: 'Termos e Condições', route: config.pt.routes.home },
-    { name: 'Política de Privacidade', route: config.pt.routes.home },
+    {
+      name: translations.pt.phrases.footer['Terms and Conditions'],
+      route: config.pt.routes.footer.termsAndConditions,
+    },
+    {
+      name: translations.pt.phrases.footer['Privacy Policy'],
+      route: config.pt.routes.footer.privacyPolicy,
+    },
   ]
 
   return (

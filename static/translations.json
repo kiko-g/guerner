@@ -19,6 +19,13 @@
       "dois": "dois",
       "três": "três",
       "quatro": "quatro"
+    },
+    "phrases": {
+      "footer": {
+        "About Us": "About Us",
+        "Terms and Conditions": "Terms and Conditions",
+        "Privacy Policy": "Privacy Policy"
+      }
     }
   },
   "pt": {
@@ -41,6 +48,12 @@
       "dois": "dois",
       "três": "três",
       "quatro": "quatro"
+    },
+    "phrases": {
+      "footer": {
+        "Terms and Conditions": "Termos e Condições",
+        "Privacy Policy": "Política de Privacidade"
+      }
     }
   }
 }
