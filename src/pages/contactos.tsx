@@ -14,10 +14,7 @@ const ContactsPagePT = () => {
           <ContactsBanner />
         </header>
 
-        <div className="w-full rounded">
-          <GoogleMapsLocation height={isMobile ? 225 : 500} />
-        </div>
-
+        <GoogleMapsLocation height={isMobile ? 225 : 500} />
         <SendEmailForm />
       </main>
     </Layout>

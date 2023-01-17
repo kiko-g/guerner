@@ -16,6 +16,21 @@ export default function SendEmailForm({}: Props) {
   const [messageBody, setMessageBody] = useState('')
   const [consentTerms, setConsentTerms] = useState(false)
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
+    const subject = `Customer website message`
+    const html = [
+      `Name: ${name}`,
+      `Phone: ${phone ? phone : 'N/A'}`,
+      `Email: ${email}`,
+      `Location: ${location ? location : 'N/A'}`,
+      `Message: ${messageBody}`,
+    ].join('\n')
+
+    // sendMail(receiverEmail, subject, html)
+  }
+
   return (
     <section className="rounded bg-light shadow dark:bg-white/5">
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
@@ -63,7 +78,7 @@ export default function SendEmailForm({}: Props) {
             </div>
 
             {/* Send email form */}
-            <form action="#" className="mt-8 grid grid-cols-6 gap-x-4 gap-y-3">
+            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-x-4 gap-y-3">
               {/* Name */}
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="name" className="block text-sm">
@@ -106,6 +121,7 @@ export default function SendEmailForm({}: Props) {
                 </label>
 
                 <input
+                  required
                   type="email"
                   id="email"
                   name="email"
@@ -140,9 +156,10 @@ export default function SendEmailForm({}: Props) {
                 </label>
 
                 <textarea
+                  required
+                  rows={8}
                   id="messageBody"
                   name="messageBody"
-                  rows={8}
                   className="mt-0.5"
                   value={messageBody}
                   onChange={e => setMessageBody(e.target.value)}
@@ -153,6 +170,7 @@ export default function SendEmailForm({}: Props) {
               <div className="col-span-6">
                 <label htmlFor="acceptTerms" className="flex gap-2">
                   <input
+                    required
                     type="checkbox"
                     id="acceptTerms"
                     name="acceptTerms"
@@ -175,7 +193,8 @@ export default function SendEmailForm({}: Props) {
               <div className="col-span-6 mt-3">
                 <button
                   type="submit"
-                  className="w-full rounded bg-primary px-12 py-3 text-sm text-white transition hover:opacity-80 dark:bg-secondary"
+                  className="w-full rounded bg-primary px-12 py-3 text-sm 
+                  text-white transition hover:opacity-80 dark:bg-secondary"
                 >
                   Enviar email
                 </button>
