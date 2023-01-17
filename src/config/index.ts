@@ -5,8 +5,8 @@ export default {
       company: '/empresa',
       products: {
         main: '/produtos',
-        agriculture: '/produtos/agriculture',
-        gardening: '/produtos/gardening',
+        agriculture: '/produtos/agricultura',
+        gardening: '/produtos/jardinagem',
       },
       contacts: '/contactos',
     },

@@ -3,7 +3,7 @@ pinned: true
 name: Abciehefrhrfs
 slug: produto
 color: blue
-category: all
+category: um
 featuredImage: ./featured.png
 ---
 

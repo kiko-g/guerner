@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import classNames from 'classnames'
-import { XMarkIcon, PaintBrushIcon } from '@heroicons/react/24/outline'
+import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
+import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import translations from '../../../static/translations.json'
 import '../../styles/colors.css'
@@ -10,15 +11,15 @@ type Props = {
 }
 
 export default function ColorFilter({ hook }: Props) {
-  const colors = Object.keys(translations['en'].colors)
   const [pickedColor, setPickedColor] = hook
+  const colors = Object.keys(translations['en'].colors)
 
   return (
     <Menu as="div" className="relative">
       {({ open }) => (
         <>
           <Menu.Button
-            className="flex items-center gap-x-3 rounded-full border-2 border-primary bg-primary 
+            className="flex items-center gap-x-3 rounded border-2 border-primary bg-primary/80 
             py-1 px-2 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             {pickedColor !== '' ? (
@@ -31,7 +32,11 @@ export default function ColorFilter({ hook }: Props) {
               </span>
             )}
 
-            <PaintBrushIcon className="h-6 w-6" />
+            {pickedColor === '' ? (
+              <PaintBrushIconOutline className="h-6 w-6" />
+            ) : (
+              <PaintBrushIconSolid className="h-6 w-6" />
+            )}
           </Menu.Button>
           {open ? (
             <Transition
@@ -46,9 +51,9 @@ export default function ColorFilter({ hook }: Props) {
             >
               <Menu.Items
                 className={classNames(
-                  open
-                    ? 'absolute right-0 z-40 mt-3 w-32 rounded-xl bg-white p-4 shadow-xl dark:bg-[#2e373d]'
-                    : 'hidden'
+                  'z-40 rounded-md p-4 shadow',
+                  'border-2 border-white bg-white dark:border-[#434b51] dark:bg-[#2e373d]',
+                  open ? 'absolute right-0 mt-2 w-32' : 'hidden'
                 )}
               >
                 <div className="grid grid-cols-3 gap-4">

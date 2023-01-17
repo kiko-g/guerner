@@ -12,18 +12,20 @@ export default function PinToggler({ hook }: Props) {
   return pin ? (
     <button
       title="Change to grid view"
-      className="flex rounded bg-primary p-0.5 text-white transition hover:opacity-80 dark:bg-white/10"
+      className="flex rounded border-2 border-primary bg-primary/80 p-1 text-white 
+      transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
       onClick={() => setPinned(false)}
     >
-      <StarIconSolid className="h-8 w-8" />
+      <StarIconSolid className="h-6 w-6" />
     </button>
   ) : (
     <button
       title="Change to list view"
-      className="flex rounded bg-primary p-0.5 text-white transition hover:opacity-80 dark:bg-white/10"
+      className="flex rounded border-2 border-primary bg-primary/80 p-1 text-white 
+      transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
       onClick={() => setPinned(true)}
     >
-      <StarIconOutline className="h-8 w-8" />
+      <StarIconOutline className="h-6 w-6" />
     </button>
   )
 }

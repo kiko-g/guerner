@@ -3,9 +3,14 @@ import classNames from 'classnames'
 import { Link, graphql } from 'gatsby'
 import { Layout } from '../../../components/layout'
 import { strIncludes, tx } from '../../../utils'
-import { ColorFilter, PinToggler, Search, ViewToggler } from '../../../components/products'
-import { ArrowTopRightOnSquareIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { StarIcon } from '@heroicons/react/24/solid'
+import {
+  ColorFilter,
+  PinToggler,
+  Search,
+  ViewToggler,
+  CategoryFilter,
+} from '../../../components/products'
+import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
 
 const ProductsAgriculturePagePT = ({
   data: {
@@ -14,13 +19,12 @@ const ProductsAgriculturePagePT = ({
 }) => {
   const title = `Agricultura`
   const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
-  const colorPreText = `Cor`
-  const categoryPreText = `Categoria`
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
   const [pickedColor, setPickedColor] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
+  const [pickedCategories, setPickedCategories] = useState<string[]>([])
 
   return (
     <Layout location="Agricultura">
@@ -32,11 +36,14 @@ const ProductsAgriculturePagePT = ({
 
         <div className="flex w-full flex-col gap-y-6">
           {/* Filters */}
-          <div className="flex items-center justify-between gap-x-3">
+          <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
-            <ColorFilter hook={[pickedColor, setPickedColor]} />
-            <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
-            <ViewToggler hook={[viewType, setViewType]} />
+            <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
+              <CategoryFilter hook={[pickedCategories, setPickedCategories]} />
+              <ColorFilter hook={[pickedColor, setPickedColor]} />
+              <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
+              <ViewToggler hook={[viewType, setViewType]} />
+            </div>
           </div>
 
           {/* Listing */}
@@ -52,6 +59,7 @@ const ProductsAgriculturePagePT = ({
                 let textMatch = true
                 let colorMatch = true
                 let pinnedMatch = true
+                let categoryMatch = true
 
                 if (searchQuery !== '') {
                   textMatch = strIncludes(product.frontmatter.name, searchQuery)
@@ -65,16 +73,46 @@ const ProductsAgriculturePagePT = ({
                   pinnedMatch = product.frontmatter.pinned
                 }
 
-                return textMatch && colorMatch && pinnedMatch
+                if (categoryMatch) {
+                  categoryMatch =
+                    pickedCategories.length === 0
+                      ? true
+                      : pickedCategories.includes(product.frontmatter.category)
+                }
+
+                return textMatch && colorMatch && pinnedMatch && categoryMatch
               })
               .map((product: any, productIdx: any) => (
                 <li key={`product-${productIdx}`} className="group relative">
-                  {/* Floating items */}
-                  {product.frontmatter.pinned ? (
-                    <div className="absolute top-2 left-2 z-10 rounded-full bg-primary p-1 shadow dark:bg-secondary">
-                      <StarIcon className="h-5 w-5 text-white" />
-                    </div>
-                  ) : null}
+                  {/* Floating top left */}
+                  <div className="absolute top-3 left-3 z-10 flex items-center justify-center gap-x-1.5">
+                    {product.frontmatter.color ? (
+                      <div
+                        className={classNames('rounded-full p-1 shadow', product.frontmatter.color)}
+                      >
+                        <PaintBrushIcon className="h-4 w-4 text-white" />
+                      </div>
+                    ) : null}
+
+                    {product.frontmatter.pinned ? (
+                      <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
+                        <StarIcon className="h-4 w-4 text-white" />
+                      </div>
+                    ) : null}
+                  </div>
+
+                  {/* Floating top right */}
+                  <div className="absolute top-3 right-3 z-10 flex items-center justify-center gap-x-1.5">
+                    {product.frontmatter.category ? (
+                      <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-white shadow">
+                        {tx('category', product.frontmatter.category, 'pt')}
+                      </div>
+                    ) : (
+                      <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-rose-500 shadow">
+                        N/A
+                      </div>
+                    )}
+                  </div>
 
                   {/* Card body */}
                   <Link
@@ -95,46 +133,16 @@ const ProductsAgriculturePagePT = ({
                     px-3.5 py-2 font-normal dark:bg-white/10"
                   >
                     {/* Top line */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between text-sm font-bold">
                       <Link
                         to={product.frontmatter.slug}
-                        className="underline transition hover:text-primary hover:opacity-80 dark:hover:text-secondary"
+                        className="transition hover:text-primary hover:underline hover:opacity-90 dark:hover:text-secondary"
                       >
                         {product.frontmatter.name}
                       </Link>
                       <Link to={product.frontmatter.slug}>
-                        <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-80 dark:text-secondary" />
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-secondary" />
                       </Link>
-                    </div>
-
-                    {/* Bottom line */}
-                    <div className="flex items-center justify-between text-sm">
-                      {/* Color */}
-                      <div className="flex items-center gap-x-1">
-                        <span>{colorPreText}</span>
-                        {product.frontmatter.color ? (
-                          <span
-                            className={classNames(
-                              product.frontmatter.color.toLowerCase(),
-                              'h-4 w-4 rounded-full shadow'
-                            )}
-                          />
-                        ) : (
-                          <span className="font-bold text-red-700 dark:text-rose-500">N/A</span>
-                        )}
-                      </div>
-
-                      {/* Category */}
-                      <div>
-                        <span>{categoryPreText}: </span>
-                        {product.frontmatter.category ? (
-                          <span className="font-bold">
-                            {tx('category', product.frontmatter.category, 'pt')}
-                          </span>
-                        ) : (
-                          <span className="font-bold text-red-700 dark:text-rose-500">N/A</span>
-                        )}
-                      </div>
                     </div>
                   </div>
                 </li>

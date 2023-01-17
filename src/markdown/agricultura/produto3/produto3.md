@@ -3,7 +3,7 @@ pinned: false
 name: Dieufqhfr
 slug: produto3
 color: black
-category: all
+category: dois
 featuredImage: ./featured.png
 ---
 

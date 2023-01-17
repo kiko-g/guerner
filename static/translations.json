@@ -14,7 +14,11 @@
       "purple": "purple"
     },
     "category": {
-      "all": "all"
+      "all": "all",
+      "um": "um",
+      "dois": "dois",
+      "três": "três",
+      "quatro": "quatro"
     }
   },
   "pt": {
@@ -32,7 +36,11 @@
       "purple": "roxo"
     },
     "category": {
-      "all": "todos"
+      "all": "todos",
+      "um": "um",
+      "dois": "dois",
+      "três": "três",
+      "quatro": "quatro"
     }
   }
 }
