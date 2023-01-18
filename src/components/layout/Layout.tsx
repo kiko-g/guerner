@@ -38,7 +38,7 @@ const Layout = ({ children, location = 'Unknown', language = 'pt', home = false 
         <div
           className={classNames(
             'z-10 mx-auto mb-auto',
-            home ? 'w-full' : 'container max-w-7xl px-4 py-4 md:px-3 md:py-3'
+            home ? 'w-full' : 'container max-w-7xl px-5 py-5 md:px-3 md:py-3'
           )}
         >
           {children}

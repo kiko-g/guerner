@@ -37,7 +37,7 @@ export default function PrivacyPolicy({ data }: Props) {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(politica-de-privacidade)/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(privacy-policy)/" } }) {
       nodes {
         id
         html

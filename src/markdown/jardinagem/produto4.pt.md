@@ -5,10 +5,10 @@ name: Cgefygfre
 slug: produto4
 color: red
 category: all
-featuredImage: ./featured.png
+featuredImage: ./images/produto4.png
 ---
 
-## Exemplo de título
+## Exemplo de título 4
 
 Informação sobre o produto.
 

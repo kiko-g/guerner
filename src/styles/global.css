@@ -23,7 +23,7 @@ input[type='tel'],
 input[type='text'],
 input[type='email'],
 input[type='search'] {
-  @apply font-normal w-full rounded border border-white bg-white text-sm shadow placeholder:font-normal 
+  @apply w-full rounded border border-white bg-white text-sm font-normal shadow placeholder:font-normal 
   placeholder:text-gray-400 focus:border-primary focus:ring-primary 
   dark:border-white/10 dark:bg-white/10 dark:focus:border-secondary dark:focus:ring-secondary;
 }
@@ -51,7 +51,7 @@ article a {
 }
 
 article p {
-  @apply my-2 text-left lg:my-3 lg:text-justify;
+  @apply my-2 lg:my-3;
 }
 
 article h1,

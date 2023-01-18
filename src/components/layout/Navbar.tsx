@@ -50,7 +50,7 @@ const Navbar = ({ title, location, special }: Props) => {
       as="nav"
       defaultOpen={false}
       className={classNames(
-        'sticky top-0 z-20 w-full px-3 py-2 shadow-xl dark:shadow-none md:px-6 md:py-4',
+        'sticky top-0 z-20 w-full px-3 py-2 shadow shadow-black/50 md:px-6 md:py-4',
         special
           ? 'bg-black/30 text-white dark:bg-black/30'
           : 'bg-primary text-white dark:bg-navy dark:text-white'

@@ -1,14 +1,14 @@
 ---
 lang: pt
 pinned: false
-name: Dieufqhfr
-slug: produto3
-color: black
-category: dois
-featuredImage: ./featured.png
+name: Bereiuhe
+slug: produto5
+color: red
+category: all
+featuredImage: ./images/produto1.png
 ---
 
-## Exemplo de título
+## Exemplo de título 1
 
 Informação sobre o produto.
 

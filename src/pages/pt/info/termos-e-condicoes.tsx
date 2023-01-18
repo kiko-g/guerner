@@ -37,7 +37,7 @@ export default function TermsAndConditions({ data }: Props) {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(termos-e-condicoes)/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(terms-and-conditions)/" } }) {
       nodes {
         id
         html
