@@ -1,34 +1,34 @@
 import { Link } from 'gatsby'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { routes } from '../../config'
 
 type Props = {}
 
 export default function SendEmailForm({}: Props) {
-  const headerText = `Entre em contacto connosco`
-  const bodyText = `Preencha o formulário ao lado para nos enviar um email com as suas informações.`
-  const receiverEmail = process.env.GATSBY_GUERNER_EMAIL!
+  const br = `%0D%0A`
+  const headline = `Entre em contacto connosco`
+  const instructions = `Preencha o formulário ao lado para nos enviar um email com as suas informações.`
+  const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
-  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
   const [location, setLocation] = useState('')
   const [messageBody, setMessageBody] = useState('')
   const [consentTerms, setConsentTerms] = useState(false)
 
+  const emailContent = useMemo(() => {
+    return [
+      `Nome: ${name}`,
+      `Telefone: ${phone ? phone : 'N/A'}`,
+      `Localização: ${location ? location : 'N/A'}`,
+      `Message: ${encodeURIComponent(messageBody)}`,
+      `${br}${br}${br}Enviado a partir do website por: ${name}`,
+    ].join(br)
+  }, [name, phone, location, messageBody])
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
-    const subject = `Customer website message`
-    const html = [
-      `Name: ${name}`,
-      `Phone: ${phone ? phone : 'N/A'}`,
-      `Email: ${email}`,
-      `Location: ${location ? location : 'N/A'}`,
-      `Message: ${messageBody}`,
-    ].join('\n')
-
-    // sendMail(receiverEmail, subject, html)
   }
 
   return (
@@ -53,9 +53,9 @@ export default function SendEmailForm({}: Props) {
               />
             </Link>
             <h2 className="mt-6 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
-              {headerText}
+              {headline}
             </h2>
-            <p className="mt-4 leading-relaxed text-white/90">{bodyText}</p>
+            <p className="mt-4 leading-relaxed text-white/90">{instructions}</p>
           </div>
         </div>
 
@@ -73,8 +73,8 @@ export default function SendEmailForm({}: Props) {
                   className="z-20 inline-flex h-full w-full rounded-full transition"
                 />
               </Link>
-              <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{headerText}</h1>
-              <p className="mt-4 leading-relaxed">{bodyText}</p>
+              <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{headline}</h1>
+              <p className="mt-4 leading-relaxed">{instructions}</p>
             </div>
 
             {/* Send email form */}
@@ -114,21 +114,21 @@ export default function SendEmailForm({}: Props) {
                 />
               </div>
 
-              {/* Email */}
+              {/* Subject */}
               <div className="col-span-6">
-                <label htmlFor="email" className="block text-sm">
-                  Email
+                <label htmlFor="subject" className="block text-sm">
+                  Assunto
                 </label>
 
                 <input
                   required
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="text"
+                  id="subject"
+                  name="subject"
                   className="mt-0.5"
-                  placeholder="example@email.com"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
+                  placeholder="Assunto da mensagem"
+                  value={subject}
+                  onChange={e => setSubject(e.target.value)}
                 />
               </div>
 
@@ -194,13 +194,13 @@ export default function SendEmailForm({}: Props) {
 
               {/* Submit */}
               <div className="col-span-6 mt-3">
-                <button
-                  type="submit"
-                  className="w-full rounded bg-primary px-12 py-3 text-sm 
+                <a
+                  href={`mailto:${receiverEmail}?subject=${subject}&body=${emailContent}`}
+                  className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm 
                   text-white transition hover:opacity-80 dark:bg-secondary"
                 >
                   Enviar email
-                </button>
+                </a>
               </div>
             </form>
           </div>
