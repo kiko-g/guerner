@@ -4,7 +4,6 @@
 
 .blue {
   @apply bg-blue-600;
-  /* filter: grayscale(0); */
 }
 
 .green {

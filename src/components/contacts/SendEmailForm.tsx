@@ -183,7 +183,7 @@ export default function SendEmailForm({}: Props) {
                     Li e aceito os{' '}
                     <Link
                       to={routes.pt.info.termsAndConditions}
-                      className="link font-bold"
+                      className="font-bold transition hover:text-tertiary hover:underline dark:text-white/75 dark:hover:text-secondary"
                     >
                       termos e condições
                     </Link>

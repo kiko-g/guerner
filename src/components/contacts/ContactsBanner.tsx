@@ -48,7 +48,10 @@ export default function ContactsBanner({}: Props) {
             {item.link === null ? (
               <span>{item.text}</span>
             ) : (
-              <a className="link underline" href={item.link}>
+              <a
+                className="underline transition hover:text-tertiary hover:underline dark:text-white/75 dark:hover:text-secondary"
+                href={item.link}
+              >
                 {item.text}
               </a>
             )}

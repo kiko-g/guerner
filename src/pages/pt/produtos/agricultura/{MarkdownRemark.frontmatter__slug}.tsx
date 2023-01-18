@@ -3,7 +3,6 @@ import { routes } from '../../../../config'
 import { GoBack, Layout } from '../../../../components/layout'
 import { graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import '../../../../styles/product.css'
 
 type Props = {
   data: any
@@ -16,7 +15,7 @@ export default function Template({ data }: Props) {
 
   return (
     <Layout location={frontmatter.name}>
-      <main className="product">
+      <main className="mx-auto flex max-w-xl flex-col items-center justify-center gap-y-4 py-8 font-normal md:gap-y-6 md:py-16">
         <header className="flex w-full items-center justify-between">
           <GoBack url={routes.pt.products.agriculture} />
           <h1 className="text-lg font-bold tracking-tight">Agricultura</h1>

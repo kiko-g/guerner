@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900&family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900');
 
 html {
   @apply scroll-smooth;
@@ -31,57 +31,4 @@ input[type='search'] {
 input[type='checkbox'] {
   @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary 
   dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
-}
-
-.link {
-  @apply transition hover:text-tertiary hover:underline dark:text-white/75 dark:hover:text-secondary;
-}
-
-.min-h-adjusted {
-  min-height: calc(100vh - 3.5rem);
-}
-
-/* Article */
-article {
-  @apply mx-auto mt-0 w-full p-0 text-center font-normal lg:text-justify;
-}
-
-article a {
-  @apply font-semibold text-tertiary transition hover:underline dark:text-secondary;
-}
-
-article p {
-  @apply my-2 lg:my-3;
-}
-
-article h1,
-article h2,
-article h3,
-article h4 {
-  @apply text-center font-bold;
-}
-
-article h1 {
-  @apply mt-1.5 mb-5 text-4xl;
-}
-
-article h2 {
-  @apply mt-1 mb-4 text-3xl;
-}
-
-article h3 {
-  @apply mt-0.5 mb-3 text-2xl;
-}
-
-article h4 {
-  @apply mt-0 mb-2 text-xl;
-}
-
-article ul {
-  @apply ml-5 mt-1 list-disc leading-tight;
-}
-
-article blockquote {
-  @apply my-8 rounded border-l-4 border-primary bg-light py-1 pl-4 font-medium text-gray-800 
-  dark:border-tertiary dark:bg-ice/5 dark:text-white;
 }
