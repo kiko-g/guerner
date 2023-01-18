@@ -24,7 +24,7 @@ export default function FeaturedAgriculture({}: Props) {
           </p>
           <div className="mt-4 sm:mt-8">
             <Link
-              to={routes.pt.routes.products.agriculture}
+              to={routes.pt.products.agriculture}
               className="inline-flex items-center rounded-full bg-primary px-8 py-3 text-white shadow-lg 
               transition hover:opacity-80 focus:outline-none focus:ring dark:bg-secondary"
             >

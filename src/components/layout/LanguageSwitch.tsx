@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { Language } from '../../@types'
+import { Language } from '../../config/types'
 import { Switch } from '@headlessui/react'
 import { LanguageIcon } from '@heroicons/react/24/solid'
 

@@ -15,7 +15,7 @@ export default function Template({ data }) {
         <header>
           <h1>{frontmatter.name}</h1>
           <div>
-            <GoBack url={routes.pt.routes.products.gardening} />
+            <GoBack url={routes.pt.products.gardening} />
             <span className="date">{frontmatter.date}</span>
           </div>
         </header>

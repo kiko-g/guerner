@@ -1,4 +1,4 @@
-import routes from './routes.json'
-import translations from './translations.json'
+import routes from './routing'
+import translations from './translation'
 
 export { translations, routes }

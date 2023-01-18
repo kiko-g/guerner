@@ -10,11 +10,11 @@ const Footer = ({ title }: Props) => {
   const links = [
     {
       name: translations.pt.phrases.footer['Terms and Conditions'],
-      route: routes.pt.routes.footer.termsAndConditions,
+      route: routes.pt.info.termsAndConditions,
     },
     {
       name: translations.pt.phrases.footer['Privacy Policy'],
-      route: routes.pt.routes.footer.privacyPolicy,
+      route: routes.pt.info.privacyPolicy,
     },
   ]
 
@@ -25,7 +25,7 @@ const Footer = ({ title }: Props) => {
           {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
             <Link
-              to={routes.pt.routes.home}
+              to={routes.pt.home}
               className="group flex items-center justify-center gap-x-2"
             >
               <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={title} />

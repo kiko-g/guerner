@@ -18,7 +18,7 @@ export default function Template({ data }: Props) {
     <Layout location={frontmatter.name}>
       <main className="product">
         <header className="flex w-full items-center justify-between">
-          <GoBack url={routes.pt.routes.products.agriculture} />
+          <GoBack url={routes.pt.products.agriculture} />
           <h1 className="text-lg font-bold tracking-tight">Agricultura</h1>
         </header>
 

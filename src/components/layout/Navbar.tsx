@@ -16,22 +16,22 @@ import {
 const navigation = [
   {
     title: 'Início',
-    location: routes.pt.routes.home,
+    location: routes.pt.home,
     icon: <HomeModernIcon className="h-5 w-5" />,
   },
   {
     title: 'Empresa',
-    location: routes.pt.routes.company,
+    location: routes.pt.company,
     icon: <BriefcaseIcon className="h-5 w-5" />,
   },
   {
     title: 'Produtos',
-    location: routes.pt.routes.products.main,
+    location: routes.pt.products.main,
     icon: <ShoppingCartIcon className="h-5 w-5" />,
   },
   {
     title: 'Contactos',
-    location: routes.pt.routes.contacts,
+    location: routes.pt.contacts,
     icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
   },
 ]
@@ -85,7 +85,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
         : 'flex w-full items-center justify-between'
     )}
   >
-    <Link to={routes.pt.routes.home}>
+    <Link to={routes.pt.home}>
       <img
         alt="Guerner"
         src={'/images/avatar.png'}
@@ -117,7 +117,7 @@ const Header = ({ title, location }: Props) => (
   <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
     <div className="relative hidden h-auto transition md:flex md:items-center">
       <Link
-        to={routes.pt.routes.home}
+        to={routes.pt.home}
         className="group flex items-center gap-x-3 transition hover:opacity-80"
       >
         <img
