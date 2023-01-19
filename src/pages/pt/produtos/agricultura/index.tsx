@@ -41,17 +41,17 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
 
   return (
     <Layout location="Agricultura">
-      <main className="flex flex-col items-center justify-center py-8 gap-y-4 md:gap-y-6 md:py-16">
+      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight text-center">{title}</h1>
-          <p className="font-normal text-center lg:text-justify">{text}</p>
+          <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
+          <p className="text-center font-normal lg:text-justify">{text}</p>
         </header>
 
-        <div className="flex flex-col w-full gap-y-6">
+        <div className="flex w-full flex-col gap-y-6">
           {/* Filters */}
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
-            <div className="flex items-center justify-end w-full gap-x-2 lg:w-auto">
+            <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
               <CategoryFilter hook={[pickedCategories, setPickedCategories]} />
               <ColorFilter hook={[pickedColor, setPickedColor]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
@@ -96,20 +96,20 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
                 return textMatch && colorMatch && pinnedMatch && categoryMatch
               })
               .map((product: any, productIdx: any) => (
-                <li key={`product-${productIdx}`} className="relative group">
+                <li key={`product-${productIdx}`} className="group relative">
                   {/* Floating top left */}
                   <div className="absolute top-3 left-3 z-10 flex items-center justify-center gap-x-1.5">
                     {product.frontmatter.color ? (
                       <div
                         className={classNames('rounded-full p-1 shadow', product.frontmatter.color)}
                       >
-                        <PaintBrushIcon className="w-4 h-4 text-white" />
+                        <PaintBrushIcon className="h-4 w-4 text-white" />
                       </div>
                     ) : null}
 
                     {product.frontmatter.pinned ? (
-                      <div className="p-1 rounded-full shadow bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700">
-                        <StarIcon className="w-4 h-4 text-white" />
+                      <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
+                        <StarIcon className="h-4 w-4 text-white" />
                       </div>
                     ) : null}
                   </div>
@@ -117,11 +117,11 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
                   {/* Floating top right */}
                   <div className="absolute top-3 right-3 z-10 flex items-center justify-center gap-x-1.5">
                     {product.frontmatter.category ? (
-                      <div className="px-2 py-1 text-xs text-white rounded-md shadow bg-slate-800">
+                      <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-white shadow">
                         {tx('category', product.frontmatter.category, 'pt')}
                       </div>
                     ) : (
-                      <div className="px-2 py-1 text-xs rounded-md shadow bg-slate-800 text-rose-500">
+                      <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-rose-500 shadow">
                         N/A
                       </div>
                     )}
@@ -130,12 +130,12 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
                   {/* Card body */}
                   <Link
                     to={product.frontmatter.slug}
-                    className="block w-full overflow-hidden h-60 rounded-t-xl"
+                    className="block h-60 w-full overflow-hidden rounded-t-xl"
                   >
                     <img
                       alt={`product-${productIdx}`}
                       src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b"
-                      className="object-cover w-full h-full transition duration-400 aspect-square hover:scale-110 hover:opacity-80"
+                      className="duration-400 aspect-square h-full w-full object-cover transition hover:scale-110 hover:opacity-80"
                     />
                   </Link>
 
@@ -153,7 +153,7 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
                         {product.frontmatter.name}
                       </Link>
                       <Link to={product.frontmatter.slug}>
-                        <ArrowTopRightOnSquareIcon className="w-6 h-6 transition text-primary hover:opacity-75 dark:text-secondary" />
+                        <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-secondary" />
                       </Link>
                     </div>
                   </div>

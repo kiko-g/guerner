@@ -30,13 +30,13 @@ const ProductsGardeningPagePT = ({ data }: Props) => {
 
   return (
     <Layout location="Jardinagem">
-      <main className="flex flex-col items-center justify-center py-8 gap-y-4 md:gap-y-6 md:py-16">
+      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
-          <h1 className="text-4xl font-bold tracking-tight text-center">{title}</h1>
-          <p className="font-normal text-center lg:text-justify">{text}</p>
+          <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
+          <p className="text-center font-normal lg:text-justify">{text}</p>
         </header>
 
-        <div className="flex flex-col w-full gap-y-6">
+        <div className="flex w-full flex-col gap-y-6">
           {/* Filters */}
           <div className="flex items-center justify-between gap-x-2">
             <ViewToggler hook={[viewType, setViewType]} />
@@ -58,7 +58,7 @@ const ProductsGardeningPagePT = ({ data }: Props) => {
               <li key={`product-${productIdx}`}>
                 <Link
                   to={product.frontmatter.slug}
-                  className="block overflow-hidden transition rounded group hover:opacity-80"
+                  className="group block overflow-hidden rounded transition hover:opacity-80"
                 >
                   <img
                     alt={`product-${productIdx}`}
@@ -67,11 +67,11 @@ const ProductsGardeningPagePT = ({ data }: Props) => {
                       duration-500 sm:h-[450px]"
                   />
 
-                  <div className="flex items-center justify-between px-3 py-2 bg-white">
+                  <div className="flex items-center justify-between bg-white px-3 py-2">
                     <span className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
                       {product.frontmatter.name}
                     </span>
-                    <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+                    <ArrowTopRightOnSquareIcon className="h-5 w-5" />
                   </div>
                 </Link>
               </li>

@@ -29,9 +29,9 @@ const pt: Translation = {
       goToCompany: 'Conheça-nos melhor',
       goToProducts: 'Ver produtos e ofertas',
       goToContacts: 'Contacte-nos',
-      visitCompanyHeader: 'Lorem, ipsum dolor sit amet',
+      visitCompanyHeader: 'Quem somos nós?',
       visitCompanyDescription:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.',
+        'A Guerner & Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.',
     },
     footer: {
       terms: 'Termos e Condições',

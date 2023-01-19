@@ -8,9 +8,9 @@ const ContactsPagePT = () => {
 
   return (
     <Layout location="Contactos">
-      <main className="flex flex-col items-center justify-center py-8 gap-y-4 md:gap-y-6 md:py-16">
+      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full">
-          <h1 className="text-4xl font-bold tracking-tight text-center">Contactos</h1>
+          <h1 className="text-center text-4xl font-bold tracking-tight">Contactos</h1>
         </header>
         <ContactsBanner />
         <GoogleMapsLocation height={isMobile ? 225 : 500} />
