@@ -64,7 +64,7 @@ module.exports = {
         light: 'light 400ms ease-in-out',
       },
       backgroundPosition: {
-        'center-half': '50% 28%',
+        'center-half': '60% 27%',
       },
     },
   },

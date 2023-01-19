@@ -2,11 +2,30 @@ import React from 'react'
 import { routes } from '../../../../config'
 import { GoBack, Layout } from '../../../../components/layout'
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
 
-export default function Template({ data }) {
-  const { markdownRemark } = data
-  const { frontmatter, html } = markdownRemark
+type MarkdownData = {
+  html: string
+  frontmatter: {
+    lang: string
+    name: string
+    slug: string
+    date: string
+    color: string
+    pinned: boolean
+    category: string
+    featuredImage: IGatsbyImageData
+  }
+}
+
+type Props = {
+  data: {
+    markdownRemark: MarkdownData
+  }
+}
+
+export default function Template({ data }: Props) {
+  const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
 
   return (
@@ -32,8 +51,10 @@ export const pageQuery = graphql`
       html
       frontmatter {
         name
-        pinned
         slug
+        pinned
+        color
+        category
         featuredImage {
           childImageSharp {
             gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

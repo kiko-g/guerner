@@ -9,11 +9,11 @@ type Props = {
 const Footer = ({ title }: Props) => {
   const links = [
     {
-      name: translations.pt.phrases.footer['Terms and Conditions'],
+      name: translations.pt.phrases.footer.terms,
       route: routes.pt.info.termsAndConditions,
     },
     {
-      name: translations.pt.phrases.footer['Privacy Policy'],
+      name: translations.pt.phrases.footer.privacy,
       route: routes.pt.info.privacyPolicy,
     },
   ]

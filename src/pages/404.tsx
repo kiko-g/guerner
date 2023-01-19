@@ -5,14 +5,14 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
 
 const NotFoundPage = () => (
   <Layout location="Oops">
-    <main className="mx-auto flex max-w-5xl flex-col gap-y-4 py-8 text-center">
+    <main className="flex flex-col max-w-5xl py-8 mx-auto text-center gap-y-4">
       <img
         alt=""
-        className="h-64 w-full rounded object-cover"
+        className="object-cover w-full h-64 rounded"
         src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
       />
       <div>
-        <h1 className="mb-4 font-headings text-4xl font-extrabold tracking-tight">Oops!</h1>
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight font-headings">Oops!</h1>
         <p>
           Hmmmm, esse <strong>caminho não existe</strong>. Parece que não há nada para ver aqui...
         </p>
@@ -21,15 +21,12 @@ const NotFoundPage = () => (
         </p>
       </div>
 
-      <div className="mx-auto w-min whitespace-nowrap font-normal">
-        <button
-          className="group flex items-center gap-x-2 rounded bg-primary py-2 px-3 text-white 
-          shadow transition hover:opacity-80"
-        >
+      <div className="mx-auto font-normal w-min whitespace-nowrap">
+        <button className="flex items-center px-3 py-2 text-white transition rounded shadow group gap-x-2 bg-primary hover:opacity-80">
           <Link to="/" className="italic">
             Country roads... take me home
           </Link>
-          <ArrowLongRightIcon className="h-5 w-5 transition" />
+          <ArrowLongRightIcon className="w-5 h-5 transition" />
         </button>
       </div>
     </main>

@@ -9,6 +9,10 @@ html {
   @apply scroll-smooth;
 }
 
+*::selection {
+  @apply text-white bg-primary dark:bg-secondary;
+}
+
 h1,
 h2,
 h3,
@@ -23,12 +27,9 @@ input[type='tel'],
 input[type='text'],
 input[type='email'],
 input[type='search'] {
-  @apply w-full rounded border border-white bg-white text-sm font-normal shadow placeholder:font-normal 
-  placeholder:text-gray-400 focus:border-primary focus:ring-primary 
-  dark:border-white/10 dark:bg-white/10 dark:focus:border-secondary dark:focus:ring-secondary;
+  @apply w-full text-sm font-normal bg-white border border-white rounded shadow placeholder:font-normal placeholder:text-gray-400 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-white/10 dark:focus:border-secondary dark:focus:ring-secondary;
 }
 
 input[type='checkbox'] {
-  @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary 
-  dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
+  @apply bg-white border border-transparent rounded shadow text-primary focus:border-primary focus:ring-primary dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
 }

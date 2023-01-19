@@ -1,6 +1,6 @@
 import { Translation } from './types'
 
-const pt = {
+const pt: Translation = {
   colors: {
     black: 'preto',
     white: 'branco',
@@ -22,14 +22,25 @@ const pt = {
     quatro: 'quatro',
   },
   phrases: {
+    home: {
+      title: 'Guerner & Irmãos',
+      welcome: 'Welcome to',
+      statement: 'Missão e/ou visão da empresa',
+      goToCompany: 'Conheça-nos melhor',
+      goToProducts: 'Ver produtos e ofertas',
+      goToContacts: 'Contacte-nos',
+      visitCompanyHeader: 'Lorem, ipsum dolor sit amet',
+      visitCompanyDescription:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.',
+    },
     footer: {
-      'Terms and Conditions': 'Termos e Condições',
-      'Privacy Policy': 'Política de Privacidade',
+      terms: 'Termos e Condições',
+      privacy: 'Política de Privacidade',
     },
   },
 }
 
-const en = {
+const en: Translation = {
   colors: {
     black: 'black',
     white: 'white',
@@ -51,10 +62,20 @@ const en = {
     quatro: 'quatro',
   },
   phrases: {
+    home: {
+      title: 'Guerner & Irmãos',
+      welcome: 'Welcome to',
+      statement: 'Mission statement or vision from the company',
+      goToCompany: 'Get to know us better',
+      goToProducts: 'See products',
+      goToContacts: 'Contact us',
+      visitCompanyHeader: 'Lorem, ipsum dolor sit amet',
+      visitCompanyDescription:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.',
+    },
     footer: {
-      'About Us': 'About Us',
-      'Terms and Conditions': 'Terms and Conditions',
-      'Privacy Policy': 'Privacy Policy',
+      terms: 'Terms and Conditions',
+      privacy: 'Privacy Policy',
     },
   },
 }

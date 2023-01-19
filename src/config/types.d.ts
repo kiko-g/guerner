@@ -37,9 +37,19 @@ export interface Translation {
     quatro: string
   }
   phrases: {
+    home: {
+      title: string
+      welcome: string
+      statement: string
+      goToCompany: string
+      goToProducts: string
+      goToContacts: string
+      visitCompanyHeader: string
+      visitCompanyDescription: string
+    }
     footer: {
-      'Terms and Conditions': string
-      'Privacy Policy': string
+      terms: string
+      privacy: string
     }
   }
 }

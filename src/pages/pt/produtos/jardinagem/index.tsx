@@ -4,11 +4,24 @@ import { Layout } from '../../../../components/layout'
 import { ViewToggler } from '../../../../components/products'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
 
-const ProductsGardeningPagePT = ({
+type MarkdownData = {
+  html: string
+  frontmatter: {
+    lang: string
+  }
+}
+
+type Props = {
   data: {
-    allMarkdownRemark: { nodes },
-  },
-}) => {
+    allMarkdownRemark: {
+      nodes: MarkdownData[]
+    }
+  }
+}
+
+const ProductsGardeningPagePT = ({ data }: Props) => {
+  const nodes = data.allMarkdownRemark.nodes
+
   const title = `Jardinagem`
   const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
 
@@ -17,13 +30,13 @@ const ProductsGardeningPagePT = ({
 
   return (
     <Layout location="Jardinagem">
-      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
+      <main className="flex flex-col items-center justify-center py-8 gap-y-4 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
-          <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
-          <p className="text-center font-normal lg:text-justify">{text}</p>
+          <h1 className="text-4xl font-bold tracking-tight text-center">{title}</h1>
+          <p className="font-normal text-center lg:text-justify">{text}</p>
         </header>
 
-        <div className="flex w-full flex-col gap-y-6">
+        <div className="flex flex-col w-full gap-y-6">
           {/* Filters */}
           <div className="flex items-center justify-between gap-x-2">
             <ViewToggler hook={[viewType, setViewType]} />
@@ -45,7 +58,7 @@ const ProductsGardeningPagePT = ({
               <li key={`product-${productIdx}`}>
                 <Link
                   to={product.frontmatter.slug}
-                  className="group block overflow-hidden rounded transition hover:opacity-80"
+                  className="block overflow-hidden transition rounded group hover:opacity-80"
                 >
                   <img
                     alt={`product-${productIdx}`}
@@ -54,11 +67,11 @@ const ProductsGardeningPagePT = ({
                       duration-500 sm:h-[450px]"
                   />
 
-                  <div className="flex items-center justify-between bg-white px-3 py-2">
+                  <div className="flex items-center justify-between px-3 py-2 bg-white">
                     <span className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
                       {product.frontmatter.name}
                     </span>
-                    <ArrowTopRightOnSquareIcon className="h-5 w-5" />
+                    <ArrowTopRightOnSquareIcon className="w-5 h-5" />
                   </div>
                 </Link>
               </li>

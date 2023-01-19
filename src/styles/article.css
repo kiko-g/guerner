@@ -1,9 +1,9 @@
 article {
-  @apply mx-auto mt-0 w-full p-0 text-center font-normal lg:text-justify;
+  @apply w-full p-0 mx-auto mt-0 font-normal text-center lg:text-justify;
 }
 
 article a {
-  @apply font-semibold text-tertiary transition hover:underline dark:text-secondary;
+  @apply font-semibold transition text-tertiary hover:underline dark:text-secondary;
 }
 
 article p {
@@ -14,7 +14,7 @@ article h1,
 article h2,
 article h3,
 article h4 {
-  @apply text-center font-bold;
+  @apply font-bold text-center;
 }
 
 article h1 {
@@ -34,10 +34,9 @@ article h4 {
 }
 
 article ul {
-  @apply ml-5 mt-1 list-disc leading-tight;
+  @apply mt-1 ml-5 leading-tight list-disc;
 }
 
 article blockquote {
-  @apply my-8 rounded border-l-4 border-primary bg-light py-1 pl-4 font-medium text-gray-800 
-  dark:border-tertiary dark:bg-ice/5 dark:text-white;
+  @apply py-1 pl-4 my-8 font-medium text-gray-800 border-l-4 rounded border-primary bg-light dark:border-tertiary dark:bg-ice/5 dark:text-white;
 }
