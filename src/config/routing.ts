@@ -1,4 +1,17 @@
-import { Routes } from './types'
+interface Routes {
+  home: string
+  company: string
+  contacts: string
+  products: {
+    main: string
+    agriculture: string
+    gardening: string
+  }
+  info: {
+    privacyPolicy: string
+    termsAndConditions: string
+  }
+}
 
 const pt: Routes = {
   home: '/pt',

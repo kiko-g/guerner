@@ -20,6 +20,7 @@ module.exports = {
         primary: '#124845',
         secondary: '#df803f',
         tertiary: '#14B8A6',
+        quaternary: '#C2410C',
       },
       maxWidth: {
         screen: '100vw',
@@ -35,6 +36,7 @@ module.exports = {
       },
       fontFamily: {
         prose: ['Inter', ...defaultTheme.fontFamily.sans],
+        lexend: ['Lexend', ...defaultTheme.fontFamily.sans],
         headings: ['Montserrat', ...defaultTheme.fontFamily.sans],
         code: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
         mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
@@ -57,11 +59,19 @@ module.exports = {
           '50%': { backgroundPosition: '100% 45%' },
           '100%': { backgroundPosition: '0% 90%' },
         },
+        'slide-left': {
+          '100%': { left: '0' },
+        },
+        'wipe-enter': {
+          '0%': { transform: 'scale(0, 0.025)' },
+          '50%': { transform: 'scale(1, 0.025)' },
+        },
       },
       animation: {
         lava: 'lava 5s ease infinite',
         dark: 'dark 400ms ease-in-out',
         light: 'light 400ms ease-in-out',
+        wipe: 'wipe-enter 0.5s',
       },
       backgroundPosition: {
         'center-half': '60% 27%',

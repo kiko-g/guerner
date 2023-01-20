@@ -9,7 +9,7 @@ const BackToTopButton = () => {
 
   if (typeof window !== 'undefined') {
     window.onscroll = () => {
-      setHidden(window.scrollY < 500)
+      setHidden(window.scrollY < 400)
     }
   }
 
@@ -17,9 +17,9 @@ const BackToTopButton = () => {
     <button
       hidden={hidden || isMobile}
       onClick={() => document.getElementById('layout')!.scrollIntoView()}
-      className="fixed bottom-3 left-1/2 z-50 rounded p-1 text-white transition-all hover:-translate-y-1 hover:bg-black/50"
+      className="fixed bottom-3 left-[calc(50%-1.25rem)] z-50 rounded-md p-1 text-white transition-all hover:-translate-y-1 hover:bg-primary/75 dark:hover:bg-secondary/50"
     >
-      <ChevronDoubleUpIcon className="h-6 w-6" />
+      <ChevronDoubleUpIcon className="h-7 w-7" />
     </button>
   )
 }

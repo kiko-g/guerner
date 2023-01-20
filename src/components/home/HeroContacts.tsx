@@ -1,17 +1,15 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { routes, translations } from '../../config'
 import { CompanyShowcase1, CompanyShowcase2, CompanyShowcase3 } from '../../images'
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
-import { HoverDiv } from '../utils'
 
 type Props = {}
 
-export default function HeroCompany({}: Props) {
+export default function HeroContacts({}: Props) {
   const link = translations.pt.phrases.home.visitCompany.takeMeThere
   const text = translations.pt.phrases.home.visitCompany.description
   const header = translations.pt.phrases.home.visitCompany.header
-  const [isShowing, setIsShowing] = useState(false)
 
   return (
     <section>
@@ -27,8 +25,7 @@ export default function HeroCompany({}: Props) {
               <div>
                 <Link
                   to={routes.pt.company}
-                  className="group flex items-center justify-center gap-x-2 rounded bg-primary px-12 py-3 
-                  text-sm font-medium text-white shadow transition-all hover:translate-x-1 hover:opacity-90 dark:bg-secondary"
+                  className="group flex items-center justify-center gap-x-2 rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow transition-all hover:translate-x-1 hover:opacity-90 dark:bg-secondary"
                 >
                   <span>{link}</span>
                   <ArrowLongRightIcon className="mt-[1px] inline-flex h-5 w-5 transition group-hover:translate-x-1.5" />
@@ -38,23 +35,17 @@ export default function HeroCompany({}: Props) {
           </div>
 
           <div className="grid grid-cols-2">
-            <div className="relative h-48 transition sm:h-56 md:h-full">
-              <img
-                alt="Student"
-                src={CompanyShowcase1}
-                className="absolute top-0 left-0 h-full w-full object-cover transition"
-              />
-              {/* <HoverDiv>Link aqui</HoverDiv> */}
-            </div>
+            <img
+              alt="Student"
+              src={CompanyShowcase1}
+              className="h-48 w-full object-cover sm:h-56 md:h-full"
+            />
 
-            <div className="relative h-48 transition sm:h-56 md:h-full">
-              <img
-                alt="Student"
-                src={CompanyShowcase2}
-                className="h-48 w-full object-cover sm:h-56 md:h-full"
-              />
-              {/* <HoverDiv>Link aqui</HoverDiv> */}
-            </div>
+            <img
+              alt="Student"
+              src={CompanyShowcase2}
+              className="h-48 w-full object-cover sm:h-56 md:h-full"
+            />
           </div>
         </div>
       </div>

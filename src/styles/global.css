@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900');
-
-html {
-  @apply scroll-smooth;
-}
 
 *::selection {
   @apply bg-primary text-white dark:bg-secondary;
@@ -32,4 +29,12 @@ input[type='search'] {
 
 input[type='checkbox'] {
   @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
+}
+
+.bg-magic-light {
+  @apply bg-[url(../images/backgrounds/magic-gradient-light.png)];
+}
+
+.bg-magic-dark {
+  @apply bg-[url(../images/backgrounds/magic-gradient-dark.png)];
 }
