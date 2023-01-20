@@ -17,12 +17,12 @@ const DarkModeSwitch = () => {
         >
           {enabled ? (
             <MoonIcon
-              className="ease block h-6 w-6 text-blue-100 transition duration-100 hover:text-blue-200/75 md:h-8 md:w-8"
+              className="ease block h-6 w-6 text-blue-400 transition duration-100 hover:text-blue-500 md:h-8 md:w-8"
               aria-hidden="true"
             />
           ) : (
             <SunIcon
-              className="ease block h-6 w-6 text-orange-300 transition duration-100 hover:text-orange-400/80 md:h-8 md:w-8"
+              className="ease block h-6 w-6 text-orange-400 transition duration-100 hover:text-orange-500 md:h-8 md:w-8"
               aria-hidden="true"
             />
           )}
