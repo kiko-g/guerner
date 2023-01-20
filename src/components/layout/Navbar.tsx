@@ -52,7 +52,7 @@ const Navbar = ({ title, location, special }: Props) => {
       className={classNames(
         'sticky top-0 z-20 w-full px-3 py-2 shadow shadow-black/50 md:px-6 md:py-4',
         special
-          ? 'bg-black/30 text-white dark:bg-black/30'
+          ? 'bg-black/40 text-white dark:bg-black/60'
           : 'bg-primary text-white dark:bg-navy dark:text-white'
       )}
     >
@@ -144,7 +144,7 @@ const Header = ({ title, location }: Props) => (
                 'flex items-center justify-center lowercase tracking-wide transition',
                 location === link.title
                   ? 'font-bold text-white dark:text-white'
-                  : 'font-normal text-white/30 hover:text-white dark:text-white/30 dark:hover:text-white'
+                  : 'font-normal text-white/50 hover:text-white dark:text-white/50 dark:hover:text-white'
               )}
             >
               <span className="flex items-center justify-center gap-x-1 tracking-tight">

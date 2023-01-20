@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { routes, translations } from '../../config'
+import { LinkTranslate } from '../utils'
 
 type Props = {}
 
@@ -18,7 +19,7 @@ export default function HeroBanner({}: Props) {
         <div className="mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             <span>{welcome}</span>
-            <strong className="mx-auto block font-extrabold tracking-tighter text-emerald-400 dark:bg-transparent dark:text-secondary">
+            <strong className="mx-auto block font-extrabold tracking-tighter text-secondary dark:bg-transparent dark:text-secondary">
               {title}
             </strong>
           </h1>
@@ -26,18 +27,8 @@ export default function HeroBanner({}: Props) {
           <p className="mx-auto mt-4 sm:text-xl sm:leading-relaxed">{statement}</p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center">
-            <Link
-              to={routes.pt.products.main}
-              className="w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow transition hover:-translate-y-1 hover:opacity-90 dark:bg-secondary sm:w-auto"
-            >
-              {goToProducts}
-            </Link>
-            <Link
-              to={routes.pt.contacts}
-              className="w-full rounded bg-white px-12 py-3 text-sm font-medium text-primary shadow transition hover:-translate-y-1 hover:opacity-90 dark:text-secondary sm:w-auto"
-            >
-              {goToContacts}
-            </Link>
+            <LinkTranslate text={goToProducts} link={routes.pt.products.main} />
+            <LinkTranslate text={goToContacts} link={routes.pt.contacts} alt />
           </div>
         </div>
       </div>

@@ -30,7 +30,7 @@ const Layout = ({ children, location = 'Unknown', language = 'pt', home = false 
         className={classNames(
           'mb-auto flex min-h-screen flex-col overflow-clip font-prose font-medium',
           home
-            ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
+            ? 'home bg-primary text-gray-800 dark:bg-navy dark:text-white'
             : 'bg-ice text-gray-800 dark:bg-navy dark:text-white'
         )}
       >

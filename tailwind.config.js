@@ -17,10 +17,9 @@ module.exports = {
         light: '#f2f4f7',
         lighter: '#f7f7f7',
         lightest: '#ffffff',
-        primary: '#124845',
-        secondary: '#df803f',
-        tertiary: '#14B8A6',
-        quaternary: '#C2410C',
+        primary: '#124842',
+        secondary: '#2ddf62', // #df803f
+        tertiary: '#9687ec',
       },
       maxWidth: {
         screen: '100vw',
@@ -37,7 +36,7 @@ module.exports = {
       fontFamily: {
         prose: ['Inter', ...defaultTheme.fontFamily.sans],
         lexend: ['Lexend', ...defaultTheme.fontFamily.sans],
-        headings: ['Montserrat', ...defaultTheme.fontFamily.sans],
+        headings: ['Lexend', ...defaultTheme.fontFamily.sans],
         code: ['JetBrains Mono', ...defaultTheme.fontFamily.mono],
         mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
         source: ['Source Sans Pro', ...defaultTheme.fontFamily.sans],
@@ -71,7 +70,7 @@ module.exports = {
         lava: 'lava 5s ease infinite',
         dark: 'dark 400ms ease-in-out',
         light: 'light 400ms ease-in-out',
-        wipe: 'wipe-enter 0.5s',
+        wipe: 'wipe-enter 1s',
       },
       backgroundPosition: {
         'center-half': '60% 27%',

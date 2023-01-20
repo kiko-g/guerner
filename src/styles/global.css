@@ -6,8 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900');
 
+html {
+  @apply scroll-smooth
+}
+
 *::selection {
-  @apply bg-primary text-white dark:bg-secondary;
+  @apply bg-primary text-white;
 }
 
 h1,
@@ -29,6 +33,10 @@ input[type='search'] {
 
 input[type='checkbox'] {
   @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
+}
+
+.bg-cta {
+  @apply bg-[url(../images/backgrounds/cta.png)];
 }
 
 .bg-magic-light {
