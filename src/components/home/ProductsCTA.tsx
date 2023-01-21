@@ -13,8 +13,8 @@ export default function ProductsCTA({}: Props) {
   const headerText = translations.pt.phrases.home.visitProducts.header
   const productsText = translations.pt.phrases.home.visitProducts.description
   const takeMeThere = translations.pt.phrases.home.visitProducts.takeMeThere
-  const takeMeThereConstruction = translations.pt.phrases.home.visitProducts.takeMeThereAgriculture
-  const takeMeThereAgriculture = translations.pt.phrases.home.visitProducts.takeMeThereConstruction
+  const takeMeThereAgriculture = translations.pt.phrases.home.visitProducts.takeMeThereAgriculture
+  const takeMeThereConstruction = translations.pt.phrases.home.visitProducts.takeMeThereConstruction
 
   return (
     <section className="w-full">
@@ -22,14 +22,14 @@ export default function ProductsCTA({}: Props) {
         {/* Products */}
         <div className="order-2 grid grid-cols-2 lg:order-1 lg:grid-cols-1">
           <NavigateCtaDiv
+            image={Agriculture}
             link={linkAgriculture}
             actionText={takeMeThereAgriculture}
-            image={Agriculture}
           />
           <NavigateCtaDiv
+            image={Construction}
             link={linkConstruction}
             actionText={takeMeThereConstruction}
-            image={Construction}
           />
         </div>
 

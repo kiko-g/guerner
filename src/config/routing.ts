@@ -19,7 +19,7 @@ const pt: Routes = {
   products: {
     main: '/pt/produtos',
     agriculture: '/pt/produtos/agricultura',
-    construction: '/pt/produtos/construção',
+    construction: '/pt/produtos/construcao',
   },
   contacts: '/pt/contactos',
   info: {
