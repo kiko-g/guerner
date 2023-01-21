@@ -24,7 +24,7 @@ export default function FeaturedAgriculture({}: Props) {
             {text}
           </p>
           <div className="mt-4 sm:mt-8">
-            <LinkFill link={route} text={takeMeThere} />
+            <LinkFill link={route} text={takeMeThere} light />
           </div>
         </div>
       </div>
