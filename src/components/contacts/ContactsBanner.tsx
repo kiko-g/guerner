@@ -12,11 +12,13 @@ type Props = {}
 
 export default function ContactsBanner({}: Props) {
   const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
+  const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER!
+  const address = process.env.GATSBY_GUERNER_STREET_ADDRESS!
 
   const contact: Contact[] = [
     {
       name: 'Phone',
-      text: '+351 91 000 00 00',
+      text: phone,
       link: null,
       icon: <PhoneIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
     },
@@ -30,7 +32,7 @@ export default function ContactsBanner({}: Props) {
     },
     {
       name: 'Location',
-      text: 'R. Pereira Guerner 1649, Vila Nova de Gaia, Portugal',
+      text: address,
       link: 'https://goo.gl/maps/2ep68957S4uWJDu88',
       icon: <MapPinIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
     },

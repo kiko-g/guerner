@@ -1,16 +1,17 @@
+// See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
 import React from 'react'
 import { Layout } from '../components/layout'
-import { HeroBanner, CompanyCTA } from '../components/home'
+import { HeroBanner, CompanyCTA, ContactsCTA, ProductsCTA } from '../components/home'
 
-// See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
-
-const IndexPage = () => {
+const IndexPagePT = () => {
   return (
     <Layout location="Início" home>
       <HeroBanner />
       <CompanyCTA />
+      <ProductsCTA />
+      <ContactsCTA />
     </Layout>
   )
 }
 
-export default IndexPage
+export default IndexPagePT
