@@ -34,23 +34,3 @@ input[type='search'] {
 input[type='checkbox'] {
   @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
 }
-
-.bg-cta {
-  @apply bg-[url(../images/backgrounds/cta.png)];
-}
-
-.bg-cta-dark {
-  @apply bg-[url(../images/backgrounds/cta-dark.png)];
-}
-
-.bg-magic-light {
-  @apply bg-[url(../images/backgrounds/magic-gradient-light.png)];
-}
-
-.bg-magic-dark {
-  @apply bg-[url(../images/backgrounds/magic-gradient-dark.png)];
-}
-
-.bg-banner {
-  @apply bg-[url(../images/hero/banner.png)];
-}

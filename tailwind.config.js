@@ -21,6 +21,12 @@ module.exports = {
         secondary: '#2ddf62', // #df803f
         tertiary: '#9687ec',
       },
+      backgroundImage: {
+        // path relative to src/styles
+        banner: 'url(../images/hero/banner.png)',
+        cta: 'url(../images/backgrounds/cta.png)',
+        'cta-dark': 'url(../images/backgrounds/cta-dark.png)',
+      },
       maxWidth: {
         screen: '100vw',
         '8xl': '88rem',

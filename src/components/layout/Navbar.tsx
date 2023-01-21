@@ -81,7 +81,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
     className={classNames(
       'z-50 md:hidden',
       open
-        ? 'w-auto absolute top-2 right-2 my-auto flex h-6 items-center justify-end gap-x-2'
+        ? 'absolute top-2 right-2 my-auto flex h-6 w-auto items-center justify-end gap-x-2'
         : 'flex w-full items-center justify-between'
     )}
   >
