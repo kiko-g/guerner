@@ -1,20 +1,27 @@
 import React from 'react'
 import { routes, translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { LinkFill } from '../utils'
-import NavigateCtaDiv from './NavigateCtaDiv'
 import { Agriculture, Construction } from '../../images'
+import NavigateCtaDiv from './NavigateCtaDiv'
 
 type Props = {}
 
 export default function ProductsCTA({}: Props) {
-  const linkConstruction = routes.pt.products.construction
-  const linkAgriculture = routes.pt.products.agriculture
+  const { language } = useLanguage()
 
-  const headerText = translations.pt.phrases.home.visitProducts.header
-  const productsText = translations.pt.phrases.home.visitProducts.description
-  const takeMeThere = translations.pt.phrases.home.visitProducts.takeMeThere
-  const takeMeThereAgriculture = translations.pt.phrases.home.visitProducts.takeMeThereAgriculture
-  const takeMeThereConstruction = translations.pt.phrases.home.visitProducts.takeMeThereConstruction
+  const headerText = translations[language].phrases.home.visitProducts.header
+  const productsText = translations[language].phrases.home.visitProducts.description
+
+  const takeMeThere = translations[language].phrases.home.visitProducts.takeMeThere
+  const takeMeThereAgriculture =
+    translations[language].phrases.home.visitProducts.takeMeThereAgriculture
+  const takeMeThereConstruction =
+    translations[language].phrases.home.visitProducts.takeMeThereConstruction
+
+  const routeProducts = routes[language].products.main
+  const routeConstruction = routes[language].products.construction
+  const routeAgriculture = routes[language].products.agriculture
 
   return (
     <section className="w-full">
@@ -23,12 +30,12 @@ export default function ProductsCTA({}: Props) {
         <div className="order-2 grid grid-cols-2 lg:order-1 lg:grid-cols-1">
           <NavigateCtaDiv
             image={Agriculture}
-            link={linkAgriculture}
+            link={routeAgriculture}
             actionText={takeMeThereAgriculture}
           />
           <NavigateCtaDiv
             image={Construction}
-            link={linkConstruction}
+            link={routeConstruction}
             actionText={takeMeThereConstruction}
           />
         </div>
@@ -52,7 +59,7 @@ export default function ProductsCTA({}: Props) {
             <p className="block px-2 py-2 text-center tracking-tighter text-white">
               {productsText}
             </p>
-            <LinkFill text={takeMeThere} link={routes.pt.products.main} />
+            <LinkFill text={takeMeThere} link={routeProducts} />
           </div>
         </div>
       </div>

@@ -1,14 +1,17 @@
 import React from 'react'
 import { routes, translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { LinkFill } from '../utils'
 
 type Props = {}
 
 export default function FeaturedConstruction({}: Props) {
-  const title = translations.pt.phrases.products.construction.title
-  const text = translations.pt.phrases.products.construction.text
-  const takeMeThere = translations.pt.phrases.products.construction.takeMeThere
-  const route = routes.pt.products.construction
+  const { language } = useLanguage()
+
+  const title = translations[language].phrases.products.construction.title
+  const text = translations[language].phrases.products.construction.text
+  const takeMeThere = translations[language].phrases.products.construction.takeMeThere
+  const route = routes[language].products.construction
 
   return (
     <section className="w-full overflow-hidden rounded bg-construction bg-cover bg-center bg-no-repeat">

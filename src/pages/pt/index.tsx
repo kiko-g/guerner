@@ -1,10 +1,15 @@
 import React from 'react'
+import { translations } from '../../config'
 import { Layout } from '../../components/layout'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { HeroBanner, CompanyCTA, ContactsCTA, ProductsCTA } from '../../components/home'
 
 const IndexPagePT = () => {
+  const { language } = useLanguage()
+  const location = translations[language].location.home
+
   return (
-    <Layout location="Início" home>
+    <Layout location={location} home>
       <HeroBanner />
       <CompanyCTA />
       <ProductsCTA />

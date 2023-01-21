@@ -1,14 +1,18 @@
 import React from 'react'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { routes, translations } from '../../config'
 import { LinkFill } from '../utils'
 
 type Props = {}
 
 export default function FeaturedAgriculture({}: Props) {
-  const title = translations.pt.phrases.products.agriculture.title
-  const text = translations.pt.phrases.products.agriculture.text
-  const takeMeThere = translations.pt.phrases.products.agriculture.takeMeThere
-  const route = routes.pt.products.agriculture
+  const { language } = useLanguage()
+
+  const title = translations[language].phrases.products.agriculture.title
+  const text = translations[language].phrases.products.agriculture.text
+  const takeMeThere = translations[language].phrases.products.agriculture.takeMeThere
+
+  const route = routes[language].products.agriculture
 
   return (
     <section className="w-full overflow-hidden rounded bg-agriculture bg-cover bg-center bg-no-repeat">

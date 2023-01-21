@@ -1,4 +1,10 @@
 interface Translation {
+  location: {
+    home: string
+    company: string
+    products: string
+    contacts: string
+  }
   colors: {
     black: string
     white: string
@@ -41,6 +47,10 @@ interface Translation {
         description: string
         takeMeThere: string
       }
+    }
+    company: {
+      title: string
+      text: string
     }
     products: {
       header: string
@@ -86,6 +96,12 @@ interface Translation {
 }
 
 const pt: Translation = {
+  location: {
+    home: 'Início',
+    company: 'Empresa',
+    products: 'Produtos',
+    contacts: 'Contactos',
+  },
   colors: {
     black: `preto`,
     white: `branco`,
@@ -128,6 +144,10 @@ const pt: Translation = {
         description: `Não hesite em contactar-nos.`,
         takeMeThere: `Contacte-nos`,
       },
+    },
+    company: {
+      title: `Empresa`,
+      text: `A Guerner & Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.`,
     },
     products: {
       header: `Produtos`,
@@ -173,6 +193,12 @@ const pt: Translation = {
 }
 
 const en: Translation = {
+  location: {
+    home: 'Home',
+    company: 'Company',
+    products: 'Products',
+    contacts: 'Contacts',
+  },
   colors: {
     black: `black`,
     white: `white`,
@@ -215,6 +241,10 @@ const en: Translation = {
         description: `Don't hesitate to contact us`,
         takeMeThere: `Contact us`,
       },
+    },
+    company: {
+      title: `Company`,
+      text: `Texto mas em inglês`,
     },
     products: {
       header: `Products`,

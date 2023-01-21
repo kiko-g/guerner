@@ -1,15 +1,21 @@
 import React, { useMemo, useState } from 'react'
+import { routes, translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { Link } from 'gatsby'
-import { routes } from '../../config'
 import { Banner } from '../../images'
 
 type Props = {}
 
 export default function SendEmailForm({}: Props) {
+  const { language } = useLanguage()
+
   const br = `%0D%0A`
-  const headline = `Entre em contacto connosco`
-  const instructions = `Preencha o formulário ao lado para nos enviar um email com as suas informações.`
   const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
+
+  const header = translations[language].phrases.contacts.form.header
+  const instructions = translations[language].phrases.contacts.form.text
+  const placeholders = translations[language].phrases.contacts.form.placeholders
+  const routeTerms = routes[language].info.termsAndConditions
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -23,7 +29,7 @@ export default function SendEmailForm({}: Props) {
       `Nome: ${name}`,
       `Telefone: ${phone ? phone : 'N/A'}`,
       `Localização: ${location ? location : 'N/A'}`,
-      `Message: ${encodeURIComponent(messageBody)}`,
+      `Mensagem: ${encodeURIComponent(messageBody)}`,
       `${br}${br}${br}Enviado a partir do website por: ${name}`,
     ].join(br)
   }, [name, phone, location, messageBody])
@@ -40,8 +46,8 @@ export default function SendEmailForm({}: Props) {
           <img
             alt="Night"
             src={Banner}
-            className="absolute inset-0 h-full w-full rounded-t object-cover opacity-80
-            lg:rounded-none lg:rounded-l object-left-top"
+            className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top
+            opacity-80 lg:rounded-none lg:rounded-l"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
@@ -56,7 +62,7 @@ export default function SendEmailForm({}: Props) {
               />
             </Link>
             <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
-              {headline}
+              {header}
             </h2>
             <p className="mt-2 leading-relaxed text-white/90">{instructions}</p>
           </div>
@@ -77,7 +83,7 @@ export default function SendEmailForm({}: Props) {
                   className="z-20 inline-flex h-full w-full rounded-full transition"
                 />
               </Link>
-              <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{headline}</h1>
+              <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{header}</h1>
               <p className="mt-2 leading-relaxed">{instructions}</p>
             </div>
 
@@ -97,7 +103,7 @@ export default function SendEmailForm({}: Props) {
                   className="mt-0.5"
                   value={name}
                   onChange={e => setName(e.target.value)}
-                  placeholder="Nome completo"
+                  placeholder={placeholders.name}
                 />
               </div>
 
@@ -112,7 +118,7 @@ export default function SendEmailForm({}: Props) {
                   id="location"
                   name="location"
                   className="mt-0.5"
-                  placeholder="Cidade, País"
+                  placeholder={placeholders.location}
                   value={location}
                   onChange={e => setLocation(e.target.value)}
                 />
@@ -130,7 +136,7 @@ export default function SendEmailForm({}: Props) {
                   id="subject"
                   name="subject"
                   className="mt-0.5"
-                  placeholder="Assunto da mensagem"
+                  placeholder={placeholders.subject}
                   value={subject}
                   onChange={e => setSubject(e.target.value)}
                 />
@@ -147,7 +153,7 @@ export default function SendEmailForm({}: Props) {
                   id="phone"
                   name="phone"
                   className="mt-0.5"
-                  placeholder="+351 91 123 45 78"
+                  placeholder={placeholders.phone}
                   value={phone}
                   onChange={e => setPhone(e.target.value)}
                 />
@@ -184,10 +190,10 @@ export default function SendEmailForm({}: Props) {
                   />
 
                   <span className="text-sm text-gray-500 dark:text-gray-400">
-                    Li e aceito os{' '}
+                    {placeholders.terms}{' '}
                     <Link
-                      to={routes.pt.info.termsAndConditions}
-                      className="font-bold transition hover:text-tertiary hover:underline dark:text-white/75 dark:hover:text-secondary/75"
+                      to={routeTerms}
+                      className="font-bold transition hover:text-primary/75 hover:underline dark:text-white/75 dark:hover:text-secondary/75"
                     >
                       termos e condições
                     </Link>

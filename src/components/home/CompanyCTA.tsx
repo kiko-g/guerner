@@ -1,14 +1,18 @@
 import React from 'react'
 import { routes, translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { LinkFill } from '../utils'
 import { CompanyShowcase1, CompanyShowcase2 } from '../../images'
 
 type Props = {}
 
 export default function CompanyCTA({}: Props) {
-  const link = translations.pt.phrases.home.visitCompany.takeMeThere
-  const text = translations.pt.phrases.home.visitCompany.description
-  const header = translations.pt.phrases.home.visitCompany.header
+  const { language } = useLanguage()
+
+  const link = translations[language].phrases.home.visitCompany.takeMeThere
+  const text = translations[language].phrases.home.visitCompany.description
+  const header = translations[language].phrases.home.visitCompany.header
+  const routeCompany = routes[language].company
 
   return (
     <section className="w-full">
@@ -30,7 +34,7 @@ export default function CompanyCTA({}: Props) {
               {header}
             </h2>
             <p className="block px-2 py-2 text-center tracking-tighter text-white">{text}</p>
-            <LinkFill text={link} link={routes.pt.company} />
+            <LinkFill text={link} link={routeCompany} />
           </div>
         </div>
 

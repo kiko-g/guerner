@@ -1,6 +1,4 @@
 import React from 'react'
-import { useMediaQuery } from 'usehooks-ts'
-import classNames from 'classnames'
 
 type Props = {
   height?: number

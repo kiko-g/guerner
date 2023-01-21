@@ -1,10 +1,10 @@
 import React from 'react'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { Building } from '../../images'
 import { PhoneIcon, InboxArrowDownIcon, MapPinIcon } from '@heroicons/react/24/solid'
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
 
 interface Contact {
-  name: string
   text: string
   link: string | null
   icon: JSX.Element
@@ -13,19 +13,19 @@ interface Contact {
 type Props = {}
 
 export default function ContactsBanner({}: Props) {
+  const { language } = useLanguage()
+
   const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
   const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER!
   const address = process.env.GATSBY_GUERNER_STREET_ADDRESS!
 
   const contact: Contact[] = [
     {
-      name: 'Phone',
       text: phone,
       link: null,
       icon: <PhoneIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
     },
     {
-      name: 'Email',
       text: email,
       link: `mailto:${email}`,
       icon: (
@@ -33,7 +33,6 @@ export default function ContactsBanner({}: Props) {
       ),
     },
     {
-      name: 'Location',
       text: address,
       link: 'https://goo.gl/maps/2ep68957S4uWJDu88',
       icon: <MapPinIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
@@ -67,8 +66,8 @@ export default function ContactsBanner({}: Props) {
             )}
             <button
               onClick={async () => await navigator.clipboard.writeText(item.text)}
-              className="rounded-full p-1 transition hover:text-secondary/50 
-              focus:bg-teal-600 focus:text-white"
+              className="rounded-full p-1 transition hover:text-secondary 
+              focus:bg-teal-600 focus:text-white dark:hover:text-secondary/50"
             >
               <ClipboardDocumentIcon className="h-6 w-6" />
             </button>

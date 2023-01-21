@@ -1,16 +1,20 @@
 import React from 'react'
+import { translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
 import { Layout } from '../../components/layout'
 
 const CompanyPagePT = () => {
-  const title = `Empresa`
-  const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
+  const { language } = useLanguage()
+  const location = translations[language].location.company
+  const title = translations[language].phrases.company.title
+  const pageText = translations[language].phrases.company.text
 
   return (
-    <Layout location="Empresa">
+    <Layout location={location}>
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
-          <p className="text-center font-normal lg:text-justify">{text}</p>
+          <p className="text-center font-normal lg:text-justify">{pageText}</p>
         </header>
       </main>
     </Layout>
