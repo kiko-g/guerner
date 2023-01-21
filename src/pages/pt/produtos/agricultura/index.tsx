@@ -172,7 +172,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: [{ frontmatter: { name: ASC } }]
-      filter: { fileAbsolutePath: { regex: "/(agricultura)/" } }
+      filter: { fileAbsolutePath: { regex: "/(agriculture)/" } }
     ) {
       nodes {
         id

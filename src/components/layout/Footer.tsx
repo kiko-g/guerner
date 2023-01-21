@@ -27,8 +27,8 @@ const Footer = ({ title }: Props) => {
         <div className="flex items-center justify-between py-2 md:py-3">
           {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
-            <Link to={routes.pt.home} className="group flex items-center justify-center gap-x-2">
-              <img className="h-12 w-12 rounded-full" src={'/images/avatar.png'} alt={title} />
+            <Link to={routes.pt.home} className="group flex items-center justify-center gap-x-3">
+              <img className="h-12 w-12 rounded-full" src={'/images/icon.png'} alt={title} />
               <h5
                 className="flex max-w-xs flex-col font-headings text-sm font-medium 
                 transition group-hover:underline md:text-base md:font-bold"

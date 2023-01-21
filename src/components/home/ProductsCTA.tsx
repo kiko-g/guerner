@@ -2,18 +2,19 @@ import React from 'react'
 import { routes, translations } from '../../config'
 import { LinkFill } from '../utils'
 import NavigateCtaDiv from './NavigateCtaDiv'
+import { Agriculture, Construction } from '../../images'
 
 type Props = {}
 
 export default function ProductsCTA({}: Props) {
-  const linkGardening = routes.pt.products.gardening
+  const linkConstruction = routes.pt.products.construction
   const linkAgriculture = routes.pt.products.agriculture
 
   const headerText = translations.pt.phrases.home.visitProducts.header
   const productsText = translations.pt.phrases.home.visitProducts.description
   const takeMeThere = translations.pt.phrases.home.visitProducts.takeMeThere
-  const takeMeThereGardening = translations.pt.phrases.home.visitProducts.takeMeThereAgriculture
-  const takeMeThereAgriculture = translations.pt.phrases.home.visitProducts.takeMeThereGardening
+  const takeMeThereConstruction = translations.pt.phrases.home.visitProducts.takeMeThereAgriculture
+  const takeMeThereAgriculture = translations.pt.phrases.home.visitProducts.takeMeThereConstruction
 
   return (
     <section className="w-full">
@@ -23,12 +24,12 @@ export default function ProductsCTA({}: Props) {
           <NavigateCtaDiv
             link={linkAgriculture}
             actionText={takeMeThereAgriculture}
-            image="https://images.unsplash.com/photo-1631451095765-2c91616fc9e6"
+            image={Agriculture}
           />
           <NavigateCtaDiv
-            link={linkGardening}
-            actionText={takeMeThereGardening}
-            image="https://images.unsplash.com/photo-1672803949246-85b33371c7ab"
+            link={linkConstruction}
+            actionText={takeMeThereConstruction}
+            image={Construction}
           />
         </div>
 

@@ -3,7 +3,7 @@ import ColorFilter from './ColorFilter'
 import PinToggler from './PinToggler'
 import ViewToggler from './ViewToggler'
 import CategoryFilter from './CategoryFilter'
-import FeaturedGardening from './FeaturedGardening'
+import FeaturedConstruction from './FeaturedConstruction'
 import FeaturedAgriculture from './FeaturedAgriculture'
 
 export {
@@ -13,5 +13,5 @@ export {
   ViewToggler,
   CategoryFilter,
   FeaturedAgriculture,
-  FeaturedGardening,
+  FeaturedConstruction,
 }

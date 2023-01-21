@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from '../../../components/layout'
-import { FeaturedAgriculture, FeaturedGardening } from '../../../components/products'
+import { FeaturedAgriculture, FeaturedConstruction } from '../../../components/products'
 
 const ProductsPagePT = () => {
   const title = `Produtos`
@@ -15,7 +15,7 @@ const ProductsPagePT = () => {
         </header>
 
         <FeaturedAgriculture />
-        <FeaturedGardening />
+        <FeaturedConstruction />
       </main>
     </Layout>
   )

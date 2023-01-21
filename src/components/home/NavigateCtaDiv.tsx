@@ -13,19 +13,19 @@ export default function NavigateCtaDiv({ link, image, actionText }: Props) {
     <Link to={link} className="group relative bg-center">
       <img
         src={image}
-        className="h-64 max-h-full w-full object-cover grayscale-[40%] transition 
+        className="h-64 max-h-full w-full object-cover grayscale-[50%] transition 
         duration-300 group-hover:grayscale-0 lg:h-96"
       />
       <div className="absolute inset-0 flex h-full w-full items-center justify-center">
         <div
           className="absolute h-full w-full bg-primary/0 group-hover:animate-wipe
-          group-hover:bg-primary/25 dark:bg-secondary/0 group-hover:dark:bg-secondary/25"
+          group-hover:bg-primary/40 dark:bg-secondary/0 group-hover:dark:bg-secondary/40"
         />
 
         <div
           className="z-50 flex h-full w-full items-center justify-center gap-x-2
-          text-center font-lexend text-lg font-normal text-white opacity-80 
-          duration-500 group-hover:opacity-100 lg:text-3xl lg:opacity-30"
+          text-center font-lexend text-lg font-normal opacity-80 
+          duration-500 group-hover:opacity-100 lg:text-3xl lg:opacity-0"
         >
           <span className="transition hover:opacity-80 group-hover:animate-bounce">
             {actionText}

@@ -18,21 +18,21 @@ export default function ContactsBanner({}: Props) {
       name: 'Phone',
       text: '+351 91 000 00 00',
       link: null,
-      icon: <PhoneIcon className="h-6 w-6 text-primary dark:text-secondary md:h-7 md:w-7" />,
+      icon: <PhoneIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
     },
     {
       name: 'Email',
       text: email,
       link: `mailto:${email}`,
       icon: (
-        <InboxArrowDownIcon className="h-6 w-6 text-primary dark:text-secondary md:h-7 md:w-7" />
+        <InboxArrowDownIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />
       ),
     },
     {
       name: 'Location',
       text: 'R. Pereira Guerner 1649, Vila Nova de Gaia, Portugal',
       link: 'https://goo.gl/maps/2ep68957S4uWJDu88',
-      icon: <MapPinIcon className="h-6 w-6 text-primary dark:text-secondary md:h-7 md:w-7" />,
+      icon: <MapPinIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
     },
   ]
 
@@ -50,7 +50,7 @@ export default function ContactsBanner({}: Props) {
             ) : (
               <a
                 className="font-medium transition hover:text-primary/75 hover:underline 
-                dark:text-white/75 dark:hover:text-secondary"
+                dark:text-white/75 dark:hover:text-secondary/75"
                 href={item.link}
               >
                 {item.text}
@@ -60,7 +60,7 @@ export default function ContactsBanner({}: Props) {
         ))}
       </ul>
       <img
-        className="h-48 w-full rounded bg-primary object-cover object-center dark:bg-secondary lg:h-64"
+        className="h-48 w-full rounded bg-primary object-cover object-center dark:bg-secondary/75 lg:h-64"
         src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19"
       />
     </div>

@@ -19,17 +19,17 @@ type Props = {
   }
 }
 
-const ProductsGardeningPagePT = ({ data }: Props) => {
+const ProductsConstructionPagePT = ({ data }: Props) => {
   const nodes = data.allMarkdownRemark.nodes
 
-  const title = `Jardinagem`
+  const title = `Construção`
   const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
 
   const [viewType, setViewType] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
-    <Layout location="Jardinagem">
+    <Layout location="Construção">
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
@@ -83,13 +83,13 @@ const ProductsGardeningPagePT = ({ data }: Props) => {
   )
 }
 
-export default ProductsGardeningPagePT
+export default ProductsConstructionPagePT
 
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: [{ frontmatter: { pinned: DESC } }, { frontmatter: { name: ASC } }]
-      filter: { fileAbsolutePath: { regex: "/(jardinagem)/" } }
+      filter: { fileAbsolutePath: { regex: "/(construction)/" } }
     ) {
       nodes {
         id

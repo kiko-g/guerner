@@ -34,7 +34,7 @@ interface Translation {
         description: string
         takeMeThere: string
         takeMeThereAgriculture: string
-        takeMeThereGardening: string
+        takeMeThereConstruction: string
       }
       visitContacts: {
         header: string
@@ -90,7 +90,7 @@ const pt: Translation = {
     home: {
       title: `Guerner & Irmãos`,
       welcome: `Bem vindo à`,
-      statement: `Missão e/ou visão da empresa`,
+      statement: `Téxteis e fábricas de alto rendimento`,
       visitCompany: {
         header: `Quem somos nós?`,
         description: `A Guerner & Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.`,
@@ -101,7 +101,7 @@ const pt: Translation = {
         description: `Aqui estão os produtos!`,
         takeMeThere: `Ver produtos e ofertas`,
         takeMeThereAgriculture: `Ver produtos de Agricultura`,
-        takeMeThereGardening: `Ver produtos de Jardinagem`,
+        takeMeThereConstruction: `Ver produtos de Construção`,
       },
       visitContacts: {
         header: `Tem alguma pergunta?`,
@@ -157,7 +157,7 @@ const en: Translation = {
     home: {
       title: `Guerner & Irmãos`,
       welcome: `Welcome to`,
-      statement: `Mission statement or vision from the company`,
+      statement: `High-Performance Textiles and Technical Fabrics`,
       visitCompany: {
         header: `Who are we?`,
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.`,
@@ -168,7 +168,7 @@ const en: Translation = {
         description: `Here are the products lorem!`,
         takeMeThere: `See products`,
         takeMeThereAgriculture: `Check out agriculture products`,
-        takeMeThereGardening: `Check out gardening products`,
+        takeMeThereConstruction: `Check out construction products`,
       },
       visitContacts: {
         header: `Any questions?`,

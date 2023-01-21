@@ -5,7 +5,7 @@ interface Routes {
   products: {
     main: string
     agriculture: string
-    gardening: string
+    construction: string
   }
   info: {
     privacyPolicy: string
@@ -19,7 +19,7 @@ const pt: Routes = {
   products: {
     main: '/pt/produtos',
     agriculture: '/pt/produtos/agricultura',
-    gardening: '/pt/produtos/jardinagem',
+    construction: '/pt/produtos/construção',
   },
   contacts: '/pt/contactos',
   info: {
@@ -34,7 +34,7 @@ const en: Routes = {
   products: {
     main: '/en/products',
     agriculture: '/en/products/agriculture',
-    gardening: '/pt/products/gardening',
+    construction: '/pt/products/construction',
   },
   contacts: '/pt/contacts',
   info: {

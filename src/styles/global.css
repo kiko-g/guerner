@@ -7,11 +7,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800;900');
 
 html {
-  @apply scroll-smooth
+  @apply scroll-smooth;
 }
 
 *::selection {
-  @apply bg-primary text-white dark:bg-secondary/70;
+  @apply bg-primary text-white dark:bg-secondary/75;
 }
 
 h1,
@@ -49,4 +49,8 @@ input[type='checkbox'] {
 
 .bg-magic-dark {
   @apply bg-[url(../images/backgrounds/magic-gradient-dark.png)];
+}
+
+.bg-banner {
+  @apply bg-[url(../images/hero/banner.png)];
 }

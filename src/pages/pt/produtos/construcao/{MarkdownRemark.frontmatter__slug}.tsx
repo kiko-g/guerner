@@ -34,7 +34,7 @@ export default function Template({ data }: Props) {
         <header>
           <h1>{frontmatter.name}</h1>
           <div>
-            <GoBack url={routes.pt.products.gardening} />
+            <GoBack url={routes.pt.products.construction} />
             <span className="date">{frontmatter.date}</span>
           </div>
         </header>

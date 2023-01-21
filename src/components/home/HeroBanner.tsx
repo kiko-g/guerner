@@ -13,7 +13,7 @@ export default function HeroBanner({}: Props) {
   const goToContacts = translations.pt.phrases.home.visitContacts.takeMeThere
 
   return (
-    <section className="relative w-full bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
+    <section className="bg-banner relative w-full bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-transparent bg-gradient-to-r from-black/25 to-black/50 dark:from-black/50 dark:to-black/75" />
       <div className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="mx-auto text-center">

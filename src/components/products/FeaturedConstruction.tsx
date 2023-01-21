@@ -4,8 +4,8 @@ import { Link } from 'gatsby'
 
 type Props = {}
 
-export default function FeaturedGardening({}: Props) {
-  const title = `Jardinagem`
+export default function FeaturedConstruction({}: Props) {
+  const title = `Construção`
   const text = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore officia corporis quasi doloribus iure architecto quae voluptatum beatae excepturi dolores.`
 
   return (
@@ -23,7 +23,7 @@ export default function FeaturedGardening({}: Props) {
           </p>
           <div className="mt-4 sm:mt-8">
             <Link
-              to={routes.pt.products.gardening}
+              to={routes.pt.products.construction}
               className="inline-flex items-center rounded-full bg-primary px-8 py-3 text-white shadow-lg 
               transition hover:opacity-80 focus:outline-none focus:ring dark:bg-secondary"
             >
