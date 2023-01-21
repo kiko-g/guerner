@@ -59,13 +59,13 @@ const Footer = ({ title }: Props) => {
 
         <div className="flex flex-col items-center justify-between gap-y-1 py-2 md:flex-row md:gap-y-0 md:py-2">
           <span className="md:text-center">© 2022 {title}™</span>
-          <span className="text-white/50">
+          <span className="text-white/25">
             Made by{' '}
             <a
               target="_blank"
               rel="noreferrer"
-              href="https://kikogoncalves.com"
-              className="font-bold transition-all hover:text-white hover:underline"
+              href="https://github.com/kiko-g"
+              className="font-bold transition-all hover:text-blue-400 hover:underline"
             >
               Francisco Gonçalves
             </a>

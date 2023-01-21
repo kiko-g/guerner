@@ -26,6 +26,8 @@ module.exports = {
         banner: 'url(../images/hero/banner.png)',
         cta: 'url(../images/backgrounds/cta.png)',
         'cta-dark': 'url(../images/backgrounds/cta-dark.png)',
+        agriculture: 'url(../images/products/agriculture.png)',
+        construction: 'url(../images/products/construction.png)',
       },
       maxWidth: {
         screen: '100vw',

@@ -42,6 +42,20 @@ interface Translation {
         takeMeThere: string
       }
     }
+    products: {
+      header: string
+      pageText: string
+      agriculture: {
+        title: string
+        text: string
+        takeMeThere: string
+      }
+      construction: {
+        title: string
+        text: string
+        takeMeThere: string
+      }
+    }
     contacts: {
       title: string
       text: string
@@ -97,7 +111,7 @@ const pt: Translation = {
         takeMeThere: `Conheça-nos melhor`,
       },
       visitProducts: {
-        header: `Produtos`,
+        header: `O que fornecemos?`,
         description: `Aqui estão os produtos!`,
         takeMeThere: `Ver produtos e ofertas`,
         takeMeThereAgriculture: `Ver produtos de Agricultura`,
@@ -107,6 +121,20 @@ const pt: Translation = {
         header: `Tem alguma pergunta?`,
         description: `Não hesite em contactar-nos.`,
         takeMeThere: `Contacte-nos`,
+      },
+    },
+    products: {
+      header: `Produtos`,
+      pageText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.`,
+      agriculture: {
+        title: `Agricultura`,
+        text: `Têxteis e fábricas de alto rendimento`,
+        takeMeThere: `Ver listagens dos produtos`,
+      },
+      construction: {
+        title: `Construção`,
+        text: `Materiais de construção de alta qualidade`,
+        takeMeThere: `Ver listagens dos materiais`,
       },
     },
     contacts: {
@@ -174,6 +202,20 @@ const en: Translation = {
         header: `Any questions?`,
         description: `Don't hesitate to contact us`,
         takeMeThere: `Contact us`,
+      },
+    },
+    products: {
+      header: `Products`,
+      pageText: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.`,
+      agriculture: {
+        title: `Agriculture`,
+        text: `High-Performance Textiles and Technical Fabrics`,
+        takeMeThere: `Show me the listings`,
+      },
+      construction: {
+        title: `Construction`,
+        text: `High-quality Building Materials`,
+        takeMeThere: `Show me the listings`,
       },
     },
     contacts: {

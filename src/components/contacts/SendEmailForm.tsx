@@ -1,6 +1,7 @@
-import { Link } from 'gatsby'
 import React, { useMemo, useState } from 'react'
+import { Link } from 'gatsby'
 import { routes } from '../../config'
+import { Banner } from '../../images'
 
 type Props = {}
 
@@ -38,8 +39,9 @@ export default function SendEmailForm({}: Props) {
         <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
           <img
             alt="Night"
-            src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            className="absolute inset-0 h-full w-full rounded-t object-cover opacity-80 lg:rounded-none lg:rounded-l"
+            src={Banner}
+            className="absolute inset-0 h-full w-full rounded-t object-cover opacity-80
+            lg:rounded-none lg:rounded-l object-left-top"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link

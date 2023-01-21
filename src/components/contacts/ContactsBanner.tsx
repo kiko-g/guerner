@@ -1,5 +1,7 @@
 import React from 'react'
+import { Building } from '../../images'
 import { PhoneIcon, InboxArrowDownIcon, MapPinIcon } from '@heroicons/react/24/solid'
+import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
 
 interface Contact {
   name: string
@@ -41,29 +43,44 @@ export default function ContactsBanner({}: Props) {
   return (
     <div
       className="flex w-full flex-col items-center justify-center gap-y-4 gap-x-4 rounded 
-      bg-light px-4 py-4 shadow dark:bg-white/5 md:flex-row md:items-start md:justify-between md:gap-x-8 md:px-6 md:py-6"
+      bg-light px-4 py-4 shadow dark:bg-white/5 xl:flex-row xl:items-start xl:justify-between 
+      xl:gap-x-6 xl:px-6 xl:py-6"
     >
-      <ul className="flex w-full max-w-md flex-col items-start justify-start gap-y-2 font-normal md:gap-y-3">
+      {/* Contacts */}
+      <ul
+        className="order-2 flex h-full w-full max-w-md flex-col items-start 
+        justify-start gap-y-2 font-normal md:gap-y-3 xl:order-1"
+      >
         {contact.map((item, index) => (
-          <li key={`contact-${index}`} className="flex items-center gap-x-3">
+          <li key={`contact-${index}`} className="flex w-full items-center gap-x-3">
             <span>{item.icon}</span>
             {item.link === null ? (
-              <span>{item.text}</span>
+              <span className="w-full">{item.text}</span>
             ) : (
               <a
-                className="font-medium transition hover:text-primary/75 hover:underline 
-                dark:text-white/75 dark:hover:text-secondary/75"
                 href={item.link}
+                className="w-full font-medium transition hover:text-primary/75 hover:underline 
+                dark:text-white/75 dark:hover:text-secondary/75"
               >
                 {item.text}
               </a>
             )}
+            <button
+              onClick={async () => await navigator.clipboard.writeText(item.text)}
+              className="rounded-full p-1 transition hover:text-secondary/50 
+              focus:bg-teal-600 focus:text-white"
+            >
+              <ClipboardDocumentIcon className="h-6 w-6" />
+            </button>
           </li>
         ))}
       </ul>
+
+      {/* Image */}
       <img
-        className="h-48 w-full rounded bg-primary object-cover object-center dark:bg-secondary/75 lg:h-64"
-        src="https://images.unsplash.com/photo-1617195737496-bc30194e3a19"
+        src={Building}
+        className="order-1 h-48 w-full rounded bg-primary object-cover object-center 
+        dark:bg-secondary/75 lg:h-64 xl:order-2"
       />
     </div>
   )

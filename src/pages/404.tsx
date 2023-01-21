@@ -2,15 +2,12 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Layout } from '../components/layout'
 import { ArrowLongRightIcon } from '@heroicons/react/24/solid'
+import { Banner } from '../images'
 
 const NotFoundPage = () => (
   <Layout location="Oops">
     <main className="mx-auto flex max-w-5xl flex-col gap-y-4 py-8 text-center">
-      <img
-        alt=""
-        className="h-64 w-full rounded object-cover"
-        src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1548&q=80"
-      />
+      <img alt="Guerner" className="h-64 w-full rounded object-cover" src={Banner} />
       <div>
         <h1 className="mb-4 font-headings text-4xl font-extrabold tracking-tight">Oops!</h1>
         <p>
