@@ -1,16 +1,17 @@
 import React, { ReactNode } from 'react'
-import { Seo, BackToTopButton, Navbar, Footer } from '.'
-import { useStaticQuery, graphql } from 'gatsby'
 import classNames from 'classnames'
+import { Seo, BackToTopButton, Navbar, Footer } from '.'
+import { LanguageProvider, useLanguage } from '../../hooks/useLanguageContext'
+import { useStaticQuery, graphql } from 'gatsby'
 
 type Props = {
   children: ReactNode
   location?: string
-  language?: string
   home?: boolean
 }
 
-const Layout = ({ children, location = 'Unknown', language = 'pt', home = false }: Props) => {
+const Layout = ({ children, location = 'Unknown', home = false }: Props) => {
+  const { language } = useLanguage()
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -23,7 +24,7 @@ const Layout = ({ children, location = 'Unknown', language = 'pt', home = false 
   const title = data.site.siteMetadata?.title || 'Site Title'
 
   return (
-    <>
+    <LanguageProvider>
       <Seo title={location} lang={language} />
       <div
         id="layout"
@@ -46,7 +47,7 @@ const Layout = ({ children, location = 'Unknown', language = 'pt', home = false 
         <BackToTopButton />
         <Footer title={title} />
       </div>
-    </>
+    </LanguageProvider>
   )
 }
 

@@ -72,10 +72,16 @@ interface Translation {
         }
       }
     }
-    footer: {
-      terms: string
-      privacy: string
-    }
+  }
+  navbar: {
+    home: string
+    company: string
+    products: string
+    contacts: string
+  }
+  footer: {
+    terms: string
+    privacy: string
   }
 }
 
@@ -153,10 +159,16 @@ const pt: Translation = {
         },
       },
     },
-    footer: {
-      terms: `Termos e Condições`,
-      privacy: `Política de Privacidade`,
-    },
+  },
+  navbar: {
+    home: `Início`,
+    company: `Empresa`,
+    products: `Produtos`,
+    contacts: `Contactos`,
+  },
+  footer: {
+    terms: `Termos e Condições`,
+    privacy: `Política de Privacidade`,
   },
 }
 
@@ -234,10 +246,16 @@ const en: Translation = {
         },
       },
     },
-    footer: {
-      terms: `Terms and Conditions`,
-      privacy: `Privacy Policy`,
-    },
+  },
+  navbar: {
+    home: `Home`,
+    company: `Company`,
+    products: `Products`,
+    contacts: `Contacts`,
+  },
+  footer: {
+    terms: `Terms and Conditions`,
+    privacy: `Privacy Policy`,
   },
 }
 

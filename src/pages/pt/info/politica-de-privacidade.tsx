@@ -19,7 +19,7 @@ type Props = {
 }
 
 export default function PrivacyPolicy({ data }: Props) {
-  const title = translations.pt.phrases.footer.privacy
+  const title = translations.pt.footer.privacy
   const info = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === 'pt')!
 
   return (

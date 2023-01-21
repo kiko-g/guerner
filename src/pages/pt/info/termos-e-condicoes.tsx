@@ -19,7 +19,7 @@ type Props = {
 }
 
 export default function TermsAndConditions({ data }: Props) {
-  const title = translations.pt.phrases.footer.terms
+  const title = translations.pt.footer.terms
   const info = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === 'pt')!
 
   return (
