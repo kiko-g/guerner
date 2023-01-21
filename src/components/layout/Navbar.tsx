@@ -79,37 +79,66 @@ const Navbar = ({ title, location, special }: Props) => {
 const Hamburger = ({ open }: { open: boolean }) => (
   <div
     className={classNames(
-      'z-50 w-full md:hidden',
+      'z-50 md:hidden',
       open
-        ? 'absolute top-2 right-2 my-auto flex h-6 items-center justify-end gap-x-2'
+        ? 'w-auto absolute top-2 right-2 my-auto flex h-6 items-center justify-end gap-x-2'
         : 'flex w-full items-center justify-between'
     )}
   >
-    <Link to={routes.pt.home}>
-      <img
-        alt="Guerner"
-        src={'/images/icon.png'}
-        className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
-      />
-    </Link>
+    {open ? (
+      <div className="flex items-center gap-x-1">
+        <Link to={routes.pt.home}>
+          <img
+            alt="Guerner"
+            src={'/images/icon.png'}
+            className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
+          />
+        </Link>
+        <DarkModeSwitch />
+        <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white md:hidden">
+          <span className="sr-only">Open nav menu</span>
+          {open ? (
+            <XMarkIcon
+              className="ease block h-6 w-6 transition duration-200 group-hover:text-white/50 dark:group-hover:text-secondary/75"
+              aria-hidden="true"
+            />
+          ) : (
+            <Bars4Icon
+              className="ease block h-6 w-6 transition duration-200 group-hover:text-white/50 dark:group-hover:text-secondary/75"
+              aria-hidden="true"
+            />
+          )}
+        </Disclosure.Button>
+      </div>
+    ) : (
+      <>
+        <Link to={routes.pt.home}>
+          <img
+            alt="Guerner"
+            src={'/images/icon.png'}
+            className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
+          />
+        </Link>
 
-    <div className="flex items-center gap-x-1">
-      <DarkModeSwitch />
-      <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white md:hidden">
-        <span className="sr-only">Open nav menu</span>
-        {open ? (
-          <XMarkIcon
-            className="ease block h-7 w-7 transition duration-200 group-hover:text-white/50 dark:group-hover:text-secondary/75"
-            aria-hidden="true"
-          />
-        ) : (
-          <Bars4Icon
-            className="ease block h-7 w-7 transition duration-200 group-hover:text-white/50 dark:group-hover:text-secondary/75"
-            aria-hidden="true"
-          />
-        )}
-      </Disclosure.Button>
-    </div>
+        <div className="flex items-center gap-x-1">
+          <DarkModeSwitch />
+          <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white md:hidden">
+            <span className="sr-only">Open nav menu</span>
+            {open ? (
+              <XMarkIcon
+                className="ease block h-7 w-7 transition duration-200 group-hover:text-white/50 dark:group-hover:text-secondary/75"
+                aria-hidden="true"
+              />
+            ) : (
+              <Bars4Icon
+                className="ease block h-7 w-7 transition duration-200 group-hover:text-white/50 dark:group-hover:text-secondary/75"
+                aria-hidden="true"
+              />
+            )}
+          </Disclosure.Button>
+        </div>
+      </>
+    )}
   </div>
 )
 
@@ -121,8 +150,8 @@ const Header = ({ title, location }: Props) => (
         className="group flex items-center gap-x-3 transition hover:opacity-80"
       >
         <img
-          src={'/images/icon.png'}
           alt="Guerner"
+          src={'/images/icon.png'}
           className="z-20 inline-flex h-8 w-8 rounded-full transition"
         />
         <h2 className="text-xs font-bold tracking-tighter duration-150 group-hover:underline md:text-lg">
@@ -167,7 +196,6 @@ const FoldableMobileMenu = ({ location }: { location: string }) => (
     leave="transition duration-75 ease-out"
     leaveFrom="transform scale-100 opacity-100"
     leaveTo="transform scale-95 opacity-0"
-    className="z-50"
   >
     <Disclosure.Panel className="flex flex-col space-y-3 py-2 md:hidden">
       {navigation.map((link, index) => (
