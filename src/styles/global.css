@@ -11,7 +11,7 @@ html {
 }
 
 *::selection {
-  @apply bg-primary text-white;
+  @apply bg-primary text-white dark:bg-secondary/70;
 }
 
 h1,
@@ -37,6 +37,10 @@ input[type='checkbox'] {
 
 .bg-cta {
   @apply bg-[url(../images/backgrounds/cta.png)];
+}
+
+.bg-cta-dark {
+  @apply bg-[url(../images/backgrounds/cta-dark.png)];
 }
 
 .bg-magic-light {

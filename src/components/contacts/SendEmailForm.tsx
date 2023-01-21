@@ -44,18 +44,19 @@ export default function SendEmailForm({}: Props) {
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
               to={routes.pt.home}
-              className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-2 sm:h-20 sm:w-20"
+              className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary
+              bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
             >
               <img
-                src={'/images/avatar.png'}
+                src={'/images/icon.png'}
                 alt="Guerner"
                 className="z-20 inline-flex h-full w-full rounded-full transition"
               />
             </Link>
-            <h2 className="mt-6 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
               {headline}
             </h2>
-            <p className="mt-4 leading-relaxed text-white/90">{instructions}</p>
+            <p className="mt-2 leading-relaxed text-white/90">{instructions}</p>
           </div>
         </div>
 
@@ -65,16 +66,17 @@ export default function SendEmailForm({}: Props) {
             <div className="relative -mt-16 block lg:hidden">
               <Link
                 to={routes.pt.home}
-                className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-2 sm:h-20 sm:w-20"
+                className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary
+              bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
               >
                 <img
-                  src={'/images/avatar.png'}
+                  src={'/images/icon.png'}
                   alt="Guerner"
                   className="z-20 inline-flex h-full w-full rounded-full transition"
                 />
               </Link>
               <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{headline}</h1>
-              <p className="mt-4 leading-relaxed">{instructions}</p>
+              <p className="mt-2 leading-relaxed">{instructions}</p>
             </div>
 
             {/* Send email form */}
@@ -197,7 +199,7 @@ export default function SendEmailForm({}: Props) {
                 <a
                   href={`mailto:${receiverEmail}?subject=${subject}&body=${emailContent}`}
                   className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm 
-                  text-white transition hover:opacity-80 dark:bg-secondary"
+                  text-white transition hover:opacity-80 dark:bg-secondary/75"
                 >
                   Enviar email
                 </a>

@@ -26,7 +26,7 @@ export default function HeroBanner({}: Props) {
 
           <p className="mx-auto mt-4 sm:text-xl sm:leading-relaxed">{statement}</p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-center">
             <LinkTranslate text={goToProducts} link={routes.pt.products.main} />
             <LinkTranslate text={goToContacts} link={routes.pt.contacts} alt />
           </div>

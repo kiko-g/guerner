@@ -1,13 +1,13 @@
 import HeroBanner from './HeroBanner'
-import HeroCompany from './HeroCompany'
-import HeroProducts from './HeroProducts'
-import HeroContacts from './HeroContacts'
+import CompanyCTA from './CompanyCTA'
+import ProductsCTA from './ProductsCTA'
+import ContactsCTA from './ContactsCTA'
 import GrayscaleNavigateCtaDiv from './NavigateCtaDiv'
 
 export {
   HeroBanner,
-  HeroCompany,
-  HeroProducts,
-  HeroContacts,
+  CompanyCTA,
+  ProductsCTA,
+  ContactsCTA,
   GrayscaleNavigateCtaDiv as NavigateCtaDiv,
 }

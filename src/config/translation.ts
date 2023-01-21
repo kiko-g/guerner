@@ -42,6 +42,22 @@ interface Translation {
         takeMeThere: string
       }
     }
+    contacts: {
+      title: string
+      text: string
+      form: {
+        header: string
+        text: string
+        placeholders: {
+          name: string
+          location: string
+          subject: string
+          phone: string
+          message: string
+          terms: string
+        }
+      }
+    }
     footer: {
       terms: string
       privacy: string
@@ -73,7 +89,7 @@ const pt: Translation = {
   phrases: {
     home: {
       title: `Guerner & Irmãos`,
-      welcome: `Welcome to`,
+      welcome: `Bem vindo à`,
       statement: `Missão e/ou visão da empresa`,
       visitCompany: {
         header: `Quem somos nós?`,
@@ -91,6 +107,22 @@ const pt: Translation = {
         header: `Tem alguma pergunta?`,
         description: `Não hesite em contactar-nos.`,
         takeMeThere: `Contacte-nos`,
+      },
+    },
+    contacts: {
+      title: `Contactos`,
+      text: `Nesta página pode entrar em contacto connosco`,
+      form: {
+        header: `Entre em contacto`,
+        text: `Preencha o formulário ao lado para nos enviar um email com as suas informações.`,
+        placeholders: {
+          name: `Nome completo`,
+          location: `Cidade, País`,
+          subject: `Assunto da mensagem`,
+          phone: `+351 91 827 11 05`,
+          message: `Conteúdo da mensagem`,
+          terms: `Li e aceito os`,
+        },
       },
     },
     footer: {
@@ -142,6 +174,22 @@ const en: Translation = {
         header: `Any questions?`,
         description: `Don't hesitate to contact us`,
         takeMeThere: `Contact us`,
+      },
+    },
+    contacts: {
+      title: `Contactos`,
+      text: `Nesta página pode entrar em contacto connosco`,
+      form: {
+        header: `Entre em contacto`,
+        text: `Preencha o formulário ao lado para nos enviar um email com as suas informações.`,
+        placeholders: {
+          name: `Nome completo`,
+          location: `Cidade, País`,
+          subject: `Assunto da mensagem`,
+          phone: `+351 91 234 45 78`,
+          message: `Conteúdo da mensagem`,
+          terms: `Li e aceito os `,
+        },
       },
     },
     footer: {

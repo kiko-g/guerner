@@ -88,7 +88,7 @@ const Hamburger = ({ open }: { open: boolean }) => (
     <Link to={routes.pt.home}>
       <img
         alt="Guerner"
-        src={'/images/avatar.png'}
+        src={'/images/icon.png'}
         className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
       />
     </Link>
@@ -121,7 +121,7 @@ const Header = ({ title, location }: Props) => (
         className="group flex items-center gap-x-3 transition hover:opacity-80"
       >
         <img
-          src={'/images/avatar.png'}
+          src={'/images/icon.png'}
           alt="Guerner"
           className="z-20 inline-flex h-8 w-8 rounded-full transition"
         />

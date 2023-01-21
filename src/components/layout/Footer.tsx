@@ -48,7 +48,7 @@ const Footer = ({ title }: Props) => {
               <li key={`link-${linkIdx}`}>
                 <Link
                   to={link.route}
-                  className="transition hover:text-tertiary hover:underline dark:hover:text-secondary"
+                  className="transition hover:text-secondary hover:underline dark:hover:text-secondary"
                 >
                   {link.name}
                 </Link>
