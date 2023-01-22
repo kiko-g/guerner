@@ -2,7 +2,7 @@
 lang: pt
 pinned: true
 name: Abciehefrhrfs
-slug: produto
+slug: produto5
 color: blue
 category: um
 featuredImage: ./images/produto5.png

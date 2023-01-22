@@ -2,7 +2,7 @@
 lang: en
 pinned: false
 name: Bereiuhe
-slug: produto5
+slug: produto1
 color: red
 category: all
 featuredImage: ./images/produto1.png
