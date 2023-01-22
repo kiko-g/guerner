@@ -5,7 +5,7 @@ name: Dieufqhfr
 slug: produto3
 color: black
 category: dois
-featuredImage: ./images/produto3.png
+featuredImage: ./produto3.jpg
 ---
 
 ## Exemplo de título 3

@@ -5,7 +5,7 @@ name: Awjirhv
 slug: produto2
 color: green
 category: all
-featuredImage: ./images/produto2.png
+featuredImage: ./produto2.jpg
 ---
 
 ## Exemplo de título 2

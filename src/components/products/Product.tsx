@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { translations } from '../../config'
 import { Category, Color } from '../../types'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
+import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
 import { useLanguage } from '../../hooks/useLanguageContext'
 import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
 
@@ -23,6 +23,8 @@ type Props = {
 
 export default function Product({ product }: Props) {
   const { language } = useLanguage()
+  const coverImage = getImage(product.featuredImage)
+  console.log(product.name, product.featuredImage, 1)
 
   return (
     <li className="group relative">
@@ -54,11 +56,15 @@ export default function Product({ product }: Props) {
 
       {/* Card body */}
       <Link to={product.slug} className="block h-60 w-full overflow-hidden rounded-t-xl">
-        <img
-          alt={`product-${product.name}`}
-          src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b"
-          className="duration-400 aspect-square h-full w-full object-cover transition hover:scale-110 hover:opacity-80"
-        />
+        {coverImage ? (
+          <GatsbyImage
+            alt={`product-${product.name}`}
+            image={coverImage}
+            className="duration-400 aspect-square h-full w-full object-cover transition hover:scale-110 hover:opacity-80"
+          />
+        ) : (
+          <div className="aspect-square h-full w-full bg-primary transition hover:opacity-80 dark:bg-secondary/50" />
+        )}
       </Link>
 
       {/* Card footer */}
