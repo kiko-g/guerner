@@ -102,11 +102,7 @@ export const pageQuery = graphql`
           name
           slug
           pinned
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-            }
-          }
+          featuredImage
         }
       }
     }

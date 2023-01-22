@@ -122,7 +122,6 @@ export const pageQuery = graphql`
     ) {
       nodes {
         id
-        excerpt(pruneLength: 80)
         frontmatter {
           lang
           name
@@ -130,11 +129,7 @@ export const pageQuery = graphql`
           pinned
           color
           category
-          featuredImage {
-            childImageSharp {
-              gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
-            }
-          }
+          featuredImage
         }
       }
     }
