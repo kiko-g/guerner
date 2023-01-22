@@ -4,7 +4,7 @@ import { Layout } from '../../components/layout'
 import { useLanguage } from '../../hooks/useLanguageContext'
 import { HeroBanner, CompanyCTA, ContactsCTA, ProductsCTA } from '../../components/home'
 
-const IndexPagePT = () => {
+const IndexPage = () => {
   const { language } = useLanguage()
   const location = translations[language].location.home
 
@@ -18,4 +18,4 @@ const IndexPagePT = () => {
   )
 }
 
-export default IndexPagePT
+export default IndexPage

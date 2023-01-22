@@ -1,8 +1,6 @@
 import React, { createContext, useContext } from 'react'
 import { Language } from '../types'
 
-
-
 interface LanguageContextProps {
   language: Language
   setLanguage: (lang: Language) => void

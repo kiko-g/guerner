@@ -3,6 +3,7 @@ import { routes } from '../../../../config'
 import { GoBack, Layout } from '../../../../components/layout'
 import { graphql } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import { useLanguage } from '../../../../hooks/useLanguageContext'
 
 type MarkdownData = {
   html: string
@@ -25,6 +26,9 @@ type Props = {
 }
 
 export default function AgricultureProductTemplate({ data }: Props) {
+  const { language } = useLanguage()
+  const routeGoBack = routes[language].products.agriculture
+
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
 
@@ -32,7 +36,7 @@ export default function AgricultureProductTemplate({ data }: Props) {
     <Layout location={frontmatter.name}>
       <main className="mx-auto flex max-w-xl flex-col items-center justify-center gap-y-4 py-8 font-normal md:gap-y-6 md:py-16">
         <header className="flex w-full items-center justify-between">
-          <GoBack url={routes.pt.products.agriculture} />
+          <GoBack url={routeGoBack} />
           <h1 className="text-lg font-bold tracking-tight">Agricultura</h1>
         </header>
 

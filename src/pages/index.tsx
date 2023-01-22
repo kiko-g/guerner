@@ -1,3 +1,3 @@
-import IndexPagePT from './pt/index'
+import IndexPage from './pt/index'
 
-export default IndexPagePT
+export default IndexPage

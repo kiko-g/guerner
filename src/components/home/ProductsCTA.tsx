@@ -14,10 +14,8 @@ export default function ProductsCTA({}: Props) {
   const productsText = translations[language].phrases.home.visitProducts.description
 
   const takeMeThere = translations[language].phrases.home.visitProducts.takeMeThere
-  const takeMeThereAgriculture =
-    translations[language].phrases.home.visitProducts.takeMeThereAgriculture
-  const takeMeThereConstruction =
-    translations[language].phrases.home.visitProducts.takeMeThereConstruction
+  const takeMeThereAgric = translations[language].phrases.home.visitProducts.takeMeThereAgriculture
+  const takeMeThereConst = translations[language].phrases.home.visitProducts.takeMeThereConstruction
 
   const routeProducts = routes[language].products.main
   const routeConstruction = routes[language].products.construction
@@ -31,12 +29,12 @@ export default function ProductsCTA({}: Props) {
           <NavigateCtaDiv
             image={Agriculture}
             link={routeAgriculture}
-            actionText={takeMeThereAgriculture}
+            actionText={takeMeThereAgric}
           />
           <NavigateCtaDiv
             image={Construction}
             link={routeConstruction}
-            actionText={takeMeThereConstruction}
+            actionText={takeMeThereConst}
           />
         </div>
 

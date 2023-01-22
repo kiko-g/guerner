@@ -3,6 +3,7 @@ import { routes } from '../../../../config'
 import { GoBack, Layout } from '../../../../components/layout'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import { useLanguage } from '../../../../hooks/useLanguageContext'
 
 type MarkdownData = {
   html: string
@@ -25,6 +26,9 @@ type Props = {
 }
 
 export default function Template({ data }: Props) {
+  const { language } = useLanguage()
+  const routeGoBack = routes[language].products.construction
+
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
 
@@ -34,7 +38,7 @@ export default function Template({ data }: Props) {
         <header>
           <h1>{frontmatter.name}</h1>
           <div>
-            <GoBack url={routes.pt.products.construction} />
+            <GoBack url={routeGoBack} />
             <span className="date">{frontmatter.date}</span>
           </div>
         </header>

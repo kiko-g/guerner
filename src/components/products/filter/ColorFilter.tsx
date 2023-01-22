@@ -3,16 +3,19 @@ import classNames from 'classnames'
 import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
 import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import { translations } from '../../config'
-import '../../styles/colors.css'
+import { translations } from '../../../config'
+import { Color } from '../../../types'
+import { useLanguage } from '../../../hooks/useLanguageContext'
+import '../../../styles/colors.css'
 
 type Props = {
-  hook: [string, React.Dispatch<React.SetStateAction<string>>]
+  hook: [Color, React.Dispatch<React.SetStateAction<Color>>]
 }
 
 export default function ColorFilter({ hook }: Props) {
+  const { language } = useLanguage()
   const [pickedColor, setPickedColor] = hook
-  const colors = Object.keys(translations['en'].colors)
+  const colors = Object.keys(translations[language].colors) as Color[]
 
   return (
     <Menu as="div" className="relative">

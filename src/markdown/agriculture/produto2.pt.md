@@ -1,14 +1,14 @@
 ---
 lang: pt
 pinned: false
-name: Awjirhv
-slug: produto2
-color: green
+name: Bereiuhe
+slug: produto5
+color: red
 category: all
-featuredImage: ./images/produto2.png
+featuredImage: ./images/produto1.png
 ---
 
-## Exemplo de título 2
+## Exemplo de título 1
 
 Informação sobre o produto.
 

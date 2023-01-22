@@ -15,6 +15,8 @@ export default function SendEmailForm({}: Props) {
   const header = translations[language].phrases.contacts.form.header
   const instructions = translations[language].phrases.contacts.form.text
   const placeholders = translations[language].phrases.contacts.form.placeholders
+
+  const routeHome = routes[language].home
   const routeTerms = routes[language].info.termsAndConditions
 
   const [name, setName] = useState('')
@@ -51,7 +53,7 @@ export default function SendEmailForm({}: Props) {
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
-              to={routes.pt.home}
+              to={routeHome}
               className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary
               bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
             >
@@ -73,7 +75,7 @@ export default function SendEmailForm({}: Props) {
             {/* Mobile header */}
             <div className="relative -mt-16 block lg:hidden">
               <Link
-                to={routes.pt.home}
+                to={routeHome}
                 className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary
               bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
               >

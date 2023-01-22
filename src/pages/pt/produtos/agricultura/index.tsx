@@ -1,22 +1,36 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+import { strIncludes } from '../../../../utils'
+import { translations } from '../../../../config'
+import { useLanguage } from '../../../../hooks/useLanguageContext'
 import { Layout } from '../../../../components/layout'
-import { strIncludes, tx } from '../../../../utils'
+import { Category, Colors } from '../../../../types'
 import {
   ColorFilter,
   PinToggler,
   Search,
   ViewToggler,
   CategoryFilter,
+  Product,
 } from '../../../../components/products'
-import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
+
+type Color = keyof Colors | ''
+
+type Frontmatter = {
+  lang: string
+  name: string
+  slug: string
+  pinned: boolean
+  color: Color
+  category: Category
+  featuredImage: IGatsbyImageData
+}
 
 type MarkdownData = {
   html: string
-  frontmatter: {
-    lang: string
-  }
+  frontmatter: Frontmatter
 }
 
 type Props = {
@@ -27,17 +41,38 @@ type Props = {
   }
 }
 
-const ProductsAgriculturePagePT = ({ data }: Props) => {
+const ProductsAgriculturePage = ({ data }: Props) => {
+  const { language } = useLanguage()
   const nodes = data.allMarkdownRemark.nodes
 
-  const title = `Agricultura`
-  const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
+  const title = translations[language].phrases.products.agriculture.title
+  const text = translations[language].phrases.products.agriculture.text
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
-  const [pickedColor, setPickedColor] = useState('')
   const [searchQuery, setSearchQuery] = useState('')
-  const [pickedCategories, setPickedCategories] = useState<string[]>([])
+  const [pickedColor, setPickedColor] = useState<Color>('')
+  const [pickedCategories, setPickedCategories] = useState<Category[]>([])
+
+  const filter = (product: Frontmatter) => {
+    if (product.lang !== language) return false
+
+    let textMatch = true
+    let colorMatch = true
+    let pinnedMatch = true
+    let categoryMatch = true
+
+    if (searchQuery !== '') textMatch = strIncludes(product.name, searchQuery)
+    if (pickedColor !== '') colorMatch = product.color === pickedColor
+    if (pinnedOnly) pinnedMatch = product.pinned
+
+    if (categoryMatch) {
+      categoryMatch =
+        pickedCategories.length === 0 ? true : pickedCategories.includes(product.category)
+    }
+
+    return textMatch && colorMatch && pinnedMatch && categoryMatch
+  }
 
   return (
     <Layout location="Agricultura">
@@ -68,96 +103,9 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
             )}
           >
             {nodes
-              .filter((product: any) => {
-                let textMatch = true
-                let colorMatch = true
-                let pinnedMatch = true
-                let categoryMatch = true
-
-                if (searchQuery !== '') {
-                  textMatch = strIncludes(product.frontmatter.name, searchQuery)
-                }
-
-                if (pickedColor !== '') {
-                  colorMatch = product.frontmatter.color === pickedColor
-                }
-
-                if (pinnedOnly) {
-                  pinnedMatch = product.frontmatter.pinned
-                }
-
-                if (categoryMatch) {
-                  categoryMatch =
-                    pickedCategories.length === 0
-                      ? true
-                      : pickedCategories.includes(product.frontmatter.category)
-                }
-
-                return textMatch && colorMatch && pinnedMatch && categoryMatch
-              })
-              .map((product: any, productIdx: any) => (
-                <li key={`product-${productIdx}`} className="group relative">
-                  {/* Floating top left */}
-                  <div className="absolute top-3 left-3 z-10 flex items-center justify-center gap-x-1.5">
-                    {product.frontmatter.color ? (
-                      <div
-                        className={classNames('rounded-full p-1 shadow', product.frontmatter.color)}
-                      >
-                        <PaintBrushIcon className="h-4 w-4 text-white" />
-                      </div>
-                    ) : null}
-
-                    {product.frontmatter.pinned ? (
-                      <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
-                        <StarIcon className="h-4 w-4 text-white" />
-                      </div>
-                    ) : null}
-                  </div>
-
-                  {/* Floating top right */}
-                  <div className="absolute top-3 right-3 z-10 flex items-center justify-center gap-x-1.5">
-                    {product.frontmatter.category ? (
-                      <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-white shadow">
-                        {tx('category', product.frontmatter.category, 'pt')}
-                      </div>
-                    ) : (
-                      <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-rose-500 shadow">
-                        N/A
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Card body */}
-                  <Link
-                    to={product.frontmatter.slug}
-                    className="block h-60 w-full overflow-hidden rounded-t-xl"
-                  >
-                    <img
-                      alt={`product-${productIdx}`}
-                      src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b"
-                      className="duration-400 aspect-square h-full w-full object-cover transition hover:scale-110 hover:opacity-80"
-                    />
-                  </Link>
-
-                  {/* Card footer */}
-                  <div
-                    className="flex w-full flex-col gap-y-2 rounded-b-xl bg-white 
-                    px-3.5 py-2 font-normal dark:bg-white/10"
-                  >
-                    {/* Top line */}
-                    <div className="flex items-center justify-between text-sm font-bold">
-                      <Link
-                        to={product.frontmatter.slug}
-                        className="transition hover:text-primary hover:underline hover:opacity-90 dark:hover:text-secondary"
-                      >
-                        {product.frontmatter.name}
-                      </Link>
-                      <Link to={product.frontmatter.slug}>
-                        <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-secondary" />
-                      </Link>
-                    </div>
-                  </div>
-                </li>
+              .filter((product: MarkdownData) => filter(product.frontmatter))
+              .map((productMd: MarkdownData, productIdx: number) => (
+                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
               ))}
           </ul>
         </div>
@@ -166,7 +114,7 @@ const ProductsAgriculturePagePT = ({ data }: Props) => {
   )
 }
 
-export default ProductsAgriculturePagePT
+export default ProductsAgriculturePage
 
 export const pageQuery = graphql`
   query {
@@ -178,6 +126,7 @@ export const pageQuery = graphql`
         id
         excerpt(pruneLength: 80)
         frontmatter {
+          lang
           name
           slug
           pinned

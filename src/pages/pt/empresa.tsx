@@ -3,7 +3,7 @@ import { translations } from '../../config'
 import { useLanguage } from '../../hooks/useLanguageContext'
 import { Layout } from '../../components/layout'
 
-const CompanyPagePT = () => {
+const CompanyPage = () => {
   const { language } = useLanguage()
   const location = translations[language].location.company
   const title = translations[language].phrases.company.title
@@ -21,4 +21,4 @@ const CompanyPagePT = () => {
   )
 }
 
-export default CompanyPagePT
+export default CompanyPage

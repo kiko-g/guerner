@@ -5,12 +5,12 @@ import { useLanguage } from '../../hooks/useLanguageContext'
 import { useMediaQuery } from 'usehooks-ts'
 import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../../components/contacts'
 
-const ContactsPagePT = () => {
+const ContactsPage = () => {
   const { language } = useLanguage()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   const location = translations[language].location.contacts
-  const title = translations.pt.phrases.contacts.title
+  const title = translations[language].phrases.contacts.title
 
   return (
     <Layout location={location}>
@@ -25,4 +25,4 @@ const ContactsPagePT = () => {
     </Layout>
   )
 }
-export default ContactsPagePT
+export default ContactsPage

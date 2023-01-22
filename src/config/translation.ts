@@ -1,30 +1,18 @@
+import { Categories, Colors } from '../types'
+
 interface Translation {
   location: {
     home: string
     company: string
-    products: string
+    products: {
+      main: string
+      agriculture: string
+      construction: string
+    }
     contacts: string
   }
-  colors: {
-    black: string
-    white: string
-    red: string
-    blue: string
-    green: string
-    gray: string
-    brown: string
-    yellow: string
-    orange: string
-    pink: string
-    purple: string
-  }
-  category: {
-    all: string
-    um: string
-    dois: string
-    três: string
-    quatro: string
-  }
+  colors: Colors
+  category: Categories
   phrases: {
     home: {
       title: string
@@ -99,7 +87,11 @@ const pt: Translation = {
   location: {
     home: 'Início',
     company: 'Empresa',
-    products: 'Produtos',
+    products: {
+      main: 'Produtos',
+      agriculture: 'Agricultura',
+      construction: 'Construção',
+    },
     contacts: 'Contactos',
   },
   colors: {
@@ -196,7 +188,11 @@ const en: Translation = {
   location: {
     home: 'Home',
     company: 'Company',
-    products: 'Products',
+    products: {
+      main: 'Products',
+      agriculture: 'Agriculture',
+      construction: 'Construction',
+    },
     contacts: 'Contacts',
   },
   colors: {

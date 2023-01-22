@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Link, graphql } from 'gatsby'
+import { translations } from '../../../../config'
+import { useLanguage } from '../../../../hooks/useLanguageContext'
 import { Layout } from '../../../../components/layout'
 import { ViewToggler } from '../../../../components/products'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
@@ -19,17 +21,18 @@ type Props = {
   }
 }
 
-const ProductsConstructionPagePT = ({ data }: Props) => {
+const ProductsConstructionPage = ({ data }: Props) => {
+  const { language } = useLanguage()
   const nodes = data.allMarkdownRemark.nodes
-
-  const title = `Construção`
-  const text = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet urna lacinia, facilisis risus ac, commodo neque. Phasellus vel dignissim diam. Nullam convallis nunc in porttitor bibendum. Mauris eu laoreet diam. Aliquam suscipit cursus augue eu efficitur. Praesent eu sodales purus. Donec nec odio semper, faucibus nisi a, varius sem. Nam viverra ultrices pharetra. Curabitur eget tortor ultrices, molestie erat et, varius enim. Aenean sit amet ligula vel erat dictum accumsan. Phasellus ornare dictum sodales.`
+  const location = translations[language].location.products.construction
+  const title = translations[language].phrases.products.construction.title
+  const text = translations[language].phrases.products.construction.text
 
   const [viewType, setViewType] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
-    <Layout location="Construção">
+    <Layout location={location}>
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
@@ -62,7 +65,10 @@ const ProductsConstructionPagePT = ({ data }: Props) => {
                 >
                   <img
                     alt={`product-${productIdx}`}
-                    src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                    src={
+                      product.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images
+                        .fallback.src
+                    }
                     className="h-[350px] w-full overflow-hidden object-cover transition 
                       duration-500 sm:h-[450px]"
                   />
@@ -83,7 +89,7 @@ const ProductsConstructionPagePT = ({ data }: Props) => {
   )
 }
 
-export default ProductsConstructionPagePT
+export default ProductsConstructionPage
 
 export const pageQuery = graphql`
   query {

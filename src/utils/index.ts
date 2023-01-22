@@ -11,8 +11,3 @@ export const strIncludes = (str: string, query: string, simple?: boolean) =>
         .replace('.', '')
         .replace(':', '')
         .includes(query.toLowerCase().replace(/\s+/g, ''))
-
-export const tx = (type: string, keyword: string, language: string) => {
-  // @ts-ignore
-  return translations[language][type][keyword]
-}

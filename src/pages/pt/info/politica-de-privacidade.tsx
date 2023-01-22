@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { Layout } from '../../../components/layout'
 import { translations } from '../../../config'
+import { useLanguage } from '../../../hooks/useLanguageContext'
 
 type MarkdownData = {
   html: string
@@ -19,7 +20,9 @@ type Props = {
 }
 
 export default function PrivacyPolicy({ data }: Props) {
-  const title = translations.pt.footer.privacy
+  const { language } = useLanguage()
+
+  const title = translations[language].footer.privacy
   const info = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === 'pt')!
 
   return (

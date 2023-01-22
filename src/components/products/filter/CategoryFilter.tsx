@@ -1,14 +1,17 @@
 import React from 'react'
 import classNames from 'classnames'
-import { translations } from '../../config'
+import { translations } from '../../../config'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
+import { Category } from '../../../types'
+import { useLanguage } from '../../../hooks/useLanguageContext'
 
 type Props = {
-  hook: [string[], React.Dispatch<React.SetStateAction<string[]>>]
+  hook: [Category[], React.Dispatch<React.SetStateAction<Category[]>>]
 }
 
 export default function CategoryFilter({ hook }: Props) {
+  const { language } = useLanguage()
   const [pickedCategories, setPickedCategories] = hook
   const categories = Object.keys(translations['en'].category)
   const text = `Categorias`
