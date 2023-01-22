@@ -2,10 +2,10 @@
 lang: en
 pinned: false
 name: Bereiuhe
-slug: produto4
+slug: produto2
 color: red
 category: all
-featuredImage: ./produto4.jpg
+featuredImage: ../images/produto2.jpg
 ---
 
 ## Title example 1

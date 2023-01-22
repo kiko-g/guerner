@@ -1,14 +1,14 @@
 ---
 lang: pt
 pinned: true
-name: Abciehefrhrfs
-slug: produto5
-color: blue
-category: um
-featuredImage: ./produto5.jpg
+name: Cgefygfre
+slug: produto4
+color: red
+category: all
+featuredImage: ../images/produto4.jpg
 ---
 
-## Exemplo de título 5
+## Exemplo de título 4
 
 Informação sobre o produto.
 

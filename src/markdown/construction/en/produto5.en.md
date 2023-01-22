@@ -5,7 +5,7 @@ name: Bereiuhe
 slug: produto5
 color: red
 category: all
-featuredImage: ./produto5.jpg
+featuredImage: ../images/produto5.jpg
 ---
 
 ## Title example 1

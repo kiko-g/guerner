@@ -1,11 +1,11 @@
 ---
-lang: pt
+lang: en
 pinned: false
 name: Dieufqhfr
 slug: produto3
 color: black
 category: dois
-featuredImage: ./produto3.jpg
+featuredImage: ../images/produto3.jpg
 ---
 
 ## Exemplo de título 3

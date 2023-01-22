@@ -1,11 +1,11 @@
 ---
-lang: pt
+lang: en
 pinned: true
 name: Cgefygfre
 slug: produto4
 color: red
 category: all
-featuredImage: ./produto4.jpg
+featuredImage: ../images/produto4.jpg
 ---
 
 ## Exemplo de título 4

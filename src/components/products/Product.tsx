@@ -24,7 +24,6 @@ type Props = {
 export default function Product({ product }: Props) {
   const { language } = useLanguage()
   const coverImage = getImage(product.featuredImage)
-  console.log(product.name, product.featuredImage, 1)
 
   return (
     <li className="group relative">

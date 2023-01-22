@@ -1,14 +1,14 @@
 ---
 lang: pt
 pinned: false
-name: Awjirhv
+name: Bereiuhe
 slug: produto2
-color: green
+color: red
 category: all
-featuredImage: ./produto2.jpg
+featuredImage: ../images/produto2.jpg
 ---
 
-## Exemplo de título 2
+## Exemplo de título 1
 
 Informação sobre o produto.
 

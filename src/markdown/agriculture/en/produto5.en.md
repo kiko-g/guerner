@@ -5,7 +5,7 @@ name: Abciehefrhrfs
 slug: produto5
 color: blue
 category: um
-featuredImage: ./produto5.jpg
+featuredImage: ../images/produto5.jpg
 ---
 
 ## Exemplo de título 5

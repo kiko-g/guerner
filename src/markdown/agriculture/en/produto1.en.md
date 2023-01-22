@@ -1,14 +1,14 @@
 ---
 lang: en
-pinned: true
-name: Cgefygfre
-slug: produto4
+pinned: false
+name: Bereiuhe
+slug: produto1
 color: red
 category: all
-featuredImage: ./produto4.jpg
+featuredImage: ../images/produto1.jpg
 ---
 
-## Exemplo de título 4
+## Exemplo de título 1
 
 Informação sobre o produto.
 
