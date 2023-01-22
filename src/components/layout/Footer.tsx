@@ -7,7 +7,7 @@ type Props = {
   title: string
 }
 
-const Footer = ({ title }: Props) => {
+export default function Footer({ title }: Props) {
   const { language } = useLanguage()
 
   const links = [
@@ -81,5 +81,3 @@ const Footer = ({ title }: Props) => {
     </footer>
   )
 }
-
-export default Footer

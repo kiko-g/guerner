@@ -11,7 +11,7 @@ interface HamburgerProps {
   open: boolean
 }
 
-const Hamburger = ({ open }: HamburgerProps) => {
+export default function Hamburger({ open }: HamburgerProps) {
   const { language, setLanguage } = useLanguage()
 
   return (
@@ -85,5 +85,3 @@ const Hamburger = ({ open }: HamburgerProps) => {
     </div>
   )
 }
-
-export default Hamburger

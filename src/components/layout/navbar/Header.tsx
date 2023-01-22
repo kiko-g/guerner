@@ -12,7 +12,7 @@ interface HeaderProps {
   navigation: NavItem[]
 }
 
-const Header = ({ title, location, navigation }: HeaderProps) => {
+export default function Header({ title, location, navigation }: HeaderProps) {
   const { language, setLanguage } = useLanguage()
 
   return (
@@ -61,5 +61,3 @@ const Header = ({ title, location, navigation }: HeaderProps) => {
     </div>
   )
 }
-
-export default Header

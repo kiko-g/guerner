@@ -25,7 +25,7 @@ const useLocalStorage = (key: string, initialValue?: any) => {
   return [storedValue, setValue]
 }
 
-const useDarkMode = () => {
+export default function useDarkMode() {
   const [enabled, setEnabled] = useLocalStorage('dark-theme')
 
   // @ts-ignore
@@ -40,5 +40,3 @@ const useDarkMode = () => {
 
   return [enabled, setEnabled]
 }
-
-export default useDarkMode

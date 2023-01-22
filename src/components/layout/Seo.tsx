@@ -18,7 +18,7 @@ interface Props {
   description?: string
 }
 
-const Seo = ({ title, lang = `pt`, meta = [], description = `` }: Props) => {
+export default function Seo({ title, lang = `pt`, meta = [], description = `` }: Props) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -81,5 +81,3 @@ const Seo = ({ title, lang = `pt`, meta = [], description = `` }: Props) => {
     />
   )
 }
-
-export default Seo

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/outline'
 
-const BackToTopButton = () => {
+export default function BackToTopButton() {
   const [hidden, setHidden] = useState(true)
 
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -23,5 +23,3 @@ const BackToTopButton = () => {
     </button>
   )
 }
-
-export default BackToTopButton

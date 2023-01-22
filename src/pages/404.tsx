@@ -4,7 +4,7 @@ import { Banner } from '../images'
 import { useLanguage } from '../hooks/useLanguageContext'
 import { LinkFill } from '../components/utils'
 
-const NotFoundPage = () => {
+export default function NotFoundPage() {
   const { language } = useLanguage()
   const link = `/${language}`
 
@@ -42,5 +42,3 @@ const NotFoundPage = () => {
     </Layout>
   )
 }
-
-export default NotFoundPage

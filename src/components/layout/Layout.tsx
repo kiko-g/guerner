@@ -10,7 +10,7 @@ type Props = {
   home?: boolean
 }
 
-const Layout = ({ children, location = 'Unknown', home = false }: Props) => {
+export default function Layout({ children, location = 'Unknown', home = false }: Props) {
   const { language } = useLanguage()
   const data = useStaticQuery(graphql`
     query titleQuery {
@@ -50,5 +50,3 @@ const Layout = ({ children, location = 'Unknown', home = false }: Props) => {
     </LanguageProvider>
   )
 }
-
-export default Layout

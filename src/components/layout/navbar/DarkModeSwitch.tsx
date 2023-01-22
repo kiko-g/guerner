@@ -4,7 +4,7 @@ import useDarkMode from '../../../hooks/useDarkMode'
 import { Switch } from '@headlessui/react'
 import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
 
-const DarkModeSwitch = () => {
+export default function DarkModeSwitch() {
   const [enabled, setEnabled] = useDarkMode()
 
   return (
@@ -31,5 +31,3 @@ const DarkModeSwitch = () => {
     </Switch.Group>
   )
 }
-
-export default DarkModeSwitch

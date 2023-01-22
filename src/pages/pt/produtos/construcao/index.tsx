@@ -21,7 +21,7 @@ type Props = {
   }
 }
 
-const ProductsConstructionPage = ({ data }: Props) => {
+export default function ProductsConstructionPage({ data }: Props) {
   const { language } = useLanguage()
   const nodes = data.allMarkdownRemark.nodes
   const location = translations[language].location.products.construction
@@ -88,8 +88,6 @@ const ProductsConstructionPage = ({ data }: Props) => {
     </Layout>
   )
 }
-
-export default ProductsConstructionPage
 
 export const pageQuery = graphql`
   query {

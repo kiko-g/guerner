@@ -4,7 +4,7 @@ import { useLanguage } from '../../../hooks/useLanguageContext'
 import { Layout } from '../../../components/layout'
 import { FeaturedAgriculture, FeaturedConstruction } from '../../../components/products'
 
-const ProductsPage = () => {
+export default function ProductsPage() {
   const { language } = useLanguage()
 
   const location = translations[language].location.products.main
@@ -24,5 +24,3 @@ const ProductsPage = () => {
     </Layout>
   )
 }
-
-export default ProductsPage

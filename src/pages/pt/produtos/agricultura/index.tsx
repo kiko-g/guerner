@@ -41,7 +41,7 @@ type Props = {
   }
 }
 
-const ProductsAgriculturePage = ({ data }: Props) => {
+export default function ProductsAgriculturePage({ data }: Props) {
   const { language } = useLanguage()
   const nodes = data.allMarkdownRemark.nodes
 
@@ -113,8 +113,6 @@ const ProductsAgriculturePage = ({ data }: Props) => {
     </Layout>
   )
 }
-
-export default ProductsAgriculturePage
 
 export const pageQuery = graphql`
   query {

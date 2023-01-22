@@ -5,7 +5,7 @@ import { useLanguage } from '../../hooks/useLanguageContext'
 import { useMediaQuery } from 'usehooks-ts'
 import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../../components/contacts'
 
-const ContactsPage = () => {
+export default function ContactsPage() {
   const { language } = useLanguage()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
@@ -25,4 +25,3 @@ const ContactsPage = () => {
     </Layout>
   )
 }
-export default ContactsPage

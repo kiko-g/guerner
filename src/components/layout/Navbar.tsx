@@ -14,7 +14,7 @@ interface NavbarProps {
   special?: boolean
 }
 
-const Navbar = ({ title, location, special }: NavbarProps) => {
+export default function Navbar({ title, location, special }: NavbarProps) {
   const { language } = useLanguage()
   const navigation = getNavigation(language)
 
@@ -48,5 +48,3 @@ const Navbar = ({ title, location, special }: NavbarProps) => {
     </Disclosure>
   )
 }
-
-export default Navbar
