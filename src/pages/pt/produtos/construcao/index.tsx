@@ -43,7 +43,6 @@ type Props = {
 
 export default function ProductsConstructionPage({ data }: Props) {
   const { language } = useLanguage()
-  const nodes = data.allMarkdownRemark.nodes
 
   const location = translations[language].location.products.construction
   const title = translations[language].phrases.products.construction.title
@@ -55,7 +54,9 @@ export default function ProductsConstructionPage({ data }: Props) {
   const [pickedColor, setPickedColor] = useState<Color>('')
   const [pickedCategories, setPickedCategories] = useState<Category[]>([])
 
-  const filter = (product: Frontmatter) => {
+  const products = data.allMarkdownRemark.nodes.filter((md: MarkdownData) => {
+    const product = md.frontmatter
+
     if (product.lang !== language) return false
 
     let textMatch = true
@@ -73,7 +74,7 @@ export default function ProductsConstructionPage({ data }: Props) {
     }
 
     return textMatch && colorMatch && pinnedMatch && categoryMatch
-  }
+  })
 
   return (
     <Layout location={location}>
@@ -84,7 +85,7 @@ export default function ProductsConstructionPage({ data }: Props) {
         </header>
 
         <div className="flex w-full flex-col gap-y-6">
-          {/* Filters */}
+          {/* Products */}
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
@@ -103,11 +104,9 @@ export default function ProductsConstructionPage({ data }: Props) {
                 : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
             )}
           >
-            {nodes
-              .filter((product: MarkdownData) => filter(product.frontmatter))
-              .map((productMd: MarkdownData, productIdx: number) => (
-                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
-              ))}
+            {products.map((productMd: MarkdownData, productIdx: number) => (
+              <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+            ))}
           </ul>
         </div>
       </main>

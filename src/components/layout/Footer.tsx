@@ -34,7 +34,11 @@ export default function Footer({ title }: Props) {
               to={routes[language].home}
               className="group flex items-center justify-center gap-x-3"
             >
-              <img className="h-12 w-12 rounded-full" src={'/images/icon.png'} alt={title} />
+              <img
+                alt={title}
+                src={'/images/icon.png'}
+                className="h-12 w-12 rounded-full bg-primary p-0.5 shadow"
+              />
               <h5
                 className="flex max-w-xs flex-col font-headings text-sm font-medium 
                 transition group-hover:underline md:text-base md:font-bold"

@@ -43,7 +43,6 @@ type Props = {
 
 export default function ProductsAgriculturePage({ data }: Props) {
   const { language } = useLanguage()
-  const nodes = data.allMarkdownRemark.nodes
 
   const location = translations[language].location.products.agriculture
   const title = translations[language].phrases.products.agriculture.title
@@ -55,7 +54,8 @@ export default function ProductsAgriculturePage({ data }: Props) {
   const [pickedColor, setPickedColor] = useState<Color>('')
   const [pickedCategories, setPickedCategories] = useState<Category[]>([])
 
-  const filter = (product: Frontmatter) => {
+  const products = data.allMarkdownRemark.nodes.filter((md: MarkdownData) => {
+    const product = md.frontmatter
     if (product.lang !== language) return false
 
     let textMatch = true
@@ -73,7 +73,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
     }
 
     return textMatch && colorMatch && pinnedMatch && categoryMatch
-  }
+  })
 
   return (
     <Layout location={location}>
@@ -95,7 +95,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
             </div>
           </div>
 
-          {/* Listing */}
+          {/* Products */}
           <ul
             className={classNames(
               viewType
@@ -103,11 +103,9 @@ export default function ProductsAgriculturePage({ data }: Props) {
                 : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
             )}
           >
-            {nodes
-              .filter((product: MarkdownData) => filter(product.frontmatter))
-              .map((productMd: MarkdownData, productIdx: number) => (
-                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
-              ))}
+            {products.map((productMd: MarkdownData, productIdx: number) => (
+              <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+            ))}
           </ul>
         </div>
       </main>
