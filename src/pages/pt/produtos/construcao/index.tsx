@@ -1,16 +1,36 @@
 import React, { useState } from 'react'
-import { Link, graphql } from 'gatsby'
+import classNames from 'classnames'
+import { graphql } from 'gatsby'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
+import { strIncludes } from '../../../../utils'
 import { translations } from '../../../../config'
 import { useLanguage } from '../../../../hooks/useLanguageContext'
 import { Layout } from '../../../../components/layout'
-import { ViewToggler } from '../../../../components/products'
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline'
+import { Category, Colors } from '../../../../types'
+import {
+  ColorFilter,
+  PinToggler,
+  Search,
+  ViewToggler,
+  CategoryFilter,
+  Product,
+} from '../../../../components/products'
+
+type Color = keyof Colors | ''
+
+type Frontmatter = {
+  lang: string
+  name: string
+  slug: string
+  pinned: boolean
+  color: Color
+  category: Category
+  featuredImage: IGatsbyImageData
+}
 
 type MarkdownData = {
   html: string
-  frontmatter: {
-    lang: string
-  }
+  frontmatter: Frontmatter
 }
 
 type Props = {
@@ -24,12 +44,36 @@ type Props = {
 export default function ProductsConstructionPage({ data }: Props) {
   const { language } = useLanguage()
   const nodes = data.allMarkdownRemark.nodes
+
   const location = translations[language].location.products.construction
   const title = translations[language].phrases.products.construction.title
   const text = translations[language].phrases.products.construction.text
 
   const [viewType, setViewType] = useState(false)
+  const [pinnedOnly, setPinnedOnly] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
+  const [pickedColor, setPickedColor] = useState<Color>('')
+  const [pickedCategories, setPickedCategories] = useState<Category[]>([])
+
+  const filter = (product: Frontmatter) => {
+    if (product.lang !== language) return false
+
+    let textMatch = true
+    let colorMatch = true
+    let pinnedMatch = true
+    let categoryMatch = true
+
+    if (searchQuery !== '') textMatch = strIncludes(product.name, searchQuery)
+    if (pickedColor !== '') colorMatch = product.color === pickedColor
+    if (pinnedOnly) pinnedMatch = product.pinned
+
+    if (categoryMatch) {
+      categoryMatch =
+        pickedCategories.length === 0 ? true : pickedCategories.includes(product.category)
+    }
+
+    return textMatch && colorMatch && pinnedMatch && categoryMatch
+  }
 
   return (
     <Layout location={location}>
@@ -41,47 +85,29 @@ export default function ProductsConstructionPage({ data }: Props) {
 
         <div className="flex w-full flex-col gap-y-6">
           {/* Filters */}
-          <div className="flex items-center justify-between gap-x-2">
-            <ViewToggler hook={[viewType, setViewType]} />
-            <input
-              type="search"
-              id="searchProduct"
-              name="searchProduct"
-              title="Enter your search string here"
-              placeholder="Search"
-              className=""
-              value={searchQuery}
-              onChange={e => setSearchQuery(e.target.value)}
-            />
+          <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
+            <Search hook={[searchQuery, setSearchQuery]} />
+            <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
+              <CategoryFilter hook={[pickedCategories, setPickedCategories]} />
+              <ColorFilter hook={[pickedColor, setPickedColor]} />
+              <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
+              <ViewToggler hook={[viewType, setViewType]} />
+            </div>
           </div>
 
           {/* Listing */}
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {nodes.map((product: any, productIdx: any) => (
-              <li key={`product-${productIdx}`}>
-                <Link
-                  to={product.frontmatter.slug}
-                  className="group block overflow-hidden rounded transition hover:opacity-80"
-                >
-                  <img
-                    alt={`product-${productIdx}`}
-                    src={
-                      product.frontmatter.featuredImage.childImageSharp.gatsbyImageData.images
-                        .fallback.src
-                    }
-                    className="h-[350px] w-full overflow-hidden object-cover transition 
-                      duration-500 sm:h-[450px]"
-                  />
-
-                  <div className="flex items-center justify-between bg-white px-3 py-2">
-                    <span className="text-xs text-gray-700 group-hover:underline group-hover:underline-offset-4">
-                      {product.frontmatter.name}
-                    </span>
-                    <ArrowTopRightOnSquareIcon className="h-5 w-5" />
-                  </div>
-                </Link>
-              </li>
-            ))}
+          <ul
+            className={classNames(
+              viewType
+                ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
+                : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
+            )}
+          >
+            {nodes
+              .filter((product: MarkdownData) => filter(product.frontmatter))
+              .map((productMd: MarkdownData, productIdx: number) => (
+                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+              ))}
           </ul>
         </div>
       </main>
@@ -92,16 +118,18 @@ export default function ProductsConstructionPage({ data }: Props) {
 export const pageQuery = graphql`
   query {
     allMarkdownRemark(
-      sort: [{ frontmatter: { pinned: DESC } }, { frontmatter: { name: ASC } }]
+      sort: [{ frontmatter: { name: ASC } }]
       filter: { fileAbsolutePath: { regex: "/(construction)/" } }
     ) {
       nodes {
         id
-        excerpt(pruneLength: 80)
         frontmatter {
+          lang
           name
           slug
           pinned
+          color
+          category
           featuredImage {
             childImageSharp {
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

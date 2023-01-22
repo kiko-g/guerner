@@ -45,6 +45,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
   const { language } = useLanguage()
   const nodes = data.allMarkdownRemark.nodes
 
+  const location = translations[language].location.products.agriculture
   const title = translations[language].phrases.products.agriculture.title
   const text = translations[language].phrases.products.agriculture.text
 
@@ -75,7 +76,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
   }
 
   return (
-    <Layout location="Agricultura">
+    <Layout location={location}>
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
