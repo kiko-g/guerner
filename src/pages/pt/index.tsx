@@ -9,7 +9,7 @@ export default function IndexPage() {
   const location = translations[language].location.home
 
   return (
-    <Layout location={location} home>
+    <Layout location={location} special>
       <HeroBanner />
       <CompanyCTA />
       <ProductsCTA />

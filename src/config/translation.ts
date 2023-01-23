@@ -50,6 +50,8 @@ interface Translation {
     company: {
       title: string
       text: string
+      takeMeToPresentation: string
+      takeMeToProduction: string
       sectionIds: {
         welcome: string
         presentation: string
@@ -165,8 +167,10 @@ const pt: Translation = {
       },
     },
     company: {
-      title: `Empresa`,
-      text: `A Guerner & Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.`,
+      title: `Conheça melhor a nossa empresa`,
+      text: `Aqui pode saber mais sobre a história e atualidade da Guerner & Irmãos.`,
+      takeMeToPresentation: `Apresentação`,
+      takeMeToProduction: `Produção e fabrico`,
       sectionIds: {
         welcome: `bem-vindo`,
         presentation: `apresentacao`,
@@ -284,6 +288,8 @@ const en: Translation = {
     company: {
       title: `Company`,
       text: `Texto mas em inglês`,
+      takeMeToPresentation: `string`,
+      takeMeToProduction: `string`,
       sectionIds: {
         welcome: `welcome`,
         presentation: `presentation`,

@@ -24,6 +24,7 @@ module.exports = {
       backgroundImage: {
         // path relative to src/styles
         banner: 'url(../images/hero/banner.png)',
+        building: 'url(../images/building.png)',
         cta: 'url(../images/backgrounds/cta.png)',
         'cta-dark': 'url(../images/backgrounds/cta-dark.png)',
         agriculture: 'url(../images/products/agriculture.png)',
@@ -73,12 +74,20 @@ module.exports = {
           '0%': { transform: 'scale(0, 0.025)' },
           '50%': { transform: 'scale(1, 0.025)' },
         },
+        gradient: {
+          '0%': { backgroundPosition: '0% 0%' },
+          '25%': { backgroundPosition: '50% 50%' },
+          '50%': { backgroundPosition: '100% 100%' },
+          '75%': { backgroundPosition: '50% 50%' },
+          '100%': { backgroundPosition: '0% 0%' },
+        },
       },
       animation: {
         lava: 'lava 5s ease infinite',
         dark: 'dark 400ms ease-in-out',
         light: 'light 400ms ease-in-out',
         wipe: 'wipe-enter 1s',
+        gradient: 'gradient 20s ease infinite',
       },
       backgroundPosition: {
         'center-half': '60% 27%',

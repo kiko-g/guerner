@@ -9,7 +9,7 @@ export default function Production({}: Props) {
   const sectionId = translations[language].phrases.company.sectionIds.production
 
   return (
-    <section className={sectionId}>
+    <section id={sectionId}>
       <div>Production</div>
     </section>
   )
