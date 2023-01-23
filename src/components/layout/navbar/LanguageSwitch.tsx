@@ -1,31 +1,49 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import classNames from 'classnames'
+import { routes, translations } from '../../../config'
+import { switchRouteLanguage } from '../../../utils'
 import { Language } from '../../../types'
-import { Switch } from '@headlessui/react'
+import { Switch, Transition } from '@headlessui/react'
 import { LanguageIcon } from '@heroicons/react/24/solid'
+import { useLanguage } from '../../../hooks/useLanguageContext'
+import { Link } from 'gatsby'
 
-type Props = {
-  languageHook: [Language, React.Dispatch<React.SetStateAction<Language>>]
-}
+type Props = {}
 
-export default function LanguageSwitch({ languageHook }: Props) {
-  const [language, setLanguage] = languageHook
+export default function LanguageSwitch({}: Props) {
+  const { language } = useLanguage()
+  const languages = ['pt', 'en'] as Language[]
+  const [open, setOpen] = React.useState(false)
 
   return (
-    <Switch.Group>
-      <Switch
-        checked={language === 'pt'}
-        onChange={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
+    <div className="flex flex-row gap-x-4">
+      <div
         className={classNames(
-          'group flex items-center justify-center gap-x-0.5 rounded-full text-sm'
+          open
+            ? 'mr-3 flex flex-row gap-x-1.5 rounded bg-black/25 px-1.5 py-1 dark:bg-white/10'
+            : 'hidden'
         )}
       >
-        <LanguageIcon className="ease block h-5 w-5 text-white transition-all group-hover:opacity-80 dark:text-white md:h-7 md:w-7" />
-        <div className="flex flex-col -space-y-1 group-hover:opacity-80">
-          {language === 'pt' ? <span>PT</span> : <span>EN</span>}
-          {language === 'pt' ? <span>🇵🇹</span> : <span>🇬🇧</span>}
-        </div>
-      </Switch>
-    </Switch.Group>
+        {languages.map(lang => (
+          <Link
+            key={lang}
+            to={switchRouteLanguage(lang)}
+            className={classNames(
+              'my-auto flex h-min flex-row items-center gap-x-2 rounded-sm px-1 py-0.5 transition hover:bg-white/50',
+              language === lang ? 'bg-teal-500' : ''
+            )}
+          >
+            <span className="text-sm font-normal uppercase">{lang}</span>
+          </Link>
+        ))}
+      </div>
+
+      <button
+        onClick={() => setOpen(!open)}
+        className="rounded-xl border-2 border-teal-700 bg-teal-700/50 p-1 transition hover:bg-teal-700/90"
+      >
+        <LanguageIcon className="h-6 w-6" />
+      </button>
+    </div>
   )
 }

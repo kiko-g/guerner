@@ -18,3 +18,13 @@ export const divideTitle = (title: string) => [
   title.slice(0, title.lastIndexOf(' ', title.lastIndexOf(' ') - 1)),
   title.slice(title.lastIndexOf(' ', title.lastIndexOf(' ') - 1)),
 ]
+
+export const switchRouteLanguage = (language: string): string => {
+  if (typeof window === 'undefined') return '/'
+
+  const route = window.location.pathname
+  const routeParts = route.split('/')
+  routeParts[1] = language
+
+  return routeParts.join('/')
+}

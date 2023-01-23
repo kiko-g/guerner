@@ -5,6 +5,7 @@ import { Link } from 'gatsby'
 import { routes } from '../../../config'
 import { NavItem } from '../../../types'
 import DarkModeSwitch from './DarkModeSwitch'
+import LanguageSwitch from './LanguageSwitch'
 
 interface HeaderProps {
   title: string
@@ -34,7 +35,8 @@ export default function Header({ title, location, navigation }: HeaderProps) {
       </div>
 
       <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-1.5">
-        <div>
+        <div className="flex items-center justify-center gap-x-2">
+          <LanguageSwitch />
           <DarkModeSwitch />
         </div>
         <div className="flex gap-x-6">
