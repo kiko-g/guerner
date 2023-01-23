@@ -1,6 +1,7 @@
 import { Categories, Colors } from '../types'
 
 interface Translation {
+  categoriesName: string
   location: {
     home: string
     company: string
@@ -22,6 +23,16 @@ interface Translation {
         header: string
         description: string
         takeMeThere: string
+        goToPresentationSection: {
+          header: string
+          subheader: string
+          description: string
+        }
+        goToProductionSection: {
+          header: string
+          subheader: string
+          description: string
+        }
       }
       visitProducts: {
         header: string
@@ -39,6 +50,11 @@ interface Translation {
     company: {
       title: string
       text: string
+      sectionIds: {
+        welcome: string
+        presentation: string
+        production: string
+      }
     }
     products: {
       header: string
@@ -84,6 +100,7 @@ interface Translation {
 }
 
 const pt: Translation = {
+  categoriesName: `Categorias`,
   location: {
     home: 'Início',
     company: 'Empresa',
@@ -123,6 +140,16 @@ const pt: Translation = {
         header: `Quem somos nós?`,
         description: `A Guerner & Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.`,
         takeMeThere: `Conheça-nos melhor`,
+        goToPresentationSection: {
+          header: `Apresentação`,
+          subheader: `Empresa e a sua história`,
+          description: `Navegue diretamente para a secção que fala sobre as origens, costumes e práticas da Guerner & Irmãos.`,
+        },
+        goToProductionSection: {
+          header: `Produção`,
+          subheader: `Metodologias da empresa`,
+          description: `Navegue diretamente para a secção que descreve os setores e metodologias de produção da Guerner & Irmãos.`,
+        },
       },
       visitProducts: {
         header: `O que fornecemos?`,
@@ -140,6 +167,11 @@ const pt: Translation = {
     company: {
       title: `Empresa`,
       text: `A Guerner & Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.`,
+      sectionIds: {
+        welcome: `bem-vindo`,
+        presentation: `apresentacao`,
+        production: `producao`,
+      },
     },
     products: {
       header: `Produtos`,
@@ -185,6 +217,7 @@ const pt: Translation = {
 }
 
 const en: Translation = {
+  categoriesName: `Categories`,
   location: {
     home: 'Home',
     company: 'Company',
@@ -224,6 +257,16 @@ const en: Translation = {
         header: `Who are we?`,
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum tincidunt duis.`,
         takeMeThere: `Get to know us better`,
+        goToPresentationSection: {
+          header: `Presentation`,
+          subheader: `Get to know the company and its history`,
+          description: `Navigate directly to the section that dives into the origins and traditions of Guerner & Irmãos.`,
+        },
+        goToProductionSection: {
+          header: `Production`,
+          subheader: `Get to know the methologies of the company`,
+          description: `Navigate directly yo the section that takes a look at the production sectors and methologies of Guerner & Irmãos.`,
+        },
       },
       visitProducts: {
         header: `Products lorem`,
@@ -241,6 +284,11 @@ const en: Translation = {
     company: {
       title: `Company`,
       text: `Texto mas em inglês`,
+      sectionIds: {
+        welcome: `welcome`,
+        presentation: `presentation`,
+        production: `production`,
+      },
     },
     products: {
       header: `Products`,
