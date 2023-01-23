@@ -1,5 +1,5 @@
 article {
-  @apply mx-auto mt-0 w-full p-0 text-center font-normal lg:text-justify;
+  @apply mx-auto mt-0 w-full max-w-xs p-0 text-left font-normal lg:max-w-4xl lg:text-justify;
 }
 
 article a {
@@ -7,7 +7,7 @@ article a {
 }
 
 article p {
-  @apply my-2 lg:my-3;
+  @apply my-2 text-sm leading-snug lg:my-3 lg:text-base lg:leading-normal;
 }
 
 article h1,
@@ -43,7 +43,17 @@ article blockquote {
 }
 
 /* Alternate styles*/
+article.alt h1,
+article.alt h2,
+article.alt h3,
+article.alt h4,
+article.alt h5,
+article.alt h6 {
+  @apply text-secondary dark:text-white;
+}
+
 article.alt blockquote {
-  @apply my-8 rounded border-l-4 border-secondary bg-ice/10 py-1 pl-4 pr-6 
-  font-medium text-white dark:border-tertiary dark:bg-ice/5;
+  @apply my-8 rounded border-l-4 border-secondary bg-ice/10 py-1 pl-4 
+  pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary 
+  dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
 }
