@@ -68,7 +68,9 @@ export default function Footer({ title }: Props) {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-y-1 py-2 md:flex-row md:gap-y-0 md:py-2">
-          <span className="md:text-center">© 2022 {title}™</span>
+          <span className="md:text-center">
+            © {new Date().getFullYear()} {title}™
+          </span>
           <span className="text-white/25">
             Made by{' '}
             <a
