@@ -6,7 +6,7 @@ import { Language } from '../../../types'
 import { Switch, Transition } from '@headlessui/react'
 import { LanguageIcon } from '@heroicons/react/24/solid'
 import { useLanguage } from '../../../hooks/useLanguageContext'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 type Props = {}
 
@@ -14,6 +14,20 @@ export default function LanguageSwitch({}: Props) {
   const { language } = useLanguage()
   const languages = ['pt', 'en'] as Language[]
   const [open, setOpen] = React.useState(false)
+
+  const {
+    pages: { nodes },
+  } = useStaticQuery(graphql`
+    {
+      pages: allSitePage {
+        nodes {
+          path
+        }
+      }
+    }
+  `)
+
+  const gatsbyRoutes = nodes.map((node: { path: string }) => node.path)
 
   return (
     <div className="flex flex-row gap-x-4">
@@ -27,7 +41,7 @@ export default function LanguageSwitch({}: Props) {
         {languages.map(lang => (
           <Link
             key={lang}
-            to={switchRouteLanguage(lang)}
+            to={switchRouteLanguage(language, lang)}
             className={classNames(
               'my-auto flex h-min flex-row items-center gap-x-2 rounded-sm px-1 py-0.5 transition hover:bg-white/50',
               language === lang ? 'bg-teal-500' : ''
