@@ -2,6 +2,8 @@
 lang: pt
 ---
 
+## Apresentação
+
 A empresa Guerner & Irmãos SA foi constituída em 1958, com sede social em Rua Pereira Guerner, no 1649, Perosinho, com o capital social de 2.500.000,00€, representada pelo Presidente do Conselho de Administração, Sr. Manuel Joaquim de Sousa Guerner.
 
 A Guerner Irmãos, SA, tem como atividade a produção de têxteis técnicos para a agricultura e construção civil, utilizando como matéria-prima principal o polietileno.
