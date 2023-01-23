@@ -27,6 +27,7 @@ module.exports = {
         building: 'url(../images/building.png)',
         cta: 'url(../images/backgrounds/cta.png)',
         'cta-dark': 'url(../images/backgrounds/cta-dark.png)',
+        'cta-tailwind': 'url(../images/backgrounds/cta-tailwind.jpg)',
         agriculture: 'url(../images/products/agriculture.png)',
         construction: 'url(../images/products/construction.png)',
       },
@@ -87,7 +88,7 @@ module.exports = {
         dark: 'dark 400ms ease-in-out',
         light: 'light 400ms ease-in-out',
         wipe: 'wipe-enter 1s',
-        gradient: 'gradient 20s ease infinite',
+        gradient: 'gradient 10s ease-in-out infinite',
       },
       backgroundPosition: {
         'center-half': '60% 27%',

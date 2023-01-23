@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useLanguage } from '../../hooks/useLanguageContext'
 import { translations } from '../../config'
-import { Building } from '../../images'
+import { Building, Rays } from '../../images'
 
 type Frontmatter = {
   lang: string
@@ -42,12 +42,19 @@ export default function Presentation({}: Props) {
   const html = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === language)!.html
 
   return (
-    <section id={sectionId} className="grid grid-cols-1 overflow-hidden bg-gray-50 lg:grid-cols-2">
-      <div className="relative flex items-center justify-center bg-cta bg-cover px-8 dark:bg-cta-dark md:px-12 lg:px-16">
+    <section id={sectionId} className="grid grid-cols-1 overflow-hidden lg:grid-cols-2">
+      <div
+        className="relative flex flex-col items-center justify-center 
+        bg-gradient-to-br from-teal-800 to-teal-600 dark:from-slate-900 dark:to-slate-900"
+      >
+        <img
+          alt="rays"
+          src={Rays}
+          className="absolute -bottom-24 -left-24 h-auto w-full object-cover opacity-100 dark:opacity-40"
+        />
         <div className="mx-auto flex max-w-xl flex-col items-start justify-center gap-y-3 py-8 text-center sm:text-left">
-          <article className="text-center md:mt-4" dangerouslySetInnerHTML={{ __html: html }} />
+          <article className="z-40 text-white md:mt-4" dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <div className="bottom-0 z-50 hidden h-2 w-full bg-gradient-to-r from-primary to-secondary lg:absolute" />
       </div>
 
       <img alt="Building" src={Building} className="h-48 w-full object-cover lg:h-full" />
