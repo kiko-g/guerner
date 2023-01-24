@@ -23,7 +23,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
       as="nav"
       defaultOpen={false}
       className={classNames(
-        'sticky top-0 z-20 w-full px-3 py-2 shadow shadow-black/50 md:px-6 md:py-4',
+        'sticky top-0 z-20 w-full px-3 py-2 shadow shadow-black/50 md:px-5 md:py-3.5',
         special
           ? 'bg-black/40 text-white dark:bg-black/60'
           : 'bg-primary text-white dark:bg-navy dark:text-white'

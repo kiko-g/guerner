@@ -34,8 +34,8 @@ export default function Header({ title, location, navigation }: HeaderProps) {
         </Link>
       </div>
 
-      <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-1.5">
-        <div className="flex items-center justify-center gap-x-2">
+      <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-2">
+        <div className="flex items-center justify-center gap-x-3">
           <LanguageSwitch />
           <DarkModeSwitch />
         </div>
