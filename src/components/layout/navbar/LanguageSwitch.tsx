@@ -12,6 +12,8 @@ type Props = {}
 
 export default function LanguageSwitch({}: Props) {
   const { language } = useLanguage()
+  console.log(language)
+
   const languages = ['pt', 'en'] as Language[]
   const [open, setOpen] = React.useState(false)
 
@@ -34,7 +36,7 @@ export default function LanguageSwitch({}: Props) {
       <div
         className={classNames(
           open
-            ? 'mr-3 flex flex-row gap-x-1.5 rounded bg-black/25 px-1.5 py-1 dark:bg-white/10'
+            ? 'mr-1 flex flex-row gap-x-1.5 rounded bg-black/25 px-1.5 py-1 dark:bg-white/10 lg:mr-3'
             : 'hidden'
         )}
       >
@@ -56,7 +58,7 @@ export default function LanguageSwitch({}: Props) {
         onClick={() => setOpen(!open)}
         className="rounded-xl border-2 border-teal-700 bg-teal-700/50 p-1 transition hover:bg-teal-700/90"
       >
-        <LanguageIcon className="h-6 w-6" />
+        <LanguageIcon className="h-5 w-5 lg:h-6 lg:w-6" />
       </button>
     </div>
   )

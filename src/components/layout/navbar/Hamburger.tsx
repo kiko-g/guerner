@@ -6,13 +6,14 @@ import { useLanguage } from '../../../hooks/useLanguageContext'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import DarkModeSwitch from './DarkModeSwitch'
+import LanguageSwitch from './LanguageSwitch'
 
 interface HamburgerProps {
   open: boolean
 }
 
 export default function Hamburger({ open }: HamburgerProps) {
-  const { language, setLanguage } = useLanguage()
+  const { language } = useLanguage()
 
   return (
     <div
@@ -32,6 +33,7 @@ export default function Hamburger({ open }: HamburgerProps) {
               className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
             />
           </Link>
+          <LanguageSwitch />
           <DarkModeSwitch />
           <Disclosure.Button
             className="group text-white transition duration-200 ease-in 
@@ -64,6 +66,7 @@ export default function Hamburger({ open }: HamburgerProps) {
           </Link>
 
           <div className="flex items-center gap-x-1">
+            <LanguageSwitch />
             <DarkModeSwitch />
             <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white md:hidden">
               <span className="sr-only">Open nav menu</span>

@@ -14,7 +14,7 @@ interface HeaderProps {
 }
 
 export default function Header({ title, location, navigation }: HeaderProps) {
-  const { language, setLanguage } = useLanguage()
+  const { language } = useLanguage()
 
   return (
     <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
