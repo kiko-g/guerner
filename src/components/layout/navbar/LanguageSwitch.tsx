@@ -1,12 +1,8 @@
 import React, { Fragment, useState } from 'react'
-import classNames from 'classnames'
-import { routes, translations } from '../../../config'
-import { switchRouteLanguage } from '../../../utils'
 import { Language } from '../../../types'
 import { Listbox, Transition } from '@headlessui/react'
 import { useLanguage } from '../../../hooks/useLanguageContext'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import { LanguageIcon, CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/solid'
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/solid'
 
 type Props = {}
 
@@ -20,7 +16,7 @@ export default function LanguageSwitch({}: Props) {
       <div className="relative z-10">
         <Listbox.Button
           className="relative flex w-full cursor-pointer items-center justify-center 
-          gap-x-0.5 rounded border-2 border-teal-500/30 bg-teal-500/20 py-1 pl-3 pr-2 text-sm 
+          gap-x-0.5 rounded border-2 border-teal-500/20 bg-teal-500/20 py-1 pl-3 pr-2 text-sm 
           shadow transition hover:border-teal-500/50 hover:bg-teal-500/50 md:gap-x-1 md:pl-3 md:pr-1.5"
         >
           <span className="block truncate uppercase tracking-wide">{selected}</span>
@@ -36,7 +32,7 @@ export default function LanguageSwitch({}: Props) {
           leave="transition-all duration-100"
         >
           <Listbox.Options
-            className="absolute mt-2 w-full overflow-auto rounded bg-white py-1.5 
+            className="absolute mt-2 w-full overflow-auto rounded bg-gray-50 py-1.5 
             text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
           >
             {languages.map((lang, langIdx) => (
