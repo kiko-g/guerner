@@ -1,23 +1,30 @@
 import React, { useMemo, useState } from 'react'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Link } from 'gatsby'
 import { Banner } from '../../images'
 
 type Props = {}
 
 export default function SendEmailForm({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
   const br = `%0D%0A`
   const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
 
-  const header = translations[language].phrases.contacts.form.header
-  const instructions = translations[language].phrases.contacts.form.text
-  const placeholders = translations[language].phrases.contacts.form.placeholders
+  const header = t('contactsFormHeader')
+  const instructions = t('contactsFormText')
+  const placeholders = {
+    name: t('contactsFormPlaceholderName'),
+    email: t('contactsFormPlaceholderEmail'),
+    subject: t('contactsFormPlaceholderSubject'),
+    phone: t('contactsFormPlaceholderPhone'),
+    location: t('contactsFormPlaceholderLocation'),
+    message: t('contactsFormPlaceholderMessage'),
+    terms: t('contactsFormPlaceholderTerms'),
+  }
 
-  const routeHome = routes[language].home
-  const routeTerms = routes[language].info.termsAndConditions
+  const routeHome = '/'
+  const routeTerms = '/info/termos-e-condicoes'
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -41,15 +48,14 @@ export default function SendEmailForm({}: Props) {
   }
 
   return (
-    <section className="rounded bg-light shadow dark:bg-white/5">
+    <section className="rounded shadow bg-light dark:bg-white/5">
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
         {/* Desktop header */}
-        <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
+        <div className="relative flex items-end h-32 bg-gray-900 rounded-t lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
           <img
             alt="Night"
             src={Banner}
-            className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top
-            opacity-80 lg:rounded-none lg:rounded-l"
+            className="absolute inset-0 object-cover object-left-top w-full h-full rounded-t opacity-80 lg:rounded-none lg:rounded-l"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
@@ -60,7 +66,7 @@ export default function SendEmailForm({}: Props) {
               <img
                 src={'/images/icon.png'}
                 alt="Guerner"
-                className="z-20 inline-flex h-full w-full rounded-full transition"
+                className="z-20 inline-flex w-full h-full transition rounded-full"
               />
             </Link>
             <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl">
@@ -73,7 +79,7 @@ export default function SendEmailForm({}: Props) {
         <div className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6">
           <div className="max-w-xl lg:max-w-3xl">
             {/* Mobile header */}
-            <div className="relative -mt-16 block lg:hidden">
+            <div className="relative block -mt-16 lg:hidden">
               <Link
                 to={routeHome}
                 className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary
@@ -82,7 +88,7 @@ export default function SendEmailForm({}: Props) {
                 <img
                   src={'/images/icon.png'}
                   alt="Guerner"
-                  className="z-20 inline-flex h-full w-full rounded-full transition"
+                  className="z-20 inline-flex w-full h-full transition rounded-full"
                 />
               </Link>
               <h1 className="mt-2 text-2xl font-bold sm:text-3xl md:text-4xl">{header}</h1>
@@ -90,7 +96,7 @@ export default function SendEmailForm({}: Props) {
             </div>
 
             {/* Send email form */}
-            <form onSubmit={handleSubmit} className="mt-8 grid grid-cols-6 gap-x-4 gap-y-3">
+            <form onSubmit={handleSubmit} className="grid grid-cols-6 mt-8 gap-x-4 gap-y-3">
               {/* Name */}
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="name" className="block text-sm">
@@ -186,7 +192,7 @@ export default function SendEmailForm({}: Props) {
                     type="checkbox"
                     id="acceptTerms"
                     name="acceptTerms"
-                    className="h-5 w-5"
+                    className="w-5 h-5"
                     checked={consentTerms}
                     onChange={e => setConsentTerms(e.target.checked)}
                   />
@@ -208,8 +214,7 @@ export default function SendEmailForm({}: Props) {
               <div className="col-span-6 mt-3">
                 <a
                   href={`mailto:${receiverEmail}?subject=${subject}&body=${emailContent}`}
-                  className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm 
-                  text-white transition hover:opacity-80 dark:bg-secondary/75"
+                  className="inline-flex justify-center w-full px-12 py-3 text-sm text-white transition rounded bg-primary hover:opacity-80 dark:bg-secondary/75"
                 >
                   Enviar email
                 </a>

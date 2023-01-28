@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 import classNames from 'classnames'
 import { Seo, BackToTopButton, Navbar, Footer } from '.'
-import { LanguageProvider, useLanguage } from '../../hooks/useLanguageContext'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Props = {
   children: ReactNode
@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default function Layout({ children, location = 'Unknown', special = false }: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
@@ -24,8 +24,8 @@ export default function Layout({ children, location = 'Unknown', special = false
   const title = data.site.siteMetadata?.title || 'Site Title'
 
   return (
-    <LanguageProvider>
-      <Seo title={location} lang={language} />
+    <>
+      <Seo title={location} />
       <div
         id="layout"
         className={classNames(
@@ -47,6 +47,6 @@ export default function Layout({ children, location = 'Unknown', special = false
         <BackToTopButton />
         <Footer title={title} />
       </div>
-    </LanguageProvider>
+    </>
   )
 }

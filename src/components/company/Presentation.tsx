@@ -1,7 +1,5 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { useLanguage } from '../../hooks/useLanguageContext'
-import { translations } from '../../config'
 import { Building, Rays } from '../../images'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 

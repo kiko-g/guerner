@@ -2,7 +2,6 @@ import React from 'react'
 import classNames from 'classnames'
 import { useLanguage } from '../../../hooks/useLanguageContext'
 import { Link } from 'gatsby'
-import { routes } from '../../../config'
 import { NavItem } from '../../../types'
 import DarkModeSwitch from './DarkModeSwitch'
 import LanguageSwitch from './LanguageSwitch'
@@ -19,10 +18,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
   return (
     <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
       <div className="relative hidden h-auto transition md:flex md:items-center">
-        <Link
-          to={routes[language].home}
-          className="group flex items-center gap-x-3 transition hover:opacity-80"
-        >
+        <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
           <img
             alt="Guerner"
             src={'/images/icon.png'}

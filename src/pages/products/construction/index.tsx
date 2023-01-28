@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
+import { strIncludes } from '../../../utils'
+import { Category, Colors } from '../../../types'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import { strIncludes } from '../../../utils'
-import { translations } from '../../../config'
-import { useLanguage } from '../../../hooks/useLanguageContext'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Layout } from '../../../components/layout'
-import { Category, Colors } from '../../../types'
 import {
   ColorFilter,
   PinToggler,
@@ -42,11 +41,11 @@ type Props = {
 }
 
 export default function ProductsConstructionPage({ data }: Props) {
-  const { language } = useLanguage()
+  const { t, language } = useI18next()
 
-  const location = translations[language].location.products.construction
-  const title = translations[language].phrases.products.construction.title
-  const text = translations[language].phrases.products.construction.text
+  const location = t('location')!
+  const title = t('title')
+  const description = t('description')
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
@@ -81,7 +80,7 @@ export default function ProductsConstructionPage({ data }: Props) {
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
-          <p className="text-center font-normal lg:text-justify">{text}</p>
+          <p className="text-center font-normal lg:text-justify">{description}</p>
         </header>
 
         <div className="flex w-full flex-col gap-y-6">

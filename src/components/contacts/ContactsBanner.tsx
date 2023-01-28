@@ -1,8 +1,8 @@
 import React from 'react'
-import { useLanguage } from '../../hooks/useLanguageContext'
 import { Building } from '../../images'
 import { PhoneIcon, InboxArrowDownIcon, MapPinIcon } from '@heroicons/react/24/solid'
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 interface Contact {
   text: string
@@ -13,7 +13,7 @@ interface Contact {
 type Props = {}
 
 export default function ContactsBanner({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
   const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
   const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER!

@@ -1,20 +1,19 @@
 import React from 'react'
 import classNames from 'classnames'
-import { translations } from '../../../config'
 import { Listbox } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
-import { Category } from '../../../types'
-import { useLanguage } from '../../../hooks/useLanguageContext'
+import { Category, Language } from '../../../types'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Props = {
   hook: [Category[], React.Dispatch<React.SetStateAction<Category[]>>]
 }
 
 export default function CategoryFilter({ hook }: Props) {
-  const { language } = useLanguage()
+  const { t, language } = useI18next()
   const [pickedCategories, setPickedCategories] = hook
-  const categories = Object.values(translations[language].category)
-  const text = translations[language].categoriesName
+  const categories = ['a', 'b', 'c', 'd']
+  const text = t('categories')
 
   return (
     <Listbox

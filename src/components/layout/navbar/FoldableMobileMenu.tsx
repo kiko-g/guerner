@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { Disclosure, Transition } from '@headlessui/react'
-import { NavItem } from '.'
+import { NavItem } from '../../../types'
 
 interface FoldableMobileMenuProps {
   location: string

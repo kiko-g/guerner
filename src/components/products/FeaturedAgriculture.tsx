@@ -1,30 +1,26 @@
 import React from 'react'
-import { useLanguage } from '../../hooks/useLanguageContext'
-import { routes, translations } from '../../config'
 import { LinkFill } from '../utils'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Props = {}
 
 export default function FeaturedAgriculture({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
-  const title = translations[language].phrases.products.agriculture.title
-  const text = translations[language].phrases.products.agriculture.text
-  const takeMeThere = translations[language].phrases.products.agriculture.takeMeThere
+  const title = t('title')
+  const text = t('agricultureText')
+  const takeMeThere = t('agricultureTakeMeThere')
 
-  const route = routes[language].products.agriculture
+  const route = '/agricultura'
 
   return (
-    <section className="w-full overflow-hidden rounded bg-agriculture bg-cover bg-center bg-no-repeat">
-      <div className="bg-gradient-to-r from-black/75 via-black/50 to-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
+    <section className="w-full overflow-hidden bg-center bg-no-repeat bg-cover rounded bg-agriculture">
+      <div className="p-8 bg-gradient-to-r from-black/75 via-black/50 to-black/25 md:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-left md:items-start">
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl md:mb-1 md:text-5xl">
             {title}
           </h2>
-          <p
-            className="max-w-xs text-sm font-normal leading-tight text-white/90 
-            md:mt-6 md:block md:text-lg md:leading-relaxed"
-          >
+          <p className="max-w-xs text-sm font-normal leading-tight text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
             {text}
           </p>
           <div className="mt-4 sm:mt-8">

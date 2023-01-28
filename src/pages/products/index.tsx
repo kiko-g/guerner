@@ -1,15 +1,14 @@
 import React from 'react'
-import { translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Layout } from '../../components/layout'
 import { FeaturedAgriculture, FeaturedConstruction } from '../../components/products'
 
 export default function ProductsPage() {
-  const { language } = useLanguage()
+  const { t } = useI18next()
+  const location = t('title')
 
-  const location = translations[language].location.products.main
-  const title = translations[language].phrases.products.header
-  const pageText = translations[language].phrases.products.pageText
+  const title = t('productsHeader')
+  const pageText = t('productsDescription')
 
   return (
     <Layout location={location}>

@@ -1,9 +1,8 @@
 import React from 'react'
-import { routes, translations } from '../../../config'
 import { GoBack, Layout } from '../../../components/layout'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
-import { useLanguage } from '../../../hooks/useLanguageContext'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type MarkdownData = {
   html: string
@@ -26,10 +25,10 @@ type Props = {
 }
 
 export default function ConstructionProductTemplate({ data }: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
-  const routeGoBack = routes[language].products.construction
-  const title = translations[language].phrases.products.construction.title
+  const routeGoBack = '/products/construction'
+  const title = t('products.construction.title')
 
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
