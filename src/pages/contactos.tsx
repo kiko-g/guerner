@@ -1,16 +1,16 @@
 import React from 'react'
-import { translations } from '../../config'
-import { Layout } from '../../components/layout'
-import { useLanguage } from '../../hooks/useLanguageContext'
 import { useMediaQuery } from 'usehooks-ts'
-import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../../components/contacts'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import { Layout } from '../components/layout'
+import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../components/contacts'
+import { graphql } from 'gatsby'
 
 export default function ContactsPage() {
-  const { language } = useLanguage()
+  const { t } = useI18next()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
-  const location = translations[language].location.contacts
-  const title = translations[language].phrases.contacts.title
+  const title = t('title')
+  const location = t('location')!
 
   return (
     <Layout location={location}>
@@ -25,3 +25,17 @@ export default function ContactsPage() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { ns: { in: ["contactos"] }, language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`

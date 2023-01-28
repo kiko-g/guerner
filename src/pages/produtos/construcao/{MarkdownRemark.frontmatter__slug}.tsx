@@ -1,9 +1,9 @@
 import React from 'react'
-import { routes, translations } from '../../../../config'
-import { GoBack, Layout } from '../../../../components/layout'
-import { graphql } from 'gatsby'
+import { routes, translations } from '../../../config'
+import { GoBack, Layout } from '../../../components/layout'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
-import { useLanguage } from '../../../../hooks/useLanguageContext'
+import { useLanguage } from '../../../hooks/useLanguageContext'
 
 type MarkdownData = {
   html: string
@@ -25,10 +25,11 @@ type Props = {
   }
 }
 
-export default function AgricultureProductTemplate({ data }: Props) {
+export default function ConstructionProductTemplate({ data }: Props) {
   const { language } = useLanguage()
-  const routeGoBack = routes[language].products.agriculture
-  const title = translations[language].phrases.products.agriculture.title
+
+  const routeGoBack = routes[language].products.construction
+  const title = translations[language].phrases.products.construction.title
 
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)

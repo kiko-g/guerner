@@ -1,9 +1,13 @@
+const { languages, defaultLanguage } = require('./languages')
+
+const mode = process.env.NODE_ENV
+
 module.exports = {
   siteMetadata: {
     title: `Guerner & Irmãos S.A.`,
     description: `Guerner & Irmãos S.A. website`,
     author: `@kikogoncalves`,
-    siteUrl: `https://guerner.netlify.app`,
+    siteUrl: `https://guerner.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -74,28 +78,33 @@ module.exports = {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages: [`pt`, `en`],
         defaultLanguage: `pt`,
-        siteUrl: `https://guernerpt.netlify.app`,
+        siteUrl:
+          mode !== 'production' ? 'http://localhost:8000/' : 'https://guernerpt.netlify.app/',
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         trailingSlash: 'always',
-        // you can pass any i18next options
         i18nextOptions: {
+          // you can pass any i18next options
+          debug: mode !== 'production',
+          fallbackLng: defaultLanguage,
+          supportedLngs: languages,
+          defaultNS: 'common',
           interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
           },
           keySeparator: false,
           nsSeparator: false,
         },
-        pages: [
-          {
-            matchPath: '/:lang?/blog/:uid',
-            getLanguageFromPath: true,
-            excludeLanguages: ['es'],
-          },
-          {
-            matchPath: '/preview',
-            languages: ['en'],
-          },
-        ],
+        // pages: [
+        //   {
+        //     matchPath: '/:lang?/blog/:uid',
+        //     getLanguageFromPath: true,
+        //     excludeLanguages: ['es'],
+        //   },
+        //   {
+        //     matchPath: '/preview',
+        //     languages: ['en'],
+        //   },
+        // ],
       },
     },
   ],

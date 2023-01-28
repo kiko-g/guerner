@@ -1,8 +1,8 @@
 import React from 'react'
-import { translations } from '../../../config'
-import { useLanguage } from '../../../hooks/useLanguageContext'
-import { Layout } from '../../../components/layout'
-import { FeaturedAgriculture, FeaturedConstruction } from '../../../components/products'
+import { translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
+import { Layout } from '../../components/layout'
+import { FeaturedAgriculture, FeaturedConstruction } from '../../components/products'
 
 export default function ProductsPage() {
   const { language } = useLanguage()

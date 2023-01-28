@@ -1,25 +1,23 @@
 import React from 'react'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
-import { LinkFill } from '../utils'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Agriculture, Construction } from '../../images'
+import { LinkFill } from '../utils'
 import NavigateCtaDiv from './NavigateCtaDiv'
 
 type Props = {}
 
 export default function ProductsCTA({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
-  const headerText = translations[language].phrases.home.visitProducts.header
-  const productsText = translations[language].phrases.home.visitProducts.description
+  const headerText = t('visitProductsHeader')
+  const productsText = t('visitProductsDescription')
+  const takeMeThere = t('visitProductsTakeMeThere')
+  const takeMeThereAgriculture = t('visitProductsTakeMeThereAgriculture')
+  const takeMeThereConstruction = t('visitProductsTakeMeThereConstruction')
 
-  const takeMeThere = translations[language].phrases.home.visitProducts.takeMeThere
-  const takeMeThereAgric = translations[language].phrases.home.visitProducts.takeMeThereAgriculture
-  const takeMeThereConst = translations[language].phrases.home.visitProducts.takeMeThereConstruction
-
-  const routeProducts = routes[language].products.main
-  const routeConstruction = routes[language].products.construction
-  const routeAgriculture = routes[language].products.agriculture
+  const routeProducts = '/produtos'
+  const routeAgriculture = '/produtos/agricultura'
+  const routeConstruction = '/produtos/construcao'
 
   return (
     <section className="w-full">
@@ -29,12 +27,12 @@ export default function ProductsCTA({}: Props) {
           <NavigateCtaDiv
             image={Agriculture}
             link={routeAgriculture}
-            actionText={takeMeThereAgric}
+            actionText={takeMeThereAgriculture}
           />
           <NavigateCtaDiv
             image={Construction}
             link={routeConstruction}
-            actionText={takeMeThereConst}
+            actionText={takeMeThereConstruction}
           />
         </div>
 

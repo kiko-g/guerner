@@ -1,26 +1,27 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../components/layout'
-import { HeroBanner, CompanyCTA, ContactsCTA, ProductsCTA } from '../components/home'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { Layout } from '../components/layout'
+import { Presentation, Production, Welcome } from '../components/company'
 
-export default function IndexPage() {
+export default function CompanyPage() {
   const { t } = useI18next()
   const location = t('location')!
 
   return (
     <Layout location={location} special>
-      <HeroBanner />
-      <CompanyCTA />
-      <ProductsCTA />
-      <ContactsCTA />
+      <Welcome />
+      <main>
+        <Presentation />
+        <Production />
+      </main>
     </Layout>
   )
 }
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { ns: { in: ["index"] }, language: { eq: $language } }) {
+    locales: allLocale(filter: { ns: { in: ["empresa"] }, language: { eq: $language } }) {
       edges {
         node {
           ns

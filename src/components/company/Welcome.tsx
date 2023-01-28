@@ -4,12 +4,13 @@ import { translations } from '../../config'
 import { LinkTranslate } from '../utils'
 import { divideTitle } from '../../utils'
 import { Building } from '../../images'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Props = {}
 
 export default function Welcome({}: Props) {
-  const { language } = useLanguage()
-  const sectionId = translations[language].phrases.company.sectionIds.welcome
+  const { t } = useI18next()
+  const sectionId = t('sectionIdWelcome')
 
   const title = translations[language].phrases.company.title
   const [titleTop, titleBottom] = divideTitle(title) // split into two parts

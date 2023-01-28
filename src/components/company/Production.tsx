@@ -1,10 +1,9 @@
 import React from 'react'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import classNames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Tab } from '@headlessui/react'
 import { IGatsbyImageData, getImage, GatsbyImage } from 'gatsby-plugin-image'
-import classNames from 'classnames'
 import { LinkFill } from '../utils'
 
 type Frontmatter = {
@@ -28,8 +27,8 @@ type Data = {
 type Props = {}
 
 export default function Production({}: Props) {
-  const { language } = useLanguage()
-  const sectionId = translations[language].phrases.company.sectionIds.production
+  const { t } = useI18next()
+  const sectionId = t('sectionIdProduction')
   const routeToProducts = routes[language].products.main
   const takeMeToProducts = translations[language].phrases.home.visitProducts.takeMeThere
 

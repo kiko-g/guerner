@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import classNames from 'classnames'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import { strIncludes } from '../../../../utils'
-import { translations } from '../../../../config'
-import { useLanguage } from '../../../../hooks/useLanguageContext'
-import { Layout } from '../../../../components/layout'
-import { Category, Colors } from '../../../../types'
+import { strIncludes } from '../../../utils'
+import { translations } from '../../../config'
+import { useLanguage } from '../../../hooks/useLanguageContext'
+import { Layout } from '../../../components/layout'
+import { Category, Colors } from '../../../types'
 import {
   ColorFilter,
   PinToggler,
@@ -14,7 +14,7 @@ import {
   ViewToggler,
   CategoryFilter,
   Product,
-} from '../../../../components/products'
+} from '../../../components/products'
 
 type Color = keyof Colors | ''
 
@@ -41,12 +41,12 @@ type Props = {
   }
 }
 
-export default function ProductsAgriculturePage({ data }: Props) {
+export default function ProductsConstructionPage({ data }: Props) {
   const { language } = useLanguage()
 
-  const location = translations[language].location.products.agriculture
-  const title = translations[language].phrases.products.agriculture.title
-  const text = translations[language].phrases.products.agriculture.text
+  const location = translations[language].location.products.construction
+  const title = translations[language].phrases.products.construction.title
+  const text = translations[language].phrases.products.construction.text
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
@@ -56,6 +56,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
 
   const products = data.allMarkdownRemark.nodes.filter((md: MarkdownData) => {
     const product = md.frontmatter
+
     if (product.lang !== language) return false
 
     let textMatch = true
@@ -84,7 +85,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
         </header>
 
         <div className="flex w-full flex-col gap-y-6">
-          {/* Filters */}
+          {/* Products */}
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
@@ -95,7 +96,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
             </div>
           </div>
 
-          {/* Products */}
+          {/* Listing */}
           <ul
             className={classNames(
               viewType
@@ -117,7 +118,7 @@ export const pageQuery = graphql`
   query {
     allMarkdownRemark(
       sort: [{ frontmatter: { name: ASC } }]
-      filter: { fileAbsolutePath: { regex: "/(agriculture)/" } }
+      filter: { fileAbsolutePath: { regex: "/(construction)/" } }
     ) {
       nodes {
         id

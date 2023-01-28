@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../../../components/layout'
-import { translations } from '../../../config'
-import { useLanguage } from '../../../hooks/useLanguageContext'
+import { Layout } from '../../components/layout'
+import { translations } from '../../config'
+import { useLanguage } from '../../hooks/useLanguageContext'
 
 type MarkdownData = {
   html: string
