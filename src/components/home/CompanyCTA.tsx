@@ -21,7 +21,7 @@ export default function CompanyCTA({}: Props) {
   const presentationSectionSubeader = t('presentationSectionSubeader')
   const presentationSectionDescription = t('presentationSectionDescription')
 
-  const routeCompany = '/empresa'
+  const routeCompany = '/company'
 
   return (
     <section className="w-full">

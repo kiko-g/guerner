@@ -9,12 +9,12 @@ export default function Welcome({}: Props) {
   const { t } = useI18next()
   const sectionId = t('sectionIdWelcome')
 
-  const titleTop = t('companyTitleTop')
-  const titleBottom = t('companyTitleBottom')
-  const description = t('companyDescription')
+  const titleTop = t('titleTop')
+  const titleBottom = t('titleBottom')
+  const description = t('description')
 
-  const takeMeToPresentation = t('companyTakeMeToPresentation')
-  const takeMeToProduction = t('companyTakeMeToPresentation')
+  const takeMeToPresentation = t('takeMeToPresentation')
+  const takeMeToProduction = t('takeMeToPresentation')
 
   const presentationId = t('sectionIdPresentation')
   const productionId = t('sectionIdProduction')

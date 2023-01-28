@@ -85,6 +85,14 @@ module.exports = {
         i18nextOptions: {
           // you can pass any i18next options
           debug: mode !== 'production',
+          resources: {
+            pt: {
+              common: require('./src/locales/pt/common.json'),
+            },
+            en: {
+              common: require('./src/locales/en/common.json'),
+            },
+          },
           fallbackLng: defaultLanguage,
           supportedLngs: languages,
           defaultNS: 'common',

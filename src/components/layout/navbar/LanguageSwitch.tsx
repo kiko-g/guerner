@@ -7,7 +7,7 @@ type Props = {}
 
 export default function LanguageSwitch({}: Props) {
   const [open, setOpen] = useState(false)
-  const { languages, language, originalPath, t, i18n } = useI18next()
+  const { languages, language, originalPath } = useI18next()
 
   return (
     <div className="relative z-10">
@@ -34,9 +34,10 @@ export default function LanguageSwitch({}: Props) {
               <li
                 key={langIdx}
                 className={classNames(
-                  `relative z-50 cursor-pointer select-none py-1 px-2.5 
-                  text-sm transition md:py-1.5 md:px-2.5 md:text-base`,
-                  active ? 'bg-teal-100 text-teal-800' : 'text-gray-900'
+                  `group relative z-50 cursor-pointer select-none py-1 px-2.5 
+                  text-sm transition hover:bg-teal-700 hover:text-white md:py-1.5
+                  md:px-2.5 md:text-base`,
+                  active ? 'bg-teal-100 text-teal-800' : 'text-gray-800'
                 )}
               >
                 <Link
@@ -46,15 +47,15 @@ export default function LanguageSwitch({}: Props) {
                 >
                   <span
                     className={classNames(
-                      'truncate uppercase',
-                      active ? 'font-bold text-teal-700' : 'font-normal'
+                      'truncate uppercase group-hover:text-white',
+                      active ? 'font-bold text-teal-700 ' : 'font-normal'
                     )}
                   >
                     {lang}
                   </span>
                   {active ? (
                     <CheckIcon
-                      className="mt-0 h-4 w-4 text-teal-700 md:h-[1.1rem] md:w-[1.1rem]"
+                      className="mt-0 h-4 w-4 text-teal-700 group-hover:text-white md:h-[1.1rem] md:w-[1.1rem]"
                       aria-hidden="true"
                     />
                   ) : null}

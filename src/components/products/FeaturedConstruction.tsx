@@ -13,8 +13,8 @@ export default function FeaturedConstruction({}: Props) {
   const route = '/contrucao'
 
   return (
-    <section className="w-full overflow-hidden bg-center bg-no-repeat bg-cover rounded bg-construction">
-      <div className="p-8 bg-gradient-to-l from-black/75 via-black/50 to-black/25 md:p-12 lg:px-16 lg:py-24">
+    <section className="w-full overflow-hidden rounded bg-construction bg-cover bg-center bg-no-repeat">
+      <div className="bg-gradient-to-l from-black/75 via-black/50 to-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-right md:items-end">
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl md:mb-1 md:text-5xl">
             {title}

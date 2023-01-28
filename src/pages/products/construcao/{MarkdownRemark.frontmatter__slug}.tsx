@@ -1,8 +1,8 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { useI18next } from 'gatsby-plugin-react-i18next'
 import { GoBack, Layout } from '../../../components/layout'
+import { graphql, Link } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type MarkdownData = {
   html: string
@@ -24,10 +24,11 @@ type Props = {
   }
 }
 
-export default function AgricultureProductTemplate({ data }: Props) {
+export default function ConstructionProductTemplate({ data }: Props) {
   const { t } = useI18next()
-  const routeGoBack = '/products/agriculture'
-  const title = t('products.agriculture.title')
+
+  const routeGoBack = '/products/construction'
+  const title = t('products.construction.title')
 
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)

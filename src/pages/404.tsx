@@ -1,15 +1,11 @@
 import React from 'react'
-import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Banner } from '../images'
 import { Layout } from '../components/layout'
 import { LinkFill } from '../components/utils'
 
 export default function NotFoundPage() {
-  const { t } = useI18next()
-  const location = t('location')!
-
   return (
-    <Layout location={location}>
+    <Layout location="404">
       <main className="mx-auto flex max-w-5xl flex-col gap-y-4 py-8 text-center">
         <img alt="Guerner" className="h-64 w-full rounded object-cover shadow-xl" src={Banner} />
         <div>

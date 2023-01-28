@@ -1,7 +1,6 @@
 ---
 lang: en
-facilitiesNames:
-  ['Centro de Extrusão', 'Centro de Urdisagem', 'Centro de Tecelagem', 'Centro de Confeção']
+facilitiesNames: ['Extrusion', 'Warping', 'Weaving', 'Confection']
 facilitiesImages:
   [
     '../images/facility1.jpg',
@@ -11,24 +10,24 @@ facilitiesImages:
   ]
 facilitiesDescriptions:
   [
-    'Neste segmento o polietileno virgem (HDPE) é extrudido em fio o denominado monofilamento com diversos diâmetros sendo estes posteriormente enrolados em bobines que abastecem 2 segmentos a Urdussagem e a Tecelagem',
-    'Fabrica a teia, colocando-a nos órgãos a inserir no tear',
-    'Processo combinado de teia e trama onde são produzidas as redes /tecidos com as diferentes especificações',
-    'Constituído por um conjunto de equipamentos que transformam a rede produzida nas diversas medidas, de acordo com as especificações necessárias',
+    'In this segment, virgin polyethylene (HDPE) is extruded into a thread, the so-called monofilament, with various diameters, which are then rolled into bobbins that supply 2 segments, the Warping and the Weaving',
+    'Weaves the fabric, placing it in the organs to be inserted into the loom',
+    'Combined process of warp and weft where the nets / fabrics with different specifications are produced',
+    'Consisting of a set of equipment that transforms the net produced into the various sizes, according to the necessary specifications',
   ]
 ---
 
-O processo produtivo encontra-se verticalizado, desde a extrusão da matéria-prima em fio, monofilamento, passando pela urdissagem, tecelagem e confeção.
+The production process is vertically integrated, from the extrusion of the raw material into thread, monofilament, through spinning, weaving and finishing.
 
-A produção está dividida em 4 grandes áreas:
+The production is divided into 4 main areas:
 
-- Extrusão
-- Urdissagem
-- Tecelagem
-- Confeção
+- Extrusion
+- Warping
+- Weaving
+- Confection
 
-A Guerner & Irmãos prossegue a sua atividade forma de sustentável, reciclando o desperdício e reintroduzindo-o no processo produtivo, com a fabricação de “placas” e bandas.
+Guerner & Irmãos continues its activity in a sustainable way, recycling waste and reintroducing it into the production process, with the manufacture of "plates" and bands.
 
-Recentemente, a Empresa viu aprovado um projeto no âmbito do PT 2020 – SI Inovação -. A Guerner & Irmãos concebeu um projeto de investimento, de montante a jusante, de que se destaca uma nova linha de extrusão que permitirá a produção de fio com a incorporação de reciclado de polietileno.
+Recently, the Company had its project approved within the scope of PT 2020 - SI Innovation -. Guerner & Irmãos designed an investment project, downstream, of which stands out a new extrusion line that will allow the production of thread with the incorporation of recycled polyethylene.
 
-Em suma, a Guerner e Irmãos, pretende apetrechar-se com novos equipamentos que serão uma mais-valia na incorporação de matérias-primas recicladas no processo produtivo e aumentar a eficiência energética de toda a unidade.
+In summary, Guerner and Irmãos intends to equip itself with new equipment that will be an added value in the incorporation of recycled raw materials into the production process and increase the energy efficiency of the entire unit.

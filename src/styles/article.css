@@ -1,5 +1,5 @@
 article {
-  @apply mx-auto mt-0 w-full max-w-xs p-0 text-left px-3 lg:px-4 font-normal lg:max-w-4xl lg:text-justify;
+  @apply mx-auto mt-0 w-full max-w-xs p-0 px-3 text-left font-normal lg:max-w-4xl lg:px-4 lg:text-justify;
 }
 
 article a {

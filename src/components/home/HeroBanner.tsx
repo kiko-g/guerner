@@ -11,8 +11,8 @@ export default function HeroBanner({}: Props) {
   const welcome = t('welcome')
   const statement = t('statement')
 
-  const routeProducts = '/produtos'
-  const routeContacts = '/contactos'
+  const routeProducts = '/products'
+  const routeContacts = '/contacts'
 
   const takeMeToProducts = t('takeMeToProducts')
   const takeMeToContacts = t('takeMeToContacts')

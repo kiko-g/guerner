@@ -61,10 +61,10 @@ export default function Production({}: Props) {
 
   return (
     <section id={sectionId} className="">
-      <div className="relative py-16 overflow-hidden bg-teal-800 bg-cover dark:bg-teal-900 lg:py-24">
-        <div className="flex flex-col items-center justify-center px-4 gap-y-4 lg:gap-y-8 lg:px-3">
+      <div className="relative overflow-hidden bg-teal-800 bg-cover py-16 dark:bg-teal-900 lg:py-24">
+        <div className="flex flex-col items-center justify-center gap-y-4 px-4 lg:gap-y-8 lg:px-3">
           <Tab.Group>
-            <Tab.List className="flex items-center justify-center px-1 py-1 mx-auto text-sm font-normal tracking-tighter rounded w-min gap-x-2 bg-white/10 font-lexend lg:gap-x-4 lg:text-base">
+            <Tab.List className="mx-auto flex w-min items-center justify-center gap-x-2 rounded bg-white/10 px-1 py-1 font-lexend text-sm font-normal tracking-tighter lg:gap-x-4 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
@@ -85,18 +85,18 @@ export default function Production({}: Props) {
 
                 return (
                   <Tab.Panel key={`tab-panel-${tabIdx}`}>
-                    <div className="flex flex-col items-center justify-center text-center gap-y-4 lg:gap-y-6">
+                    <div className="flex flex-col items-center justify-center gap-y-4 text-center lg:gap-y-6">
                       <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                        Centro de {tabList[tabIdx]}
+                        {tabList[tabIdx]}
                       </h2>
                       {gatsbyImage ? (
                         <GatsbyImage
                           image={gatsbyImage}
                           alt={tabList[tabIdx]}
-                          className="max-w-xl shadow rounded-xl"
+                          className="max-w-xl rounded-xl shadow"
                         />
                       ) : null}
-                      <p className="max-w-xl mx-auto text-base text-teal-200 dark:text-teal-100 lg:text-lg">
+                      <p className="mx-auto max-w-xl text-base text-teal-200 dark:text-teal-100 lg:text-lg">
                         {tabDescriptions[tabIdx]}
                       </p>
                     </div>
@@ -114,7 +114,7 @@ export default function Production({}: Props) {
 
       <article
         dangerouslySetInnerHTML={{ __html: html }}
-        className="max-w-xs py-12 text-teal-100 alt dark:text-white lg:max-w-4xl"
+        className="alt max-w-xs py-12 text-teal-100 dark:text-white lg:max-w-4xl"
       />
     </section>
   )

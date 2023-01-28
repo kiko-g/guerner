@@ -15,9 +15,9 @@ export default function ProductsCTA({}: Props) {
   const takeMeThereAgriculture = t('visitProductsTakeMeThereAgriculture')
   const takeMeThereConstruction = t('visitProductsTakeMeThereConstruction')
 
-  const routeProducts = '/produtos'
-  const routeAgriculture = '/produtos/agricultura'
-  const routeConstruction = '/produtos/construcao'
+  const routeProducts = '/products'
+  const routeAgriculture = '/products/agriculture'
+  const routeConstruction = '/products/construction'
 
   return (
     <section className="w-full">

@@ -28,7 +28,7 @@ export default function ContactsPage() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { ns: { in: ["contactos"] }, language: { eq: $language } }) {
+    locales: allLocale(filter: { ns: { in: ["contacts"] }, language: { eq: $language } }) {
       edges {
         node {
           ns
