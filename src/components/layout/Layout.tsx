@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default function Layout({ children, location = 'Unknown', special = false }: Props) {
-  const { t } = useI18next()
+  const { t, language } = useI18next()
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {

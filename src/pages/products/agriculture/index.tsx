@@ -43,9 +43,9 @@ type Props = {
 export default function ProductsAgriculturePage({ data }: Props) {
   const { t, language } = useI18next()
 
-  const location = t('title')
-  const title = t('agricultureTitle')
-  const description = t('agricultureDescription')
+  const location = t('location')
+  const title = t('title')
+  const description = t('description')
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
@@ -55,7 +55,6 @@ export default function ProductsAgriculturePage({ data }: Props) {
 
   const products = data.allMarkdownRemark.nodes.filter((md: MarkdownData) => {
     const product = md.frontmatter
-    if (product.lang !== language) return false
 
     let textMatch = true
     let colorMatch = true
@@ -112,11 +111,14 @@ export default function ProductsAgriculturePage({ data }: Props) {
   )
 }
 
-export const pageQuery = graphql`
-  query {
+export const pageAndLanguageQuery = graphql`
+  query pageQuery($language: String!) {
     allMarkdownRemark(
       sort: [{ frontmatter: { name: ASC } }]
-      filter: { fileAbsolutePath: { regex: "/(agriculture)/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/(agriculture)/" }
+        frontmatter: { lang: { eq: $language } }
+      }
     ) {
       nodes {
         id
@@ -132,6 +134,17 @@ export const pageQuery = graphql`
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
+        }
+      }
+    }
+    locales: allLocale(
+      filter: { ns: { in: ["agriculture", "common"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

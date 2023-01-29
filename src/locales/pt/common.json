@@ -1,4 +1,10 @@
 {
   "hello": "olá",
-  "made by": "Feito por"
+  "madeBy": "Feito por",
+  "home": "Início",
+  "company": "Empresa",
+  "contacts": "Contactos",
+  "products": "Produtos",
+  "privacyPolicy": "Política de Privacidade",
+  "termsAndConditions": "Terms e Condições"
 }

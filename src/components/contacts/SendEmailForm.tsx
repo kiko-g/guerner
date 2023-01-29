@@ -11,16 +11,16 @@ export default function SendEmailForm({}: Props) {
   const br = `%0D%0A`
   const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
 
-  const header = t('contactsFormHeader')
-  const instructions = t('contactsFormText')
+  const header = t('formHeader')
+  const instructions = t('formText')
   const placeholders = {
-    name: t('contactsFormPlaceholderName'),
-    email: t('contactsFormPlaceholderEmail'),
-    subject: t('contactsFormPlaceholderSubject'),
-    phone: t('contactsFormPlaceholderPhone'),
-    location: t('contactsFormPlaceholderLocation'),
-    message: t('contactsFormPlaceholderMessage'),
-    terms: t('contactsFormPlaceholderTerms'),
+    name: t('formPlaceholderName'),
+    email: t('formPlaceholderEmail'),
+    subject: t('formPlaceholderSubject'),
+    phone: t('formPlaceholderPhone'),
+    location: t('formPlaceholderLocation'),
+    message: t('formPlaceholderMessage'),
+    terms: t('formPlaceholderTerms'),
   }
 
   const routeHome = '/'
@@ -39,7 +39,7 @@ export default function SendEmailForm({}: Props) {
       `${t('phone')}: ${phone ? phone : 'N/A'}`,
       `${t('location-geo')}: ${location ? location : 'N/A'}`,
       `${t('message')}: ${encodeURIComponent(messageBody)}`,
-      `${br}${br}${br}${t('sent-from-website')}: ${name}`,
+      `${br}${br}${br}${t('sentFromWebsiteText')}: ${name}`,
     ].join(br)
   }, [name, phone, location, messageBody])
 
@@ -100,7 +100,7 @@ export default function SendEmailForm({}: Props) {
               {/* Name */}
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="name" className="block text-sm">
-                  Nome
+                  {t('name')}
                 </label>
 
                 <input
@@ -118,7 +118,7 @@ export default function SendEmailForm({}: Props) {
               {/* Location */}
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="location" className="block text-sm">
-                  Localização
+                  {t('location-geo')}
                 </label>
 
                 <input
@@ -135,7 +135,7 @@ export default function SendEmailForm({}: Props) {
               {/* Subject */}
               <div className="col-span-6">
                 <label htmlFor="subject" className="block text-sm">
-                  Assunto
+                  {t('subject')}
                 </label>
 
                 <input
@@ -153,7 +153,7 @@ export default function SendEmailForm({}: Props) {
               {/* Phone */}
               <div className="col-span-6 sm:col-span-6">
                 <label htmlFor="phone" className="block text-sm">
-                  Telemóvel
+                  {t('phone')}
                 </label>
 
                 <input
@@ -170,7 +170,7 @@ export default function SendEmailForm({}: Props) {
               {/* Message */}
               <div className="col-span-6 sm:col-span-6">
                 <label htmlFor="messageBody" className="block text-sm">
-                  Mensagem
+                  {t('message')}
                 </label>
 
                 <textarea
@@ -203,7 +203,7 @@ export default function SendEmailForm({}: Props) {
                       to={routeTerms}
                       className="font-bold transition hover:text-primary/75 hover:underline dark:text-white/75 dark:hover:text-secondary/75"
                     >
-                      termos e condições
+                      {t('termsAndConditionsText')}
                     </Link>
                     .
                   </span>
@@ -216,7 +216,7 @@ export default function SendEmailForm({}: Props) {
                   href={`mailto:${receiverEmail}?subject=${subject}&body=${emailContent}`}
                   className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm text-white transition hover:opacity-80 dark:bg-secondary/75"
                 >
-                  Enviar email
+                  {t('send')}
                 </a>
               </div>
             </form>

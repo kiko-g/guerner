@@ -76,7 +76,7 @@ export default function Product({ product }: Props) {
             to={product.slug}
             className="transition hover:text-primary hover:underline hover:opacity-90 dark:hover:text-secondary"
           >
-            {product.name}
+            {t(product.name)}
           </Link>
           <Link to={product.slug}>
             <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-secondary" />

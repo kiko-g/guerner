@@ -6,7 +6,7 @@ import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../components
 import { graphql } from 'gatsby'
 
 export default function ContactsPage() {
-  const { t } = useI18next()
+  const { t, language } = useI18next()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   const title = t('title')
@@ -28,7 +28,9 @@ export default function ContactsPage() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { ns: { in: ["contacts"] }, language: { eq: $language } }) {
+    locales: allLocale(
+      filter: { ns: { in: ["contacts", "common"] }, language: { eq: $language } }
+    ) {
       edges {
         node {
           ns

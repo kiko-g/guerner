@@ -41,7 +41,7 @@ type Props = {
 }
 
 export default function ProductsConstructionPage({ data }: Props) {
-  const { t, language } = useI18next()
+  const { t } = useI18next()
 
   const location = t('location')!
   const title = t('title')
@@ -55,8 +55,6 @@ export default function ProductsConstructionPage({ data }: Props) {
 
   const products = data.allMarkdownRemark.nodes.filter((md: MarkdownData) => {
     const product = md.frontmatter
-
-    if (product.lang !== language) return false
 
     let textMatch = true
     let colorMatch = true
@@ -113,11 +111,14 @@ export default function ProductsConstructionPage({ data }: Props) {
   )
 }
 
-export const pageQuery = graphql`
-  query {
+export const pageAndLanguageQuery = graphql`
+  query pageQuery($language: String!) {
     allMarkdownRemark(
       sort: [{ frontmatter: { name: ASC } }]
-      filter: { fileAbsolutePath: { regex: "/(construction)/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/(construction)/" }
+        frontmatter: { lang: { eq: $language } }
+      }
     ) {
       nodes {
         id
@@ -133,6 +134,17 @@ export const pageQuery = graphql`
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
+        }
+      }
+    }
+    locales: allLocale(
+      filter: { ns: { in: ["construction", "common"] }, language: { eq: $language } }
+    ) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

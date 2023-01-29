@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
-import { useLanguage } from '../../../hooks/useLanguageContext'
 import { Link } from 'gatsby'
 import { NavItem } from '../../../types'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import DarkModeSwitch from './DarkModeSwitch'
 import LanguageSwitch from './LanguageSwitch'
 
@@ -13,7 +13,7 @@ interface HeaderProps {
 }
 
 export default function Header({ title, location, navigation }: HeaderProps) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
   return (
     <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
@@ -42,7 +42,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                 type="button"
                 className={classNames(
                   'flex items-center justify-center lowercase tracking-wide transition',
-                  location === link.title
+                  t(location).toLowerCase() === t(link.title).toLowerCase()
                     ? 'font-bold text-white dark:text-white'
                     : 'font-normal text-white/50 hover:text-white dark:text-white/50 dark:hover:text-white'
                 )}

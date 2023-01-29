@@ -1,3 +1,11 @@
 {
-  "location": "Products"
+  "location": "Produtos",
+  "title": "Produtos",
+  "description": "Produtos texto",
+  "agricultureHeader": "Agricultura",
+  "agricultureDescription": "Agricultura texto",
+  "agricultureTakeMeThere": "Ver produtos de agricultura",
+  "constructionHeader": "Construção",
+  "constructionDescription": "Construção texto",
+  "constructionTakeMeThere": "Ver produtos de construção"
 }

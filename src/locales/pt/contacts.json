@@ -1,4 +1,21 @@
 {
   "location": "Contactos",
-  "title": "Contactos"
+  "title": "Contactos",
+  "formHeader": "Tem alguma pergunta?",
+  "formText": "Preencha o formulário para entrar em contacto connosco.",
+  "formPlaceholderName": "Nome completo",
+  "formPlaceholderEmail": "Email",
+  "formPlaceholderSubject": "Assunto",
+  "formPlaceholderPhone": "Telemóvel",
+  "formPlaceholderLocation": "Cidade, País",
+  "formPlaceholderMessage": "A sua mensagem aqui",
+  "formPlaceholderTerms": "Aceito os",
+  "send": "Enviar",
+  "termsAndConditionsText": "termos e condições",
+  "name": "Nome",
+  "phone": "Telemóvel",
+  "subject": "Assunto",
+  "location-geo": "Localização",
+  "message": "Mensagem",
+  "sentFromWebsiteText": "Enviado a partir do website"
 }

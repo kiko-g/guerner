@@ -21,7 +21,7 @@ export default function CompanyPage() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(filter: { ns: { in: ["company"] }, language: { eq: $language } }) {
+    locales: allLocale(filter: { ns: { in: ["company", "common"] }, language: { eq: $language } }) {
       edges {
         node {
           ns

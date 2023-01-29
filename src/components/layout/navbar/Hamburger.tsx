@@ -1,18 +1,18 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
-import { useLanguage } from '../../../hooks/useLanguageContext'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import DarkModeSwitch from './DarkModeSwitch'
 import LanguageSwitch from './LanguageSwitch'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 interface HamburgerProps {
   open: boolean
 }
 
 export default function Hamburger({ open }: HamburgerProps) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
   return (
     <div

@@ -61,8 +61,8 @@ export default function Footer({ title }: Props) {
           <span className="md:text-center">
             © {new Date().getFullYear()} {title}™
           </span>
-          <span className="text-white/25">
-            <Trans t={t}>Made by</Trans>{' '}
+          <span className="text-sm text-white/25">
+            <span>{t('madeBy')} </span>
             <a
               target="_blank"
               rel="noreferrer"
