@@ -69,7 +69,7 @@ export default function ConstructionProductTemplate({ data }: Props) {
 }
 
 export const pageQuery = graphql`
-  query ($id: String!) {
+  query ($language: String!, $id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -82,6 +82,15 @@ export const pageQuery = graphql`
           childImageSharp {
             gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
+        }
+      }
+    }
+    locales: allLocale(filter: { ns: { in: ["common"] }, language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }

@@ -2,7 +2,7 @@
 lang: pt
 pinned: false
 name: Redes de Proteção de Silos
-slug: redes
+slug: redes-protecao-silos
 color: green
 category: agrotextile
 featuredImage: ../images/produto1.jpg

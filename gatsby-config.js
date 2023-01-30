@@ -87,23 +87,16 @@ module.exports = {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
         languages: [`pt`, `en`],
         defaultLanguage: `pt`,
+        lng: `pt`,
+        fallbackLng: `pt`,
+        supportedLngs: [`pt`, `en`],
         siteUrl:
           mode !== 'production' ? 'http://localhost:8000/' : 'https://guernerpt.netlify.app/',
         // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         trailingSlash: 'always',
         i18nextOptions: {
           // you can pass any i18next options
-          debug: mode !== 'production',
-          resources: {
-            pt: {
-              common: require('./src/locales/pt/common.json'),
-            },
-            en: {
-              common: require('./src/locales/en/common.json'),
-            },
-          },
-          fallbackLng: defaultLanguage,
-          supportedLngs: languages,
+          debug: false,
           defaultNS: 'common',
           interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
