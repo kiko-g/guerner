@@ -14,20 +14,7 @@ type Props = {
 export default function ColorFilter({ hook }: Props) {
   const { t, language } = useI18next()
   const [pickedColor, setPickedColor] = hook
-  const colors: Color[] = [
-    '',
-    'blue',
-    'green',
-    'black',
-    'brown',
-    'red',
-    'yellow',
-    'white',
-    'gray',
-    'purple',
-    'pink',
-    'orange',
-  ]
+  const colors: Color[] = ['black', 'white', 'gray', 'green', 'blue', 'gold', 'red', 'yellow']
 
   return (
     <Menu as="div" className="relative">

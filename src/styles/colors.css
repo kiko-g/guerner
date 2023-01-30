@@ -1,3 +1,11 @@
+.black {
+  @apply bg-black;
+}
+
+.white {
+  @apply bg-white;
+}
+
 .red {
   @apply bg-red-700;
 }
@@ -10,6 +18,23 @@
   @apply bg-emerald-600;
 }
 
+.yellow {
+  @apply bg-amber-300;
+}
+
+.gold {
+  @apply bg-amber-700;
+}
+
+.gray {
+  @apply bg-gray-400;
+}
+
+/* Backlog */
+.slate {
+  @apply bg-slate-600;
+}
+
 .pink {
   @apply bg-pink-300;
 }
@@ -20,28 +45,4 @@
 
 .orange {
   @apply bg-orange-600;
-}
-
-.yellow {
-  @apply bg-amber-400;
-}
-
-.brown {
-  @apply bg-amber-800;
-}
-
-.gray {
-  @apply bg-gray-400;
-}
-
-.slate {
-  @apply bg-slate-600;
-}
-
-.black {
-  @apply bg-black;
-}
-
-.white {
-  @apply bg-white;
 }

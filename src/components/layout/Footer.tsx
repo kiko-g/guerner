@@ -36,7 +36,7 @@ export default function Footer({ title }: Props) {
                 className="h-12 w-12 rounded-full bg-primary p-0.5 shadow"
               />
               <h5
-                className="flex max-w-[10rem] flex-col font-headings text-sm font-medium transition 
+                className="flex max-w-[6rem] flex-col font-headings text-sm font-medium transition 
                 group-hover:underline md:text-base md:font-bold"
               >
                 Guerner & Irmãos S.A.

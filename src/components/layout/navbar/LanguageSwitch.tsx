@@ -14,8 +14,10 @@ export default function LanguageSwitch({}: Props) {
       <button
         onClick={() => setOpen(!open)}
         className="relative flex w-full cursor-pointer items-center justify-center 
-          gap-x-0.5 rounded border-2 border-teal-500/20 bg-teal-500/20 py-1 pl-3 pr-2 text-sm 
-          shadow transition hover:border-teal-500/50 hover:bg-teal-500/50 md:gap-x-1 md:pl-3 md:pr-1.5"
+          gap-x-0.5 rounded border-2 border-black/30 bg-black/30 py-1 pl-3 pr-2 text-sm 
+          shadow transition hover:border-black/50 hover:bg-black/50 dark:border-white/30 
+          dark:bg-white/10 dark:hover:border-white/40 dark:hover:bg-white/30 
+          md:gap-x-1 md:pl-3 md:pr-1.5"
       >
         <span className="block truncate uppercase tracking-wide">{language}</span>
         <ChevronUpDownIcon

@@ -19,26 +19,27 @@ interface NavbarProps {
 }
 
 export default function Navbar({ title, location, special }: NavbarProps) {
-  const { t, language } = useI18next()
+  const { t, language, defaultLanguage } = useI18next()
+  const isDefaultLanguage = language === defaultLanguage
   const navigation = [
     {
       title: t('home'),
-      location: '/',
+      location: isDefaultLanguage ? '/' : `/${language}/`,
       icon: <HomeModernIcon className="h-5 w-5" />,
     },
     {
       title: t('company'),
-      location: '/company',
+      location: isDefaultLanguage ? '/company' : `/${language}/company`,
       icon: <BriefcaseIcon className="h-5 w-5" />,
     },
     {
       title: t('products'),
-      location: '/products',
+      location: isDefaultLanguage ? '/products' : `/${language}/products`,
       icon: <ShoppingCartIcon className="h-5 w-5" />,
     },
     {
       title: t('contacts'),
-      location: '/contacts',
+      location: isDefaultLanguage ? '/contacts' : `/${language}/contacts`,
       icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
     },
   ]

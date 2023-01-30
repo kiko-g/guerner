@@ -94,17 +94,25 @@ export default function ProductsAgriculturePage({ data }: Props) {
           </div>
 
           {/* Products */}
-          <ul
-            className={classNames(
-              viewType
-                ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
-                : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
-            )}
-          >
-            {products.map((productMd: MarkdownData, productIdx: number) => (
-              <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
-            ))}
-          </ul>
+          <div className="flex flex-col">
+            <div className="mb-2">
+              <p>
+                {products.length} {t('resultsFound')}.
+              </p>
+            </div>
+
+            <ul
+              className={classNames(
+                viewType
+                  ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
+                  : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
+              )}
+            >
+              {products.map((productMd: MarkdownData, productIdx: number) => (
+                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+              ))}
+            </ul>
+          </div>
         </div>
       </main>
     </Layout>
