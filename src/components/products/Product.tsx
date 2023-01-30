@@ -1,11 +1,10 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
-import { translations } from '../../config'
 import { Category, Color } from '../../types'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
-import { useLanguage } from '../../hooks/useLanguageContext'
 import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Frontmatter = {
   lang: string
@@ -22,7 +21,7 @@ type Props = {
 }
 
 export default function Product({ product }: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
   const coverImage = getImage(product.featuredImage)
 
   return (
@@ -46,7 +45,7 @@ export default function Product({ product }: Props) {
       <div className="absolute top-3 right-3 z-10 flex items-center justify-center gap-x-1.5">
         {product.category ? (
           <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-white shadow">
-            {translations[language].category[product.category]}
+            {t(`categories.${product.category}`)}
           </div>
         ) : (
           <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
@@ -77,7 +76,7 @@ export default function Product({ product }: Props) {
             to={product.slug}
             className="transition hover:text-primary hover:underline hover:opacity-90 dark:hover:text-secondary"
           >
-            {product.name}
+            {t(product.name)}
           </Link>
           <Link to={product.slug}>
             <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-secondary" />

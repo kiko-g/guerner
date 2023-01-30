@@ -1,8 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { useLanguage } from '../../hooks/useLanguageContext'
-import { translations } from '../../config'
 import { Building, Rays } from '../../images'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Frontmatter = {
   lang: string
@@ -22,8 +21,8 @@ type Data = {
 type Props = {}
 
 export default function Presentation({}: Props) {
-  const { language } = useLanguage()
-  const sectionId = translations[language].phrases.company.sectionIds.presentation
+  const { t, language } = useI18next()
+  const sectionId = t('sectionIdPresentation')
 
   const data: Data = useStaticQuery(graphql`
     query PresentationQuery {

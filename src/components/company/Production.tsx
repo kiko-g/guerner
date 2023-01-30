@@ -1,10 +1,9 @@
 import React from 'react'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import classNames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Tab } from '@headlessui/react'
 import { IGatsbyImageData, getImage, GatsbyImage } from 'gatsby-plugin-image'
-import classNames from 'classnames'
 import { LinkFill } from '../utils'
 
 type Frontmatter = {
@@ -28,10 +27,10 @@ type Data = {
 type Props = {}
 
 export default function Production({}: Props) {
-  const { language } = useLanguage()
-  const sectionId = translations[language].phrases.company.sectionIds.production
-  const routeToProducts = routes[language].products.main
-  const takeMeToProducts = translations[language].phrases.home.visitProducts.takeMeThere
+  const { t, language } = useI18next()
+  const routeToProducts = '/products'
+  const sectionId = t('sectionIdProduction')
+  const takeMeToProducts = t('takeMeToProducts')
 
   const data: Data = useStaticQuery(graphql`
     query ProductionQuery {
@@ -65,10 +64,7 @@ export default function Production({}: Props) {
       <div className="relative overflow-hidden bg-teal-800 bg-cover py-16 dark:bg-teal-900 lg:py-24">
         <div className="flex flex-col items-center justify-center gap-y-4 px-4 lg:gap-y-8 lg:px-3">
           <Tab.Group>
-            <Tab.List
-              className="mx-auto flex w-min items-center justify-center gap-x-2 rounded bg-white/10 
-              px-1 py-1 font-lexend text-sm font-normal tracking-tighter lg:gap-x-4 lg:text-base"
-            >
+            <Tab.List className="mx-auto flex w-min items-center justify-center gap-x-1 rounded bg-white/10 px-1 py-1 font-lexend text-sm font-normal tracking-tighter lg:gap-x-1 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
@@ -91,7 +87,7 @@ export default function Production({}: Props) {
                   <Tab.Panel key={`tab-panel-${tabIdx}`}>
                     <div className="flex flex-col items-center justify-center gap-y-4 text-center lg:gap-y-6">
                       <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                        Centro de {tabList[tabIdx]}
+                        {tabList[tabIdx]}
                       </h2>
                       {gatsbyImage ? (
                         <GatsbyImage
@@ -100,10 +96,7 @@ export default function Production({}: Props) {
                           className="max-w-xl rounded-xl shadow"
                         />
                       ) : null}
-                      <p
-                        className="mx-auto max-w-xl text-base
-                        text-teal-200 dark:text-teal-100 lg:text-lg"
-                      >
+                      <p className="mx-auto max-w-xl text-base text-teal-200 dark:text-teal-100 lg:text-lg">
                         {tabDescriptions[tabIdx]}
                       </p>
                     </div>

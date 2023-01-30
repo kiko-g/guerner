@@ -1,6 +1,6 @@
 ---
 lang: pt
-facilitiesNames: ['Extrusão', 'Urdisagem', 'Tecelagem', 'Confeção']
+facilitiesNames: ['Extrusão', 'Urdissagem', 'Tecelagem', 'Confeção']
 facilitiesImages:
   [
     '../images/facility1.jpg',

@@ -1,34 +1,27 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { LinkFill } from '../utils'
 import { CompanyShowcase1, CompanyShowcase2 } from '../../images'
-
-interface GoToSection {
-  header: string
-  subheader: string
-  description: string
-}
-
-type CompanyShowcaseProps = {
-  info: GoToSection
-  image: string
-}
 
 type Props = {}
 
 export default function CompanyCTA({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
-  const link = translations[language].phrases.home.visitCompany.takeMeThere
-  const text = translations[language].phrases.home.visitCompany.description
-  const header = translations[language].phrases.home.visitCompany.header
-  const routeCompany = routes[language].company
+  const link = t('takeMeToCompany')
+  const text = t('visitCompanyDescription')
+  const header = t('visitCompanyHeader')
 
-  const productionSection = translations[language].phrases.home.visitCompany.goToProductionSection
-  const presentationSection =
-    translations[language].phrases.home.visitCompany.goToPresentationSection
+  const productionSectionHeader = t('productionSectionHeader')
+  const productionSectionSubeader = t('productionSectionSubeader')
+  const productionSectionDescription = t('productionSectionDescription')
+
+  const presentationSectionHeader = t('presentationSectionHeader')
+  const presentationSectionSubeader = t('presentationSectionSubeader')
+  const presentationSectionDescription = t('presentationSectionDescription')
+
+  const routeCompany = '/company'
 
   return (
     <section className="w-full">
@@ -56,35 +49,48 @@ export default function CompanyCTA({}: Props) {
 
         {/* Images */}
         <div className="grid grid-cols-2">
-          <CompanyShowcase image={CompanyShowcase1} info={presentationSection} />
-          <CompanyShowcase image={CompanyShowcase2} info={productionSection} />
+          <Link to="#" className="group relative block bg-black">
+            <img
+              alt={`company-showcase-${presentationSectionHeader}`}
+              src={CompanyShowcase1}
+              className="absolute inset-0 h-full w-full object-cover opacity-75 
+        transition-opacity group-hover:opacity-40 xl:h-[32rem]"
+            />
+
+            <div className="relative p-8">
+              <p className="text-sm font-medium uppercase tracking-widest text-secondary">
+                {presentationSectionHeader}
+              </p>
+              <p className="text-2xl font-bold text-white">{presentationSectionSubeader}</p>
+              <div className="mt-64">
+                <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="text-sm text-white">{presentationSectionDescription}</p>
+                </div>
+              </div>
+            </div>
+          </Link>
+          <Link to="#" className="group relative block bg-black">
+            <img
+              alt={`company-showcase-${productionSectionHeader}`}
+              src={CompanyShowcase2}
+              className="absolute inset-0 h-full w-full object-cover opacity-75 
+        transition-opacity group-hover:opacity-40 xl:h-[32rem]"
+            />
+
+            <div className="relative p-8">
+              <p className="text-sm font-medium uppercase tracking-widest text-secondary">
+                {productionSectionHeader}
+              </p>
+              <p className="text-2xl font-bold text-white">{productionSectionSubeader}</p>
+              <div className="mt-64">
+                <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                  <p className="text-sm text-white">{productionSectionDescription}</p>
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
-  )
-}
-
-function CompanyShowcase({ info, image }: CompanyShowcaseProps) {
-  return (
-    <Link to="#" className="group relative block bg-black">
-      <img
-        alt={`company-showcase-${info.header}`}
-        src={image}
-        className="absolute inset-0 h-full w-full object-cover opacity-75 
-        transition-opacity group-hover:opacity-40 xl:h-[32rem]"
-      />
-
-      <div className="relative p-8">
-        <p className="text-sm font-medium uppercase tracking-widest text-secondary">
-          {info.header}
-        </p>
-        <p className="text-2xl font-bold text-white">{info.subheader}</p>
-        <div className="mt-64">
-          <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-            <p className="text-sm text-white">{info.description}</p>
-          </div>
-        </div>
-      </div>
-    </Link>
   )
 }

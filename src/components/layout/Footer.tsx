@@ -1,23 +1,22 @@
 import React from 'react'
-import { routes, translations } from '../../config'
 import { Link } from 'gatsby'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 
 type Props = {
   title: string
 }
 
 export default function Footer({ title }: Props) {
-  const { language } = useLanguage()
+  const { t } = useTranslation()
 
   const links = [
     {
-      name: translations[language].footer.terms,
-      route: routes[language].info.termsAndConditions,
+      name: t('termsAndConditions'),
+      route: 'info/terms-and-conditions',
     },
     {
-      name: translations[language].footer.privacy,
-      route: routes[language].info.privacyPolicy,
+      name: t('privacyPolicy'),
+      route: 'info/politica-privacidade',
     },
   ]
 
@@ -30,21 +29,17 @@ export default function Footer({ title }: Props) {
         <div className="flex items-center justify-between py-2 md:py-3">
           {/* Left column */}
           <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
-            <Link
-              to={routes[language].home}
-              className="group flex items-center justify-center gap-x-3"
-            >
+            <Link to={'/'} className="group flex items-center justify-center gap-x-3">
               <img
                 alt={title}
                 src={'/images/icon.png'}
                 className="h-12 w-12 rounded-full bg-primary p-0.5 shadow"
               />
               <h5
-                className="flex max-w-xs flex-col font-headings text-sm font-medium 
-                transition group-hover:underline md:text-base md:font-bold"
+                className="flex max-w-[10rem] flex-col font-headings text-sm font-medium transition 
+                group-hover:underline md:text-base md:font-bold"
               >
-                <span>Guerner &</span>
-                <span>Irmãos S.A.</span>
+                Guerner & Irmãos S.A.
               </h5>
             </Link>
           </div>
@@ -71,8 +66,8 @@ export default function Footer({ title }: Props) {
           <span className="md:text-center">
             © {new Date().getFullYear()} {title}™
           </span>
-          <span className="text-white/25">
-            Made by{' '}
+          <span className="text-sm text-gray-400">
+            <span>{t('madeBy')} </span>
             <a
               target="_blank"
               rel="noreferrer"

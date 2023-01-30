@@ -1,12 +1,16 @@
 import React from 'react'
 import classNames from 'classnames'
-import { useLanguage } from '../../hooks/useLanguageContext'
 import { Disclosure } from '@headlessui/react'
-
-import { getNavigation } from './navbar'
+import {
+  HomeModernIcon,
+  BriefcaseIcon,
+  ShoppingCartIcon,
+  PhoneArrowDownLeftIcon,
+} from '@heroicons/react/24/outline'
 import Header from './navbar/Header'
 import Hamburger from './navbar/Hamburger'
 import FoldableMobileMenu from './navbar/FoldableMobileMenu'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 interface NavbarProps {
   title: string
@@ -15,8 +19,29 @@ interface NavbarProps {
 }
 
 export default function Navbar({ title, location, special }: NavbarProps) {
-  const { language } = useLanguage()
-  const navigation = getNavigation(language)
+  const { t, language } = useI18next()
+  const navigation = [
+    {
+      title: t('home'),
+      location: '/',
+      icon: <HomeModernIcon className="h-5 w-5" />,
+    },
+    {
+      title: t('company'),
+      location: '/company',
+      icon: <BriefcaseIcon className="h-5 w-5" />,
+    },
+    {
+      title: t('products'),
+      location: '/products',
+      icon: <ShoppingCartIcon className="h-5 w-5" />,
+    },
+    {
+      title: t('contacts'),
+      location: '/contacts',
+      icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
+    },
+  ]
 
   return (
     <Disclosure

@@ -18,8 +18,10 @@ export default function LinkTranslate({ text, link, alt = false, arrow = false }
         `group flex w-full items-center justify-center gap-x-1 rounded border-2 px-8 py-3 text-sm 
         font-medium shadow transition hover:-translate-y-1 sm:w-auto lg:gap-x-2`,
         alt
-          ? `border-white bg-white/80 text-primary dark:border-black dark:bg-black/50 dark:text-white`
-          : `border-primary bg-primary/80 text-white dark:border-secondary dark:bg-secondary/75`
+          ? `border-white bg-white/80 text-primary hover:bg-white dark:border-black 
+          dark:bg-black/50 dark:text-white dark:hover:bg-black/90`
+          : `border-primary bg-primary/80 text-white hover:bg-primary dark:border-secondary 
+          dark:bg-secondary/75 dark:hover:bg-secondary`
       )}
     >
       <span>{text}</span>

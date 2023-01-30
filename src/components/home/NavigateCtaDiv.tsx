@@ -13,6 +13,7 @@ export default function NavigateCtaDiv({ link, image, actionText }: Props) {
     <Link to={link} className="group relative overflow-hidden bg-center">
       <img
         src={image}
+        alt={`guerner-nav-${actionText}`}
         className="h-64 max-h-full w-full object-cover blur-xl
         transition duration-300 group-hover:blur-0 lg:h-96"
       />

@@ -1,11 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import classNames from 'classnames'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
 import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import { translations } from '../../../config'
 import { Color } from '../../../types'
-import { useLanguage } from '../../../hooks/useLanguageContext'
 import '../../../styles/colors.css'
 
 type Props = {
@@ -13,9 +12,22 @@ type Props = {
 }
 
 export default function ColorFilter({ hook }: Props) {
-  const { language } = useLanguage()
+  const { t, language } = useI18next()
   const [pickedColor, setPickedColor] = hook
-  const colors = Object.keys(translations[language].colors) as Color[]
+  const colors: Color[] = [
+    '',
+    'blue',
+    'green',
+    'black',
+    'brown',
+    'red',
+    'yellow',
+    'white',
+    'gray',
+    'purple',
+    'pink',
+    'orange',
+  ]
 
   return (
     <Menu as="div" className="relative">

@@ -8,17 +8,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type MetaProps = JSX.IntrinsicElements['meta']
 
 interface Props {
   title: string
-  lang?: string
   meta?: MetaProps[]
   description?: string
 }
 
-export default function Seo({ title, lang = `pt`, meta = [], description = `` }: Props) {
+export default function Seo({ title, meta = [], description = `` }: Props) {
+  const { t, language } = useI18next()
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -39,7 +40,7 @@ export default function Seo({ title, lang = `pt`, meta = [], description = `` }:
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        language,
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}

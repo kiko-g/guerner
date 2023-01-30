@@ -1,18 +1,17 @@
 import React from 'react'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
 import { LinkFill } from '../utils'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Props = {}
 
 export default function ContactsCTA({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
-  const text = translations[language].phrases.home.visitContacts.description
-  const header = translations[language].phrases.home.visitContacts.header
-  const takeMeThere = translations[language].phrases.home.visitContacts.takeMeThere
+  const header = t('visitContactsHeader')
+  const description = t('visitContactsDescription')
+  const takeMeThere = t('visitContactsTakeMeThere')
 
-  const routeContacts = routes[language].contacts
+  const routeContacts = '/contacts'
 
   return (
     <section className="relative z-0 w-full bg-cta-dark p-12 lg:px-16 lg:py-24">
@@ -21,7 +20,9 @@ export default function ContactsCTA({}: Props) {
         <h2 className="w-full text-center font-headings text-2xl font-bold tracking-tighter text-secondary dark:text-secondary xl:text-3xl">
           {header}
         </h2>
-        <p className="block w-full px-2 py-2 text-center tracking-tighter text-white">{text}</p>
+        <p className="block w-full px-2 py-2 text-center tracking-tighter text-white">
+          {description}
+        </p>
         <LinkFill text={takeMeThere} link={routeContacts} light />
       </div>
     </section>

@@ -1,19 +1,18 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
-import { routes, translations } from '../../../config'
-import { useLanguage } from '../../../hooks/useLanguageContext'
 import { Disclosure, Transition } from '@headlessui/react'
 import { Bars4Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import DarkModeSwitch from './DarkModeSwitch'
 import LanguageSwitch from './LanguageSwitch'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
 interface HamburgerProps {
   open: boolean
 }
 
 export default function Hamburger({ open }: HamburgerProps) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
   return (
     <div
@@ -26,7 +25,7 @@ export default function Hamburger({ open }: HamburgerProps) {
     >
       {open ? (
         <div className="flex items-center gap-x-1">
-          <Link to={routes[language].home}>
+          <Link to="/">
             <img
               alt="Guerner"
               src={'/images/icon.png'}
@@ -57,7 +56,7 @@ export default function Hamburger({ open }: HamburgerProps) {
         </div>
       ) : (
         <>
-          <Link to={routes[language].home}>
+          <Link to="/">
             <img
               alt="Guerner"
               src={'/images/icon.png'}

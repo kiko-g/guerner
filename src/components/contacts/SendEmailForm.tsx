@@ -1,23 +1,30 @@
 import React, { useMemo, useState } from 'react'
-import { routes, translations } from '../../config'
-import { useLanguage } from '../../hooks/useLanguageContext'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Link } from 'gatsby'
 import { Banner } from '../../images'
 
 type Props = {}
 
 export default function SendEmailForm({}: Props) {
-  const { language } = useLanguage()
+  const { t } = useI18next()
 
   const br = `%0D%0A`
   const receiverEmail = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
 
-  const header = translations[language].phrases.contacts.form.header
-  const instructions = translations[language].phrases.contacts.form.text
-  const placeholders = translations[language].phrases.contacts.form.placeholders
+  const header = t('formHeader')
+  const instructions = t('formText')
+  const placeholders = {
+    name: t('formPlaceholderName'),
+    email: t('formPlaceholderEmail'),
+    subject: t('formPlaceholderSubject'),
+    phone: t('formPlaceholderPhone'),
+    location: t('formPlaceholderLocation'),
+    message: t('formPlaceholderMessage'),
+    terms: t('formPlaceholderTerms'),
+  }
 
-  const routeHome = routes[language].home
-  const routeTerms = routes[language].info.termsAndConditions
+  const routeHome = '/'
+  const routeTerms = '/info/terms-and-conditions'
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -28,11 +35,11 @@ export default function SendEmailForm({}: Props) {
 
   const emailContent = useMemo(() => {
     return [
-      `Nome: ${name}`,
-      `Telefone: ${phone ? phone : 'N/A'}`,
-      `Localização: ${location ? location : 'N/A'}`,
-      `Mensagem: ${encodeURIComponent(messageBody)}`,
-      `${br}${br}${br}Enviado a partir do website por: ${name}`,
+      `${t('name')}: ${name}`,
+      `${t('phone')}: ${phone ? phone : 'N/A'}`,
+      `${t('location-geo')}: ${location ? location : 'N/A'}`,
+      `${t('message')}: ${encodeURIComponent(messageBody)}`,
+      `${br}${br}${br}${t('sentFromWebsiteText')}: ${name}`,
     ].join(br)
   }, [name, phone, location, messageBody])
 
@@ -46,10 +53,9 @@ export default function SendEmailForm({}: Props) {
         {/* Desktop header */}
         <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
           <img
-            alt="Night"
+            alt="Night Banner"
             src={Banner}
-            className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top
-            opacity-80 lg:rounded-none lg:rounded-l"
+            className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top opacity-80 lg:rounded-none lg:rounded-l"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
@@ -94,7 +100,7 @@ export default function SendEmailForm({}: Props) {
               {/* Name */}
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="name" className="block text-sm">
-                  Nome
+                  {t('name')}
                 </label>
 
                 <input
@@ -112,7 +118,7 @@ export default function SendEmailForm({}: Props) {
               {/* Location */}
               <div className="col-span-6 sm:col-span-3">
                 <label htmlFor="location" className="block text-sm">
-                  Localização
+                  {t('location-geo')}
                 </label>
 
                 <input
@@ -129,7 +135,7 @@ export default function SendEmailForm({}: Props) {
               {/* Subject */}
               <div className="col-span-6">
                 <label htmlFor="subject" className="block text-sm">
-                  Assunto
+                  {t('subject')}
                 </label>
 
                 <input
@@ -147,7 +153,7 @@ export default function SendEmailForm({}: Props) {
               {/* Phone */}
               <div className="col-span-6 sm:col-span-6">
                 <label htmlFor="phone" className="block text-sm">
-                  Telemóvel
+                  {t('phone')}
                 </label>
 
                 <input
@@ -164,7 +170,7 @@ export default function SendEmailForm({}: Props) {
               {/* Message */}
               <div className="col-span-6 sm:col-span-6">
                 <label htmlFor="messageBody" className="block text-sm">
-                  Mensagem
+                  {t('message')}
                 </label>
 
                 <textarea
@@ -197,7 +203,7 @@ export default function SendEmailForm({}: Props) {
                       to={routeTerms}
                       className="font-bold transition hover:text-primary/75 hover:underline dark:text-white/75 dark:hover:text-secondary/75"
                     >
-                      termos e condições
+                      {t('termsAndConditionsText')}
                     </Link>
                     .
                   </span>
@@ -208,10 +214,9 @@ export default function SendEmailForm({}: Props) {
               <div className="col-span-6 mt-3">
                 <a
                   href={`mailto:${receiverEmail}?subject=${subject}&body=${emailContent}`}
-                  className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm 
-                  text-white transition hover:opacity-80 dark:bg-secondary/75"
+                  className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm text-white transition hover:opacity-80 dark:bg-secondary/75"
                 >
-                  Enviar email
+                  {t('send')}
                 </a>
               </div>
             </form>
