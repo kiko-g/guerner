@@ -78,6 +78,7 @@ export default function ContactsBanner({}: Props) {
       {/* Image */}
       <img
         src={Building}
+        alt="Guerner Building"
         className="order-1 h-48 w-full rounded bg-primary object-cover object-center 
         dark:bg-secondary/75 lg:h-64 xl:order-2"
       />

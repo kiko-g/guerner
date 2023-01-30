@@ -53,7 +53,7 @@ export default function SendEmailForm({}: Props) {
         {/* Desktop header */}
         <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
           <img
-            alt="Night"
+            alt="Night Banner"
             src={Banner}
             className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top opacity-80 lg:rounded-none lg:rounded-l"
           />

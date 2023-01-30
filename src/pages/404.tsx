@@ -7,7 +7,11 @@ export default function NotFoundPage() {
   return (
     <Layout location="404">
       <main className="mx-auto flex max-w-5xl flex-col gap-y-4 py-8 text-center">
-        <img alt="Guerner" className="h-64 w-full rounded object-cover shadow-xl" src={Banner} />
+        <img
+          alt="Guerner | Not Found"
+          className="h-64 w-full rounded object-cover shadow-xl"
+          src={Banner}
+        />
         <div>
           <h1 className="mb-4 font-headings text-4xl font-extrabold tracking-tight">
             404 | Not Found

@@ -10,6 +10,7 @@ module.exports = {
     siteUrl: `https://guerner.netlify.app/`,
   },
   plugins: [
+    `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-image`,
@@ -57,12 +58,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `guerner`,
+        name: `Guerner & Irmãos S.A.`,
         short_name: `guerner`,
         start_url: `/`,
-        background_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `static/favicon.ico`, // This path is relative to the root of the site.
+        theme_color: `#124842`,
+        display: `standalone`,
+        icon: `static/images/icon.png`,
+        icons: [
+          {
+            src: 'static/images/icon.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+        ],
       },
     },
     {
@@ -102,17 +111,6 @@ module.exports = {
           keySeparator: false,
           nsSeparator: false,
         },
-        // pages: [
-        //   {
-        //     matchPath: '/:lang?/blog/:uid',
-        //     getLanguageFromPath: true,
-        //     excludeLanguages: ['es'],
-        //   },
-        //   {
-        //     matchPath: '/preview',
-        //     languages: ['en'],
-        //   },
-        // ],
       },
     },
   ],

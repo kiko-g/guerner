@@ -21,7 +21,10 @@ export default function Footer({ title }: Props) {
   ]
 
   return (
-    <footer className="z-10 flex flex-col border-t border-transparent bg-navy text-sm text-white dark:border-white/10 dark:bg-navy md:text-base">
+    <footer
+      className="z-10 flex flex-col border-t border-transparent bg-navy 
+      text-sm text-white dark:border-white/10 dark:bg-navy md:text-base"
+    >
       <div className="mx-4 py-1 md:mx-8 md:py-2">
         <div className="flex items-center justify-between py-2 md:py-3">
           {/* Left column */}
@@ -32,9 +35,11 @@ export default function Footer({ title }: Props) {
                 src={'/images/icon.png'}
                 className="h-12 w-12 rounded-full bg-primary p-0.5 shadow"
               />
-              <h5 className="flex max-w-xs flex-col font-headings text-sm font-medium transition group-hover:underline md:text-base md:font-bold">
-                <span>Guerner &</span>
-                <span>Irmãos S.A.</span>
+              <h5
+                className="flex max-w-[10rem] flex-col font-headings text-sm font-medium transition 
+                group-hover:underline md:text-base md:font-bold"
+              >
+                Guerner & Irmãos S.A.
               </h5>
             </Link>
           </div>
@@ -61,7 +66,7 @@ export default function Footer({ title }: Props) {
           <span className="md:text-center">
             © {new Date().getFullYear()} {title}™
           </span>
-          <span className="text-sm text-white/25">
+          <span className="text-sm text-gray-400">
             <span>{t('madeBy')} </span>
             <a
               target="_blank"
