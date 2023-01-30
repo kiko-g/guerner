@@ -24,6 +24,7 @@ module.exports = {
       backgroundImage: {
         // path relative to src/styles
         banner: 'url(../images/hero/banner.png)',
+        'banner-2': 'url(../images/hero/banner-2.png)',
         building: 'url(../images/building.png)',
         cta: 'url(../images/backgrounds/cta.png)',
         'cta-dark': 'url(../images/backgrounds/cta-dark.png)',

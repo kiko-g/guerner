@@ -20,7 +20,7 @@ export default function HeroBanner({}: Props) {
   return (
     <section className="relative w-full bg-banner bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-transparent bg-gradient-to-r from-black/25 to-black/50 dark:from-black/50 dark:to-black/75" />
-      <div className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+      <div className="relative mx-auto min-h-screen max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:items-center lg:px-8">
         <div className="mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             <span>{welcome}</span>

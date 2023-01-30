@@ -28,8 +28,8 @@ type Props = {}
 
 export default function Production({}: Props) {
   const { t, language } = useI18next()
-  const sectionId = t('sectionIdProduction')
   const routeToProducts = '/products'
+  const sectionId = t('sectionIdProduction')
   const takeMeToProducts = t('takeMeToProducts')
 
   const data: Data = useStaticQuery(graphql`
@@ -64,7 +64,7 @@ export default function Production({}: Props) {
       <div className="relative overflow-hidden bg-teal-800 bg-cover py-16 dark:bg-teal-900 lg:py-24">
         <div className="flex flex-col items-center justify-center gap-y-4 px-4 lg:gap-y-8 lg:px-3">
           <Tab.Group>
-            <Tab.List className="mx-auto flex w-min items-center justify-center gap-x-2 rounded bg-white/10 px-1 py-1 font-lexend text-sm font-normal tracking-tighter lg:gap-x-4 lg:text-base">
+            <Tab.List className="mx-auto flex w-min items-center justify-center gap-x-1 rounded bg-white/10 px-1 py-1 font-lexend text-sm font-normal tracking-tighter lg:gap-x-1 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}

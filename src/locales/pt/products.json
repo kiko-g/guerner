@@ -1,11 +1,11 @@
 {
   "location": "Produtos",
   "title": "Produtos",
-  "description": "Produtos texto",
+  "description": "A Guerner & Irmãos S.A. tem uma vasta gama de produtos especializados e comercializados. Apesar do forte destaque no setor agrícola, oferecendo um sortido variado de produtos agrotêxteis e acessórios para a agricultura, a empresa aposta continuamente noutras indústrias, nomeadamente na construção, embalagem, jardinagem e cordoaria.",
   "agricultureHeader": "Agricultura",
-  "agricultureDescription": "Agricultura texto",
+  "agricultureDescription": "Conheça a nossa lista diversificada de produtos agrotêxteis e acessórios agrícolas.",
   "agricultureTakeMeThere": "Ver produtos de agricultura",
   "constructionHeader": "Construção",
-  "constructionDescription": "Construção texto",
+  "constructionDescription": "Conheça a nossa seleção de acessórios dirigidos à construção.",
   "constructionTakeMeThere": "Ver produtos de construção"
 }

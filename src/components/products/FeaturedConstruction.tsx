@@ -18,7 +18,7 @@ export default function FeaturedConstruction({}: Props) {
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl md:mb-1 md:text-5xl">
             {header}
           </h2>
-          <p className="max-w-md text-sm font-normal leading-tight text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
+          <p className="max-w-sm text-sm font-normal leading-tight text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
             {description}
           </p>
           <div className="mt-4 sm:mt-8">
