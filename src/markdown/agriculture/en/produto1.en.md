@@ -6,14 +6,9 @@ slug: silage-protection-nets
 color: green
 category: all
 featuredImage: ../images/produto1.jpg
+description: The silage protection net (Silo Net) ensures the preservation of the quality of the silage you produced and that it does not "breathe" (anaerobiosis. It is essential to ensure good silage and correct ensilage.
+characteristics: [Open Field, Cement Silos (_for covering the top_)]
 ---
-
-## Description
-
-The silage protection net (Silo Net) ensures the preservation of the quality of the silage you produced and that it does not "breathe" (anaerobiosis. It is essential to ensure good silage and correct ensilage.
-
-- Open Field
-- Cement Silos (_for covering the top_)
 
 ## Dimensions
 

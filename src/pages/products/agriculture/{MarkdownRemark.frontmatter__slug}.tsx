@@ -3,6 +3,8 @@ import { graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { GoBack, Layout } from '../../../components/layout'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import '../../../styles/product.css'
+import classNames from 'classnames'
 
 type MarkdownData = {
   html: string
@@ -14,6 +16,8 @@ type MarkdownData = {
     color: string
     pinned: boolean
     category: string
+    description: string
+    characteristics: string[]
     featuredImage: IGatsbyImageData
   }
 }
@@ -26,42 +30,63 @@ type Props = {
 
 export default function AgricultureProductTemplate({ data }: Props) {
   const { t } = useI18next()
-  const routeGoBack = '/products/agriculture'
-  const title = t('products.agriculture.title')
 
+  const routeGoBack = '/products/agriculture'
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
 
   return (
     <Layout location={frontmatter.name}>
-      <main className="mx-auto flex max-w-xl flex-col items-center justify-center gap-y-4 py-8 font-normal md:gap-y-6 md:py-16">
-        <header className="flex w-full items-center justify-between">
+      <main className="product">
+        <header>
           <GoBack url={routeGoBack} />
-          <h1 className="text-lg font-bold tracking-tight">{title}</h1>
+          <h1>{frontmatter.name}</h1>
         </header>
 
-        <div className="flex w-full gap-4 rounded-xl bg-white p-4 dark:bg-white/10">
+        <div className="showcase">
           {coverImage ? (
-            <GatsbyImage image={coverImage} alt="product-cover" className="rounded" />
+            <GatsbyImage
+              image={coverImage}
+              alt="product-cover"
+              className="col-span-1 h-full w-full rounded object-cover lg:col-span-3"
+            />
           ) : null}
-          <ul className="whitespace-nowrap pr-16 text-sm">
-            <li>
-              Destaque:{' '}
-              <span className="font-bold">{frontmatter.pinned === true ? 'Sim' : 'Não'}</span>
-            </li>
-            <li>
-              Nome: <span className="font-bold">{frontmatter.name}</span>
-            </li>
-            <li>
-              Cor: <span className="font-bold">{frontmatter.color}</span>
-            </li>
-            <li>
-              Categoria: <span className="font-bold">{frontmatter.category}</span>
-            </li>
-          </ul>
+          <div className="col-span-1 flex flex-col gap-y-1 lg:col-span-2">
+            <ul>
+              <li className="flex items-center">
+                <strong>Cor:&nbsp;</strong>
+                <span>{frontmatter.color}&nbsp;</span>
+                <div className={classNames('mt-[1px] h-3 w-3 rounded-full', frontmatter.color)} />
+              </li>
+              <li>
+                <strong>Destaque:&nbsp;</strong>
+                <span>{frontmatter.pinned === true ? 'Sim' : 'Não'}</span>
+              </li>
+              <li>
+                <strong>Categoria:&nbsp;</strong>
+                <span>{t(`categories-${frontmatter.category}`)}</span>
+              </li>
+            </ul>
+
+            <p className="mt-1">{frontmatter.description}</p>
+
+            {frontmatter.characteristics ? (
+              <ul className="mt-2 flex flex-col gap-y-2">
+                {frontmatter.characteristics.map((characteristic, chracteristicIdx) => (
+                  <li
+                    className="flex items-center gap-x-2 font-lexend uppercase tracking-tight"
+                    key={`chracteristic-${chracteristicIdx}`}
+                  >
+                    <span className="h-6 w-1 rounded bg-primary dark:bg-secondary" />
+                    <span>{characteristic}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
         </div>
 
-        <article dangerouslySetInnerHTML={{ __html: html }} />
+        <section dangerouslySetInnerHTML={{ __html: html }} className="content" />
       </main>
     </Layout>
   )
@@ -77,6 +102,8 @@ export const pageQuery = graphql`
         pinned
         color
         category
+        description
+        characteristics
         featuredImage {
           childImageSharp {
             gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])

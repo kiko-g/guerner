@@ -30,7 +30,7 @@ export default function TermsAndConditions({ data }: Props) {
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
         </header>
 
-        <article dangerouslySetInnerHTML={{ __html: info.html }} />
+        <article dangerouslySetInnerHTML={{ __html: info.html }} className="article" />
       </main>
     </Layout>
   )

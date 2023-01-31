@@ -19,7 +19,7 @@ export default function Welcome({}: Props) {
   const productionId = t('sectionIdProduction')
 
   return (
-    <section id={sectionId} className="bg-banner-2 relative w-full bg-cover bg-center bg-no-repeat">
+    <section id={sectionId} className="relative w-full bg-banner-2 bg-cover bg-center bg-no-repeat">
       <div className="absolute inset-0 bg-transparent bg-gradient-to-r from-black/25 to-black/50 dark:from-black/50 dark:to-black/75" />
       <div className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="mx-auto text-center">

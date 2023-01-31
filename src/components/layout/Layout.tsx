@@ -39,7 +39,7 @@ export default function Layout({ children, location = 'Unknown', special = false
         <div
           className={classNames(
             'z-10 mx-auto mb-auto',
-            special ? 'w-full' : 'container max-w-7xl px-5 py-5 md:px-3 md:py-3'
+            special ? 'w-full' : 'container max-w-7xl px-4 py-4 md:px-3 md:py-3'
           )}
         >
           {children}

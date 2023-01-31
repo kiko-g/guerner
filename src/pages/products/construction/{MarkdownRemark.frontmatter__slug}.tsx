@@ -3,6 +3,7 @@ import { GoBack, Layout } from '../../../components/layout'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import '../../../styles/product.css'
 
 type MarkdownData = {
   html: string
@@ -62,7 +63,7 @@ export default function ConstructionProductTemplate({ data }: Props) {
           </ul>
         </div>
 
-        <article dangerouslySetInnerHTML={{ __html: html }} />
+        <section dangerouslySetInnerHTML={{ __html: html }} className="product" />
       </main>
     </Layout>
   )

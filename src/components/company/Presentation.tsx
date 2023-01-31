@@ -52,7 +52,10 @@ export default function Presentation({}: Props) {
           className="absolute -bottom-24 -left-24 h-auto w-full object-cover opacity-100 dark:opacity-40"
         />
         <div className="mx-auto flex max-w-xl flex-col items-start justify-center gap-y-3 py-8 text-center sm:text-left">
-          <article className="z-40 text-white md:mt-4" dangerouslySetInnerHTML={{ __html: html }} />
+          <article
+            className="article z-40 text-white md:mt-4"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </div>
       </div>
 

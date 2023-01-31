@@ -114,7 +114,7 @@ export default function Production({}: Props) {
 
       <article
         dangerouslySetInnerHTML={{ __html: html }}
-        className="alt max-w-xs py-12 text-teal-100 dark:text-white lg:max-w-4xl"
+        className="article alt max-w-xs py-12 text-teal-100 dark:text-white lg:max-w-4xl"
       />
     </section>
   )

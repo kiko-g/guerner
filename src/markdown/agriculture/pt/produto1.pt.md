@@ -6,22 +6,17 @@ slug: redes-protecao-silos
 color: green
 category: agrotextile
 featuredImage: ../images/produto1.jpg
+description: A rede de proteção de silos (Silo Net) garante a preservação da qualidade da silagem que produziu e que a mesma “não respire” (anaerobiose. É imprescindível para garantir uma boa silagem e uma correta ensilagem.
+characteristics: [Campo Aberto, Silos de Cimento]
 ---
-
-## Descrição
-
-A rede de proteção de silos (Silo Net) garante a preservação da qualidade da silagem que produziu e que a mesma “não respire” (anaerobiose. É imprescindível para garantir uma boa silagem e uma correta ensilagem.
-
-- Campo Aberto
-- Silos de Cimento (_para cobertura da parte superior_)
 
 ## Dimensões
 
-| Referência |   Trama   | Fio (mm) | GMS |      Cores      | Largura (m) | Comprimento (m) |
-| :--------: | :-------: | :------: | :-: | :-------------: | :---------: | :-------------: |
-| Rede Silos | 7,3 x 8,5 |   0,42   | 200 | Verde com alças |      5      | 100 (standard)  |
-| Rede Silos | 7,0 x 8,5 |   0,42   | 220 | Verde com alças |      5      | 100 (standard)  |
-| Rede Silos | 8,0 x 8,5 |   0,42   | 235 | Verde com alças |      5      | 100 (standard)  |
+| Referência |  Trama  | Fio (mm) | GMS |      Cores      | Largura (m) | Comprimento (m) |
+| :--------: | :-----: | :------: | :-: | :-------------: | :---------: | :-------------: |
+| Rede Silos | 7,3x8,5 |   0,42   | 200 | Verde com alças |      5      | 100 (standard)  |
+| Rede Silos | 7,0x8,5 |   0,42   | 220 | Verde com alças |      5      | 100 (standard)  |
+| Rede Silos | 8,0x8,5 |   0,42   | 235 | Verde com alças |      5      | 100 (standard)  |
 
 ## Benefícios
 

@@ -1,0 +1,59 @@
+.product {
+  @apply mx-auto max-w-3xl space-y-4 py-8 font-normal md:py-16;
+}
+
+.product header {
+  @apply flex w-full items-center justify-between;
+}
+
+.product header h1 {
+  @apply text-base font-bold tracking-tight no-underline lg:text-xl;
+}
+
+/* Showcase */
+.product .showcase {
+  @apply grid w-full grid-cols-1 gap-3 rounded bg-white p-4 dark:bg-white/10 lg:grid-cols-5;
+}
+
+/* Markdown */
+.product .content {
+  @apply block;
+}
+
+.product .content h1 {
+  @apply mb-3 mt-6 text-3xl font-bold;
+}
+
+.product .content h2 {
+  @apply mb-2 mt-5 text-2xl font-bold;
+}
+
+.product .content ul {
+  @apply ml-4 list-disc;
+}
+
+.product .content ul > li::marker {
+  @apply text-primary dark:text-secondary;
+}
+
+.product .content table {
+  @apply w-full max-w-full table-auto border-2 border-primary 
+  text-xs tracking-[-0.06rem] dark:border-secondary/50 bg-white dark:bg-transparent 
+  lg:text-base lg:tracking-tight;
+}
+
+.product .content table tr th {
+  @apply truncate whitespace-pre-wrap bg-primary/90 text-white border-primary dark:bg-secondary/40 px-0.5 
+  py-2 font-prose font-medium lg:py-2 lg:px-3 lg:font-lexend;
+}
+
+.product .content table tr td {
+  @apply truncate whitespace-pre-wrap 
+  border-2 border-primary dark:border-secondary/50 px-[0.1rem] py-2 lg:py-2 lg:px-3;
+}
+
+.product .content blockquote {
+  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 
+  pr-3 text-left font-normal tracking-tight text-white dark:border-secondary 
+  dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
+}
