@@ -1,6 +1,7 @@
 import React from 'react'
 import { LinkFill } from '../utils'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { Agriculture } from '../../images'
 
 type Props = {}
 
@@ -13,7 +14,12 @@ export default function FeaturedAgriculture({}: Props) {
   const takeMeThere = t('agricultureTakeMeThere')
 
   return (
-    <section className="w-full overflow-hidden rounded bg-agriculture bg-cover bg-center bg-no-repeat">
+    <section className="relative w-full">
+      <img
+        className="absolute top-0 left-0 h-full w-full object-cover"
+        src={Agriculture}
+        alt="Agriculture @ Guerner"
+      />
       <div className="bg-gradient-to-r from-black/75 via-black/50 to-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-left md:items-start">
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl md:mb-1 md:text-5xl">

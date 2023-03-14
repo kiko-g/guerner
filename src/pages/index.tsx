@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { Layout } from '../components/layout'
+import { Layout, Seo } from '../components/layout'
 import { HeroBanner, CompanyCTA, ContactsCTA, ProductsCTA } from '../components/home'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
@@ -10,10 +10,13 @@ export default function IndexPage() {
 
   return (
     <Layout location={location} special>
-      <HeroBanner />
-      <CompanyCTA />
-      <ProductsCTA />
-      <ContactsCTA />
+      <Seo title={location} />
+      <div className="flex min-h-screen flex-col scroll-smooth bg-emerald-50 font-prose font-medium text-gray-800 opacity-[99%] dark:bg-navy dark:text-white">
+        <HeroBanner />
+        <CompanyCTA />
+        <ProductsCTA />
+        <ContactsCTA />
+      </div>
     </Layout>
   )
 }

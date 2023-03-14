@@ -2,26 +2,18 @@ import React from 'react'
 import { Banner } from '../images'
 import { Layout } from '../components/layout'
 import { LinkFill } from '../components/utils'
+import Seo from '../components/layout/Seo'
 
 export default function NotFoundPage() {
   return (
-    <Layout location="404">
-      <main className="mx-auto flex max-w-5xl flex-col gap-y-4 py-8 text-center">
-        <img
-          alt="Guerner | Not Found"
-          className="h-64 w-full rounded object-cover shadow-xl"
-          src={Banner}
-        />
-        <div>
-          <h1 className="mb-4 font-headings text-4xl font-extrabold tracking-tight">
-            404 | Not Found
-          </h1>
-        </div>
-
-        <div className="mx-auto w-min whitespace-nowrap font-normal italic">
-          <LinkFill link="/" text="Country roads... take me home!" />
-        </div>
+    <div className="flex min-h-screen items-center bg-primary/10">
+      <Seo title="404" />
+      <main className="mx-auto flex flex-col items-center justify-center gap-y-4 rounded bg-primary/90 px-16 py-16 text-center dark:bg-primary/50">
+        <h1 className="font-headings text-4xl font-extrabold tracking-tight text-white">
+          404 | Not Found
+        </h1>
+        <LinkFill link="/" text="Country roads... take me home!" light />
       </main>
-    </Layout>
+    </div>
   )
 }

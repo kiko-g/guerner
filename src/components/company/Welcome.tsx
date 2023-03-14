@@ -1,6 +1,7 @@
 import React from 'react'
 import { LinkTranslate } from '../utils'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { Banner2 } from '../../images'
 
 type Props = {}
 
@@ -19,7 +20,8 @@ export default function Welcome({}: Props) {
   const productionId = t('sectionIdProduction')
 
   return (
-    <section id={sectionId} className="relative w-full bg-banner-2 bg-cover bg-center bg-no-repeat">
+    <section id={sectionId} className="relative w-full">
+      <img className="absolute top-0 left-0 h-full w-full object-cover" src={Banner2} alt="" />
       <div className="absolute inset-0 bg-transparent bg-gradient-to-r from-black/25 to-black/50 dark:from-black/50 dark:to-black/75" />
       <div className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="mx-auto text-center">
@@ -30,7 +32,7 @@ export default function Welcome({}: Props) {
             </strong>
           </h1>
 
-          <p className="mx-auto mt-4 sm:text-xl sm:leading-relaxed">{description}</p>
+          <p className="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed">{description}</p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-center">
             <LinkTranslate text={takeMeToPresentation} link={`#${presentationId}`} />
