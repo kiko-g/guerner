@@ -12,7 +12,6 @@ export default function DarkModeSwitch() {
       <div className="flex items-center">
         <Switch
           as="button"
-          type="button"
           name="dark-mode-switch-button"
           className={classNames('rounded-full', enabled ? 'animate-dark' : 'animate-light')}
           checked={enabled}
