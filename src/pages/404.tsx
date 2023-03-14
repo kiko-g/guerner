@@ -9,7 +9,7 @@ export default function NotFoundPage() {
     <div className="flex min-h-screen items-center bg-primary/10">
       <Seo title="404" />
       <main className="mx-auto flex flex-col items-center justify-center gap-y-4 rounded bg-primary/90 px-16 py-16 text-center dark:bg-primary/50">
-        <h1 className="font-headings text-4xl font-extrabold tracking-tight text-white">
+        <h1 className="font-lexend text-4xl font-extrabold tracking-tight text-white">
           404 | Not Found
         </h1>
         <LinkFill link="/" text="Country roads... take me home!" light />

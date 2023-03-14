@@ -12,72 +12,70 @@ export default function Footer({ title }: Props) {
   const links = [
     {
       name: t('termsAndConditions'),
+      emoji: '📗',
       route: 'info/terms-and-conditions',
     },
     {
       name: t('privacyPolicy'),
+      emoji: '👨‍⚖️',
       route: 'info/politica-privacidade',
     },
   ]
 
   return (
-    <footer
-      className="z-10 flex flex-col border-t border-transparent bg-navy 
-      text-sm text-white dark:border-white/10 dark:bg-navy md:text-base"
-    >
-      <div className="mx-4 py-1 md:mx-8 md:py-2">
-        <div className="flex items-center justify-between py-2 md:py-3">
-          {/* Left column */}
-          <div className="flex flex-col items-start gap-y-4 md:gap-y-8">
-            <Link to={'/'} className="group flex items-center justify-center gap-x-3">
-              <img
-                alt={title}
-                src={'/images/icon.png'}
-                className="h-12 w-12 rounded-full bg-primary p-0.5 shadow"
-              />
-              <span
-                className="flex max-w-[6rem] flex-col font-headings text-sm font-medium transition 
-                group-hover:underline md:text-base md:font-bold"
-              >
+    <footer className="z-10 flex flex-col border-t border-transparent bg-navy px-4 py-4 text-sm text-white dark:border-white/10 dark:bg-navy md:px-8 md:py-8 md:text-base">
+      <div className="flex items-end justify-between py-2 md:py-3">
+        {/* Left column */}
+        <div className="flex flex-col items-start gap-2 font-normal">
+          <Link
+            to={'/'}
+            className="group flex items-center justify-center gap-x-3 rounded px-4 py-4 transition hover:bg-white/10"
+          >
+            <img
+              alt={title}
+              src={'/images/icon.png'}
+              className="h-16 w-16 rounded-full bg-primary p-0.5 shadow"
+            />
+            <div className="flex flex-col gap-0.5">
+              <span>© {new Date().getFullYear()}</span>
+              <span className="flex flex-col text-sm font-normal transition group-hover:underline md:text-base">
                 Guerner & Irmãos S.A.
               </span>
-            </Link>
-          </div>
-
-          {/* Right column */}
-          <ul
-            className="flex flex-col gap-y-0 text-right text-sm font-normal 
-            tracking-tight md:gap-y-0.5 md:text-base md:tracking-tight"
-          >
-            {links.map((link, linkIdx) => (
-              <li key={`link-${linkIdx}`}>
-                <Link
-                  to={link.route}
-                  className="transition hover:text-secondary hover:underline dark:hover:text-secondary"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+            </div>
+          </Link>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-y-1 py-2 md:flex-row md:gap-y-0 md:py-2">
-          <span className="md:text-center">
-            © {new Date().getFullYear()} {title}™
-          </span>
-          <span className="text-sm text-gray-400">
-            <span>{t('madeBy')} </span>
-            <a
+        {/* Right column */}
+        <ul
+          className="flex flex-col gap-y-1 text-right text-sm font-normal 
+            tracking-tight md:gap-y-3 md:text-base md:tracking-tight"
+        >
+          {links.map((link, linkIdx) => (
+            <li
+              key={`link-${linkIdx}`}
+              className="group rounded border border-secondary/25 bg-secondary/25 transition hover:border-secondary hover:bg-secondary/50"
+            >
+              <Link
+                to={link.route}
+                className="flex w-full items-center justify-center gap-x-1 px-4 py-2 transition"
+              >
+                <span className="text-white">{link.name}</span>
+                <span>{link.emoji}</span>
+              </Link>
+            </li>
+          ))}
+          <li className="group rounded border border-blue-500/25 bg-blue-500/25 transition hover:border-blue-500 hover:bg-blue-500/50">
+            <Link
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/kiko-g"
-              className="font-bold transition-all hover:text-blue-400 hover:underline"
+              to="https://github.com/kiko-g"
+              className="flex w-full items-center justify-center gap-x-1 px-4 py-2 transition"
             >
-              Francisco Gonçalves
-            </a>
-          </span>
-        </div>
+              <span className="lowercase text-gray-400">{t('madeBy')} </span>
+              <span className="font-bold text-white">Francisco Gonçalves</span>
+            </Link>
+          </li>
+        </ul>
       </div>
     </footer>
   )

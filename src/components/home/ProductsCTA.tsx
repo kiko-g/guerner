@@ -47,7 +47,7 @@ export default function ProductsCTA({}: Props) {
           />
           <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
             <h2
-              className="w-full text-center font-headings text-2xl font-bold tracking-tighter 
+              className="w-full text-center font-lexend text-2xl font-bold tracking-tighter 
             text-secondary dark:text-secondary xl:text-3xl"
             >
               {headerText}
