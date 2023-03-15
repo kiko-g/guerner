@@ -23,9 +23,6 @@ module.exports = {
       },
       backgroundImage: {
         // path relative to src/styles
-        cta: 'url(../images/backgrounds/cta.png)',
-        'cta-dark': 'url(../images/backgrounds/cta-dark.png)',
-        'cta-tailwind': 'url(../images/backgrounds/cta-tailwind.jpg)',
       },
       maxWidth: {
         screen: '100vw',
