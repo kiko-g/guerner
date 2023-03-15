@@ -18,7 +18,7 @@ export default function FeaturedAgriculture({}: Props) {
       <img
         src={Agriculture}
         alt="Agriculture @ Guerner"
-        className="absolute top-0 left-0 h-full w-full object-cover"
+        className="absolute top-0 left-0 z-[-1] h-full w-full object-cover"
       />
       <div className="bg-gradient-to-r from-black/75 via-black/50 to-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-left md:items-start">
