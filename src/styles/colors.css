@@ -1,26 +1,20 @@
-/* Background Blob */
-.blob,
-.dark .blob {
-  @apply fixed right-0 top-0 z-[-1] h-screen w-[50%] translate-y-[30%] rotate-180 blur-[200px] transition md:w-[75%];
-}
-
-.blob {
+.xd {
   background: conic-gradient(
-    from 180deg at 50% 50%,
+    from -135deg at 50% 50%,
     #88fabf 0deg,
-    #21dc78 133.12deg,
-    #e1b564 208.13deg,
-    #fecdb3 360deg
+    #26c485 133.12deg,
+    #64e1b5 208.13deg,
+    #b3fef4 360deg
   );
 }
 
-.dark .blob {
+.dark .xd {
   background: conic-gradient(
-    from 180deg at 50% 50%,
+    from 90deg at 50% 50%,
     #259c63 0deg,
     #21dc91 133.12deg,
-    #e1a064 208.13deg,
-    #fec7b3 360deg
+    #64e1d2 208.13deg,
+    #b3fefa 360deg
   );
 }
 

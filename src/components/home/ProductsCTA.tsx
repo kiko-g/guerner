@@ -37,7 +37,7 @@ export default function ProductsCTA({}: Props) {
         </div>
 
         {/* CTA */}
-        <div className="relative z-0 order-1 w-full bg-navy p-12 lg:order-2 lg:px-16 lg:py-24">
+        <div className="relative z-0 order-1 w-full bg-teal-800 p-12 dark:bg-navy lg:order-2 lg:px-16 lg:py-24">
           <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
             <h2
               className="w-full text-center font-lexend text-2xl font-bold tracking-tighter 
@@ -48,7 +48,7 @@ export default function ProductsCTA({}: Props) {
             <p className="block px-2 py-2 text-center tracking-tighter text-white">
               {productsText}
             </p>
-            <LinkFill text={takeMeThere} link={routeProducts} />
+            <LinkFill text={takeMeThere} link={routeProducts} light />
           </div>
         </div>
       </div>

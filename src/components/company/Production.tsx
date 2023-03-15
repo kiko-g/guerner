@@ -61,17 +61,17 @@ export default function Production({}: Props) {
 
   return (
     <section id={sectionId} className="">
-      <div className="relative overflow-hidden bg-teal-800 bg-cover py-16 dark:bg-teal-900 lg:py-24">
+      <div className="relative overflow-hidden bg-primary bg-cover py-16 dark:bg-navy lg:py-24">
         <div className="flex flex-col items-center justify-center gap-y-4 px-4 lg:gap-y-8 lg:px-3">
           <Tab.Group>
-            <Tab.List className="mx-auto flex w-min items-center justify-center gap-x-1 rounded bg-white/10 px-1 py-1 font-lexend text-sm font-normal tracking-tighter lg:gap-x-1 lg:text-base">
+            <Tab.List className="mx-auto flex w-min items-center justify-center gap-2 rounded bg-teal-500/10 px-2 py-2 text-sm font-normal tracking-tighter lg:gap-4 lg:px-3 lg:py-3 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
                     classNames(
-                      selected ? 'bg-black/25 hover:bg-black/40' : 'hover:bg-teal-200/20',
-                      'rounded px-1 py-0.5 text-white transition lg:px-2 lg:py-1'
+                      selected ? 'bg-black/25 hover:opacity-80' : 'hover:bg-teal-200/20',
+                      'rounded px-2 py-1 text-sm text-white transition lg:px-4 lg:py-2 lg:text-base'
                     )
                   }
                 >
@@ -96,7 +96,7 @@ export default function Production({}: Props) {
                           className="max-w-xl rounded-xl shadow"
                         />
                       ) : null}
-                      <p className="mx-auto max-w-xl text-base text-teal-200 dark:text-teal-100 lg:text-lg">
+                      <p className="mx-auto max-w-xl text-base font-light text-white dark:text-white lg:text-base">
                         {tabDescriptions[tabIdx]}
                       </p>
                     </div>
@@ -112,10 +112,12 @@ export default function Production({}: Props) {
         </div>
       </div>
 
-      <article
-        dangerouslySetInnerHTML={{ __html: html }}
-        className="article alt max-w-xs py-12 text-teal-100 dark:text-white lg:max-w-4xl"
-      />
+      <div className="relative flex flex-col items-center justify-center bg-teal-800 dark:bg-slate-800">
+        <article
+          dangerouslySetInnerHTML={{ __html: html }}
+          className="article alt px-6 py-6 text-teal-100 dark:text-white lg:max-w-3xl lg:px-0 lg:py-16"
+        />
+      </div>
     </section>
   )
 }

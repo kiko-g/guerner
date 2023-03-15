@@ -69,6 +69,11 @@ module.exports = {
           '75%': { backgroundPosition: '50% 50%' },
           '100%': { backgroundPosition: '0% 0%' },
         },
+        floating: {
+          '0%': { transform: 'translate(0px,  0px)' },
+          '50%': { transform: 'translate(15px, 50px)' },
+          '100%': { transform: 'translate(0px, -0px)' },
+        },
       },
       animation: {
         lava: 'lava 5s ease infinite',
@@ -76,6 +81,9 @@ module.exports = {
         light: 'light 400ms ease-in-out',
         wipe: 'wipe-enter 1s',
         gradient: 'gradient 10s ease-in-out infinite',
+        'pulse-medium': 'pulse 5s ease-in-out infinite',
+        'pulse-slow': 'pulse 8s ease-in-out infinite',
+        floating: 'floating 3s ease-in-out infinite',
       },
       backgroundPosition: {
         'center-half': '60% 27%',
