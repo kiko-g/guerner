@@ -8,8 +8,14 @@ export default function DarkModeSwitch() {
   const [enabled, setEnabled] = useDarkMode()
 
   return (
-    <Switch.Group>
+    <Switch.Group as="div">
       <div className="flex items-center">
+        <Switch.Label as="h2">
+          <span className="sr-only">Dark Mode Switch</span>
+        </Switch.Label>
+        <Switch.Description className="sr-only" as="p">
+          {enabled ? 'Disabled dark mode' : 'Disable dark mode'}
+        </Switch.Description>
         <Switch
           as="button"
           name="dark-mode-switch-button"
@@ -17,6 +23,7 @@ export default function DarkModeSwitch() {
           checked={enabled}
           onChange={() => setEnabled(!enabled)}
         >
+          <span className="sr-only">Dark Mode Switch</span>
           {enabled ? (
             <MoonIcon
               className="ease block h-6 w-6 text-blue-400 transition duration-100 hover:text-blue-500 md:h-8 md:w-8"
