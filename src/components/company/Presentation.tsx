@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Building, Rays } from '../../images'
+import { Building } from '../../images'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Frontmatter = {
@@ -46,11 +46,6 @@ export default function Presentation({}: Props) {
         className="relative flex flex-col items-center justify-center 
         bg-gradient-to-br from-teal-800 to-teal-600 dark:from-slate-900 dark:to-slate-900"
       >
-        <img
-          alt="rays"
-          src={Rays}
-          className="absolute -bottom-24 -left-24 h-auto w-full object-cover opacity-100 dark:opacity-40"
-        />
         <div className="mx-auto flex max-w-xl flex-col items-start justify-center gap-y-3 py-8 text-center sm:text-left">
           <article
             className="article z-40 text-white md:mt-4"

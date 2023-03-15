@@ -3,10 +3,10 @@ lang: pt
 facilitiesNames: ['Extrusão', 'Urdissagem', 'Tecelagem', 'Confeção']
 facilitiesImages:
   [
-    '../images/facility1.jpg',
-    '../images/facility2.jpg',
-    '../images/facility3.jpg',
-    '../images/facility4.jpg',
+    '../images/facility1.webp',
+    '../images/facility2.webp',
+    '../images/facility3.webp',
+    '../images/facility4.webp',
   ]
 facilitiesDescriptions:
   [
