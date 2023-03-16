@@ -20,8 +20,8 @@ export default function Welcome({}: Props) {
   const productionId = t('sectionIdProduction')
 
   return (
-    <section id={sectionId} className="relative w-full">
-      <div className="xd fixed bottom-8 -left-24 z-[-1] h-[75vh] w-[25%] rotate-[150deg] animate-pulse-medium rounded-full blur-[200px] transition-all" />
+    <section id={sectionId} className="relative w-full bg-transparent dark:bg-slate-900/50">
+      <div className="xd fixed -bottom-12 -left-32 z-[-1] h-[75vh] w-[25%] rotate-[150deg] animate-pulse-medium rounded-full blur-[200px] transition-all" />
       <div className="xd fixed -bottom-48 -right-16 z-[-1] h-[75vh] w-[25%] rotate-[30deg] animate-pulse-slow rounded-full blur-[200px] transition-all" />
 
       <div className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">

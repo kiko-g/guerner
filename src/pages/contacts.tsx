@@ -1,7 +1,7 @@
 import React from 'react'
 import { useMediaQuery } from 'usehooks-ts'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import { Layout } from '../components/layout'
+import { Layout, Seo } from '../components/layout'
 import { SendEmailForm, GoogleMapsLocation, ContactsBanner } from '../components/contacts'
 import { graphql } from 'gatsby'
 

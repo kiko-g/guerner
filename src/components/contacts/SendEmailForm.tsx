@@ -24,7 +24,7 @@ export default function SendEmailForm({}: Props) {
   }
 
   const routeHome = '/'
-  const routeTerms = '/info/terms-and-conditions'
+  const routeTerms = '/terms-and-conditions'
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -48,7 +48,7 @@ export default function SendEmailForm({}: Props) {
   }
 
   return (
-    <section className="rounded bg-light shadow dark:bg-white/5">
+    <section className="rounded bg-light shadow dark:bg-gray-800/40">
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
         {/* Desktop header */}
         <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">

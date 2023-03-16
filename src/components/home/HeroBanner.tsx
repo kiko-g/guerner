@@ -19,7 +19,7 @@ export default function HeroBanner({}: Props) {
   const takeMeToContacts = t('takeMeToContacts')
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full bg-transparent dark:bg-slate-900/50">
       <div className="xd fixed -bottom-48 -left-24 z-[-1] h-[75vh] w-[25%] rotate-[140deg] animate-pulse-slow rounded-full blur-[200px] transition-all" />
       <div className="xd fixed -top-48 -right-24 z-[-1] h-[75vh] w-[25%] rotate-[140deg] animate-pulse-medium rounded-full blur-[200px] transition-all" />
 

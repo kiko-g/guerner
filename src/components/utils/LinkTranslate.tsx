@@ -19,9 +19,9 @@ export default function LinkTranslate({ text, link, alt = false, arrow = false }
         font-medium shadow transition hover:-translate-y-1 sm:w-auto lg:gap-x-2`,
         alt
           ? `border-white bg-white/80 text-primary hover:bg-white dark:border-black 
-          dark:bg-black/50 dark:text-white dark:hover:bg-black/90`
+          dark:bg-black/25 dark:text-white dark:hover:bg-black`
           : `border-secondary bg-secondary/80 text-white hover:bg-secondary dark:border-secondary 
-          dark:bg-secondary/60 dark:hover:bg-secondary`
+          dark:bg-secondary/50 dark:hover:bg-secondary`
       )}
     >
       <span>{text}</span>

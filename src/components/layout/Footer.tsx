@@ -4,32 +4,37 @@ import { Trans, useTranslation } from 'gatsby-plugin-react-i18next'
 
 type Props = {
   title: string
+  special?: boolean
 }
 
-export default function Footer({ title }: Props) {
+export default function Footer({ title, special }: Props) {
   const { t } = useTranslation()
 
   const links = [
     {
-      name: t('termsAndConditions'),
-      emoji: '📗',
-      route: 'info/terms-and-conditions',
-    },
-    {
       name: t('privacyPolicy'),
       emoji: '👨‍⚖️',
-      route: 'info/politica-privacidade',
+      route: '/policy',
+    },
+    {
+      name: t('termsAndConditions'),
+      emoji: '📗',
+      route: '/terms',
     },
   ]
 
   return (
-    <footer className="z-10 flex flex-col border-t border-transparent bg-navy px-4 py-8 text-sm text-white dark:border-white/10 dark:bg-navy md:px-8 md:py-8 md:text-base">
+    <footer
+      className={`z-10 flex flex-col bg-gray-900 px-4 py-8 text-sm text-white ${
+        special ? 'dark:bg-slate-900/80' : 'dark:bg-navy'
+      } md:px-8 md:py-8 md:text-base`}
+    >
       <div className="flex flex-col items-center justify-center gap-8 py-2 md:flex-row md:items-end md:justify-between md:py-3">
         {/* Left column */}
         <div className="order-2 flex flex-col items-start gap-2 font-normal md:order-1">
           <Link
             to={'/'}
-            className="group flex items-center justify-center gap-x-4 rounded bg-teal-500/5 px-4 py-4 transition hover:bg-teal-500/10"
+            className="group flex items-center justify-center gap-x-4 rounded bg-teal-500/10 px-4 py-4 transition hover:bg-teal-500/20"
           >
             <img
               alt={title}
@@ -50,7 +55,7 @@ export default function Footer({ title }: Props) {
           {links.map((link, linkIdx) => (
             <li
               key={`link-${linkIdx}`}
-              className="group rounded border border-secondary/25 bg-secondary/25 transition hover:border-secondary hover:bg-secondary/50"
+              className="group rounded border border-secondary/50 bg-secondary/25 transition hover:border-secondary hover:bg-secondary/50"
             >
               <Link
                 to={link.route}
@@ -61,7 +66,7 @@ export default function Footer({ title }: Props) {
               </Link>
             </li>
           ))}
-          <li className="group rounded border border-blue-500/25 bg-blue-500/25 transition hover:border-blue-500 hover:bg-blue-500/50">
+          <li className="group rounded border border-blue-500/50 bg-blue-500/25 transition hover:border-blue-500 hover:bg-blue-500/50">
             <a
               target="_blank"
               rel="noreferrer"

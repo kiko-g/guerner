@@ -60,17 +60,17 @@ export default function Production({}: Props) {
   const tabDescriptions = node!.frontmatter.facilitiesDescriptions
 
   return (
-    <section id={sectionId} className="">
-      <div className="relative overflow-hidden bg-primary bg-cover py-16 dark:bg-navy lg:py-24">
+    <section id={sectionId}>
+      <div className="relative overflow-hidden bg-primary/50 bg-cover py-16 dark:bg-slate-900/50 lg:py-24">
         <div className="flex flex-col items-center justify-center gap-y-4 px-4 lg:gap-y-8 lg:px-3">
           <Tab.Group>
-            <Tab.List className="mx-auto flex w-min items-center justify-center gap-2 rounded bg-teal-500/10 px-2 py-2 text-sm font-normal tracking-tighter lg:gap-4 lg:px-3 lg:py-3 lg:text-base">
+            <Tab.List className="mx-auto flex w-min items-center justify-center gap-2 rounded bg-blue-500/10 px-2 py-2 text-sm font-normal tracking-tighter lg:gap-4 lg:px-3 lg:py-3 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
                     classNames(
-                      selected ? 'bg-black/25 hover:opacity-80' : 'hover:bg-teal-200/20',
+                      selected ? 'bg-black/25 hover:opacity-80' : 'hover:bg-blue-200/20',
                       'rounded px-2 py-1 text-sm text-white transition lg:px-4 lg:py-2 lg:text-base'
                     )
                   }
@@ -112,10 +112,10 @@ export default function Production({}: Props) {
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center bg-teal-800 dark:bg-slate-800">
+      <div className="relative flex flex-col items-center justify-center bg-primary/50 backdrop-blur dark:bg-slate-900/50">
         <article
           dangerouslySetInnerHTML={{ __html: html }}
-          className="article alt px-6 py-6 text-teal-100 dark:text-white lg:max-w-3xl lg:px-0 lg:py-16"
+          className="article alt px-6 py-6 text-white dark:text-white lg:max-w-3xl lg:px-0 lg:py-16"
         />
       </div>
     </section>

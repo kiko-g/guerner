@@ -1,8 +1,8 @@
 import React from 'react'
 import { Building } from '../../images'
 import { PhoneIcon, InboxArrowDownIcon, MapPinIcon } from '@heroicons/react/24/solid'
-import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import CopyButton from './CopyButton'
 
 interface Contact {
   text: string
@@ -23,28 +23,24 @@ export default function ContactsBanner({}: Props) {
     {
       text: phone,
       link: null,
-      icon: <PhoneIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
+      icon: <PhoneIcon className="h-6 w-6 text-teal-600 dark:text-secondary md:h-7 md:w-7" />,
     },
     {
       text: email,
       link: `mailto:${email}`,
       icon: (
-        <InboxArrowDownIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />
+        <InboxArrowDownIcon className="h-6 w-6 text-teal-600 dark:text-secondary md:h-7 md:w-7" />
       ),
     },
     {
       text: address,
       link: 'https://goo.gl/maps/2ep68957S4uWJDu88',
-      icon: <MapPinIcon className="h-6 w-6 text-primary dark:text-secondary/75 md:h-7 md:w-7" />,
+      icon: <MapPinIcon className="h-6 w-6 text-teal-600 dark:text-secondary md:h-7 md:w-7" />,
     },
   ]
 
   return (
-    <div
-      className="flex w-full flex-col items-center justify-center gap-y-4 gap-x-4 rounded 
-      bg-light px-4 py-4 shadow dark:bg-white/5 xl:flex-row xl:items-start xl:justify-between 
-      xl:gap-x-6 xl:px-6 xl:py-6"
-    >
+    <div className="flex w-full flex-col items-center justify-center gap-y-4 gap-x-4 rounded bg-light px-4 py-4 shadow dark:bg-gray-800/40 xl:flex-row xl:items-start xl:justify-between xl:gap-x-6 xl:px-6 xl:py-6">
       {/* Contacts */}
       <ul
         className="order-2 flex h-full w-full max-w-md flex-col items-start 
@@ -58,19 +54,12 @@ export default function ContactsBanner({}: Props) {
             ) : (
               <a
                 href={item.link}
-                className="w-full font-medium transition hover:text-primary/75 hover:underline 
-                dark:text-white/75 dark:hover:text-secondary/75"
+                className="w-full font-medium transition hover:text-teal-500 hover:underline dark:text-white/75 dark:hover:text-secondary/75"
               >
                 {item.text}
               </a>
             )}
-            <button
-              onClick={async () => await navigator.clipboard.writeText(item.text)}
-              className="rounded-full p-1 transition hover:text-secondary 
-              focus:bg-teal-600 focus:text-white dark:hover:text-secondary/50"
-            >
-              <ClipboardDocumentIcon className="h-6 w-6" />
-            </button>
+            <CopyButton text={item.text} />
           </li>
         ))}
       </ul>

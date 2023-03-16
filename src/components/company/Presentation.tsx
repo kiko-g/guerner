@@ -42,9 +42,9 @@ export default function Presentation({}: Props) {
 
   return (
     <section id={sectionId} className="grid grid-cols-1 overflow-hidden lg:grid-cols-2">
-      <div className="relative flex flex-col items-center justify-center bg-teal-600 text-white dark:bg-navy">
+      <div className="relative flex flex-col items-center justify-center bg-teal-800 text-white dark:bg-gray-900">
         <article
-          className="article z-40 mx-auto flex flex-col items-start justify-center gap-y-3 px-16 py-16 text-center sm:text-left md:mt-4"
+          className="article z-40 mx-auto flex max-w-xl flex-col items-start justify-center gap-y-3 px-4 py-8 text-center sm:text-left md:mt-4"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       </div>

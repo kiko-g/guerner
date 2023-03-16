@@ -37,7 +37,7 @@ export default function ProductsCTA({}: Props) {
         </div>
 
         {/* CTA */}
-        <div className="relative z-0 order-1 w-full bg-teal-800 p-12 dark:bg-navy lg:order-2 lg:px-16 lg:py-24">
+        <div className="relative z-0 order-1 w-full bg-teal-800 p-12 dark:bg-gray-900 lg:order-2 lg:px-16 lg:py-24">
           <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
             <h2
               className="w-full text-center font-lexend text-2xl font-bold tracking-tighter 

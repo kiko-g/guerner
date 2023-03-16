@@ -1,6 +1,4 @@
 import React from 'react'
-import { Banner } from '../images'
-import { Layout } from '../components/layout'
 import { LinkFill } from '../components/utils'
 import Seo from '../components/layout/Seo'
 
