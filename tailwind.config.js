@@ -18,8 +18,9 @@ module.exports = {
         lighter: '#f7f7f7',
         lightest: '#ffffff',
         primary: '#124842',
-        secondary: '#2ddf62', // #df803f
-        tertiary: '#9687ec',
+        secondary: '#2ddf62', // #
+        tertiary: '#df803f',
+        // #9687ec
       },
       backgroundImage: {
         // path relative to src/styles
