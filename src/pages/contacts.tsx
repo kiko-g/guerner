@@ -14,13 +14,16 @@ export default function ContactsPage() {
 
   return (
     <Layout location={location}>
-      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
+      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:pt-16 md:pb-40">
         <header className="w-full">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
         </header>
-        <ContactsBanner />
-        <GoogleMapsLocation height={isMobile ? 225 : 500} />
-        <SendEmailForm />
+
+        <div className="flex flex-col gap-y-6 md:gap-y-12">
+          <ContactsBanner />
+          <GoogleMapsLocation height={isMobile ? 225 : 500} />
+          <SendEmailForm />
+        </div>
       </main>
     </Layout>
   )

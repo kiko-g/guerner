@@ -1,7 +1,6 @@
 import React from 'react'
 import { LinkTranslate } from '../utils'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import { Banner } from '../../images'
 
 type Props = {}
 
@@ -19,7 +18,7 @@ export default function HeroBanner({}: Props) {
   const takeMeToContacts = t('takeMeToContacts')
 
   return (
-    <section className="relative w-full bg-transparent dark:bg-slate-900/50">
+    <section className="relative w-full bg-transparent dark:bg-gray-900/50">
       <div className="xd fixed -bottom-48 -left-24 z-[-1] h-[75vh] w-[25%] rotate-[140deg] animate-pulse-slow rounded-full blur-[200px] transition-all" />
       <div className="xd fixed -top-48 -right-24 z-[-1] h-[75vh] w-[25%] rotate-[140deg] animate-pulse-medium rounded-full blur-[200px] transition-all" />
 
@@ -27,7 +26,7 @@ export default function HeroBanner({}: Props) {
         <div className="mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             <span>{welcome}</span>
-            <strong className="mx-auto block font-extrabold tracking-tighter text-secondary dark:bg-transparent dark:text-secondary">
+            <strong className="mx-auto block font-extrabold tracking-tighter text-secondary dark:bg-transparent dark:text-tertiary">
               {title}
             </strong>
           </h1>

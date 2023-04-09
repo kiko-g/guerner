@@ -13,7 +13,7 @@ export default function LanguageSwitch({}: Props) {
     <div className="relative z-10">
       <button
         onClick={() => setOpen(!open)}
-        className="relative flex w-full cursor-pointer items-center justify-center gap-x-0.5 rounded-sm bg-secondary/40 py-1 pl-3 pr-2 text-sm shadow transition hover:bg-secondary/70 dark:bg-tertiary/50 dark:hover:bg-tertiary/70 md:gap-x-1 md:pl-3 md:pr-1.5"
+        className="relative flex w-full cursor-pointer items-center justify-center gap-x-0.5 rounded-sm bg-secondary/40 py-1 pl-3 pr-2 text-sm transition hover:bg-secondary/70 dark:bg-tertiary/50 dark:hover:bg-tertiary/70 md:gap-x-1 md:pl-3 md:pr-1.5"
       >
         <span className="block truncate uppercase tracking-wide">{language}</span>
         <ChevronUpDownIcon
@@ -29,9 +29,7 @@ export default function LanguageSwitch({}: Props) {
               <li
                 key={langIdx}
                 className={classNames(
-                  `group relative z-50 cursor-pointer select-none py-1 px-2.5 
-                  text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:py-1.5
-                  md:px-2.5 md:text-base`,
+                  'group relative z-50 cursor-pointer select-none py-1 px-2.5 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:py-1.5 md:px-2.5 md:text-base',
                   active
                     ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary'
                     : 'text-gray-800'

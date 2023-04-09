@@ -31,7 +31,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
       </div>
 
       <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-2">
-        <div className="flex items-center justify-center gap-x-3">
+        <div className="flex items-center justify-center gap-x-4">
           <LanguageSwitch />
           <DarkModeSwitch />
         </div>
@@ -41,15 +41,15 @@ export default function Header({ title, location, navigation }: HeaderProps) {
               <button
                 type="button"
                 className={classNames(
-                  'flex items-center justify-center lowercase tracking-wide transition',
+                  'flex items-center justify-center transition',
                   t(location).toLowerCase() === t(link.title).toLowerCase()
                     ? 'font-bold text-white dark:text-white'
                     : 'font-normal text-white/50 hover:text-white dark:text-white/50 dark:hover:text-white'
                 )}
               >
                 <span className="flex items-center justify-center gap-x-1 tracking-tight">
-                  {link.icon}
-                  {link.title}
+                  {/* {link.icon} */}
+                  <span>{link.title}</span>
                 </span>
               </button>
             </Link>

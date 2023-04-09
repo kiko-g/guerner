@@ -14,12 +14,10 @@ export default function Footer({ title, special }: Props) {
   const links = [
     {
       name: t('privacyPolicy'),
-      emoji: '👨‍⚖️',
       route: '/policy',
     },
     {
       name: t('termsAndConditions'),
-      emoji: '📗',
       route: '/terms',
     },
   ]
@@ -27,53 +25,53 @@ export default function Footer({ title, special }: Props) {
   return (
     <footer
       className={classNames(
-        'z-10 flex flex-col bg-primary/80 px-4 py-8 text-sm text-white md:px-12 md:py-12 md:text-base',
-        special ? 'dark:bg-slate-900/80' : 'dark:bg-navy'
+        'z-10 flex flex-col px-8 py-12 text-sm text-white md:px-12 md:py-16 md:text-base',
+        special
+          ? 'bg-[radial-gradient(164.75%_100%_at_50%_0%,#2ddf6240_0%,#124842_48.73%)] dark:bg-[radial-gradient(164.75%_100%_at_50%_0%,#334155_0%,#0F172A_48.73%)]'
+          : 'bg-primary dark:bg-navy'
       )}
     >
-      <div className="flex flex-col items-center justify-center gap-8 py-2 md:flex-row md:items-end md:justify-between md:py-3">
-        {/* Left column */}
-        <div className="order-2 flex flex-col items-start gap-2 font-normal md:order-1">
+      <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-start gap-2 font-normal">
           <Link
             to={'/'}
             className="group flex items-center justify-center gap-x-4 transition hover:opacity-80"
           >
             <img
               alt={title}
-              src={'/images/icon.png'}
-              className="h-12 w-12 rounded-full bg-primary p-0.5 shadow"
+              src="/images/icon.png"
+              className="h-10 w-10 rounded-full bg-primary shadow-2xl drop-shadow-2xl"
             />
-            <div className="flex flex-col gap-0.5">
-              <span>© {new Date().getFullYear()}</span>
-              <span className="flex flex-col text-sm font-normal transition md:text-base">
-                Guerner & Irmãos S.A.
-              </span>
-            </div>
+            <h3 className="text-2xl font-medium">Guerner & Irmãos S.A.</h3>
           </Link>
         </div>
 
-        {/* Right column */}
-        <ul className="order-1 flex flex-col gap-y-2 text-right text-sm font-normal tracking-tight md:order-2 md:gap-y-3 md:text-base md:tracking-tight">
+        <div className="mt-4">
+          <p className="text-sm tracking-tight text-gray-200 dark:text-gray-300">
+            © {new Date().getFullYear()} Guerner & Irmãos S.A. All rights reserved.
+          </p>
+        </div>
+
+        <ul className="mt-16 flex w-full flex-row flex-wrap items-center justify-center gap-4">
           {links.map((link, linkIdx) => (
-            <li
-              key={`link-${linkIdx}`}
-              className="group bg-secondary/25 transition hover:bg-secondary/50 dark:bg-tertiary/25 dark:hover:bg-tertiary/50"
-            >
+            <li key={`link-${linkIdx}`}>
               <Link
                 to={link.route}
-                className="flex w-full items-center justify-end gap-x-1 px-4 py-2 transition"
+                className="whitespace-nowrap text-center text-sm font-medium tracking-tight text-white transition hover:underline hover:opacity-80 md:text-base"
               >
-                <span className="text-white">{link.name}</span>
-                <span>{link.emoji}</span>
+                {link.name}
               </Link>
             </li>
           ))}
-          <li className="group bg-blue-500/25 transition hover:border-blue-500 hover:bg-blue-500/50">
+        </ul>
+
+        <ul className="mt-4 flex gap-3">
+          <li className="group opacity-80 transition hover:opacity-80">
             <a
               target="_blank"
               rel="noreferrer"
               href="https://github.com/kiko-g"
-              className="flex w-full items-center justify-center gap-x-1 px-4 py-2 transition"
+              className="flex w-full items-center justify-center gap-x-1 transition hover:opacity-60"
             >
               <span className="lowercase text-gray-400">{t('madeBy')} </span>
               <span className="font-bold text-white">Francisco Gonçalves</span>

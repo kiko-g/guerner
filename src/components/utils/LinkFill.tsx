@@ -15,7 +15,7 @@ export default function LinkFill({ text, link, light = false }: Props) {
       to={link}
       className={classNames(
         'group relative flex items-center justify-center gap-x-2 rounded-sm border-2 border-primary px-8 py-3',
-        light ? 'border-secondary dark:border-tertiary' : 'border-primary dark:border-secondary'
+        light ? 'border-secondary dark:border-tertiary' : 'border-primary dark:border-tertiary'
       )}
     >
       <span className="absolute inset-y-0 left-0 w-[4px] bg-secondary/60 transition-all group-hover:w-full dark:bg-tertiary/60"></span>

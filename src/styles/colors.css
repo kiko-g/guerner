@@ -11,10 +11,10 @@
 .dark .xd {
   background: conic-gradient(
     from 90deg at 50% 50%,
-    #259c63 0deg,
-    #21dc91 133.12deg,
-    #64e1d2 208.13deg,
-    #b3fefa 360deg
+    #df803f 0deg,
+    #ffa970 133.12deg,
+    #e1c464 208.13deg,
+    #cafeb3 360deg
   );
 }
 
@@ -53,7 +53,7 @@
 
 /* Backlog */
 .slate {
-  @apply bg-slate-600;
+  @apply bg-gray-600;
 }
 
 .pink {

@@ -20,7 +20,7 @@ export default function Welcome({}: Props) {
   const productionId = t('sectionIdProduction')
 
   return (
-    <section id={sectionId} className="relative w-full bg-transparent dark:bg-slate-900/50">
+    <section id={sectionId} className="relative w-full bg-transparent dark:bg-gray-900/50">
       <div className="xd fixed -bottom-12 -left-32 z-[-1] h-[75vh] w-[25%] rotate-[150deg] animate-pulse-medium rounded-full blur-[200px] transition-all" />
       <div className="xd fixed -bottom-48 -right-16 z-[-1] h-[75vh] w-[25%] rotate-[30deg] animate-pulse-slow rounded-full blur-[200px] transition-all" />
 
@@ -28,7 +28,7 @@ export default function Welcome({}: Props) {
         <div className="mx-auto text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl">
             <span>{titleTop}</span>
-            <strong className="mx-auto block font-extrabold tracking-tighter text-secondary dark:bg-transparent dark:text-secondary">
+            <strong className="mx-auto block font-extrabold tracking-tighter text-secondary dark:bg-transparent dark:text-tertiary">
               {titleBottom}
             </strong>
           </h1>

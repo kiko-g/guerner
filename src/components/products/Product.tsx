@@ -44,11 +44,11 @@ export default function Product({ product }: Props) {
       {/* Floating top right */}
       <div className="absolute top-3 right-3 z-10 flex items-center justify-center gap-x-1.5">
         {product.category ? (
-          <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-white shadow">
+          <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-white shadow">
             {t(`categories.${product.category}`)}
           </div>
         ) : (
-          <div className="rounded-md bg-slate-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
+          <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
         )}
       </div>
 

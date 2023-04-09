@@ -61,7 +61,7 @@ export default function Production({}: Props) {
 
   return (
     <section id={sectionId}>
-      <div className="relative overflow-hidden bg-primary/50 bg-cover pt-16 pb-16 dark:bg-slate-900/50 lg:pt-24 lg:pb-40">
+      <div className="relative overflow-hidden bg-primary/50 bg-cover pt-16 pb-16 dark:bg-gray-900/50 lg:pt-24 lg:pb-40">
         <div className="flex flex-col items-start justify-center gap-8 px-4 lg:flex-row lg:gap-y-8 lg:px-3">
           <Tab.Group>
             <Tab.List className="mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded bg-black/20 px-2 py-2 text-xs font-normal tracking-tighter dark:bg-white/5 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:px-4 lg:py-4 lg:text-base">
@@ -117,7 +117,7 @@ export default function Production({}: Props) {
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center bg-primary/50 backdrop-blur dark:bg-slate-900/50">
+      <div className="relative flex flex-col items-center justify-center bg-primary/50 backdrop-blur dark:bg-gray-900/50">
         <div className="my-16 rounded bg-teal-700 p-8 shadow-xl dark:bg-primary">
           <article
             dangerouslySetInnerHTML={{ __html: html }}
