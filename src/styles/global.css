@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *::selection {
-  @apply bg-orange-600/50 text-white dark:bg-orange-500/50;
+  @apply bg-rose-600/70 text-white dark:bg-orange-600/60;
 }
 
 html {
@@ -27,9 +27,9 @@ input[type='tel'],
 input[type='text'],
 input[type='email'],
 input[type='search'] {
-  @apply w-full rounded border border-white bg-white text-sm font-normal shadow placeholder:font-normal placeholder:text-gray-400 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-white/10 dark:focus:border-secondary dark:focus:ring-secondary;
+  @apply w-full rounded border border-white bg-white text-sm font-normal shadow placeholder:font-normal placeholder:text-gray-400 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-white/10 dark:focus:border-tertiary dark:focus:ring-tertiary;
 }
 
 input[type='checkbox'] {
-  @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary dark:text-secondary dark:focus:border-secondary dark:focus:ring-secondary;
+  @apply rounded border border-transparent bg-white text-primary shadow focus:border-primary focus:ring-primary dark:text-tertiary dark:focus:border-tertiary dark:focus:ring-tertiary;
 }

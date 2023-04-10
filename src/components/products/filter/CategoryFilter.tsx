@@ -47,7 +47,7 @@ export default function CategoryFilter({ hook }: Props) {
               <span>{pickedCategories.length} selected</span>
               <button
                 type="button"
-                className="tracking-tighter text-primary underline hover:font-bold hover:opacity-80 dark:text-secondary"
+                className="tracking-tighter text-primary underline hover:font-bold hover:opacity-80 dark:text-tertiary"
                 onClick={() => setPickedCategories([])}
               >
                 Reset
@@ -62,7 +62,7 @@ export default function CategoryFilter({ hook }: Props) {
                   value={category}
                   className={({ active }) =>
                     `relative cursor-default select-none py-2 pl-8 pr-4 ${
-                      active ? 'bg-teal-100 text-primary dark:bg-secondary/50 dark:text-white' : ''
+                      active ? 'bg-teal-100 text-primary dark:bg-tertiary/50 dark:text-white' : ''
                     }`
                   }
                 >
@@ -72,7 +72,7 @@ export default function CategoryFilter({ hook }: Props) {
                         {category}
                       </span>
                       {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-2.5 text-primary dark:text-secondary">
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-2.5 text-primary dark:text-tertiary">
                           <CheckIcon className="h-[1.1rem] w-[1.1rem]" aria-hidden="true" />
                         </span>
                       ) : null}

@@ -45,7 +45,7 @@ export default function FoldableMobileMenu({ location, navigation }: FoldableMob
                   {link.title}
                 </span>
                 {active ? (
-                  <span className="absolute left-0.5 h-full w-1 rounded-sm bg-secondary dark:bg-secondary" />
+                  <span className="absolute left-0.5 h-full w-1 rounded-sm bg-secondary dark:bg-tertiary" />
                 ) : null}
               </button>
             </Link>

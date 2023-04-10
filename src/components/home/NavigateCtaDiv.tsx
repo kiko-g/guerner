@@ -14,16 +14,11 @@ export default function NavigateCtaDiv({ link, image, actionText }: Props) {
       <img
         src={image}
         alt={`guerner-nav-${actionText}`}
-        className="h-64 max-h-full w-full object-cover blur-xl transition duration-300 group-hover:blur-0 lg:h-96"
+        className="max-h-full min-h-[16rem] w-full object-cover blur-sm transition duration-300 group-hover:blur-0 md:blur-md lg:min-h-[20rem]"
       />
       <div className="absolute inset-0 flex h-full w-full items-center justify-center">
         <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
-
-        <div
-          className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center
-          font-lexend text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 
-          lg:w-full lg:text-3xl lg:opacity-50"
-        >
+        <div className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center font-lexend text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
           <span className="transition hover:opacity-80 group-hover:translate-x-2">
             {actionText}
           </span>

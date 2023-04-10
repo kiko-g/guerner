@@ -23,24 +23,24 @@ export default function ContactsBanner({}: Props) {
     {
       text: phone,
       link: null,
-      icon: <PhoneIcon className="h-6 w-6 text-teal-600 dark:text-secondary md:h-7 md:w-7" />,
+      icon: <PhoneIcon className="h-6 w-6 text-teal-600 dark:text-tertiary md:h-7 md:w-7" />,
     },
     {
       text: email,
       link: `mailto:${email}`,
       icon: (
-        <InboxArrowDownIcon className="h-6 w-6 text-teal-600 dark:text-secondary md:h-7 md:w-7" />
+        <InboxArrowDownIcon className="h-6 w-6 text-teal-600 dark:text-tertiary md:h-7 md:w-7" />
       ),
     },
     {
       text: address,
       link: 'https://goo.gl/maps/2ep68957S4uWJDu88',
-      icon: <MapPinIcon className="h-6 w-6 text-teal-600 dark:text-secondary md:h-7 md:w-7" />,
+      icon: <MapPinIcon className="h-6 w-6 text-teal-600 dark:text-tertiary md:h-7 md:w-7" />,
     },
   ]
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-y-4 gap-x-4 rounded bg-light px-4 py-4 shadow dark:bg-gray-800/40 xl:flex-row xl:items-start xl:justify-between xl:gap-x-6 xl:px-6 xl:py-6">
+    <div className="flex w-full flex-col items-center justify-center gap-y-4 gap-x-4 rounded bg-lighter px-4 py-4 shadow-xl dark:bg-gray-900 xl:flex-row xl:items-start xl:justify-between xl:gap-x-6 xl:px-6 xl:py-6">
       {/* Contacts */}
       <ul
         className="order-2 flex h-full w-full max-w-md flex-col items-start 
@@ -54,7 +54,7 @@ export default function ContactsBanner({}: Props) {
             ) : (
               <a
                 href={item.link}
-                className="w-full font-medium transition hover:text-teal-500 hover:underline dark:text-white/75 dark:hover:text-secondary/75"
+                className="w-full font-medium transition hover:text-teal-500 hover:underline dark:text-white/75 dark:hover:text-tertiary/75"
               >
                 {item.text}
               </a>
@@ -69,7 +69,7 @@ export default function ContactsBanner({}: Props) {
         src={Building}
         alt="Guerner Building"
         className="order-1 h-48 w-full rounded bg-primary object-cover object-center 
-        dark:bg-secondary/75 lg:h-64 xl:order-2"
+        dark:bg-tertiary/75 lg:h-64 xl:order-2"
       />
     </div>
   )

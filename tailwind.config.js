@@ -75,6 +75,16 @@ module.exports = {
           '50%': { transform: 'translate(15px, 50px)' },
           '100%': { transform: 'translate(0px, -0px)' },
         },
+        'sway-min': {
+          '0%, 100%': { transform: 'rotate(-5deg)' },
+          '50%': { transform: 'rotate(5deg)' },
+        },
+        sway: {
+          '0%, 100%': { transform: 'translateX(0px) translateY(0px) rotate(-7deg)' },
+          '25%': { transform: 'translateX(14px) translateY(-7px) rotate(-4deg)' },
+          '50%': { transform: 'translateX(-7px) translateY(14px) rotate(-3deg)' },
+          '75%': { transform: 'translateX(7px) translateY(7px) rotate(-6deg)' },
+        },
       },
       animation: {
         lava: 'lava 5s ease infinite',
@@ -85,6 +95,7 @@ module.exports = {
         'pulse-medium': 'pulse 5s ease-in-out infinite',
         'pulse-slow': 'pulse 8s ease-in-out infinite',
         floating: 'floating 3s ease-in-out infinite',
+        sway: 'sway 3s infinite',
       },
       backgroundPosition: {
         'center-half': '60% 27%',

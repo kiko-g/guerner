@@ -24,10 +24,10 @@ export default function CompanyCTA({}: Props) {
   const routeCompany = t('routeCompany')
 
   return (
-    <section className="w-full">
+    <section className="w-full overflow-hidden bg-teal-700 dark:bg-gray-800">
       <div className="grid grid-cols-1 xl:grid-cols-2">
         {/* CTA */}
-        <div className="relative z-0 w-full bg-teal-700 p-12 dark:bg-gray-900 lg:px-16 lg:py-24">
+        <div className="relative z-0 w-full p-12 lg:px-16 lg:py-24">
           <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
             <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary dark:text-tertiary lg:text-4xl">
               {header}

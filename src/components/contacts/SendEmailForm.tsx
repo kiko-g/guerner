@@ -24,7 +24,7 @@ export default function SendEmailForm({}: Props) {
   }
 
   const routeHome = '/'
-  const routeTerms = '/terms-and-conditions'
+  const routeTerms = '/terms'
 
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -48,7 +48,7 @@ export default function SendEmailForm({}: Props) {
   }
 
   return (
-    <section className="rounded bg-light shadow dark:bg-gray-800/40">
+    <section className="rounded bg-light shadow-xl dark:bg-navy">
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
         {/* Desktop header */}
         <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
@@ -201,7 +201,7 @@ export default function SendEmailForm({}: Props) {
                     {placeholders.terms}{' '}
                     <Link
                       to={routeTerms}
-                      className="font-bold transition hover:text-primary/75 hover:underline dark:text-white/75 dark:hover:text-secondary/75"
+                      className="font-bold transition hover:text-primary hover:underline dark:text-white/75 dark:hover:text-tertiary"
                     >
                       {t('termsAndConditionsText')}
                     </Link>
@@ -214,7 +214,7 @@ export default function SendEmailForm({}: Props) {
               <div className="col-span-6 mt-3">
                 <a
                   href={`mailto:${receiverEmail}?subject=${subject}&body=${emailContent}`}
-                  className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm text-white transition hover:opacity-80 dark:bg-secondary/75"
+                  className="inline-flex w-full justify-center rounded bg-primary px-12 py-3 text-sm text-white transition hover:opacity-80 dark:bg-tertiary/75"
                 >
                   {t('send')}
                 </a>
