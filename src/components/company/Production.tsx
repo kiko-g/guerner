@@ -61,26 +61,25 @@ export default function Production({}: Props) {
 
   return (
     <section id={sectionId}>
-      <div className="relative overflow-hidden bg-primary/50 bg-cover pt-16 pb-16 dark:bg-gray-900/50 lg:pt-24 lg:pb-40">
+      <div className="relative overflow-hidden bg-primary bg-cover pt-16 pb-16 dark:bg-gray-900 lg:pt-24 lg:pb-40">
         <div className="flex flex-col items-start justify-center gap-8 px-4 lg:flex-row lg:gap-y-8 lg:px-3">
           <Tab.Group>
-            <Tab.List className="mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded bg-black/20 px-2 py-2 text-xs font-normal tracking-tighter dark:bg-white/5 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:px-4 lg:py-4 lg:text-base">
+            <Tab.List className="mx-auto flex flex-row items-start justify-start gap-2 rounded bg-black/20 px-2 py-2 text-xs font-normal tracking-tighter dark:bg-white/5 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:px-4 lg:py-4 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
                     classNames(
+                      'w-full rounded border-2 px-2 py-1 text-white transition lg:px-4 lg:py-2',
                       selected
-                        ? 'bg-secondary/50 hover:opacity-80 dark:bg-tertiary/50'
-                        : 'hover:bg-secondary/20 dark:hover:bg-tertiary/20',
-                      'w-full rounded px-2 py-1 text-white transition lg:px-4 lg:py-2'
+                        ? 'border-secondary bg-secondary/50 dark:border-tertiary dark:bg-tertiary/40'
+                        : 'border-transparent hover:bg-secondary/60 dark:hover:bg-tertiary/60'
                     )
                   }
                 >
                   {tab}
                 </Tab>
               ))}
-              {/* <div className="mt-4 hidden h-px w-full bg-white dark:bg-tertiary lg:flex"></div> */}
             </Tab.List>
 
             <article className="flex flex-col">
@@ -90,18 +89,18 @@ export default function Production({}: Props) {
 
                   return (
                     <Tab.Panel key={`tab-panel-${tabIdx}`}>
-                      <div className="flex flex-col items-center justify-center gap-y-4 text-center lg:gap-y-6">
+                      <div className="flex flex-col items-center justify-center text-center">
                         {gatsbyImage ? (
                           <GatsbyImage
                             image={gatsbyImage}
                             alt={tabList[tabIdx]}
-                            className="max-w-xl rounded-xl shadow"
+                            className="max-h-96 rounded-xl shadow"
                           />
                         ) : null}
-                        <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                        <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                           {tabList[tabIdx]}
                         </h2>
-                        <p className="mx-auto max-w-xl text-base font-light text-white dark:text-white lg:text-base">
+                        <p className="mx-auto mt-2 max-w-2xl text-base font-light text-white dark:text-white lg:text-base">
                           {tabDescriptions[tabIdx]}
                         </p>
                       </div>
@@ -117,11 +116,11 @@ export default function Production({}: Props) {
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center bg-primary/50 backdrop-blur dark:bg-gray-900/50">
-        <div className="my-16 rounded bg-teal-700 p-8 shadow-xl dark:bg-primary">
+      <div className="relative flex flex-col items-center justify-center bg-teal-600 backdrop-blur dark:bg-gray-800">
+        <div className="my-32 overflow-hidden rounded-3xl bg-slate-200 px-14 py-16 dark:bg-slate-600 xl:px-16">
           <article
             dangerouslySetInnerHTML={{ __html: html }}
-            className="article alt px-4 py-4 text-white dark:text-white lg:max-w-3xl lg:px-4 lg:py-8"
+            className="article alt lg:max-w-4xl"
           />
         </div>
       </div>

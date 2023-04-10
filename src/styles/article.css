@@ -38,8 +38,7 @@
 }
 
 .article blockquote {
-  @apply my-8 rounded border-l-4 border-primary bg-light py-1 pl-4 pr-6 
-  font-medium text-gray-800 dark:border-secondary dark:bg-ice/5 dark:text-white;
+  @apply my-8 rounded border-l-4 border-primary bg-light py-1 pl-4 pr-6 font-medium text-gray-800 dark:border-secondary dark:bg-ice/5 dark:text-white;
 }
 
 /* Alternate styles*/
@@ -49,11 +48,9 @@
 .article.alt h4,
 .article.alt h5,
 .article.alt h6 {
-  @apply text-secondary dark:text-white;
+  @apply text-primary dark:text-tertiary;
 }
 
 .article.alt blockquote {
-  @apply my-8 rounded border-l-4 border-secondary bg-ice/10 py-1 pl-4 
-  pr-3 text-left font-normal tracking-tight text-white dark:border-secondary 
-  dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-8 rounded border-l-4 border-primary bg-slate-400 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-ice/10 lg:pl-4 lg:pr-6 lg:tracking-normal;
 }

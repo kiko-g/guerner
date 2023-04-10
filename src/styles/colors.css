@@ -1,4 +1,4 @@
-.xd {
+.blob {
   background: conic-gradient(
     from -135deg at 50% 50%,
     #88fabf 0deg,
@@ -8,13 +8,13 @@
   );
 }
 
-.dark .xd {
+.dark .blob {
   background: conic-gradient(
-    from 90deg at 50% 50%,
-    #df803f 0deg,
-    #ffa970 133.12deg,
-    #e1c464 208.13deg,
-    #cafeb3 360deg
+    from -135deg at 50% 50%,
+    #fa8888 0deg,
+    #c45d26 133.12deg,
+    #e1a264 208.13deg,
+    #fec7b3 360deg
   );
 }
 

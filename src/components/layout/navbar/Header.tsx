@@ -30,8 +30,8 @@ export default function Header({ title, location, navigation }: HeaderProps) {
         </Link>
       </div>
 
-      <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-2">
-        <div className="flex items-center justify-center gap-x-4">
+      <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-1">
+        <div className="flex items-center justify-center gap-x-3">
           <LanguageSwitch />
           <DarkModeSwitch />
         </div>
@@ -48,8 +48,8 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                 )}
               >
                 <span className="flex items-center justify-center gap-x-1 tracking-tight">
-                  {/* {link.icon} */}
-                  <span>{link.title}</span>
+                  {link.icon}
+                  <span className="lowercase">{link.title}</span>
                 </span>
               </button>
             </Link>
