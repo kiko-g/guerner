@@ -33,7 +33,7 @@ export default function HeroBanner({}: Props) {
 
           <p className="mx-auto mt-4 sm:text-xl sm:leading-relaxed">{statement}</p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-center">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-center">
             <LinkTranslate text={takeMeToProducts} link={routeProducts} />
             <LinkTranslate text={takeMeToContacts} link={routeContacts} alt />
           </div>

@@ -34,7 +34,7 @@ export default function Welcome({}: Props) {
 
           <p className="mx-auto mt-4 max-w-xl sm:text-xl sm:leading-relaxed">{description}</p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-center">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-center">
             <LinkTranslate text={takeMeToPresentation} link={`#${presentationId}`} />
             <LinkTranslate text={takeMeToProduction} link={`#${productionId}`} alt />
           </div>

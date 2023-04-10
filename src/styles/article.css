@@ -48,7 +48,7 @@
 .article.alt h4,
 .article.alt h5,
 .article.alt h6 {
-  @apply text-primary dark:text-tertiary;
+  @apply text-primary dark:text-white;
 }
 
 .article.alt blockquote {
