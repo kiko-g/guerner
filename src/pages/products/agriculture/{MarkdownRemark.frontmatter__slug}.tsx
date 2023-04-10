@@ -77,7 +77,7 @@ export default function AgricultureProductTemplate({ data }: Props) {
                     className="flex items-center gap-x-2 font-lexend uppercase tracking-tight"
                     key={`chracteristic-${chracteristicIdx}`}
                   >
-                    <span className="h-6 w-1 rounded bg-primary dark:bg-secondary" />
+                    <span className="h-6 w-1 rounded bg-primary dark:bg-tertiary" />
                     <span>{characteristic}</span>
                   </li>
                 ))}

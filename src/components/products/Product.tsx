@@ -61,7 +61,7 @@ export default function Product({ product }: Props) {
             className="duration-400 aspect-square h-full w-full object-cover transition hover:scale-110 hover:opacity-80"
           />
         ) : (
-          <div className="aspect-square h-full w-full bg-primary transition hover:opacity-80 dark:bg-secondary/50" />
+          <div className="aspect-square h-full w-full bg-primary transition hover:opacity-80 dark:bg-tertiary/50" />
         )}
       </Link>
 
@@ -79,7 +79,7 @@ export default function Product({ product }: Props) {
             {t(product.name)}
           </Link>
           <Link to={product.slug}>
-            <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-secondary" />
+            <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-tertiary" />
           </Link>
         </div>
       </div>

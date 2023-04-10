@@ -32,7 +32,7 @@ export default function Layout({ children, location = 'Unknown', special = false
           'mb-auto flex min-h-screen flex-col overflow-clip font-prose font-medium',
           special
             ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
-            : 'bg-ice text-gray-800 dark:bg-navy dark:text-white'
+            : 'bg-ice text-gray-800 dark:bg-gray-800 dark:text-white'
         )}
       >
         <Navbar location={location} title={title} special={special} />

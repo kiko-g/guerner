@@ -20,7 +20,7 @@ export default function ProductsCTA({}: Props) {
   const routeConstruction = '/products/construction'
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full bg-primary/50 dark:bg-navy/50">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Products */}
         <div className="order-2 grid grid-cols-2 lg:order-1 lg:grid-cols-1">
@@ -37,7 +37,7 @@ export default function ProductsCTA({}: Props) {
         </div>
 
         {/* CTA */}
-        <div className="relative z-0 order-1 w-full bg-teal-700 p-12 dark:bg-gray-900 lg:order-2 lg:px-16 lg:py-24">
+        <div className="relative z-0 order-1 w-full p-12 lg:order-2 lg:px-16 lg:py-24">
           <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
             <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary dark:text-tertiary lg:text-4xl">
               {headerText}

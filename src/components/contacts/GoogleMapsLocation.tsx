@@ -6,7 +6,7 @@ type Props = {
 
 export default function GoogleMapsLocation({ height }: Props) {
   return (
-    <div className="w-full rounded bg-light px-4 py-4 shadow dark:bg-gray-800/40 md:px-6 md:py-6">
+    <div className="w-full rounded bg-lighter px-4 py-4 shadow-xl dark:bg-navy md:px-6 md:py-6">
       <iframe
         className="w-full rounded border-0 shadow"
         height={height}

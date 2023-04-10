@@ -33,7 +33,7 @@
 }
 
 .product .content ul > li::marker {
-  @apply text-primary dark:text-secondary;
+  @apply text-primary dark:text-tertiary;
 }
 
 .product .content table {
@@ -44,7 +44,7 @@
 
 .product .content table tr th {
   @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-prose 
-  font-medium text-white dark:bg-secondary/40 lg:py-2 lg:px-3 lg:font-lexend;
+  font-medium text-white dark:bg-tertiary/40 lg:py-2 lg:px-3 lg:font-lexend;
 }
 
 .product .content table tr td {

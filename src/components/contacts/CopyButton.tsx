@@ -1,4 +1,5 @@
-import { ClipboardDocumentCheckIcon, ClipboardIcon } from '@heroicons/react/24/outline'
+import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
+import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 type Props = {
@@ -22,12 +23,12 @@ export default function CopyButton({ text }: Props) {
   return (
     <button
       onClick={() => handleCopied(text)}
-      className="rounded-full p-1 transition hover:text-teal-500 dark:hover:text-secondary/50"
+      className="rounded-full p-1 transition hover:text-teal-500 dark:hover:text-tertiary"
     >
       {copied ? (
         <ClipboardDocumentCheckIcon fillRule="evenodd" className="h-5 w-5 lg:h-6 lg:w-6" />
       ) : (
-        <ClipboardIcon className="h-5 w-5 lg:h-6 lg:w-6" />
+        <ClipboardDocumentIcon className="h-5 w-5 lg:h-6 lg:w-6" />
       )}
     </button>
   )

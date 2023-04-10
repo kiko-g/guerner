@@ -60,11 +60,12 @@ export default function Production({}: Props) {
   const tabDescriptions = node!.frontmatter.facilitiesDescriptions
 
   return (
-    <section id={sectionId}>
-      <div className="relative overflow-hidden bg-primary bg-cover pt-16 pb-16 dark:bg-gray-900 lg:pt-24 lg:pb-40">
-        <div className="flex flex-col items-start justify-center gap-8 px-4 lg:flex-row lg:gap-y-8 lg:px-3">
+    <section id={sectionId} className="bg-primary/50 pt-6 dark:bg-navy/50 md:pt-12">
+      {/* Production Centers */}
+      <div className="relative overflow-hidden bg-cover pt-16 pb-16 lg:pt-24 lg:pb-40">
+        <div className="flex flex-col items-start justify-center gap-8 px-4 lg:flex-row lg:gap-4 lg:px-3">
           <Tab.Group>
-            <Tab.List className="mx-auto flex flex-row items-start justify-start gap-2 rounded bg-black/20 px-2 py-2 text-xs font-normal tracking-tighter dark:bg-white/5 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:px-4 lg:py-4 lg:text-base">
+            <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded bg-black/20 px-2 py-2 text-xs font-normal tracking-tighter dark:bg-black/20 md:order-2 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:px-4 lg:py-4 lg:text-base">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
@@ -82,7 +83,7 @@ export default function Production({}: Props) {
               ))}
             </Tab.List>
 
-            <article className="flex flex-col">
+            <article className="order-2 flex flex-col rounded bg-black/20 px-4 py-4 md:order-1 md:px-6 md:py-6">
               <Tab.Panels>
                 {tabImages.map((tabImage: IGatsbyImageData, tabIdx: number) => {
                   const gatsbyImage = getImage(tabImage)
@@ -116,6 +117,7 @@ export default function Production({}: Props) {
         </div>
       </div>
 
+      {/* Production Description */}
       <div className="relative flex flex-col items-center justify-center bg-teal-600 backdrop-blur dark:bg-gray-800">
         <div className="my-32 overflow-hidden rounded-3xl bg-slate-200 px-14 py-16 dark:bg-slate-600 xl:px-16">
           <article
