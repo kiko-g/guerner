@@ -18,6 +18,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
   return (
     <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
       <div className="relative hidden h-auto transition md:flex md:items-center">
+        {/* Logo Link */}
         <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
           <img
             alt="Guerner"
@@ -28,32 +29,33 @@ export default function Header({ title, location, navigation }: HeaderProps) {
             {title}
           </span>
         </Link>
+
+        {/* Navigation Links */}
+        <div className="ml-4 flex gap-x-4">
+          {navigation.map((link, index) => {
+            const isActive = t(location).toLowerCase() === t(link.title).toLowerCase()
+            return (
+              <Link to={link.location} key={`nav-${index}`} className="relative">
+                <button
+                  type="button"
+                  className={classNames(
+                    'flex items-center justify-center rounded-sm px-3 py-2 font-normal transition',
+                    isActive ? 'bg-white/20' : 'hover:bg-white/10'
+                  )}
+                >
+                  <span className="capitalize tracking-tight">{link.title}</span>
+                </button>
+              </Link>
+            )
+          })}
+        </div>
       </div>
 
+      {/* Settings */}
       <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-1">
         <div className="flex items-center justify-center gap-x-3">
           <LanguageSwitch />
           <DarkModeSwitch />
-        </div>
-        <div className="flex gap-x-6">
-          {navigation.map((link, index) => (
-            <Link to={link.location} key={`nav-${index}`} className="relative">
-              <button
-                type="button"
-                className={classNames(
-                  'flex items-center justify-center transition',
-                  t(location).toLowerCase() === t(link.title).toLowerCase()
-                    ? 'font-bold text-white dark:text-white'
-                    : 'font-normal text-white/50 hover:text-white dark:text-white/50 dark:hover:text-white'
-                )}
-              >
-                <span className="flex items-center justify-center gap-x-1 tracking-tight">
-                  {link.icon}
-                  <span className="lowercase">{link.title}</span>
-                </span>
-              </button>
-            </Link>
-          ))}
         </div>
       </div>
     </div>

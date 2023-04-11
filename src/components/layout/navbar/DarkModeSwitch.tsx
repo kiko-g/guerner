@@ -19,7 +19,7 @@ export default function DarkModeSwitch() {
         <Switch
           as="button"
           name="dark-mode-switch-button"
-          className={classNames('rounded-full', enabled ? 'animate-dark' : 'animate-light')}
+          className="rounded-full"
           checked={enabled}
           onChange={() => setEnabled(!enabled)}
         >
