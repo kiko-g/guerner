@@ -37,23 +37,17 @@
 }
 
 .product .content table {
-  @apply w-full max-w-full table-auto border-2 border-primary 
-  bg-white text-xs tracking-[-0.06rem] dark:border-secondary/50 dark:bg-transparent 
-  lg:text-base lg:tracking-tight;
+  @apply w-full max-w-full table-auto border-2 border-primary bg-white text-xs tracking-[-0.06rem] dark:border-secondary/50 dark:bg-transparent lg:text-base lg:tracking-tight;
 }
 
 .product .content table tr th {
-  @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-prose 
-  font-medium text-white dark:bg-tertiary/40 lg:py-2 lg:px-3 lg:font-lexend;
+  @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-sans font-medium text-white dark:bg-tertiary/40 lg:py-2 lg:px-3 lg:font-lexend;
 }
 
 .product .content table tr td {
-  @apply truncate whitespace-pre-wrap 
-  border-2 border-primary px-[0.1rem] py-2 dark:border-secondary/50 lg:py-2 lg:px-3;
+  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 dark:border-secondary/50 lg:py-2 lg:px-3;
 }
 
 .product .content blockquote {
-  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 
-  pr-3 text-left font-normal tracking-tight text-white dark:border-secondary 
-  dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-secondary dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
 }

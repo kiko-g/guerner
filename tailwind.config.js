@@ -38,7 +38,13 @@ module.exports = {
         'inner-xl': 'inset 0px 0px 4px 4px rgb(0 0 0 / 0.1)',
       },
       fontFamily: {
-        prose: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: [
+          'Inter var, sans-serif',
+          {
+            fontFeatureSettings: '"cv11", "ss01"',
+            fontVariationSettings: '"opsz" 32',
+          },
+        ],
         lexend: ['Lexend', ...defaultTheme.fontFamily.sans],
         mono: ['Fira Code', ...defaultTheme.fontFamily.mono],
       },
