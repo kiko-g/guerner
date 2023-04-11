@@ -1,6 +1,7 @@
 import { ClipboardDocumentIcon } from '@heroicons/react/24/outline'
-import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import React from 'react'
+import classNames from 'classnames'
 
 type Props = {
   text: string
@@ -17,18 +18,21 @@ export default function CopyButton({ text }: Props) {
     if (copied)
       setTimeout(() => {
         setCopied(!copied)
-      }, 3000)
+      }, 2000)
   }, [copied, setCopied])
 
   return (
     <button
       onClick={() => handleCopied(text)}
-      className="rounded-full p-1 transition hover:text-teal-500 dark:hover:text-tertiary"
+      className={classNames(
+        'rounded-full p-1 transition',
+        copied ? '' : 'hover:text-primary dark:hover:text-tertiary'
+      )}
     >
       {copied ? (
-        <ClipboardDocumentCheckIcon fillRule="evenodd" className="h-5 w-5 lg:h-6 lg:w-6" />
+        <CheckCircleIcon className="h-5 w-5 text-teal-600 lg:h-6 lg:w-6" />
       ) : (
-        <ClipboardDocumentIcon className="h-5 w-5 lg:h-6 lg:w-6" />
+        <ClipboardDocumentIcon fillRule="evenodd" className="h-5 w-5 lg:h-6 lg:w-6" />
       )}
     </button>
   )

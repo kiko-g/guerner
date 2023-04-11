@@ -19,9 +19,11 @@ export default function ContactsPage() {
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
         </header>
 
-        <div className="flex flex-col gap-y-6 md:gap-y-12">
-          <ContactsBanner />
-          <GoogleMapsLocation height={isMobile ? 225 : 500} />
+        <div className="flex flex-col gap-4 md:gap-8">
+          <div className="flex flex-col gap-4 rounded bg-lighter px-4 py-4 shadow-xl dark:bg-navy md:gap-4 lg:flex-row">
+            <GoogleMapsLocation height={isMobile ? 240 : 'auto'} />
+            <ContactsBanner />
+          </div>
           <SendEmailForm />
         </div>
       </main>

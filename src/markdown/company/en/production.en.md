@@ -17,17 +17,16 @@ facilitiesDescriptions:
   ]
 ---
 
-The production process is vertically integrated, from the extrusion of the raw material into thread, monofilament, through spinning, weaving and finishing.
+## Production
 
-The production is divided into 4 main areas:
+The production process is vertically integrated, from the extrusion of the raw material into a thread, monofilament, through the warping, weaving and confection.
 
-- Extrusion
-- Warping
-- Weaving
-- Confection
+> Production is divided into 4 main areas: **Extrusion**, **Warping**, **Weaving**, **Confection**.
 
 Guerner & Irmãos continues its activity in a sustainable way, recycling waste and reintroducing it into the production process, with the manufacture of "plates" and bands.
 
-Recently, the Company had its project approved within the scope of PT 2020 - SI Innovation -. Guerner & Irmãos designed an investment project, downstream, of which stands out a new extrusion line that will allow the production of thread with the incorporation of recycled polyethylene.
+Recently, the Company approved a project under the PT 2020 - SI Innovation.
 
-In summary, Guerner and Irmãos intends to equip itself with new equipment that will be an added value in the incorporation of recycled raw materials into the production process and increase the energy efficiency of the entire unit.
+Guerner & Irmãos designed an investment project, downstream amount, which stands out a new extrusion line that will allow the production of thread with the incorporation of recycled polyethylene.
+
+> To sum up, Guerner & Irmãos intends to equip itself with new equipment that will be an added value in the incorporation of recycled raw materials into the production process and increase the energy efficiency of the entire unit.

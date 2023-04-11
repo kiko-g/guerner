@@ -1,5 +1,5 @@
 .product {
-  @apply mx-auto max-w-3xl space-y-4 py-8 font-normal md:py-16;
+  @apply mx-auto my-12 max-w-4xl space-y-4 rounded bg-white px-4 py-8 font-normal dark:bg-navy md:py-16 md:px-12;
 }
 
 .product header {
@@ -37,7 +37,7 @@
 }
 
 .product .content table {
-  @apply w-full max-w-full table-auto border-2 border-primary bg-white text-xs tracking-[-0.06rem] dark:border-secondary/50 dark:bg-transparent lg:text-base lg:tracking-tight;
+  @apply w-full max-w-full table-auto border-2 border-primary bg-white text-xs tracking-[-0.06rem] dark:border-tertiary/50 dark:bg-transparent lg:text-base lg:tracking-tight;
 }
 
 .product .content table tr th {
@@ -45,9 +45,9 @@
 }
 
 .product .content table tr td {
-  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 dark:border-secondary/50 lg:py-2 lg:px-3;
+  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 dark:border-tertiary/50 lg:py-2 lg:px-3;
 }
 
 .product .content blockquote {
-  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-secondary dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
 }

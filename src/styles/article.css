@@ -1,5 +1,5 @@
 .article {
-  @apply mx-auto mt-0 h-full w-full text-left font-normal lg:text-justify;
+  @apply mx-auto mt-0 h-full w-full text-center font-normal lg:text-center;
 }
 
 .article a {
@@ -42,6 +42,10 @@
 }
 
 /* Alternate styles*/
+.article.alt {
+  @apply mx-auto mt-0 h-full w-full text-left text-sm font-normal lg:text-left;
+}
+
 .article.alt h1,
 .article.alt h2,
 .article.alt h3,
