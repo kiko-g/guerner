@@ -24,29 +24,27 @@ export default function Layout({ children, location = 'Unknown', special = false
   const title = data.site.siteMetadata?.title || 'Site Title'
 
   return (
-    <>
+    <div
+      id="layout"
+      className={classNames(
+        'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium opacity-[99%]',
+        special
+          ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
+          : 'bg-ice text-gray-800 dark:bg-gray-800 dark:text-white'
+      )}
+    >
       <Seo title={location} />
+      <Navbar location={location} title={title} special={special} />
       <div
-        id="layout"
         className={classNames(
-          'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium',
-          special
-            ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
-            : 'bg-ice text-gray-800 dark:bg-gray-800 dark:text-white'
+          'z-10 mx-auto mb-auto',
+          special ? 'w-full' : 'container max-w-6xl px-4 py-4 md:px-3 md:py-3'
         )}
       >
-        <Navbar location={location} title={title} special={special} />
-        <div
-          className={classNames(
-            'z-10 mx-auto mb-auto',
-            special ? 'w-full' : 'container max-w-6xl px-4 py-4 md:px-3 md:py-3'
-          )}
-        >
-          {children}
-        </div>
-        <BackToTopButton />
-        <Footer title={title} special={special} />
+        {children}
       </div>
-    </>
+      <BackToTopButton />
+      <Footer title={title} special={special} />
+    </div>
   )
 }

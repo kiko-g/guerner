@@ -22,11 +22,11 @@ export default function Header({ title, location, navigation }: HeaderProps) {
           <img
             alt="Guerner"
             src={'/images/icon.png'}
-            className="z-20 inline-flex h-8 w-8 rounded-full transition"
+            className="z-20 inline-flex h-9 w-9 rounded-full transition"
           />
-          <h2 className="text-xs font-bold tracking-tighter duration-150 group-hover:underline md:text-lg">
+          <span className="max-w-[6rem] text-xs font-semibold leading-3 tracking-tighter duration-150 group-hover:underline md:text-sm md:leading-5">
             {title}
-          </h2>
+          </span>
         </Link>
       </div>
 

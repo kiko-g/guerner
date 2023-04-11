@@ -10,7 +10,7 @@ export default function IndexPage() {
 
   return (
     <Layout location={location} special>
-      <div className="flex min-h-screen flex-col scroll-smooth bg-primary font-sans font-medium text-gray-800 opacity-[99%] dark:bg-navy dark:text-white">
+      <div className="flex min-h-screen flex-col scroll-smooth">
         <HeroBanner />
         <CompanyCTA />
         <ProductsCTA />
