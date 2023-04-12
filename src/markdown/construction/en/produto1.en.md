@@ -4,7 +4,7 @@ pinned: false
 name: Bereiuhe
 slug: produto1
 color: red
-category: all
+category: a
 featuredImage: ../images/produto1.jpg
 ---
 

@@ -46,6 +46,7 @@ export default function ProductsConstructionPage({ data }: Props) {
   const location = t('location')!
   const title = t('title')
   const description = t('description')
+  const categoryKeys = ['a', 'b', 'c']
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
@@ -75,7 +76,7 @@ export default function ProductsConstructionPage({ data }: Props) {
 
   return (
     <Layout location={location}>
-      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:py-16">
+      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:pb-40 md:pt-16">
         <header className="w-full space-y-6">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
           <p className="text-center font-normal lg:text-justify">{description}</p>
@@ -86,7 +87,10 @@ export default function ProductsConstructionPage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
-              <CategoryFilter hook={[pickedCategories, setPickedCategories]} />
+              <CategoryFilter
+                categories={categoryKeys}
+                hook={[pickedCategories, setPickedCategories]}
+              />
               <ColorFilter hook={[pickedColor, setPickedColor]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />

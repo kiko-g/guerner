@@ -8,7 +8,7 @@
   );
 }
 
-.dark .alt {
+.dark.alt {
   background: conic-gradient(
     from -135deg at 50% 50%,
     #fa8888 0deg,

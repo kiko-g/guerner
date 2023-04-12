@@ -1,18 +1,18 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Listbox } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/24/outline'
-import { Category, Language } from '../../../types'
+import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { Category } from '../../../types'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Props = {
+  categories: string[]
   hook: [Category[], React.Dispatch<React.SetStateAction<Category[]>>]
 }
 
-export default function CategoryFilter({ hook }: Props) {
+export default function CategoryFilter({ categories, hook }: Props) {
   const { t, language } = useI18next()
   const [pickedCategories, setPickedCategories] = hook
-  const categories = ['a', 'b', 'c', 'd']
   const text = t('categories')
 
   return (
@@ -27,7 +27,7 @@ export default function CategoryFilter({ hook }: Props) {
         <>
           <Listbox.Button
             className="flex w-full items-center justify-center gap-x-0.5 rounded border-2 border-primary bg-primary/80 
-            py-1.5 px-2 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
+            px-2 py-1.5 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             <span className="text-sm font-normal">{text}</span>
           </Listbox.Button>
@@ -42,7 +42,7 @@ export default function CategoryFilter({ hook }: Props) {
             {/* Option box header */}
             <div
               className="flex w-full items-center justify-between border-b 
-              px-3 pt-1 pb-2 font-normal tracking-tighter"
+              px-3 pb-2 pt-1 font-normal tracking-tighter"
             >
               <span>{pickedCategories.length} selected</span>
               <button
@@ -56,30 +56,38 @@ export default function CategoryFilter({ hook }: Props) {
 
             {/* Option box body (options list) */}
             <div className="py-1">
-              {categories.map((category, categoryIdx) => (
-                <Listbox.Option
-                  key={`category-${categoryIdx}`}
-                  value={category}
-                  className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-8 pr-4 ${
-                      active ? 'bg-teal-100 text-primary dark:bg-tertiary/50 dark:text-white' : ''
-                    }`
-                  }
-                >
-                  {({ selected }) => (
-                    <>
-                      <span className={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
-                        {category}
-                      </span>
-                      {selected ? (
-                        <span className="absolute inset-y-0 left-0 flex items-center pl-2.5 text-primary dark:text-tertiary">
-                          <CheckIcon className="h-[1.1rem] w-[1.1rem]" aria-hidden="true" />
+              {categories.map((category: string, categoryIdx: number) => {
+                const translatedCategory = t(`categories.${category}`)
+                return (
+                  <Listbox.Option
+                    key={`category-${categoryIdx}`}
+                    value={category}
+                    className={({ active }) =>
+                      classNames(
+                        'relative cursor-default select-none py-2 pl-3 pr-3',
+                        active ? 'bg-slate-200 dark:bg-slate-600' : ''
+                      )
+                    }
+                  >
+                    {({ selected }) => (
+                      <span className="flex items-center gap-2">
+                        {selected ? (
+                          <span className="h-5 w-5 text-teal-500">
+                            <CheckCircleIcon className="" aria-hidden="true" />
+                          </span>
+                        ) : (
+                          <span className="h-5 w-5 text-teal-500"></span>
+                        )}
+                        <span
+                          className={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}
+                        >
+                          {translatedCategory}
                         </span>
-                      ) : null}
-                    </>
-                  )}
-                </Listbox.Option>
-              ))}
+                      </span>
+                    )}
+                  </Listbox.Option>
+                )
+              })}
             </div>
           </Listbox.Options>
         </>

@@ -4,7 +4,7 @@ pinned: false
 name: Redes de Proteção de Silos
 slug: redes-protecao-silos
 color: green
-category: agrotextile
+category: d
 featuredImage: ../images/produto1.jpg
 description: A rede de proteção de silos (Silo Net) garante a preservação da qualidade da silagem que produziu e que a mesma “não respire” (anaerobiose. É imprescindível para garantir uma boa silagem e uma correta ensilagem.
 characteristics: [Campo Aberto, Silos de Cimento]
