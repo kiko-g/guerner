@@ -1,8 +1,9 @@
-import Seo from './Seo'
+import BackToTopButton from './BackToTopButton'
+import Footer from './Footer'
 import GoBack from './GoBack'
 import Layout from './Layout'
 import Navbar from './Navbar'
-import Footer from './Footer'
-import BackToTopButton from './BackToTopButton'
+import Seo from './Seo'
 
-export { Seo, GoBack, Layout, Navbar, Footer, BackToTopButton }
+export { BackToTopButton, Footer, GoBack, Layout, Navbar, Seo }
+

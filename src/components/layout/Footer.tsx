@@ -40,17 +40,19 @@ export default function Footer({ title, special }: Props) {
               src="/images/icon.png"
               className="h-10 w-10 rounded-full bg-primary shadow-2xl drop-shadow-2xl"
             />
-            <h3 className="text-2xl font-medium">Guerner & Irmãos S.A.</h3>
+            <h3 className="text-center text-2xl font-medium tracking-tighter md:tracking-normal">
+              Guerner & Irmãos S.A.
+            </h3>
           </Link>
         </div>
 
         <div className="mt-4">
-          <p className="text-sm tracking-tight text-gray-200 dark:text-gray-300">
+          <p className="text-center text-sm tracking-tight text-gray-200 dark:text-gray-300">
             © {new Date().getFullYear()} Guerner & Irmãos S.A. All rights reserved.
           </p>
         </div>
 
-        <ul className="mt-16 flex w-full flex-row flex-wrap items-center justify-center gap-4">
+        <ul className="mt-16 flex w-full flex-col flex-wrap items-center justify-center gap-2 lg:flex-row lg:gap-4">
           {links.map((link, linkIdx) => (
             <li key={`link-${linkIdx}`}>
               <Link
@@ -63,8 +65,8 @@ export default function Footer({ title, special }: Props) {
           ))}
         </ul>
 
-        <ul className="mt-4 flex gap-3">
-          <li className="group opacity-80 transition hover:opacity-80">
+        <ul className="mt-6 flex gap-3 lg:mt-4">
+          <li className="group text-white opacity-60 transition hover:text-blue-400 hover:opacity-100">
             <a
               target="_blank"
               rel="noreferrer"
@@ -72,7 +74,7 @@ export default function Footer({ title, special }: Props) {
               className="flex w-full items-center justify-center gap-x-1 transition hover:opacity-60"
             >
               <span className="lowercase text-gray-400">{t('madeBy')} </span>
-              <span className="font-bold text-white">Francisco Gonçalves</span>
+              <span className="font-bold">Francisco Gonçalves</span>
             </a>
           </li>
         </ul>

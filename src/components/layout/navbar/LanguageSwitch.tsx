@@ -31,7 +31,7 @@ export default function LanguageSwitch({}: Props) {
                 className={classNames(
                   'group relative z-50 cursor-pointer select-none py-1 px-2.5 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:py-2 md:px-2.5 md:text-sm',
                   active
-                    ? 'bg-primary/20 text-primary dark:bg-tertiary/20 dark:text-tertiary'
+                    ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary'
                     : 'text-gray-800'
                 )}
               >

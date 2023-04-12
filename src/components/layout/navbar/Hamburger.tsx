@@ -26,13 +26,6 @@ export default function Hamburger({ open }: HamburgerProps) {
       {open ? (
         <div className="flex items-center justify-center gap-x-1.5">
           <LanguageSwitch />
-          <Link to="/">
-            <img
-              alt="Guerner"
-              src={'/images/icon.png'}
-              className={classNames('ml-1 rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
-            />
-          </Link>
           <DarkModeSwitch />
           <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white md:hidden">
             <span className="sr-only">Open nav menu</span>

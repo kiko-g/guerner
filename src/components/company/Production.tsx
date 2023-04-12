@@ -62,7 +62,10 @@ export default function Production({}: Props) {
   return (
     <section id={sectionId} className="bg-primary/50 pt-6 dark:bg-navy/50 md:pt-12">
       {/* Production Centers */}
-      <div className="relative overflow-hidden bg-cover pt-16 pb-16 lg:pt-24 lg:pb-40">
+      <div className="relative flex flex-col items-center space-y-6 overflow-hidden bg-cover pt-16 pb-16 lg:pt-24 lg:pb-40">
+        <h3 className="text-center text-4xl font-bold tracking-tighter text-white">
+          Centros de Produção
+        </h3>
         <div className="flex w-full flex-col items-start justify-center gap-4 px-4 lg:flex-row lg:gap-4 lg:px-3">
           <Tab.Group>
             <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded bg-black/20 px-2 py-2 text-xs font-normal tracking-tighter dark:bg-black/20 md:order-2 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:px-4 lg:py-4 lg:text-base">

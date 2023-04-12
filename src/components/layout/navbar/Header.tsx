@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { NavItem } from '../../../types'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import Settings from './Settings'
 import DarkModeSwitch from './DarkModeSwitch'
 import LanguageSwitch from './LanguageSwitch'
 
@@ -39,7 +40,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                 <button
                   type="button"
                   className={classNames(
-                    'flex items-center justify-center rounded-sm px-3 py-2 font-normal transition',
+                    'flex items-center justify-center rounded-sm px-3 py-1.5 font-normal transition',
                     isActive ? 'bg-white/20' : 'hover:bg-white/10'
                   )}
                 >
@@ -54,8 +55,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
       {/* Settings */}
       <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-1">
         <div className="flex items-center justify-center gap-x-3">
-          <LanguageSwitch />
-          <DarkModeSwitch />
+          <Settings />
         </div>
       </div>
     </div>

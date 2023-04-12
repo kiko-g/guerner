@@ -6,5 +6,10 @@
   "contacts": "Contactos",
   "products": "Produtos",
   "privacyPolicy": "Política de Privacidade",
-  "termsAndConditions": "Terms e Condições"
+  "termsAndConditions": "Terms e Condições",
+  "selectLang": "Selecione o idioma",
+  "currentLang": "Idioma atual é",
+  "darkMode": "Escolha o tema",
+  "enabled": "Mode escuro está ativado",
+  "disabled": "Mode escuro está desativado"
 }
