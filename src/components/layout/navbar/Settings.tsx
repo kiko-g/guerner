@@ -13,14 +13,14 @@ import {
 
 export default function Settings() {
   return (
-    <Popover className="relative h-6">
+    <Popover className="relative h-7 w-7">
       {({ open }) => (
         <>
           <Popover.Button>
             {open ? (
-              <Cog8ToothIconSolid className="h-6 w-6" />
+              <Cog8ToothIconSolid className="h-full w-full" />
             ) : (
-              <Cog8ToothIconOutline className="h-6 w-6" />
+              <Cog8ToothIconOutline className="h-full w-full" />
             )}
           </Popover.Button>
           <Transition
@@ -110,7 +110,7 @@ function LanguageSwitcher() {
               <li
                 key={langIdx}
                 className={classNames(
-                  'group relative z-50 cursor-pointer select-none py-1 px-2.5 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:py-1 md:px-2 md:text-sm',
+                  'group relative z-50 cursor-pointer select-none px-2.5 py-1 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:px-2 md:py-1 md:text-sm',
                   active
                     ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary'
                     : 'text-gray-800'

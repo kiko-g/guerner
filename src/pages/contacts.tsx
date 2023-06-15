@@ -14,13 +14,13 @@ export default function ContactsPage() {
 
   return (
     <Layout location={location}>
-      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:pt-16 md:pb-40">
+      <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:pb-40 md:pt-16">
         <header className="w-full">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
         </header>
 
         <div className="flex flex-col gap-4 md:gap-8">
-          <div className="flex flex-col gap-4 rounded bg-lighter px-4 py-4 shadow-xl dark:bg-navy md:gap-4 lg:flex-row">
+          <div className="flex flex-col gap-4 rounded bg-lighter px-4 py-4 shadow-xl dark:bg-gray-900 md:gap-4 lg:flex-row">
             <GoogleMapsLocation height={isMobile ? 240 : 'auto'} />
             <ContactsBanner />
           </div>

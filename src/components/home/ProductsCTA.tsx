@@ -20,7 +20,7 @@ export default function ProductsCTA({}: Props) {
   const routeConstruction = '/products/construction'
 
   return (
-    <section className="relative w-full bg-primary/50 dark:bg-navy/50">
+    <section className="relative w-full bg-primary/50 dark:bg-gray-900/50">
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Products */}
         <div className="order-2 grid grid-cols-2 lg:order-1 lg:grid-cols-1">

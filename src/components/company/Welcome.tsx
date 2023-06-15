@@ -21,7 +21,8 @@ export default function Welcome({}: Props) {
 
   return (
     <section id={sectionId} className="relative w-full bg-transparent">
-      <div className="blob fixed -bottom-36 right-auto -left-64 z-[-1] h-[75vh] w-[25%] animate-sway animate-pulse-medium rounded-full blur-[200px] transition-all dark:-bottom-36 dark:-right-64 dark:left-auto" />
+      <div className="blob fixed -bottom-36 -left-80 right-auto z-[-1] h-[75vh] w-[25%] animate-pulse-medium animate-sway rounded-full blur-[200px] transition-all dark:-bottom-36 dark:-right-80 dark:left-auto" />
+      <div className="blob fixed -bottom-12 -right-80 left-auto z-[-1] h-[75vh] w-[25%] animate-pulse-medium animate-sway rounded-full blur-[200px] transition-all dark:-bottom-12 dark:-left-80 dark:right-auto" />
 
       <div className="relative mx-auto max-w-screen-xl px-4 py-64 text-white sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="mx-auto text-center">

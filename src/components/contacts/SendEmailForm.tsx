@@ -48,7 +48,7 @@ export default function SendEmailForm({}: Props) {
   }
 
   return (
-    <section className="rounded bg-light shadow-xl dark:bg-navy">
+    <section className="rounded bg-light shadow-xl dark:bg-gray-900">
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
         {/* Desktop header */}
         <div className="relative flex h-32 items-end rounded-t bg-gray-900 lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
@@ -76,7 +76,7 @@ export default function SendEmailForm({}: Props) {
           </div>
         </div>
 
-        <div className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:py-12 lg:px-16 xl:col-span-6">
+        <div className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
           <div className="max-w-xl lg:max-w-3xl">
             {/* Mobile header */}
             <div className="relative -mt-16 block lg:hidden">

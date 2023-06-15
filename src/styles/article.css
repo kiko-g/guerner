@@ -18,23 +18,23 @@
 }
 
 .article h1 {
-  @apply mt-1.5 mb-5 text-4xl;
+  @apply mb-5 mt-1.5 text-4xl;
 }
 
 .article h2 {
-  @apply mt-1 mb-4 text-3xl;
+  @apply mb-4 mt-1 text-3xl;
 }
 
 .article h3 {
-  @apply mt-0.5 mb-3 text-2xl;
+  @apply mb-3 mt-0.5 text-2xl;
 }
 
 .article h4 {
-  @apply mt-0 mb-2 text-xl;
+  @apply mb-2 mt-0 text-xl;
 }
 
 .article ul {
-  @apply mt-1 ml-5 list-disc leading-tight;
+  @apply ml-5 mt-1 list-disc leading-tight;
 }
 
 .article blockquote {
@@ -52,9 +52,9 @@
 .article.alt h4,
 .article.alt h5,
 .article.alt h6 {
-  @apply text-primary dark:text-white;
+  @apply text-slate-700 dark:text-white;
 }
 
 .article.alt blockquote {
-  @apply my-8 rounded border-l-4 border-primary bg-slate-500 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-ice/10 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-8 rounded border-l-4 border-slate-700 bg-slate-400 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-ice/10 lg:pl-4 lg:pr-6 lg:tracking-normal;
 }

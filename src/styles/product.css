@@ -1,5 +1,5 @@
 .product {
-  @apply mx-auto my-12 max-w-4xl space-y-4 rounded bg-white px-4 py-8 font-normal dark:bg-navy md:py-16 md:px-12;
+  @apply mx-auto my-12 max-w-4xl space-y-4 rounded bg-white px-4 py-8 font-normal dark:bg-gray-900 md:px-12 md:py-16;
 }
 
 .product header {
@@ -41,11 +41,11 @@
 }
 
 .product .content table tr th {
-  @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-sans font-medium text-white dark:bg-tertiary/40 lg:py-2 lg:px-3 lg:font-lexend;
+  @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-sans font-medium text-white dark:bg-tertiary/40 lg:px-3 lg:py-2 lg:font-lexend;
 }
 
 .product .content table tr td {
-  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 dark:border-tertiary/50 lg:py-2 lg:px-3;
+  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 dark:border-tertiary/50 lg:px-3 lg:py-2;
 }
 
 .product .content blockquote {
