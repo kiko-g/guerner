@@ -8,9 +8,9 @@ type Props = {}
 
 export default function ContactsBanner({}: Props) {
   const { t } = useI18next()
-  const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS!
-  const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER!
-  const address = process.env.GATSBY_GUERNER_STREET_ADDRESS!
+  const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS
+  const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER
+  const address = process.env.GATSBY_GUERNER_STREET_ADDRESS
 
   const contacts = [
     {
@@ -31,7 +31,7 @@ export default function ContactsBanner({}: Props) {
   ]
 
   return (
-    <div className="flex w-full flex-col items-center justify-center gap-y-4 gap-x-4">
+    <div className="flex w-full flex-col items-center justify-center gap-x-4 gap-y-4">
       {/* Image */}
       <img
         src={Building}

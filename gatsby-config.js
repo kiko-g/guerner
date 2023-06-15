@@ -10,6 +10,12 @@ module.exports = {
     siteUrl: `https://guerner.netlify.app/`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-vercel',
+      options: {
+        debug: false, // (optional) Prints metrics in the console when true
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-gatsby-cloud`,
