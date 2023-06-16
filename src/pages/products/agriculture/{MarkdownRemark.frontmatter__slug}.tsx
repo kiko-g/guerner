@@ -1,35 +1,17 @@
 import React from 'react'
-import { graphql } from 'gatsby'
-import { useI18next } from 'gatsby-plugin-react-i18next'
-import { GoBack, Layout } from '../../../components/layout'
-import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
-import '../../../styles/product.css'
-import { PencilIcon, StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
 import classNames from 'classnames'
+import type { ProductFrontmatter } from '../../../types'
 import { useMediaQuery } from 'usehooks-ts'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import { graphql, Link } from 'gatsby'
+import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import { GoBack, Layout } from '../../../components/layout'
+import { PencilIcon } from '@heroicons/react/24/outline'
+import '../../../styles/product.css'
 
 type MarkdownData = {
   html: string
-  frontmatter: {
-    lang: string
-    pinned: boolean
-    slug: string
-
-    name: string
-    sector: string
-    sample: string
-    description: string
-    color: string
-    category: string
-    featuredImage: IGatsbyImageData
-    characteristics: string[]
-    dimensions: string[][]
-    customizable: boolean
-    customizableText: string
-    benefits: string[]
-    specifications: string
-    comp: string[]
-  }
+  frontmatter: ProductFrontmatter
 }
 
 type Props = {

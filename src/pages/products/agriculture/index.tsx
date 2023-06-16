@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import { Category, Colors, ProductFrontmatter } from '../../../types'
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import type { Category, Colors, ProductFrontmatter } from '../../../types'
 import { strIncludes } from '../../../utils'
 import { graphql } from 'gatsby'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
-import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Layout } from '../../../components/layout'
 import {
   ColorFilter,
