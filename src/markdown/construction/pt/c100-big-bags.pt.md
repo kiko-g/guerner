@@ -23,3 +23,5 @@ benefits: ['Fácil transporte', 'Reutilizáveis', 'Resistentes']
 specifications: 'Apresentam diferentes configurações: Apresentam diferentes configurações: simples, com saia de enchimento, válvula de descarga, entre outras.'
 comp: ['Ráfia de polipropileno']
 ---
+
+Produto Construção C100, PT

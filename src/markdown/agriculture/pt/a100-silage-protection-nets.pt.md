@@ -36,3 +36,5 @@ comp:
     'Confecção reforçada',
   ]
 ---
+
+Produto Agricultura A100, PT

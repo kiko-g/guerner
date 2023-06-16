@@ -23,3 +23,5 @@ benefits: ['Easy transport', 'Reusable', 'Resistant']
 specifications: 'They have different configurations: They have different configurations: simple, with filling skirt, discharge valve, among others.'
 comp: ['Polypropylene raffia']
 ---
+
+Construction Product C100, EN
