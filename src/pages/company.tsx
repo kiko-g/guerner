@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Layout } from '../components/layout'
-import { Presentation, Production, Values, Welcome } from '../components/company'
+import { History, Presentation, Production, Values, Welcome } from '../components/company'
 
 export default function CompanyPage() {
   const { t } = useI18next()
@@ -14,6 +14,7 @@ export default function CompanyPage() {
       <main>
         <Presentation />
         <Values />
+        <History />
         <Production />
       </main>
     </Layout>
