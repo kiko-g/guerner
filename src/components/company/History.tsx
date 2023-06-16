@@ -56,8 +56,10 @@ export default function History({}: Props) {
   const title = node!.frontmatter.title
   const history = node!.frontmatter.history
 
-  const slides = isMobile ? 1 : 3
   const [index, setIndex] = React.useState(0)
+  const slides = React.useMemo(() => (isMobile ? 1 : 3), [isMobile])
+  const disabledLeft = React.useMemo(() => index === 0, [index])
+  const disabledRight = React.useMemo(() => index > history.length - 1 - slides, [index, history])
   const historySliced = React.useMemo(() => history.slice(index, index + slides), [index, slides])
 
   const previousItem = () => {
@@ -77,20 +79,21 @@ export default function History({}: Props) {
 
         <div className="flex items-center justify-center gap-4 text-white">
           <button
-            disabled={index === 0}
+            onClick={previousItem}
+            disabled={disabledLeft}
             className="flex flex-1 items-center justify-center self-stretch rounded-l px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
           >
-            <ChevronLeftIcon className="h-6 w-6 lg:h-8 lg:w-8" onClick={previousItem} />
+            <ChevronLeftIcon className="h-6 w-6 lg:h-8 lg:w-8" />
           </button>
 
           <ul className="mx-auto grid grid-cols-1 gap-8 lg:grid-cols-3">
             {historySliced.map((entry, entryIdx) => (
               <li className="relative mb-6 sm:mb-0" key={`history-entry-${entry.date}-${entryIdx}`}>
                 <div className="flex items-center">
-                  <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-200 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
+                  <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
                     <svg
                       aria-hidden="true"
-                      className="h-3 w-3 text-primary dark:text-white"
+                      className="h-3 w-3 text-white"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +107,7 @@ export default function History({}: Props) {
                   </div>
                   <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
                 </div>
+
                 <div className="mt-3 sm:pr-8">
                   <h3 className="text-lg font-semibold text-white dark:text-white">
                     #{index + entryIdx + 1}
@@ -111,7 +115,7 @@ export default function History({}: Props) {
                   <time className="mb-2 block font-lexend text-base font-bold leading-none text-gray-200 dark:text-gray-500">
                     {entry.date}
                   </time>
-                  <p className="text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400">
+                  <p className="min-h-[10rem] text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400">
                     {entry.text}
                   </p>
                 </div>
@@ -121,10 +125,10 @@ export default function History({}: Props) {
 
           <button
             onClick={nextItem}
-            disabled={index > history.length - 1 - slides}
+            disabled={disabledRight}
             className="flex flex-1 items-center justify-center self-stretch rounded-r px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
           >
-            <ChevronRightIcon className="h-8 w-8" onClick={previousItem} />
+            <ChevronRightIcon className="h-8 w-8" />
           </button>
         </div>
       </div>

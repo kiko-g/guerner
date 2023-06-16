@@ -11,5 +11,12 @@
   "currentLang": "Current language is",
   "darkMode": "Choose theme",
   "enabled": "Dark mode is enabled",
-  "disabled": "Dark mode is disabled"
+  "disabled": "Dark mode is disabled",
+  "benefits": "Benefits",
+  "specifications": "Specifications and Applications",
+  "composition": "Composition",
+  "dimensions": "Dimensions",
+  "sector": "Sector",
+  "sample": "Sample",
+  "more-info": "For more information"
 }

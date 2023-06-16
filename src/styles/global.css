@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 *::selection {
-  @apply bg-secondary/80 text-white dark:bg-tertiary/70;
+  @apply bg-emerald-500/80 text-white dark:bg-tertiary/70;
 }
 
 html {

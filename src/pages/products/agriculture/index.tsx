@@ -19,12 +19,22 @@ type Color = keyof Colors | ''
 
 type Frontmatter = {
   lang: string
-  name: string
-  slug: string
   pinned: boolean
+  slug: string
+  name: string
+  sector: string
+  sample: string
+  description: string
   color: Color
   category: Category
   featuredImage: IGatsbyImageData
+  characteristics: string[]
+  dimensions: string[][]
+  customizable: boolean
+  customizableText: string
+  benefits: string[]
+  specifications: string
+  comp: string[]
 }
 
 type MarkdownData = {
@@ -136,9 +146,13 @@ export const pageAndLanguageQuery = graphql`
         id
         frontmatter {
           lang
-          name
-          slug
           pinned
+          slug
+
+          name
+          sector
+          sample
+          description
           color
           category
           featuredImage {
@@ -146,6 +160,13 @@ export const pageAndLanguageQuery = graphql`
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
+          dimensions
+          characteristics
+          customizable
+          customizableText
+          benefits
+          specifications
+          comp
         }
       }
     }

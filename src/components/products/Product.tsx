@@ -8,12 +8,22 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 
 type Frontmatter = {
   lang: string
-  name: string
-  slug: string
   pinned: boolean
+  slug: string
+  name: string
+  sector: string
+  sample: string
+  description: string
   color: Color
   category: Category
   featuredImage: IGatsbyImageData
+  characteristics: string[]
+  dimensions: string[][]
+  customizable: boolean
+  customizableText: string
+  benefits: string[]
+  specifications: string
+  comp: string[]
 }
 
 type Props = {
@@ -43,9 +53,9 @@ export default function Product({ product }: Props) {
 
       {/* Floating top right */}
       <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
-        {product.category ? (
+        {product.sample ? (
           <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-white shadow">
-            {t(`categories.${product.category}`)}
+            {product.sample}
           </div>
         ) : (
           <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>

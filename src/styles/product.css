@@ -1,18 +1,5 @@
 .product {
-  @apply mx-auto my-12 max-w-4xl space-y-4 rounded bg-white px-4 py-8 font-normal dark:bg-gray-900 md:px-12 md:py-16;
-}
-
-.product header {
-  @apply flex w-full items-center justify-between;
-}
-
-.product header h1 {
-  @apply text-base font-bold tracking-tight no-underline lg:text-xl;
-}
-
-/* Showcase */
-.product .showcase {
-  @apply grid w-full grid-cols-1 gap-3 rounded bg-white p-4 dark:bg-white/10 lg:grid-cols-5;
+  @apply mx-auto max-w-4xl space-y-4 bg-white px-4 py-8 font-normal dark:bg-navy md:px-12 md:py-16;
 }
 
 /* Markdown */
@@ -26,14 +13,6 @@
 
 .product .content h2 {
   @apply mb-2 mt-5 text-2xl font-bold;
-}
-
-.product .content ul {
-  @apply ml-4 list-disc;
-}
-
-.product .content ul > li::marker {
-  @apply text-primary dark:text-tertiary;
 }
 
 .product .content table {
