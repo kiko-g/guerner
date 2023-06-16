@@ -6,6 +6,7 @@ import { Tab } from '@headlessui/react'
 import { IGatsbyImageData, getImage, GatsbyImage } from 'gatsby-plugin-image'
 import { LinkFill } from '../utils'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import { useMediaQuery } from 'usehooks-ts'
 
 type Frontmatter = {
   lang: string
@@ -33,6 +34,7 @@ type Props = {}
 
 export default function History({}: Props) {
   const { t, language } = useI18next()
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const data: Data = useStaticQuery(graphql`
     query HistoryQuery {
@@ -58,7 +60,7 @@ export default function History({}: Props) {
   const title = node!.frontmatter.title
   const history = node!.frontmatter.history
 
-  const slides = 3
+  const slides = isMobile ? 1 : 3
   const [showcaseIndex, setShowcaseIndex] = React.useState(0)
 
   const previousItem = () => {
@@ -81,7 +83,7 @@ export default function History({}: Props) {
             disabled={showcaseIndex - 1 < 0}
             className="flex flex-1 items-center justify-center self-stretch rounded-l px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
           >
-            <ChevronLeftIcon className="h-8 w-8" onClick={previousItem} />
+            <ChevronLeftIcon className="h-6 w-6 lg:h-8 lg:w-8" onClick={previousItem} />
           </button>
 
           <ul className="mx-auto grid grid-cols-3 gap-8">
