@@ -1,7 +1,7 @@
 ---
 lang: en
 pinned: false
-slug: silage-protection-nets
+slug: big-bags
 
 name: Big Bags
 sector: Construction and Industry

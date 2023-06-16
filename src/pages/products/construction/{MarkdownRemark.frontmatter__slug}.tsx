@@ -27,11 +27,13 @@ export default function ConstructionProductTemplate({ data }: Props) {
   const routeGoBack = '/products/construction'
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
+  console.log(frontmatter)
 
   return (
     <Layout location={frontmatter.name}>
       <main className="product">
         <header className="flex w-full flex-col gap-2">
+          {/* Top */}
           <div className="flex w-full items-center justify-between gap-2">
             <GoBack url={routeGoBack} />
             <h1 className="hidden lg:block">{frontmatter.name}</h1>
