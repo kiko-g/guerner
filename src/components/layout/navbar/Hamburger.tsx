@@ -19,7 +19,7 @@ export default function Hamburger({ open }: HamburgerProps) {
       className={classNames(
         'z-50 md:hidden',
         open
-          ? 'absolute top-2 right-2 my-auto flex h-6 w-auto items-center justify-end gap-x-2'
+          ? 'absolute right-2 top-2 my-auto flex h-6 w-auto items-center justify-end gap-x-2'
           : 'flex w-full items-center justify-between'
       )}
     >

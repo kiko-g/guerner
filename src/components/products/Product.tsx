@@ -27,7 +27,7 @@ export default function Product({ product }: Props) {
   return (
     <li className="group relative">
       {/* Floating top left */}
-      <div className="absolute top-3 left-3 z-10 flex items-center justify-center gap-x-1.5">
+      <div className="absolute left-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
         {product.color ? (
           <div className={classNames('rounded-full p-1 shadow', product.color)}>
             <PaintBrushIcon className="h-4 w-4 text-white" />
@@ -42,7 +42,7 @@ export default function Product({ product }: Props) {
       </div>
 
       {/* Floating top right */}
-      <div className="absolute top-3 right-3 z-10 flex items-center justify-center gap-x-1.5">
+      <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
         {product.category ? (
           <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-white shadow">
             {t(`categories.${product.category}`)}

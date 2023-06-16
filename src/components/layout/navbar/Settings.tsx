@@ -103,35 +103,35 @@ function LanguageSwitcher() {
       </button>
 
       {open ? (
-        <ul className="mt-1 w-full max-w-[6rem] self-end overflow-auto rounded bg-slate-200 py-1 text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+        <ul className="mt-1 self-end overflow-auto rounded bg-dark/5 text-sm dark:bg-white/5">
           {languages.map((lang, langIdx) => {
             const active = language === lang
             return (
               <li
                 key={langIdx}
                 className={classNames(
-                  'group relative z-50 cursor-pointer select-none px-2.5 py-1 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:px-2 md:py-1 md:text-sm',
+                  'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white md:text-sm',
                   active
-                    ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary'
-                    : 'text-gray-800'
+                    ? 'bg-teal-100 text-teal-700 hover:bg-teal-500 hover:text-white dark:bg-teal-700/50 dark:text-teal-200 dark:hover:bg-teal-500'
+                    : 'text-gray-800 hover:bg-teal-500 dark:text-white dark:hover:bg-teal-500'
                 )}
               >
                 <Link
                   to={originalPath}
                   language={lang}
-                  className="flex items-center justify-between gap-x-1"
+                  className="flex items-center justify-start gap-x-1"
                 >
                   <span
                     className={classNames(
                       'truncate uppercase group-hover:text-white',
-                      active ? 'text-primary dark:text-tertiary' : 'font-normal'
+                      active ? 'text-teal-500' : 'font-normal'
                     )}
                   >
                     {lang}
                   </span>
                   {active ? (
                     <CheckCircleIcon
-                      className="mt-0 h-4 w-4 text-primary group-hover:text-white dark:text-tertiary md:h-4 md:w-4"
+                      className="mt-0 h-4 w-4 text-teal-500 group-hover:text-white md:h-4 md:w-4"
                       aria-hidden="true"
                     />
                   ) : null}
@@ -204,7 +204,8 @@ function DarkModeToggler() {
 function AnalyticsLink() {
   return (
     <Link
-      to="#"
+      target="_blank"
+      to="https://vercel.com/kiko-g-s-team/guerner/analytics"
       className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">

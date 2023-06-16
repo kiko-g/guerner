@@ -22,7 +22,7 @@ export default function ColorFilter({ hook }: Props) {
         <>
           <Menu.Button
             className="flex items-center gap-x-3 rounded border-2 border-primary bg-primary/80 
-            py-1 px-2 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
+            px-2 py-1 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             {pickedColor !== '' ? (
               <span

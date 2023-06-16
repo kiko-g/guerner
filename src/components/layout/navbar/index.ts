@@ -6,4 +6,3 @@ import LanguageSwitch from './LanguageSwitch'
 import Settings from './Settings'
 
 export { DarkModeSwitch, FoldableMobileMenu, Hamburger, Header, LanguageSwitch, Settings }
-

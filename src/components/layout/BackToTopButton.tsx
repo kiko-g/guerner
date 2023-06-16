@@ -20,7 +20,7 @@ export default function BackToTopButton() {
       hidden={hidden || isMobile}
       onClick={() => document.getElementById('layout')!.scrollIntoView()}
       className={classNames(
-        centered ? 'bottom-3 left-[calc(50%-1.25rem)]' : 'right-6 bottom-6',
+        centered ? 'bottom-3 left-[calc(50%-1.25rem)]' : 'bottom-6 right-6',
         'fixed z-50 rounded-full p-1.5 text-white transition-all hover:-translate-y-1 hover:bg-secondary/75 dark:hover:bg-tertiary/50'
       )}
     >

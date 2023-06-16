@@ -6,4 +6,3 @@ import Navbar from './Navbar'
 import Seo from './Seo'
 
 export { BackToTopButton, Footer, GoBack, Layout, Navbar, Seo }
-

@@ -15,7 +15,7 @@ export default function ContactsBanner({}: Props) {
   const contacts = [
     {
       text: phone,
-      link: null,
+      link: `https://www.google.com/search?q=${encodeURIComponent(phone)}`,
       icon: PhoneIcon,
     },
     {
@@ -59,6 +59,7 @@ function ContactDescription({ link, text }: { link: string | null; text: string 
   ) : (
     <a
       href={link}
+      target="_blank"
       className="w-full text-sm leading-tight tracking-tight transition hover:text-primary hover:underline dark:text-white dark:hover:text-tertiary lg:text-base"
     >
       {text}
