@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import type { Category, Colors, ProductFrontmatter } from '../../../types'
-import { strIncludes } from '../../../utils'
+import type { Category, Colors, ProductFrontmatter } from '../../types'
+import { strIncludes } from '../../utils'
 import { graphql } from 'gatsby'
-import { Layout } from '../../../components/layout'
+import { Layout } from '../../components/layout'
 import {
   ColorFilter,
   PinToggler,
@@ -12,7 +12,7 @@ import {
   ViewToggler,
   CategoryFilter,
   Product,
-} from '../../../components/products'
+} from '../../components/products'
 
 type Color = keyof Colors | ''
 
