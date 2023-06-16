@@ -26,7 +26,7 @@ export default function Footer({ title, special }: Props) {
     <footer
       className={classNames(
         'z-10 flex flex-col px-8 py-8 text-sm text-white md:px-12 md:py-12 md:text-base',
-        special ? 'bg-primary dark:bg-gray-900' : 'bg-primary dark:bg-gray-900'
+        special ? 'bg-primary dark:bg-navy' : 'bg-primary dark:bg-navy'
       )}
     >
       <div className="flex flex-col items-center justify-center">

@@ -29,8 +29,8 @@ export default function Layout({ children, location = 'Unknown', special = false
       className={classNames(
         'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium opacity-[99%]',
         special
-          ? 'bg-primary text-gray-800 dark:bg-gray-900 dark:text-white'
-          : 'bg-ice text-gray-800 dark:bg-gray-800 dark:text-white'
+          ? 'bg-primary text-gray-800 dark:bg-dim dark:text-white'
+          : 'bg-ice text-gray-800 dark:bg-dim dark:text-white'
       )}
     >
       <Seo title={location} />
