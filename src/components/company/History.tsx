@@ -1,10 +1,6 @@
 import React from 'react'
-import classNames from 'classnames'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Tab } from '@headlessui/react'
-import { IGatsbyImageData, getImage, GatsbyImage } from 'gatsby-plugin-image'
-import { LinkFill } from '../utils'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import { useMediaQuery } from 'usehooks-ts'
 
@@ -61,14 +57,15 @@ export default function History({}: Props) {
   const history = node!.frontmatter.history
 
   const slides = isMobile ? 1 : 3
-  const [showcaseIndex, setShowcaseIndex] = React.useState(0)
+  const [index, setIndex] = React.useState(0)
+  const historySliced = React.useMemo(() => history.slice(index, index + slides), [index, slides])
 
   const previousItem = () => {
-    setShowcaseIndex(prev => prev - 1)
+    setIndex(prev => prev - 1)
   }
 
   const nextItem = () => {
-    setShowcaseIndex(prev => prev + 1)
+    setIndex(prev => prev + 1)
   }
 
   return (
@@ -80,15 +77,15 @@ export default function History({}: Props) {
 
         <div className="flex items-center justify-center gap-4 text-white">
           <button
-            disabled={showcaseIndex - 1 < 0}
+            disabled={index === 0}
             className="flex flex-1 items-center justify-center self-stretch rounded-l px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
           >
             <ChevronLeftIcon className="h-6 w-6 lg:h-8 lg:w-8" onClick={previousItem} />
           </button>
 
-          <ul className="mx-auto grid grid-cols-3 gap-8">
-            {history.slice(showcaseIndex, showcaseIndex + slides).map((entry, entryIdx) => (
-              <li className="relative mb-6 sm:mb-0" key={`history-entry-${entryIdx}`}>
+          <ul className="mx-auto grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {historySliced.map((entry, entryIdx) => (
+              <li className="relative mb-6 sm:mb-0" key={`history-entry-${entry.date}-${entryIdx}`}>
                 <div className="flex items-center">
                   <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-200 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
                     <svg
@@ -109,7 +106,7 @@ export default function History({}: Props) {
                 </div>
                 <div className="mt-3 sm:pr-8">
                   <h3 className="text-lg font-semibold text-white dark:text-white">
-                    #{showcaseIndex + entryIdx + 1}
+                    #{index + entryIdx + 1}
                   </h3>
                   <time className="mb-2 block font-lexend text-base font-bold leading-none text-gray-200 dark:text-gray-500">
                     {entry.date}
@@ -124,7 +121,7 @@ export default function History({}: Props) {
 
           <button
             onClick={nextItem}
-            disabled={showcaseIndex > history.length - 1 - slides}
+            disabled={index > history.length - 1 - slides}
             className="flex flex-1 items-center justify-center self-stretch rounded-r px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
           >
             <ChevronRightIcon className="h-8 w-8" onClick={previousItem} />

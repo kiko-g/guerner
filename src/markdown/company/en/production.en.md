@@ -1,5 +1,6 @@
 ---
 lang: en
+title: Production Centers
 facilitiesNames: ['Extrusion', 'Warping', 'Weaving', 'Confection']
 facilitiesImages:
   [

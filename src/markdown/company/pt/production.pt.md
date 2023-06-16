@@ -1,5 +1,6 @@
 ---
 lang: pt
+title: Centros de Produção
 facilitiesNames: ['Extrusão', 'Urdissagem', 'Tecelagem', 'Confeção']
 facilitiesImages:
   [

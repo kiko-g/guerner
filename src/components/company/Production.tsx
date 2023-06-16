@@ -8,6 +8,7 @@ import { LinkFill } from '../utils'
 
 type Frontmatter = {
   lang: string
+  title: string
   facilitiesNames: string[]
   facilitiesImages: IGatsbyImageData[]
   facilitiesDescriptions: string[]
@@ -40,6 +41,7 @@ export default function Production({}: Props) {
           html
           frontmatter {
             lang
+            title
             facilitiesNames
             facilitiesImages {
               childImageSharp {
@@ -55,6 +57,7 @@ export default function Production({}: Props) {
 
   const node = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === language)
   const html = node!.html
+  const title = node!.frontmatter.title
   const tabList = node!.frontmatter.facilitiesNames
   const tabImages = node!.frontmatter.facilitiesImages
   const tabDescriptions = node!.frontmatter.facilitiesDescriptions
@@ -64,7 +67,7 @@ export default function Production({}: Props) {
       {/* Production Centers */}
       <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 md:bg-black/20 lg:px-16 lg:py-16">
         <h3 className="mb-6 text-center text-3xl font-bold tracking-tighter text-white md:text-4xl">
-          Centros de Produção
+          {title}
         </h3>
         <div className="flex w-full flex-col items-start justify-center gap-6 lg:flex-row">
           <Tab.Group>
