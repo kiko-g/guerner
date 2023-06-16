@@ -4,8 +4,6 @@ import { Link } from 'gatsby'
 import { NavItem } from '../../../types'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import Settings from './Settings'
-import DarkModeSwitch from './DarkModeSwitch'
-import LanguageSwitch from './LanguageSwitch'
 
 interface HeaderProps {
   title: string

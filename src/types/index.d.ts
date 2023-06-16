@@ -28,3 +28,23 @@ export interface Categories {
 }
 
 export type Category = keyof Categories | ''
+
+export type ProductFrontmatter = {
+  lang: string
+  pinned: boolean
+  slug: string
+  name: string
+  sector: string
+  sample: string
+  description: string
+  color: Color
+  category: Category
+  featuredImage: IGatsbyImageData
+  characteristics: string[]
+  dimensions: string[][]
+  customizable: boolean
+  customizableText: string
+  benefits: string[]
+  specifications: string
+  comp: string[]
+}

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { strIncludes } from '../../../utils'
-import { Category, Colors } from '../../../types'
+import { Category, Colors, ProductFrontmatter } from '../../../types'
 import { graphql } from 'gatsby'
-import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Layout } from '../../../components/layout'
 import {
@@ -17,19 +16,9 @@ import {
 
 type Color = keyof Colors | ''
 
-type Frontmatter = {
-  lang: string
-  name: string
-  slug: string
-  pinned: boolean
-  color: Color
-  category: Category
-  featuredImage: IGatsbyImageData
-}
-
 type MarkdownData = {
   html: string
-  frontmatter: Frontmatter
+  frontmatter: ProductFrontmatter
 }
 
 type Props = {
@@ -83,7 +72,7 @@ export default function ProductsConstructionPage({ data }: Props) {
         </header>
 
         <div className="flex w-full flex-col gap-y-6">
-          {/* Products */}
+          {/* Filters */}
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
@@ -97,18 +86,26 @@ export default function ProductsConstructionPage({ data }: Props) {
             </div>
           </div>
 
-          {/* Listing */}
-          <ul
-            className={classNames(
-              viewType
-                ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
-                : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
-            )}
-          >
-            {products.map((productMd: MarkdownData, productIdx: number) => (
-              <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
-            ))}
-          </ul>
+          {/* Products */}
+          <div className="flex flex-col">
+            <div className="mb-2">
+              <p>
+                {products.length} {t('resultsFound')}.
+              </p>
+            </div>
+
+            <ul
+              className={classNames(
+                viewType
+                  ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
+                  : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
+              )}
+            >
+              {products.map((productMd: MarkdownData, productIdx: number) => (
+                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+              ))}
+            </ul>
+          </div>
         </div>
       </main>
     </Layout>
@@ -128,9 +125,13 @@ export const pageAndLanguageQuery = graphql`
         id
         frontmatter {
           lang
-          name
-          slug
           pinned
+          slug
+
+          name
+          sector
+          sample
+          description
           color
           category
           featuredImage {
@@ -138,6 +139,13 @@ export const pageAndLanguageQuery = graphql`
               gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
             }
           }
+          dimensions
+          characteristics
+          customizable
+          customizableText
+          benefits
+          specifications
+          comp
         }
       }
     }

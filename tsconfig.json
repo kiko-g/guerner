@@ -1,5 +1,5 @@
 {
-  "include": ["./src/declaration.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "include": ["./src/declaration.d.ts", "./src/**/*.ts", "./src/**/*.tsx", "*/index.d.ts"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
     /* Projects */

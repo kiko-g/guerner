@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import { Category, Colors } from '../../../types'
+import { Category, Colors, ProductFrontmatter } from '../../../types'
 import { strIncludes } from '../../../utils'
 import { graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
@@ -17,29 +17,9 @@ import {
 
 type Color = keyof Colors | ''
 
-type Frontmatter = {
-  lang: string
-  pinned: boolean
-  slug: string
-  name: string
-  sector: string
-  sample: string
-  description: string
-  color: Color
-  category: Category
-  featuredImage: IGatsbyImageData
-  characteristics: string[]
-  dimensions: string[][]
-  customizable: boolean
-  customizableText: string
-  benefits: string[]
-  specifications: string
-  comp: string[]
-}
-
 type MarkdownData = {
   html: string
-  frontmatter: Frontmatter
+  frontmatter: ProductFrontmatter
 }
 
 type Props = {

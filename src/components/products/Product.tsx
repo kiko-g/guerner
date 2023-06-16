@@ -1,33 +1,13 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
-import { Category, Color } from '../../types'
+import { ProductFrontmatter } from '../../types'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
 import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
-type Frontmatter = {
-  lang: string
-  pinned: boolean
-  slug: string
-  name: string
-  sector: string
-  sample: string
-  description: string
-  color: Color
-  category: Category
-  featuredImage: IGatsbyImageData
-  characteristics: string[]
-  dimensions: string[][]
-  customizable: boolean
-  customizableText: string
-  benefits: string[]
-  specifications: string
-  comp: string[]
-}
-
 type Props = {
-  product: Frontmatter
+  product: ProductFrontmatter
 }
 
 export default function Product({ product }: Props) {

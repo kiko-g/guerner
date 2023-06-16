@@ -4,7 +4,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
 import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import { Color } from '../../../types'
+import { Color } from '../../../types/index.d.tts'
 import '../../../styles/colors.css'
 
 type Props = {
