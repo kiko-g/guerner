@@ -39,7 +39,7 @@ export default function CompanyCTA({}: Props) {
 
         {/* Images */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
-          <Link to="#" className="group relative block bg-black">
+          <Link to={`${routeCompany}#presentation`} className="group relative block bg-black">
             <img
               alt={`company-showcase-${presentationSectionHeader}`}
               src={CompanyShowcase1}
@@ -59,7 +59,7 @@ export default function CompanyCTA({}: Props) {
             </div>
           </Link>
 
-          <Link to="#" className="group relative block bg-black">
+          <Link to={`${routeCompany}#production`} className="group relative block bg-black">
             <img
               alt={`company-showcase-${productionSectionHeader}`}
               src={CompanyShowcase2}

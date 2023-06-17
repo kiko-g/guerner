@@ -1,0 +1,28 @@
+---
+lang: pt
+pinned: false
+slug:
+
+name: ''
+sector: Construção e Indústria
+sample: C
+description:
+color: white
+category: d
+featuredImage: ../images/mock.jpg
+characteristics: []
+dimensions:
+  [
+    ['Referência', 'Material', 'Cor', 'Largura (m)', 'Comprimento (m)', 'Resistências'],
+    ['', '', '', '', '', ''],
+    ['', '', '', '', '', ''],
+    ['', '', '', '', '', ''],
+  ]
+customizable: true
+customizableText: Este produto é customizável de acordo com as suas necessidades. Contacte-nos para mais informações.
+benefits: ['', '']
+specifications: ''
+comp: ['']
+---
+
+C, PT

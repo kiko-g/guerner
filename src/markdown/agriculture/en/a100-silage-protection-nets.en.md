@@ -9,7 +9,7 @@ sample: A100
 description: It ensures that the quality of the silage is preserved and that does not breathe (anaerobiosis). It is also indispensable for correct ensiling.
 color: green
 category: d
-featuredImage: ../images/produto1.jpg
+featuredImage: ../images/mock.jpg
 characteristics: [Open Field, Cement Silos]
 dimensions:
   [
