@@ -101,9 +101,11 @@ export default function ProductsConstructionPage({ data }: Props) {
                   : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
               )}
             >
-              {products.map((productMd: MarkdownData, productIdx: number) => (
-                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
-              ))}
+              {products
+                .sort((a, b) => (a.frontmatter.sample < b.frontmatter.sample ? -1 : 1))
+                .map((productMd: MarkdownData, productIdx: number) => (
+                  <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+                ))}
             </ul>
           </div>
         </div>
