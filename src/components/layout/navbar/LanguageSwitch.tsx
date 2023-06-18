@@ -22,7 +22,7 @@ export default function LanguageSwitch({}: Props) {
         />
       </button>
       {open ? (
-        <ul className="absolute mt-2 w-full overflow-auto rounded py-1.5 text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+        <ul className="absolute mt-2 w-full overflow-auto rounded bg-white py-1.5 text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
           {languages.map((lang, langIdx) => {
             const active = language === lang
             return (
