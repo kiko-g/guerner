@@ -71,7 +71,7 @@ export default function ProductTemplate({ data }: Props) {
         </div>
 
         {/* Characteristics Banner */}
-        {frontmatter.characteristics.length > 0 ? (
+        {frontmatter.characteristics !== null && frontmatter.characteristics.length > 0 ? (
           <ul className="mt-4 flex flex-col flex-wrap gap-8 border-y border-primary/20 py-4 dark:border-white/20 md:flex-row">
             {frontmatter.characteristics.map((c, cIdx) => (
               <li key={`characteristic-${cIdx}`} className="flex items-center gap-2">
