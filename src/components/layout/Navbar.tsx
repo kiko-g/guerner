@@ -49,7 +49,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
       as="nav"
       defaultOpen={false}
       className={classNames(
-        'top-0 z-20 w-full px-3 py-3 backdrop-blur md:px-6 md:py-4',
+        'top-0 z-20 w-full px-3 py-3 backdrop-blur lg:px-6 lg:py-4',
         special
           ? 'fixed bg-black/50 text-white dark:bg-black/30'
           : 'sticky bg-primary text-white dark:bg-navy dark:text-white'
@@ -60,7 +60,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
           <>
             <div
               className={classNames(
-                'relative flex w-full items-center justify-between md:py-0',
+                'relative flex w-full items-center justify-between lg:py-0',
                 open ? 'p-0' : 'p-2'
               )}
             >

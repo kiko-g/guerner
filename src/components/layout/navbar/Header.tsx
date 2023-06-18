@@ -15,8 +15,8 @@ export default function Header({ title, location, navigation }: HeaderProps) {
   const { t } = useI18next()
 
   return (
-    <div className="hidden w-full items-center justify-between md:flex md:items-stretch md:justify-between">
-      <div className="relative hidden h-auto transition md:flex md:items-center">
+    <div className="hidden w-full items-center justify-between lg:flex lg:items-stretch lg:justify-between">
+      <div className="relative hidden h-auto transition lg:flex lg:items-center">
         {/* Logo Link */}
         <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
           <img
@@ -24,7 +24,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
             src={'/images/icon.png'}
             className="z-20 inline-flex h-9 w-9 rounded-full transition"
           />
-          <span className="max-w-[6rem] text-xs font-semibold leading-3 tracking-tighter duration-150 group-hover:underline md:text-sm md:leading-5">
+          <span className="max-w-[6rem] text-xs font-semibold leading-3 tracking-tighter duration-150 group-hover:underline lg:text-sm lg:leading-5">
             {title}
           </span>
         </Link>
@@ -51,7 +51,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
       </div>
 
       {/* Settings */}
-      <div className="hidden md:flex md:flex-col md:items-end md:justify-center md:gap-y-1">
+      <div className="hidden lg:flex lg:flex-col lg:items-end lg:justify-center lg:gap-y-1">
         <div className="flex items-center justify-center gap-x-3">
           <Settings />
         </div>

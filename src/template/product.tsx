@@ -72,7 +72,7 @@ export default function ProductTemplate({ data }: Props) {
 
         {/* Characteristics Banner */}
         {frontmatter.characteristics !== null && frontmatter.characteristics.length > 0 ? (
-          <ul className="mt-4 flex flex-col flex-wrap gap-8 border-y border-primary/20 py-4 dark:border-white/20 md:flex-row">
+          <ul className="mt-4 flex flex-col flex-wrap gap-8 border-y border-primary/20 py-4 dark:border-white/20 lg:flex-row">
             {frontmatter.characteristics
               .sort((a, b) => (a < b ? 1 : -1))
               .map((c, cIdx) => (

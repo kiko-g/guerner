@@ -25,7 +25,7 @@ export default function Footer({ title, special }: Props) {
   return (
     <footer
       className={classNames(
-        'z-10 flex flex-col px-8 py-8 text-sm text-white md:px-12 md:py-12 md:text-base',
+        'z-10 flex flex-col px-8 py-8 text-sm text-white lg:px-12 lg:py-12 lg:text-base',
         special ? 'bg-primary dark:bg-navy' : 'bg-primary dark:bg-navy'
       )}
     >
@@ -40,7 +40,7 @@ export default function Footer({ title, special }: Props) {
               src="/images/icon.png"
               className="h-10 w-10 rounded-full bg-primary shadow-2xl drop-shadow-2xl"
             />
-            <h3 className="text-center text-2xl font-medium tracking-tighter md:tracking-normal">
+            <h3 className="text-center text-2xl font-medium tracking-tighter lg:tracking-normal">
               Guerner & Irmãos S.A.
             </h3>
           </Link>
@@ -57,7 +57,7 @@ export default function Footer({ title, special }: Props) {
             <li key={`link-${linkIdx}`}>
               <Link
                 to={link.route}
-                className="whitespace-nowrap text-center text-sm font-medium tracking-tight text-white transition hover:underline hover:opacity-80 md:text-base"
+                className="whitespace-nowrap text-center text-sm font-medium tracking-tight text-white transition hover:underline hover:opacity-80 lg:text-base"
               >
                 {link.name}
               </Link>

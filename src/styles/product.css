@@ -1,5 +1,5 @@
 .product {
-  @apply mx-auto max-w-4xl space-y-4 bg-white px-4 py-8 font-normal dark:bg-navy md:px-12 md:py-16;
+  @apply mx-auto max-w-4xl space-y-4 bg-white px-4 py-8 font-normal dark:bg-navy lg:px-12 lg:py-16;
 }
 
 /* Markdown */

@@ -110,7 +110,7 @@ function LanguageSwitcher() {
               <li
                 key={langIdx}
                 className={classNames(
-                  'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white md:text-sm',
+                  'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white lg:text-sm',
                   active
                     ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-500 hover:text-white dark:bg-emerald-700/50 dark:text-emerald-200 dark:hover:bg-emerald-500'
                     : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500'
@@ -131,7 +131,7 @@ function LanguageSwitcher() {
                   </span>
                   {active ? (
                     <CheckCircleIcon
-                      className="mt-0 h-4 w-4 text-emerald-500 group-hover:text-white md:h-4 md:w-4"
+                      className="mt-0 h-4 w-4 text-emerald-500 group-hover:text-white lg:h-4 lg:w-4"
                       aria-hidden="true"
                     />
                   ) : null}

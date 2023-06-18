@@ -62,7 +62,7 @@ export default function Values({}: Props) {
 
   return (
     <div className="px-4 py-16 text-white lg:px-0">
-      <h2 className="mb-3 text-center text-3xl font-semibold tracking-tighter md:mb-6 md:text-4xl">
+      <h2 className="mb-3 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">
         {title}
       </h2>
       <p

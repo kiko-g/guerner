@@ -22,7 +22,7 @@ export default function FoldableMobileMenu({ location, navigation }: FoldableMob
       leaveFrom="transform scale-100 opacity-100"
       leaveTo="transform scale-95 opacity-0"
     >
-      <Disclosure.Panel className="flex flex-col space-y-3 py-2 md:hidden">
+      <Disclosure.Panel className="flex flex-col space-y-3 py-2 lg:hidden">
         {navigation.map((link, index) => {
           const active = t(location).toLowerCase() === t(link.title).toLowerCase()
           return (

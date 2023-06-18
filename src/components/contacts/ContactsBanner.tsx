@@ -40,10 +40,10 @@ export default function ContactsBanner({}: Props) {
       />
 
       {/* Contacts */}
-      <ul className="flex h-full w-full flex-col items-start justify-start gap-1 font-normal md:gap-2">
+      <ul className="flex h-full w-full flex-col items-start justify-start gap-1 font-normal lg:gap-2">
         {contacts.map((item, index) => (
           <li key={`contact-${index}`} className="flex w-full items-center gap-2 lg:gap-3">
-            <item.icon className="h-5 w-5 text-teal-600 dark:text-tertiary md:h-6 md:w-6" />
+            <item.icon className="h-5 w-5 text-teal-600 dark:text-tertiary lg:h-6 lg:w-6" />
             <ContactDescription link={item.link} text={item.text} />
             <CopyButton text={item.text} />
           </li>

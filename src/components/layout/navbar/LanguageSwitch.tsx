@@ -13,11 +13,11 @@ export default function LanguageSwitch({}: Props) {
     <div className="relative z-10">
       <button
         onClick={() => setOpen(!open)}
-        className="relative flex w-full cursor-pointer items-center justify-center gap-x-0.5 rounded-sm bg-secondary/40 py-1 pl-3 pr-2 text-sm transition hover:bg-secondary/70 dark:bg-tertiary/50 dark:hover:bg-tertiary/70 md:gap-x-0 md:pl-3 md:pr-1.5"
+        className="relative flex w-full cursor-pointer items-center justify-center gap-x-0.5 rounded-sm bg-secondary/40 py-1 pl-3 pr-2 text-sm transition hover:bg-secondary/70 dark:bg-tertiary/50 dark:hover:bg-tertiary/70 lg:gap-x-0 lg:pl-3 lg:pr-1.5"
       >
         <span className="block truncate uppercase tracking-wide">{language}</span>
         <ChevronUpDownIcon
-          className="mt-[1px] h-[1.1rem] w-[1.1rem] text-gray-300 md:h-5 md:w-5"
+          className="mt-[1px] h-[1.1rem] w-[1.1rem] text-gray-300 lg:h-5 lg:w-5"
           aria-hidden="true"
         />
       </button>
@@ -29,7 +29,7 @@ export default function LanguageSwitch({}: Props) {
               <li
                 key={langIdx}
                 className={classNames(
-                  'group relative z-50 cursor-pointer select-none px-2.5 py-1 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 md:px-2.5 md:py-2 md:text-sm',
+                  'group relative z-50 cursor-pointer select-none px-2.5 py-1 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 lg:px-2.5 lg:py-2 lg:text-sm',
                   active
                     ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary'
                     : 'text-gray-800'
@@ -50,7 +50,7 @@ export default function LanguageSwitch({}: Props) {
                   </span>
                   {active ? (
                     <CheckCircleIcon
-                      className="mt-0 h-4 w-4 text-primary group-hover:text-white dark:text-tertiary md:h-4 md:w-4"
+                      className="mt-0 h-4 w-4 text-primary group-hover:text-white dark:text-tertiary lg:h-4 lg:w-4"
                       aria-hidden="true"
                     />
                   ) : null}

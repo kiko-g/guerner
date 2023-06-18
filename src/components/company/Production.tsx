@@ -63,15 +63,15 @@ export default function Production({}: Props) {
   const tabDescriptions = node!.frontmatter.facilitiesDescriptions
 
   return (
-    <section id={sectionId} className="py-6 md:py-12">
+    <section id={sectionId} className="py-6 lg:py-12">
       {/* Production Centers */}
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 md:bg-black/20 lg:px-16 lg:py-16">
-        <h3 className="mb-6 text-center text-3xl font-bold tracking-tighter text-white md:text-4xl">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 lg:bg-black/20 lg:px-16 lg:py-16">
+        <h3 className="mb-6 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
           {title}
         </h3>
         <div className="flex w-full flex-col items-start justify-center gap-6 lg:flex-row">
           <Tab.Group>
-            <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter md:order-2 md:mx-0 md:text-sm lg:flex-col lg:gap-3 lg:text-sm">
+            <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:order-2 lg:mx-0 lg:flex-col lg:gap-3 lg:text-sm lg:text-sm">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
@@ -84,12 +84,12 @@ export default function Production({}: Props) {
                     )
                   }
                 >
-                  <span className="tracking-tight text-white md:tracking-normal">{tab}</span>
+                  <span className="tracking-tight text-white lg:tracking-normal">{tab}</span>
                 </Tab>
               ))}
             </Tab.List>
 
-            <article className="order-2 flex flex-col rounded md:order-1">
+            <article className="order-2 flex flex-col rounded lg:order-1">
               <Tab.Panels>
                 {tabImages.map((tabImage: IGatsbyImageData, tabIdx: number) => {
                   const gatsbyImage = getImage(tabImage)
@@ -125,7 +125,7 @@ export default function Production({}: Props) {
 
       {/* Production Description */}
       <div className="relative flex flex-col items-center justify-center backdrop-blur">
-        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-slate-200 px-8 py-8 dark:bg-black/20 md:mx-0 md:px-16 md:py-16">
+        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-slate-200 px-8 py-8 dark:bg-black/20 lg:mx-0 lg:px-16 lg:py-16">
           <article
             dangerouslySetInnerHTML={{ __html: html }}
             className="article alt lg:max-w-4xl"

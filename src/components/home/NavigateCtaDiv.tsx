@@ -14,7 +14,7 @@ export default function NavigateCtaDiv({ link, image, actionText }: Props) {
       <img
         src={image}
         alt={`guerner-nav-${actionText}`}
-        className="max-h-full min-h-[16rem] w-full object-cover blur-sm transition duration-300 group-hover:blur-0 md:blur-md lg:min-h-[20rem]"
+        className="max-h-full min-h-[16rem] w-full object-cover blur-sm transition duration-300 group-hover:blur-0 lg:min-h-[20rem] lg:blur-md"
       />
       <div className="absolute inset-0 flex h-full w-full items-center justify-center">
         <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
