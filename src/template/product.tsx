@@ -73,12 +73,14 @@ export default function ProductTemplate({ data }: Props) {
         {/* Characteristics Banner */}
         {frontmatter.characteristics !== null && frontmatter.characteristics.length > 0 ? (
           <ul className="mt-4 flex flex-col flex-wrap gap-8 border-y border-primary/20 py-4 dark:border-white/20 md:flex-row">
-            {frontmatter.characteristics.map((c, cIdx) => (
-              <li key={`characteristic-${cIdx}`} className="flex items-center gap-2">
-                <span className="h-6 w-6 bg-emerald-600"></span>
-                <span className="text-sm tracking-tighter">{c}</span>
-              </li>
-            ))}
+            {frontmatter.characteristics
+              .sort((a, b) => (a < b ? 1 : -1))
+              .map((c, cIdx) => (
+                <li key={`characteristic-${cIdx}`} className="flex items-center gap-2">
+                  <span className="h-6 w-6 bg-emerald-600"></span>
+                  <span className="text-sm tracking-tighter">{c}</span>
+                </li>
+              ))}
           </ul>
         ) : null}
 
