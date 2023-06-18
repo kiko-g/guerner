@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ice: '#e8eef2', // dce4f0
-        dim: '#181d29',
-        navy: '#121721',
+        ice: '#ecf3f6', // dce4f0
+        dim: '#181d29', // 121721
+        navy: '#121926',
         darkish: '#2B2D39',
         dark: '#252832',
         darker: '#1e2028',
@@ -18,8 +18,8 @@ module.exports = {
         light: '#f2f4f7',
         lighter: '#f7f7f7',
         lightest: '#ffffff',
-        primary: '#124842',
-        secondary: '#10dfa8', // #2ddf62
+        primary: '#104842', // 124842
+        secondary: '#10dfa8', // 2ddf62
         tertiary: '#26c490',
         quaternary: '#ff895f',
       },

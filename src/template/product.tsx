@@ -26,9 +26,7 @@ export default function ProductTemplate({ data }: Props) {
 
   const { frontmatter, html } = data.markdownRemark
   const coverImage = getImage(frontmatter.featuredImage)
-  const routeGoBack = frontmatter.sector.includes('Agri')
-    ? '/products/agriculture'
-    : '/products/construction'
+  const routeGoBack = `/products/${frontmatter.sector}`
 
   return (
     <Layout location={frontmatter.name}>
@@ -53,12 +51,14 @@ export default function ProductTemplate({ data }: Props) {
             <div className="flex items-start justify-start gap-8 border-l-0 border-t border-primary/20 py-4 pl-0 text-left text-sm tracking-tighter dark:border-white/20 lg:items-center lg:justify-end lg:border-l lg:border-t-0 lg:py-0 lg:pl-8">
               <div className="flex flex-col">
                 <span>{t('sector')}</span>
-                <span className="max-w-[8rem] font-bold lg:max-w-full">{frontmatter.sector}</span>
+                <span className="max-w-[8rem] text-sm font-bold tracking-tighter lg:max-w-full">
+                  {t(frontmatter.sector)}
+                </span>
               </div>
 
               <div className="flex flex-col">
                 <span>{t('sample')}</span>
-                <span className="font-bold">{frontmatter.sample}</span>
+                <span className="font-bold uppercase tracking-tighter">{frontmatter.sample}</span>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function ProductTemplate({ data }: Props) {
         </div>
 
         {/* Characteristics Banner */}
-        {frontmatter.characteristics.length === 0 ? (
+        {frontmatter.characteristics.length > 0 ? (
           <ul className="mt-4 flex flex-col flex-wrap gap-8 border-y border-primary/20 py-4 dark:border-white/20 md:flex-row">
             {frontmatter.characteristics.map((c, cIdx) => (
               <li key={`characteristic-${cIdx}`} className="flex items-center gap-2">

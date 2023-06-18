@@ -112,8 +112,8 @@ function LanguageSwitcher() {
                 className={classNames(
                   'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white md:text-sm',
                   active
-                    ? 'bg-teal-100 text-teal-700 hover:bg-teal-500 hover:text-white dark:bg-teal-700/50 dark:text-teal-200 dark:hover:bg-teal-500'
-                    : 'text-gray-800 hover:bg-teal-500 dark:text-white dark:hover:bg-teal-500'
+                    ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-500 hover:text-white dark:bg-emerald-700/50 dark:text-emerald-200 dark:hover:bg-emerald-500'
+                    : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500'
                 )}
               >
                 <Link
@@ -124,14 +124,14 @@ function LanguageSwitcher() {
                   <span
                     className={classNames(
                       'truncate uppercase group-hover:text-white',
-                      active ? 'text-teal-500' : 'font-normal'
+                      active ? 'text-emerald-500' : 'font-normal'
                     )}
                   >
                     {lang}
                   </span>
                   {active ? (
                     <CheckCircleIcon
-                      className="mt-0 h-4 w-4 text-teal-500 group-hover:text-white md:h-4 md:w-4"
+                      className="mt-0 h-4 w-4 text-emerald-500 group-hover:text-white md:h-4 md:w-4"
                       aria-hidden="true"
                     />
                   ) : null}

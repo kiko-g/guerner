@@ -5,6 +5,7 @@ import { ProductFrontmatter } from '../../types'
 import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
 import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   product: ProductFrontmatter
@@ -14,65 +15,80 @@ export default function Product({ product }: Props) {
   const { t } = useI18next()
   const coverImage = getImage(product.featuredImage)
 
+  const showIcon = false
+  const route = `${product.lang}-${product.slug}`
+
   return (
-    <li className="group relative">
-      {/* Floating top left */}
-      <div className="absolute left-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
-        {product.color ? (
-          <div className={classNames('rounded-full p-1 shadow', product.color)}>
-            <PaintBrushIcon className="h-4 w-4 text-white" />
-          </div>
-        ) : null}
-
-        {product.pinned ? (
-          <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
-            <StarIcon className="h-4 w-4 text-white" />
-          </div>
-        ) : null}
-      </div>
-
-      {/* Floating top right */}
-      <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
-        {product.sample ? (
-          <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-white shadow">
-            {product.sample}
-          </div>
-        ) : (
-          <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
-        )}
-      </div>
-
+    <li className="group">
       {/* Card body */}
-      <Link to={product.slug} className="block h-60 w-full overflow-hidden rounded-t-xl">
+      <Link title={product.name} to={route} className="relative block h-60 w-full overflow-hidden">
         {coverImage ? (
           <GatsbyImage
             alt={`product-${product.name}`}
             image={coverImage}
-            className="duration-400 aspect-square h-full w-full object-cover transition hover:scale-110 hover:opacity-80"
+            className="duration-400 aspect-square h-full w-full object-cover transition group-hover:scale-110 group-hover:opacity-90"
           />
         ) : (
           <div className="aspect-square h-full w-full bg-primary transition hover:opacity-80 dark:bg-tertiary/50" />
         )}
+
+        {/* Floating top left */}
+        <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
+          {product.color ? (
+            <div
+              title={product.color}
+              className={classNames('rounded-full shadow', showIcon ? 'p-1' : 'p-3', product.color)}
+            >
+              {showIcon ? <PaintBrushIcon className="h-4 w-4 text-white" /> : null}
+            </div>
+          ) : null}
+
+          {product.pinned ? (
+            <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
+              <StarIcon className="h-4 w-4 text-white" />
+            </div>
+          ) : null}
+        </div>
+
+        {/* Floating top right */}
+        <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
+          {product.sample ? (
+            <div
+              title={product.sample}
+              className="rounded-md bg-gray-800 px-2 py-1 font-lexend text-xs font-light text-white shadow"
+            >
+              {product.sample}
+            </div>
+          ) : (
+            <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
+          )}
+        </div>
+
+        {/* Floating bottom right */}
+        <div className="absolute bottom-2 right-4 z-10 flex items-center justify-center gap-x-1.5">
+          <span className="hidden text-xs font-normal text-white group-hover:flex">See more</span>
+          <ArrowLongRightIcon className="h-5 w-5 text-white transition group-hover:-rotate-45" />
+        </div>
       </Link>
 
       {/* Card footer */}
-      <div
-        className="flex w-full flex-col gap-y-2 rounded-b-xl bg-white 
-          px-3.5 py-2 font-normal dark:bg-white/10"
+      <Link
+        to={route}
+        className="mt-2 flex flex-col items-start justify-between space-y-1 truncate"
       >
-        {/* Top line */}
-        <div className="flex items-center justify-between text-sm font-bold">
-          <Link
-            to={product.slug}
-            className="transition hover:text-primary hover:underline hover:opacity-90 dark:hover:text-secondary"
-          >
-            {t(product.name)}
-          </Link>
-          <Link to={product.slug}>
-            <ArrowTopRightOnSquareIcon className="h-6 w-6 text-primary transition hover:opacity-75 dark:text-tertiary" />
-          </Link>
-        </div>
-      </div>
+        <p
+          title={product.name}
+          className="flex-1 self-stretch truncate text-sm font-normal capitalize leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:text-ellipsis group-hover:whitespace-normal dark:text-white"
+        >
+          {product.name}
+        </p>
+        <p
+          title={product.characteristics.join(', ')}
+          className="truncate text-xs font-normal capitalize leading-snug tracking-tighter text-gray-500 dark:text-gray-400"
+        >
+          {product.characteristics.join(', ').slice(0, 40)}...
+        </p>
+      </Link>
     </li>
   )
 }

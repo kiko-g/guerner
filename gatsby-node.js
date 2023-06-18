@@ -32,9 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           frontmatter {
             slug
-          }
-          fields {
-            language
+            lang
           }
         }
       }
@@ -43,9 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           frontmatter {
             slug
-          }
-          fields {
-            language
+            lang
           }
         }
       }
@@ -58,49 +54,33 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create pages for each MarkdownRemark node in agriculture category
   const agricultureTemplatePath = path.resolve('./src/template/product.tsx')
-  result.data.agriculture.nodes.forEach(node => {
-    const { id, frontmatter, fields } = node
+  result.data.agriculture.nodes
+    .sort((a, b) => (a.frontmatter.lang < b.frontmatter.lang ? 1 : -1))
+    .forEach(node => {
+      const { id, frontmatter } = node
 
-    // Create language-specific route
-    createPage({
-      path: `/${fields.language}/products/agriculture/${frontmatter.slug}`,
-      component: agricultureTemplatePath,
-      context: {
-        id,
-      },
+      createPage({
+        path: `/products/agriculture/${frontmatter.lang}-${frontmatter.slug}`,
+        component: agricultureTemplatePath,
+        context: {
+          id,
+        },
+      })
     })
-
-    // Create language-agnostic route
-    createPage({
-      path: `/products/agriculture/${frontmatter.slug}`,
-      component: agricultureTemplatePath,
-      context: {
-        id,
-      },
-    })
-  })
 
   // Create pages for each MarkdownRemark node in construction category
   const constructionTemplatePath = path.resolve('./src/template/product.tsx')
-  result.data.construction.nodes.forEach(node => {
-    const { id, frontmatter, fields } = node
+  result.data.construction.nodes
+    .sort((a, b) => (a.frontmatter.lang < b.frontmatter.lang ? 1 : -1))
+    .forEach(node => {
+      const { id, frontmatter } = node
 
-    // Create language-specific route
-    createPage({
-      path: `/${fields.language}/products/construction/${frontmatter.slug}`,
-      component: constructionTemplatePath,
-      context: {
-        id,
-      },
+      createPage({
+        path: `/products/construction/${frontmatter.lang}-${frontmatter.slug}`,
+        component: constructionTemplatePath,
+        context: {
+          id,
+        },
+      })
     })
-
-    // Create language-agnostic route
-    createPage({
-      path: `/products/construction/${frontmatter.slug}`,
-      component: constructionTemplatePath,
-      context: {
-        id,
-      },
-    })
-  })
 }

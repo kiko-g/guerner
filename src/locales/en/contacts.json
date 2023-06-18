@@ -1,6 +1,7 @@
 {
   "location": "Contacts",
   "title": "Contacts",
+  "description": "Our facilities are located in the north of Portugal, where you can have direct and personalized contact with our team.",
   "formHeader": "Any questions?",
   "formText": "Don't hesitate to contacts us by filling the form.",
   "formPlaceholderName": "Name",

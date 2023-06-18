@@ -11,12 +11,14 @@ export default function ContactsPage() {
 
   const title = t('title')
   const location = t('location')!
+  const description = t('description')
 
   return (
     <Layout location={location}>
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 md:gap-y-6 md:pb-40 md:pt-16">
-        <header className="w-full">
+        <header className="w-full space-y-4">
           <h1 className="text-center text-4xl font-bold tracking-tight">{title}</h1>
+          <p className="text-center font-normal lg:text-justify">{description}</p>
         </header>
 
         <div className="flex flex-col gap-4 md:gap-8">

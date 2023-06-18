@@ -76,10 +76,10 @@ export default function ProductsConstructionPage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
-              <CategoryFilter
+              {/* <CategoryFilter
                 categories={categoryKeys}
                 hook={[pickedCategories, setPickedCategories]}
-              />
+              /> */}
               <ColorFilter hook={[pickedColor, setPickedColor]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />
@@ -96,9 +96,10 @@ export default function ProductsConstructionPage({ data }: Props) {
 
             <ul
               className={classNames(
+                'grid gap-x-4 gap-y-4 lg:gap-x-8 lg:gap-y-8',
                 viewType
-                  ? 'grid grid-cols-1 gap-x-6 gap-y-6 2xl:grid-cols-2'
-                  : 'grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 lg:grid-cols-4'
+                  ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'
+                  : 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
               )}
             >
               {products
