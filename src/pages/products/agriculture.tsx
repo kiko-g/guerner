@@ -35,7 +35,6 @@ export default function ProductsAgriculturePage({ data }: Props) {
   const location = t('location')
   const title = t('title')
   const description = t('description')
-  const categoryKeys = ['d', 'e', 'f']
 
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
@@ -76,11 +75,6 @@ export default function ProductsAgriculturePage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
-              {/* <CategoryFilter
-                categories={categoryKeys}
-                hook={[pickedCategories, setPickedCategories]}
-              /> */}
-              <ColorFilter hook={[pickedColor, setPickedColor]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />
             </div>

@@ -76,11 +76,6 @@ export default function ProductsConstructionPage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
-              {/* <CategoryFilter
-                categories={categoryKeys}
-                hook={[pickedCategories, setPickedCategories]}
-              /> */}
-              <ColorFilter hook={[pickedColor, setPickedColor]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />
             </div>

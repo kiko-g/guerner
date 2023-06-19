@@ -13,8 +13,6 @@ type Props = {
 
 export default function Product({ product }: Props) {
   const { t } = useI18next()
-
-  const showIcon = false
   const route = `${product.lang}-${product.slug}`
 
   return (
@@ -25,15 +23,6 @@ export default function Product({ product }: Props) {
 
         {/* Floating top left */}
         <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
-          {product.color ? (
-            <div
-              title={product.color}
-              className={classNames('rounded-full shadow', showIcon ? 'p-1' : 'p-3', product.color)}
-            >
-              {showIcon ? <PaintBrushIcon className="h-4 w-4 text-white" /> : null}
-            </div>
-          ) : null}
-
           {product.pinned ? (
             <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
               <StarIcon className="h-4 w-4 text-white" />
@@ -79,7 +68,8 @@ export default function Product({ product }: Props) {
         >
           {product.characteristics.length === 0
             ? 'N/A'
-            : product.characteristics.join(', ').slice(0, 40) + '...'}
+            : product.characteristics.join(', ').slice(0, 40) +
+              (product.characteristics.length > 40 ? '...' : '')}
         </p>
       </Link>
     </li>
