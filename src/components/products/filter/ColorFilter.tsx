@@ -4,7 +4,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
 import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import { Color } from '../../../types/index.d.tts'
+import { Color } from '../../../types'
 import '../../../styles/colors.css'
 
 type Props = {
@@ -14,7 +14,19 @@ type Props = {
 export default function ColorFilter({ hook }: Props) {
   const { t, language } = useI18next()
   const [pickedColor, setPickedColor] = hook
-  const colors: Color[] = ['black', 'white', 'gray', 'green', 'blue', 'gold', 'red', 'yellow']
+  const colors: Color[] = [
+    'black',
+    'white',
+    'green',
+    'gray',
+    'blue',
+    'red',
+    'yellow',
+    'orange',
+    'beige',
+    'gold',
+    'silver',
+  ]
 
   return (
     <Menu as="div" className="relative">

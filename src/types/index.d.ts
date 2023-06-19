@@ -9,12 +9,15 @@ export type NavItem = {
 export type Colors = {
   black: string
   gray: string
-  gold: string
   white: string
   red: string
   blue: string
   green: string
   yellow: string
+  orange: string
+  beige: string
+  gold: string
+  silver: string
 }
 
 export type Color = keyof Colors | ''

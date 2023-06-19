@@ -28,7 +28,7 @@ text: 'Introduction of computer systems.',
 },
 {
 date: '1993/1995',
-text: 'Beginning and completion of a new industrial structure with a different layout. Covered area of ​​5,000 m2 and discovery of 30,000 m2; Remodeling of the computer system.'
+text: 'Beginning and completion of a new industrial structure with a different layout. Covered area of ​​5.000 m2 and discovery of 30.000 m2; Remodeling of the computer system.'
 },
 {
 date: '1995/2000',
@@ -44,7 +44,7 @@ text: 'Expansion of the plant to 7500 m2; number of employees: 100.'
 },
 {
 date: '2005',
-text: 'Acquisition of a 6 meter wide loom, one of the only in Europe. New extension of the facilities to 10,000 m2.'
+text: 'Acquisition of a 6 meter wide loom, one of the only in Europe. New extension of the facilities to 10.000 m2.'
 },
 {
 date: '2006',

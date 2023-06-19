@@ -237,8 +237,11 @@ export default function ProductTemplate({ data }: Props) {
                   isMobile ? cIdx < 1 && 'border-t' : cIdx < 2 && 'border-t'
                 )}
               >
-                <span className="h-6 w-6 bg-emerald-600"></span>
-                <span className="text-sm tracking-tighter">{c}</span>
+                <span className="relative">
+                  <span className="absolute -top-[9px] left-0 h-5 w-5 rounded-full bg-primary dark:bg-secondary"></span>
+                  <span className="absolute -top-[9px] left-3 h-5 w-5 rounded-full bg-tertiary dark:bg-white"></span>
+                </span>
+                <span className="ml-8 text-sm tracking-tighter">{c}</span>
               </li>
             ))}
           </ul>

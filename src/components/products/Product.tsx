@@ -86,7 +86,9 @@ export default function Product({ product }: Props) {
           title={product.characteristics.join(', ')}
           className="truncate text-xs font-normal capitalize leading-snug tracking-tighter text-gray-500 dark:text-gray-400"
         >
-          {product.characteristics.join(', ').slice(0, 40)}...
+          {product.characteristics.length === 0
+            ? 'N/A'
+            : product.characteristics.join(', ').slice(0, 40) + '...'}
         </p>
       </Link>
     </li>
