@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { ProductFrontmatter } from '../../types'
-import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, IGatsbyImageData, StaticImage, getImage } from 'gatsby-plugin-image'
 import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
@@ -13,7 +13,6 @@ type Props = {
 
 export default function Product({ product }: Props) {
   const { t } = useI18next()
-  const coverImage = getImage(product.featuredImage)
 
   const showIcon = false
   const route = `${product.lang}-${product.slug}`
@@ -22,15 +21,7 @@ export default function Product({ product }: Props) {
     <li className="group">
       {/* Card body */}
       <Link title={product.name} to={route} className="relative block h-60 w-full overflow-hidden">
-        {coverImage ? (
-          <GatsbyImage
-            alt={`product-${product.name}`}
-            image={coverImage}
-            className="duration-400 aspect-square h-full w-full object-cover transition group-hover:scale-110 group-hover:opacity-90"
-          />
-        ) : (
-          <div className="aspect-square h-full w-full bg-primary transition hover:opacity-80 dark:bg-tertiary/50" />
-        )}
+        <UnsplashImage product={product} key={`product-${product.name}`} />
 
         {/* Floating top left */}
         <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
@@ -92,5 +83,30 @@ export default function Product({ product }: Props) {
         </p>
       </Link>
     </li>
+  )
+}
+
+function UnsplashImage({ product }: { product: ProductFrontmatter }) {
+  return (
+    <img
+      loading="lazy"
+      alt={`product-${product.name}`}
+      src={`https://source.unsplash.com/random/?${encodeURIComponent(product.name)}`}
+      className="duration-400 aspect-square h-full w-full object-cover transition group-hover:scale-110 group-hover:opacity-90"
+    />
+  )
+}
+
+function CoverImage({ product }: { product: ProductFrontmatter }) {
+  const coverImage = getImage(product.featuredImage)
+
+  return coverImage ? (
+    <GatsbyImage
+      alt={`product-${product.name}`}
+      image={coverImage}
+      className="duration-400 aspect-square h-full w-full object-cover transition group-hover:scale-110 group-hover:opacity-90"
+    />
+  ) : (
+    <div className="aspect-square h-full w-full bg-primary transition hover:opacity-80 dark:bg-tertiary/50" />
   )
 }

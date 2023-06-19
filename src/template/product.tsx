@@ -4,7 +4,7 @@ import type { ProductFrontmatter } from '../types'
 import { useMediaQuery } from 'usehooks-ts'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, Link } from 'gatsby'
-import { GatsbyImage, IGatsbyImageData, getImage } from 'gatsby-plugin-image'
+import { GatsbyImage, IGatsbyImageData, StaticImage, getImage } from 'gatsby-plugin-image'
 import { GoBack, Layout } from '../components/layout'
 import { PencilIcon } from '@heroicons/react/24/outline'
 import '../styles/product.css'
@@ -40,7 +40,7 @@ export default function ProductTemplate({ data }: Props) {
           <div className="mt-4 flex w-full flex-col border-b border-primary/20 dark:border-white/20 lg:flex-row">
             {/* For more info */}
             <div className="flex flex-1 items-center gap-4 py-3">
-              <span className="h-12 w-12 bg-emerald-600"></span>
+              <span className="h-12 w-12 bg-tertiary dark:bg-tertiary"></span>
               <div className="flex flex-col">
                 <span>{t('more-info')}</span>
                 <span className="font-bold">{process.env.GATSBY_GUERNER_EMAIL_ADDRESS}</span>
@@ -72,27 +72,23 @@ export default function ProductTemplate({ data }: Props) {
 
         {/* Characteristics Banner */}
         {frontmatter.characteristics !== null && frontmatter.characteristics.length > 0 ? (
-          <ul className="mt-4 flex flex-col flex-wrap gap-8 border-y border-primary/20 py-4 dark:border-white/20 lg:flex-row">
+          <ul className="mt-4 flex flex-col flex-wrap gap-4 border-y border-primary/20 py-4 dark:border-white/20 lg:flex-row lg:gap-8">
             {frontmatter.characteristics
               .sort((a, b) => (a < b ? 1 : -1))
               .map((c, cIdx) => (
-                <li key={`characteristic-${cIdx}`} className="flex items-center gap-2">
-                  <span className="h-6 w-6 bg-emerald-600"></span>
-                  <span className="text-sm tracking-tighter">{c}</span>
+                <li key={`characteristic-${cIdx}`} className="flex items-center gap-3">
+                  <span className="relative">
+                    <span className="absolute -top-2 left-0 h-4 w-4 rounded-full bg-primary dark:bg-tertiary"></span>
+                    <span className="absolute -top-2 left-2.5 h-4 w-4 rounded-full bg-tertiary dark:bg-white"></span>
+                  </span>
+                  <span className="ml-6 text-sm tracking-tighter">{c}</span>
                 </li>
               ))}
           </ul>
         ) : null}
 
         {/* Image Grid */}
-        <div className="grid h-96 w-full grid-cols-1 gap-4 lg:grid-cols-2">
-          <div className="w-full bg-emerald-600/10 dark:bg-emerald-500/10"></div>
-
-          <div className="grid w-full grid-cols-1 gap-4">
-            <div className="w-full bg-emerald-600/10 dark:bg-emerald-500/10"></div>
-            <div className="w-full bg-emerald-600/10 dark:bg-emerald-500/10"></div>
-          </div>
-        </div>
+        <UnsplashImageGrid />
 
         {/* Dimensions */}
         <div className="flow-root w-full overflow-x-auto">
@@ -248,6 +244,44 @@ export default function ProductTemplate({ data }: Props) {
         </div>
       </main>
     </Layout>
+  )
+}
+
+function MockImageGrid() {
+  return (
+    <div className="grid h-96 w-full grid-cols-1 gap-4 lg:grid-cols-2">
+      <div className="w-full bg-emerald-600/10 dark:bg-emerald-500/10"></div>
+
+      <div className="grid w-full grid-cols-1 gap-4">
+        <div className="w-full bg-emerald-600/10 dark:bg-emerald-500/10"></div>
+        <div className="w-full bg-emerald-600/10 dark:bg-emerald-500/10"></div>
+      </div>
+    </div>
+  )
+}
+
+function UnsplashImageGrid() {
+  return (
+    <div className="grid w-full grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
+      <StaticImage
+        alt="product-1"
+        src="https://source.unsplash.com/random/?agriculture"
+        className="max-h-[200px] lg:max-h-[416px]"
+      />
+
+      <div className="hidden w-full lg:grid lg:grid-cols-1 lg:gap-4">
+        <StaticImage
+          alt="product-2"
+          src="https://source.unsplash.com/random/?gardening"
+          className="h-full lg:max-h-[200px]"
+        />
+        <StaticImage
+          alt="product-3"
+          src="https://source.unsplash.com/random/?garden"
+          className="h-full lg:max-h-[200px]"
+        />
+      </div>
+    </div>
   )
 }
 
