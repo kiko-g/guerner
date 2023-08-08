@@ -1,8 +1,12 @@
-# Guerner & Irmãos S.A.
-
-Website for [**Guerner & Irmãos S.A**](https://guernerpt.vercel.app).
+# Guerner & Irmãos S.A. [🔗](https://guerner.vercel.app)
 
 ![Vercel](https://vercelbadge.vercel.app/api/kiko-g/guerner)
+
+## About
+
+Website repository for **[Guerner & Irmãos 🔗](https://guerner.vercel.app)**, a company focused on distributing High-performance technical textiles and fabrics for agriculture and construction, based in Gaia, Porto, Portugal.
+
+> Built with React using Gatsby 5, Typescript and TailwindCSS.
 
 ## Products
 
