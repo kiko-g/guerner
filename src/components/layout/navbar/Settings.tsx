@@ -37,7 +37,7 @@ export default function Settings() {
                 <div className="relative flex flex-col gap-2 bg-white p-4 dark:bg-slate-800">
                   <LanguageSwitcher />
                   <DarkModeToggler />
-                  <AnalyticsLink />
+                  {/* <AnalyticsLink /> */}
                 </div>
                 <div className="bg-slate-100 p-4 dark:bg-slate-700">
                   <Feedback />
@@ -203,9 +203,9 @@ function DarkModeToggler() {
 
 function AnalyticsLink() {
   return (
-    <Link
+    <a
       target="_blank"
-      to="https://vercel.com/kiko-g-s-team/guerner/analytics"
+      href="https://vercel.com/kiko-g-s-team/guerner/analytics"
       className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
@@ -242,7 +242,7 @@ function AnalyticsLink() {
         <p className="text-sm font-medium text-gray-900 dark:text-white">Analytics</p>
         <p className="text-sm text-gray-500 dark:text-gray-300">Keep track of your growth</p>
       </div>
-    </Link>
+    </a>
   )
 }
 
