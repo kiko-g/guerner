@@ -12,7 +12,7 @@ facilitiesImages:
 facilitiesDescriptions:
   [
     'In this segment, virgin polyethylene (HDPE) is extruded into a thread, the so-called monofilament, with various diameters, which are then rolled into bobbins that supply 2 segments, the Warping and the Weaving',
-    'Weaves the fabric, placing it in the organs to be inserted into the loom',
+    'Weaves the fabric, placing it in the organs to be inserted into the looms',
     'Combined process of warp and weft where the nets/fabrics with different specifications are produced',
     'Consisting of a set of equipment that transforms the net produced into the various sizes, according to the necessary specifications',
   ]
