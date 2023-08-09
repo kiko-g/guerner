@@ -11,8 +11,8 @@ facilitiesImages:
   ]
 facilitiesDescriptions:
   [
-    'Neste segmento o polietileno virgem (HDPE) é extrudido em fio o denominado monofilamento com diversos diâmetros sendo estes posteriormente enrolados em bobines que abastecem 2 segmentos a Urdissagem e a Tecelagem',
-    'Fabrica a teia, colocando-a nos órgãos a inserir no tear',
+    'Neste segmento o polietileno virgem (HDPE) é extrudido em fio, o denominado monofilamento, com diversos diâmetros sendo este posteriormente enrolado em bobines que abastecem 2 sectores: a Urdissagem e a Tecelagem',
+    'Fabrica a teia, colocando-a nos órgãos a inserir nos teares',
     'Processo combinado de teia e trama onde são produzidas as redes /tecidos com as diferentes especificações',
     'Constituído por um conjunto de equipamentos que transformam a rede produzida nas diversas medidas, de acordo com as especificações necessárias',
   ]
