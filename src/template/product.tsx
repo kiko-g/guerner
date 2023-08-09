@@ -66,7 +66,7 @@ export default function ProductTemplate({ data }: Props) {
 
         {/* Name and description */}
         <div className="flex flex-col py-4">
-          <h1 className="mb-4 max-w-xs text-4xl font-semibold">{frontmatter.name}</h1>
+          <h1 className="mb-4 max-w-sm text-4xl font-semibold">{frontmatter.name}</h1>
           <p className="max-w-md leading-relaxed">{frontmatter.description}</p>
         </div>
 
@@ -241,6 +241,10 @@ export default function ProductTemplate({ data }: Props) {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="w-full">
+          <GoBack url={routeGoBack} />
         </div>
       </main>
     </Layout>

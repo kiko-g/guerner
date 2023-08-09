@@ -36,7 +36,7 @@ text: 'Aumento da capacidade de produção, através de novos teares e de uma no
 },
 {
 date: '1999',
-text: 'A empresa passou de Limitada para Sociedade Anónima e Manuel Guerner, filho de José Guerner, torna-se vice-presidente.'
+text: 'A empresa passou de Limitada para Sociedade Anónima e Manuel Guerner, filho de Joaquim Guerner, torna-se vice-presidente.'
 },
 {
 date: '2001/2002',

@@ -23,16 +23,16 @@ export default function Product({ product }: Props) {
         <CoverImage product={product} />
 
         {/* Floating top left */}
-        <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
+        {/* <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
           {product.pinned ? (
             <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
               <StarIcon className="h-4 w-4 text-white" />
             </div>
           ) : null}
-        </div>
+        </div> */}
 
         {/* Floating top right */}
-        <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
+        {/* <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
           {product.sample ? (
             <div
               title={product.sample}
@@ -43,11 +43,11 @@ export default function Product({ product }: Props) {
           ) : (
             <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
           )}
-        </div>
+        </div> */}
 
         {/* Floating bottom right */}
         <div className="absolute bottom-2 right-4 z-10 flex items-center justify-center gap-x-1.5">
-          <span className="hidden text-xs font-normal text-white group-hover:flex">See more</span>
+          {/* <span className="hidden text-xs font-normal text-white group-hover:flex">See more</span> */}
           <ArrowLongRightIcon className="h-5 w-5 text-white transition group-hover:-rotate-45" />
         </div>
       </Link>

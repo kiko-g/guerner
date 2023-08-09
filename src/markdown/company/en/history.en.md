@@ -36,7 +36,7 @@ text: 'Increased production capacity, through new looms and a new extrusion line
 },
 {
 date: '1999',
-text: 'The company went from Limitada to Sociedade Anónima and Manuel Guerner, son of José Guerner, becomes vice-president.'
+text: 'The company went from Limitada to Sociedade Anónima and Manuel Guerner, son of Joaquim Guerner, becomes vice-president.'
 },
 {
 date: '2001/2002',
