@@ -19,7 +19,8 @@ export default function Product({ product }: Props) {
     <li className="group">
       {/* Card body */}
       <Link title={product.name} to={route} className="relative block h-60 w-full overflow-hidden">
-        <UnsplashImage product={product} key={`product-${product.name}`} />
+        {/* <UnsplashImage product={product} key={`product-${product.name}`} /> */}
+        <CoverImage product={product} />
 
         {/* Floating top left */}
         <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
