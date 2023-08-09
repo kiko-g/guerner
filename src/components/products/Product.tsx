@@ -14,36 +14,47 @@ type Props = {
 export default function Product({ product }: Props) {
   const { t } = useI18next()
   const route = `${product.lang}-${product.slug}`
+  const showPinned = false
+  const showSample = false
+  const showUnsplashImage = false
+  const showCharacteristics = false
 
   return (
     <li className="group">
       {/* Card body */}
       <Link title={product.name} to={route} className="relative block h-60 w-full overflow-hidden">
-        {/* <UnsplashImage product={product} key={`product-${product.name}`} /> */}
-        <CoverImage product={product} />
+        {showUnsplashImage ? (
+          <UnsplashImage product={product} key={`product-${product.name}`} />
+        ) : (
+          <CoverImage key={`product-${product.name}`} product={product} />
+        )}
 
         {/* Floating top left */}
-        {/* <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
-          {product.pinned ? (
+        <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
+          {product.pinned && showPinned ? (
             <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
               <StarIcon className="h-4 w-4 text-white" />
             </div>
           ) : null}
-        </div> */}
+        </div>
 
         {/* Floating top right */}
-        {/* <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
-          {product.sample ? (
-            <div
-              title={product.sample}
-              className="rounded-md bg-gray-800 px-2 py-1 font-lexend text-xs font-light text-white shadow"
-            >
-              {product.sample}
-            </div>
-          ) : (
-            <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">N/A</div>
-          )}
-        </div> */}
+        <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
+          {showSample ? (
+            product.sample ? (
+              <div
+                title={product.sample}
+                className="rounded-md bg-gray-800 px-2 py-1 font-lexend text-xs font-light text-white shadow"
+              >
+                {product.sample}
+              </div>
+            ) : (
+              <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">
+                N/A
+              </div>
+            )
+          ) : null}
+        </div>
 
         {/* Floating bottom right */}
         <div className="absolute bottom-2 right-4 z-10 flex items-center justify-center gap-x-1.5">
@@ -63,15 +74,17 @@ export default function Product({ product }: Props) {
         >
           {product.name}
         </p>
-        <p
-          title={product.characteristics.join(', ')}
-          className="truncate text-xs font-normal capitalize leading-snug tracking-tighter text-gray-500 dark:text-gray-400"
-        >
-          {product.characteristics.length === 0
-            ? 'N/A'
-            : product.characteristics.join(', ').slice(0, 40) +
-              (product.characteristics.length > 40 ? '...' : '')}
-        </p>
+        {showCharacteristics ? (
+          <p
+            title={product.characteristics.join(', ')}
+            className="truncate text-xs font-normal capitalize leading-snug tracking-tighter text-gray-500 dark:text-gray-400"
+          >
+            {product.characteristics.length === 0
+              ? 'N/A'
+              : product.characteristics.join(', ').slice(0, 40) +
+                (product.characteristics.length > 40 ? '...' : '')}
+          </p>
+        ) : null}
       </Link>
     </li>
   )
