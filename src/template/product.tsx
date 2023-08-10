@@ -32,7 +32,7 @@ export default function ProductTemplate({ data }: Props) {
     <Layout location={frontmatter.name} fullWidth>
       <main className="product">
         <header className="flex w-full flex-col gap-2">
-          <div className="flex w-full items-center justify-between gap-2">
+          <div className="flex w-full items-center justify-between gap-2 bg-tertiary/10 px-4 py-4">
             <GoBack url={routeGoBack} />
             <h1 className="hidden lg:block">{frontmatter.name}</h1>
           </div>
@@ -195,36 +195,12 @@ export default function ProductTemplate({ data }: Props) {
           </div>
         )}
 
-        <div className="grid w-full grid-cols-1 gap-12 lg:grid-cols-2">
-          {/* Benefits */}
-          <div className="w-full">
-            <h5 className="w-full border-b border-primary/20 py-4 font-lexend text-lg font-semibold dark:border-white/20">
-              {t('benefits')}
-            </h5>
-            <ul className="z-50 list-disc space-y-1 py-4">
-              {frontmatter.benefits.map((b, bIdx) => (
-                <li key={`benefit-${bIdx}`} className="flex items-center gap-2">
-                  <span className="text-sm tracking-tighter">{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Specifications */}
-          <div className="w-full">
-            <h5 className="w-full border-b border-primary/20 py-4 font-lexend text-lg font-semibold dark:border-white/20">
-              {t('specifications')}
-            </h5>
-            <p className="py-4 text-sm tracking-tighter">{frontmatter.specifications}</p>
-          </div>
-        </div>
-
         {/* Compostion */}
         <div className="w-full">
           <h5 className="w-full border-primary/20 py-4 font-lexend text-lg font-semibold dark:border-white/20">
             {t('composition')}
           </h5>
-          <ul className="grid w-full grid-flow-row grid-cols-1 gap-x-12 lg:grid-cols-2">
+          <ul className="grid w-full grid-flow-row grid-cols-1 gap-x-12 lg:grid-cols-1">
             {frontmatter.comp.map((c, cIdx) => (
               <li
                 key={`comp-${cIdx}`}
@@ -243,7 +219,30 @@ export default function ProductTemplate({ data }: Props) {
           </ul>
         </div>
 
-        <div className="mt-8 flex w-full items-start justify-start">
+        {/* Benefits and Specifications */}
+        <div className="grid w-full grid-cols-1 gap-x-12 gap-y-0 pb-16 lg:grid-cols-2">
+          <div className="w-full">
+            <h5 className="w-full border-b border-primary/20 py-4 font-lexend text-lg font-semibold dark:border-white/20">
+              {t('benefits')}
+            </h5>
+            <ul className="z-50 list-inside list-disc space-y-1 py-4">
+              {frontmatter.benefits.map((b, bIdx) => (
+                <li key={`benefit-${bIdx}`}>
+                  <span className="text-sm tracking-tighter">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="w-full">
+            <h5 className="w-full border-b border-primary/20 py-4 font-lexend text-lg font-semibold dark:border-white/20">
+              {t('specifications')}
+            </h5>
+            <p className="py-4 text-sm tracking-tighter">{frontmatter.specifications}</p>
+          </div>
+        </div>
+
+        <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
           <GoBack url={routeGoBack} />
         </div>
       </main>

@@ -11,7 +11,7 @@ export default function GoBack({ url }: Props) {
     <Link
       to={url}
       className="flex items-center justify-center gap-x-2 
-      text-primary transition hover:opacity-80 dark:text-tertiary"
+      text-primary transition hover:opacity-80 dark:text-white"
     >
       <ArrowSmallLeftIcon className="h-5 w-5" />
       <span className="font-bold">Voltar</span>
