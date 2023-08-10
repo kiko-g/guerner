@@ -29,6 +29,7 @@ type Props = {}
 
 export default function Production({}: Props) {
   const { t, language } = useI18next()
+  const showLinkToProducts = false
   const routeToProducts = '/products'
   const sectionId = t('sectionIdProduction')
   const takeMeToProducts = t('takeMeToProducts')
@@ -71,7 +72,7 @@ export default function Production({}: Props) {
         </h3>
         <div className="flex w-full flex-col items-start justify-center gap-6 lg:flex-row">
           <Tab.Group>
-            <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:order-2 lg:mx-0 lg:flex-col lg:gap-3 lg:text-sm lg:text-sm">
+            <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:order-2 lg:mx-0 lg:flex-col lg:gap-3 lg:text-sm">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
@@ -115,9 +116,11 @@ export default function Production({}: Props) {
                   )
                 })}
               </Tab.Panels>
-              <div className="mx-auto mt-8">
-                <LinkFill link={routeToProducts} text={takeMeToProducts} light />
-              </div>
+              {showLinkToProducts ? (
+                <div className="mx-auto mt-8">
+                  <LinkFill link={routeToProducts} text={takeMeToProducts} light />
+                </div>
+              ) : null}
             </article>
           </Tab.Group>
         </div>
@@ -125,7 +128,7 @@ export default function Production({}: Props) {
 
       {/* Production Description */}
       <div className="relative flex flex-col items-center justify-center backdrop-blur">
-        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-slate-200 px-8 py-8 dark:bg-black/20 lg:mx-0 lg:px-16 lg:py-16">
+        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-black/20 px-8 py-8 text-white dark:bg-black/20 lg:mx-0 lg:px-16 lg:py-16">
           <article
             dangerouslySetInnerHTML={{ __html: html }}
             className="article alt lg:max-w-4xl"

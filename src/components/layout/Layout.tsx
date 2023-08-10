@@ -7,10 +7,16 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 type Props = {
   children: ReactNode
   location?: string
-  special?: boolean
+  hero?: boolean
+  fullWidth?: boolean
 }
 
-export default function Layout({ children, location = 'Unknown', special = false }: Props) {
+export default function Layout({
+  children,
+  location = 'Unknown',
+  hero = false,
+  fullWidth = false,
+}: Props) {
   const { t, language } = useI18next()
   const data = useStaticQuery(graphql`
     query titleQuery {
@@ -28,23 +34,23 @@ export default function Layout({ children, location = 'Unknown', special = false
       id="layout"
       className={classNames(
         'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium opacity-[99%]',
-        special
+        hero
           ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
           : 'bg-ice text-gray-800 dark:bg-navy dark:text-white'
       )}
     >
       <Seo title={location} />
-      <Navbar location={location} title={title} special={special} />
+      <Navbar location={location} title={title} special={hero} />
       <div
         className={classNames(
           'z-10 mx-auto mb-auto flex-1',
-          special ? 'w-full' : 'container max-w-6xl px-4 lg:px-3'
+          fullWidth ? 'max-w-full' : 'max-w-6xl'
         )}
       >
         {children}
       </div>
       <BackToTopButton />
-      <Footer title={title} special={special} />
+      <Footer title={title} special={hero} />
     </div>
   )
 }

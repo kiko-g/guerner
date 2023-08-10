@@ -9,7 +9,7 @@ export default function CompanyPage() {
   const location = t('location')!
 
   return (
-    <Layout location={location} special>
+    <Layout location={location} hero fullWidth>
       <Welcome />
       <main>
         <Presentation />

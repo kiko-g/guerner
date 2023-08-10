@@ -29,7 +29,7 @@ export default function ProductTemplate({ data }: Props) {
   const routeGoBack = `/products/${frontmatter.sector}`
 
   return (
-    <Layout location={frontmatter.name}>
+    <Layout location={frontmatter.name} fullWidth>
       <main className="product">
         <header className="flex w-full flex-col gap-2">
           <div className="flex w-full items-center justify-between gap-2">
@@ -243,7 +243,7 @@ export default function ProductTemplate({ data }: Props) {
           </ul>
         </div>
 
-        <div className="w-full">
+        <div className="mt-8 flex w-full items-start justify-start">
           <GoBack url={routeGoBack} />
         </div>
       </main>

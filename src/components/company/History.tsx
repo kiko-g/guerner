@@ -112,7 +112,7 @@ export default function History({}: Props) {
                   <h3 className="text-lg font-semibold text-white dark:text-white">
                     #{index + entryIdx + 1}
                   </h3>
-                  <time className="mb-2 block font-lexend text-base font-bold leading-none text-gray-200 dark:text-gray-500">
+                  <time className="mb-2 block font-lexend text-base font-bold leading-none text-secondary dark:text-secondary">
                     {entry.date}
                   </time>
                   <p className="min-h-[10rem] text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400">

@@ -9,7 +9,7 @@ export default function IndexPage() {
   const location = t('location')!
 
   return (
-    <Layout location={location} special>
+    <Layout location={location} hero fullWidth>
       <div className="flex min-h-screen flex-col scroll-smooth">
         <HeroBanner />
         <CompanyCTA />

@@ -52,9 +52,9 @@
 .article.alt h4,
 .article.alt h5,
 .article.alt h6 {
-  @apply text-slate-700 dark:text-white;
+  @apply text-white dark:text-white;
 }
 
 .article.alt blockquote {
-  @apply my-8 rounded border-l-4 border-slate-700 bg-slate-400 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-ice/10 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-8 rounded border-l-4 border-secondary bg-secondary/20 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-tertiary/10 lg:pl-4 lg:pr-6 lg:tracking-normal;
 }
