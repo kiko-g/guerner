@@ -12,6 +12,7 @@ import {
   ViewToggler,
   CategoryFilter,
   Product,
+  ListboxSort,
 } from '../../components/products'
 
 type Color = keyof Colors | ''
@@ -63,6 +64,34 @@ export default function ProductsConstructionPage({ data }: Props) {
     return textMatch && colorMatch && pinnedMatch && categoryMatch
   })
 
+  const sortOptions = [
+    'Alphabetic (A to Z)',
+    'Alphabetic (Z to A)',
+    'Sample ID (Ascending)',
+    'Sample ID (Descending)',
+  ]
+
+  const getSortFunction = (picked: any) => {
+    switch (picked) {
+      default:
+      case 'Alphabetic (A to Z)':
+        return (a: MarkdownData, b: MarkdownData) =>
+          a.frontmatter.name.localeCompare(b.frontmatter.name) ? -1 : 1
+      case 'Alphabetic (Z to A)':
+        return (a: MarkdownData, b: MarkdownData) =>
+          a.frontmatter.name.localeCompare(b.frontmatter.name) ? 1 : -1
+      case 'Sample ID (Ascending)':
+        return (a: MarkdownData, b: MarkdownData) =>
+          a.frontmatter.sample < b.frontmatter.sample ? -1 : 1
+      case 'Sample ID (Descending)':
+        return (a: MarkdownData, b: MarkdownData) =>
+          a.frontmatter.sample < b.frontmatter.sample ? 1 : -1
+    }
+  }
+
+  const [sortPicked, setSortPicked] = React.useState(sortOptions[0])
+  const sortFunction = React.useMemo(() => getSortFunction(sortPicked), [sortPicked])
+
   return (
     <Layout location={location}>
       <main className="flex flex-col items-center justify-center gap-y-4 py-8 lg:gap-y-6 lg:pb-40 lg:pt-16">
@@ -76,6 +105,7 @@ export default function ProductsConstructionPage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
+              <ListboxSort options={sortOptions} pickedHook={[sortPicked, setSortPicked]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />
             </div>
@@ -97,11 +127,9 @@ export default function ProductsConstructionPage({ data }: Props) {
                   : 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
               )}
             >
-              {products
-                .sort((a, b) => (a.frontmatter.sample < b.frontmatter.sample ? -1 : 1))
-                .map((productMd: MarkdownData, productIdx: number) => (
-                  <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
-                ))}
+              {products.sort(sortFunction).map((productMd: MarkdownData, productIdx: number) => (
+                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+              ))}
             </ul>
           </div>
         </div>

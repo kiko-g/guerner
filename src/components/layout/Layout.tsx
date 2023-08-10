@@ -44,7 +44,7 @@ export default function Layout({
       <div
         className={classNames(
           'z-10 mx-auto mb-auto flex-1',
-          fullWidth ? 'max-w-full' : 'max-w-6xl'
+          fullWidth ? 'max-w-full' : 'max-w-6xl px-4'
         )}
       >
         {children}
