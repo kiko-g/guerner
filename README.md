@@ -1,4 +1,4 @@
-# Guerner & Irmãos S.A. [🔗](https://guerner.vercel.app)
+# Guerner & Irmãos S.A.
 
 ![Vercel](https://vercelbadge.vercel.app/api/kiko-g/guerner)
 

@@ -52,7 +52,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
         'top-0 z-20 w-full px-3 py-3 backdrop-blur lg:px-6 lg:py-4',
         special
           ? 'fixed bg-black/50 text-white dark:bg-black/30'
-          : 'sticky bg-primary text-white dark:bg-navy dark:text-white'
+          : 'sticky bg-primary text-white dark:bg-navy/80 dark:text-white'
       )}
     >
       {({ open }) => {
