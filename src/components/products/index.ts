@@ -7,6 +7,7 @@ import ViewToggler from './filter/ViewToggler'
 
 import FeaturedAgriculture from './FeaturedAgriculture'
 import FeaturedConstruction from './FeaturedConstruction'
+import FeaturedOthers from './FeaturedOthers'
 import Product from './Product'
 
 export {
@@ -14,6 +15,7 @@ export {
   ColorFilter,
   FeaturedAgriculture,
   FeaturedConstruction,
+  FeaturedOthers,
   ListboxSort,
   PinToggler,
   Product,

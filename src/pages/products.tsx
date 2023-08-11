@@ -1,7 +1,7 @@
 import React from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Layout } from '../components/layout'
-import { FeaturedAgriculture, FeaturedConstruction } from '../components/products'
+import { FeaturedAgriculture, FeaturedConstruction, FeaturedOthers } from '../components/products'
 import { graphql } from 'gatsby'
 
 export default function ProductsPage() {
@@ -19,6 +19,7 @@ export default function ProductsPage() {
         </header>
         <FeaturedAgriculture />
         <FeaturedConstruction />
+        <FeaturedOthers />
       </main>
     </Layout>
   )
