@@ -45,6 +45,15 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      others: allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/others/" } }) {
+        nodes {
+          id
+          frontmatter {
+            slug
+            lang
+          }
+        }
+      }
     }
   `)
 
@@ -78,6 +87,22 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: `/products/construction/${frontmatter.lang}-${frontmatter.slug}`,
         component: constructionTemplatePath,
+        context: {
+          id,
+        },
+      })
+    })
+
+  // Create pages for each MarkdownRemark node in others category
+  const othersTemplatePath = path.resolve('./src/template/product.tsx')
+  result.data.others.nodes
+    .sort((a, b) => (a.frontmatter.lang < b.frontmatter.lang ? 1 : -1))
+    .forEach(node => {
+      const { id, frontmatter } = node
+
+      createPage({
+        path: `/products/others/${frontmatter.lang}-${frontmatter.slug}`,
+        component: othersTemplatePath,
         context: {
           id,
         },
