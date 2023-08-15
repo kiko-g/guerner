@@ -106,5 +106,11 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: '@vercel/gatsby-plugin-vercel-analytics',
+      options: {
+        debug: false, // (optional) Prints metrics in the console when true
+      },
+    },
   ],
 }
