@@ -189,7 +189,7 @@ export default function ProductTemplate({ data }: Props) {
         {frontmatter.customizable && (
           <div className="flex w-full flex-col items-start gap-2 rounded bg-emerald-600/10 px-4 py-4 dark:bg-emerald-500/20 lg:flex-row lg:items-center lg:gap-4">
             <PencilIcon className="hidden h-6 w-6 text-emerald-700 dark:text-emerald-400 lg:flex lg:h-8 lg:w-8" />
-            <p className="max-w-lg text-sm font-normal tracking-tighter text-emerald-900 dark:text-white lg:font-medium lg:tracking-normal">
+            <p className="text-sm font-normal tracking-tighter text-emerald-900 dark:text-white lg:font-medium lg:tracking-normal">
               {frontmatter.customizableText}
             </p>
           </div>
@@ -206,7 +206,7 @@ export default function ProductTemplate({ data }: Props) {
                 key={`comp-${cIdx}`}
                 className={classNames(
                   'flex items-center gap-2 border-b border-primary/20 py-4 dark:border-white/20',
-                  isMobile ? cIdx < 1 && 'border-t' : cIdx < 2 && 'border-t'
+                  isMobile ? cIdx < 1 && 'border-t' : cIdx < 2 && 'border-t',
                 )}
               >
                 <span className="relative">

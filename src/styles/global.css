@@ -10,7 +10,7 @@
 }
 
 html {
-  @apply scroll-smooth;
+  @apply scroll-auto;
 }
 
 h1,
