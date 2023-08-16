@@ -118,7 +118,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                 <button
                   type="button"
                   className={classNames(
-                    'flex items-center justify-center rounded-sm px-3 py-1.5 font-normal transition',
+                    'flex items-center justify-center rounded px-3 py-1.5 font-normal transition',
                     isActive ? 'bg-white/20' : 'hover:bg-white/10',
                   )}
                 >

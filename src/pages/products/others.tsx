@@ -141,9 +141,11 @@ export default function ProductsOthersPage({ data }: Props) {
           </div>
         </div>
 
-        <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
-          <GoBack url="/products" />
-        </div>
+        {products.length < 5 ? null : (
+          <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
+            <GoBack url="/products" />
+          </div>
+        )}
       </main>
     </Layout>
   )
