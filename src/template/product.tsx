@@ -297,7 +297,7 @@ type ImageGridProps = {
 
 function ImageGrid({ row = false, featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
   return row ? (
-    <div className="w-full items-center justify-center flex flex-col lg:flex-row gap-6 dark:bg-white/5">
+    <div className="w-full items-center justify-center flex flex-col lg:flex-row gap-6 bg-gray-50 dark:bg-white/5">
       <GatsbyImage
         image={featuredImage}
         alt="featured"
@@ -356,6 +356,10 @@ function UnsplashImageGrid() {
 }
 
 export const pageQuery = graphql`
+  fragment imageData on ImageSharp {
+    gatsbyImageData(width: 400, placeholder: DOMINANT_COLOR, formats: [AUTO, AVIF, WEBP])
+  }
+
   query ($language: String!, $id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
@@ -372,17 +376,17 @@ export const pageQuery = graphql`
         category
         featuredImage {
           childImageSharp {
-            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
+            ...imageData
           }
         }
         secondaryImage {
           childImageSharp {
-            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
+            ...imageData
           }
         }
         tertiaryImage {
           childImageSharp {
-            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
+            ...imageData
           }
         }
         dimensions

@@ -48,6 +48,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
             if (link.isProducts && useProductsDropdown) {
               return (
                 <span
+                  key={`nav-${index}`}
                   className={classNames(
                     'flex items-center group transition hover:bg-white/10 rounded',
                     isActive ? 'bg-white/20' : '',
