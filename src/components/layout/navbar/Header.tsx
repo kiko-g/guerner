@@ -47,14 +47,16 @@ export default function Header({ title, location, navigation }: HeaderProps) {
 
             if (link.isProducts && useProductsDropdown) {
               return (
-                <span className="flex items-center group transition hover:bg-white/10 rounded">
+                <span
+                  className={classNames(
+                    'flex items-center group transition hover:bg-white/30 rounded',
+                    isActive ? 'bg-white/20' : '',
+                  )}
+                >
                   <Link to={link.location} key={`nav-${index}`} className="relative">
                     <button
                       type="button"
-                      className={classNames(
-                        'flex items-center justify-center px-3 py-1.5 font-normal transition',
-                        isActive ? 'bg-white/20 group-hover:rounded-l' : '',
-                      )}
+                      className="flex items-center justify-center group-hover:rounded-l pl-3 pr-3 py-1.5 font-normal transition"
                     >
                       <span className="capitalize tracking-tight">{link.title}</span>
                     </button>
@@ -65,9 +67,9 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                       <>
                         <Popover.Button className="flex-1 h-full transition hover:bg-secondary/40 dark:hover:bg-secondary/30 px-1 rounded-r">
                           {open ? (
-                            <ChevronUpIcon className="h-5 w-5" />
+                            <ChevronUpIcon className="h-4 w-4" />
                           ) : (
-                            <ChevronDownIcon className="h-5 w-5" />
+                            <ChevronDownIcon className="h-4 w-4" />
                           )}
                         </Popover.Button>
                         <Transition

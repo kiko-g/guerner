@@ -141,11 +141,9 @@ export default function ProductsAgriculturePage({ data }: Props) {
           </div>
         </div>
 
-        {products.length < 5 ? null : (
-          <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
-            <GoBack url="/products" />
-          </div>
-        )}
+        <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
+          <GoBack url="/products" text={t('goback')} />
+        </div>
       </main>
     </Layout>
   )
