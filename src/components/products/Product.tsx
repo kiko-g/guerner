@@ -59,7 +59,7 @@ export default function Product({ product }: Props) {
         {/* Floating bottom right */}
         <div className="absolute bottom-2 right-4 z-10 flex items-center justify-center gap-x-1.5">
           {/* <span className="hidden text-xs font-normal text-white group-hover:flex">See more</span> */}
-          <ArrowLongRightIcon className="h-5 w-5 text-white transition group-hover:-rotate-45" />
+          <ArrowLongRightIcon className="h-5 w-5 text-white transition group-hover:-rotate-45 rounded-full group-hover:bg-black/20" />
         </div>
       </Link>
 

@@ -99,6 +99,7 @@ export default function ProductTemplate({ data }: Props) {
         secondaryImage !== undefined &&
         tertiaryImage !== undefined ? (
           <ImageGrid
+            row
             featuredImage={featuredImage}
             secondaryImage={secondaryImage}
             tertiaryImage={tertiaryImage}
@@ -281,14 +282,21 @@ function MockImageGrid() {
 }
 
 type ImageGridProps = {
+  row?: boolean
   featuredImage: IGatsbyImageData
   secondaryImage: IGatsbyImageData
   tertiaryImage: IGatsbyImageData
 }
 
-function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
-  return (
-    <div className="grid w-full grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
+function ImageGrid({ row = false, featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
+  return row ? (
+    <div className="w-full flex flex-col lg:flex-row gap-6 bg-gray-50 py-4 dark:bg-white/5">
+      <GatsbyImage image={featuredImage} alt="featured" className="h-[300px] object-cover" />
+      <GatsbyImage image={secondaryImage} alt="secondary" className="h-[300px] object-cover" />
+      <GatsbyImage image={tertiaryImage} alt="tertiary" className="h-[300px] object-cover" />
+    </div>
+  ) : (
+    <div className="grid w-full bg-gray-50 py-4 dark:bg-white/5 grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
       <GatsbyImage
         image={featuredImage}
         alt="featured"
