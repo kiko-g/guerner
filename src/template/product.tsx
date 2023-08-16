@@ -301,17 +301,17 @@ function ImageGrid({ row = false, featuredImage, secondaryImage, tertiaryImage }
       <GatsbyImage
         image={featuredImage}
         alt="featured"
-        className="w-full h-full lg:h-[400px] lg:w-[400px] object-cover"
+        className="w-full h-full lg:h-full lg:w-full object-cover"
       />
       <GatsbyImage
         image={secondaryImage}
         alt="secondary"
-        className="h-[400px] w-[400px] object-cover hidden lg:flex"
+        className="lg:h-full lg:w-full object-cover hidden lg:flex"
       />
       <GatsbyImage
         image={tertiaryImage}
         alt="tertiary"
-        className="h-[400px] w-[400px] object-cover hidden lg:flex"
+        className="lg:h-full lg:w-full object-cover hidden lg:flex"
       />
     </div>
   ) : (
