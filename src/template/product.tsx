@@ -35,6 +35,15 @@ export default function ProductTemplate({ data }: Props) {
     return { featuredImage, secondaryImage, tertiaryImage }
   }, [frontmatter])
 
+  const isImageGridRow = true
+  const unsplash = false
+
+  const isMockImageGrid =
+    !unsplash &&
+    featuredImage !== undefined &&
+    secondaryImage !== undefined &&
+    tertiaryImage !== undefined
+
   return (
     <Layout location={frontmatter.name} fullWidth>
       <main className="product">
@@ -95,11 +104,9 @@ export default function ProductTemplate({ data }: Props) {
         ) : null}
 
         {/* Image Grid */}
-        {featuredImage !== undefined &&
-        secondaryImage !== undefined &&
-        tertiaryImage !== undefined ? (
+        {isMockImageGrid ? (
           <ImageGrid
-            row
+            row={isImageGridRow}
             featuredImage={featuredImage}
             secondaryImage={secondaryImage}
             tertiaryImage={tertiaryImage}
@@ -290,16 +297,28 @@ type ImageGridProps = {
 
 function ImageGrid({ row = false, featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
   return row ? (
-    <div className="w-full flex flex-col lg:flex-row gap-6 bg-gray-50 py-4 dark:bg-white/5">
-      <GatsbyImage image={featuredImage} alt="featured" className="h-[300px] object-cover" />
-      <GatsbyImage image={secondaryImage} alt="secondary" className="h-[300px] object-cover" />
-      <GatsbyImage image={tertiaryImage} alt="tertiary" className="h-[300px] object-cover" />
+    <div className="w-full flex flex-col lg:flex-row gap-6 dark:bg-white/5">
+      <GatsbyImage
+        image={featuredImage}
+        alt="featured"
+        className="w-full h-full lg:h-[400px] lg:w-[400px] object-cover"
+      />
+      <GatsbyImage
+        image={secondaryImage}
+        alt="secondary"
+        className="h-[400px] w-[400px] object-cover hidden lg:flex"
+      />
+      <GatsbyImage
+        image={tertiaryImage}
+        alt="tertiary"
+        className="h-[400px] w-[400px] object-cover hidden lg:flex"
+      />
     </div>
   ) : (
     <div className="grid w-full bg-gray-50 py-4 dark:bg-white/5 grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
       <GatsbyImage
-        image={featuredImage}
         alt="featured"
+        image={featuredImage}
         className="max-h-[200px] lg:max-h-[416px]"
       />
 
@@ -353,17 +372,17 @@ export const pageQuery = graphql`
         category
         featuredImage {
           childImageSharp {
-            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
           }
         }
         secondaryImage {
           childImageSharp {
-            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
           }
         }
         tertiaryImage {
           childImageSharp {
-            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO])
           }
         }
         dimensions
