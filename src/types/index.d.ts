@@ -4,6 +4,7 @@ export type NavItem = {
   title: string
   location: string
   icon: JSX.Element
+  isProducts: boolean
 }
 
 export type Colors = {

@@ -26,21 +26,25 @@ export default function Navbar({ title, location, special }: NavbarProps) {
       title: t('home'),
       location: isDefaultLanguage ? '/' : `/${language}/`,
       icon: <HomeModernIcon className="h-5 w-5" />,
+      isProducts: false,
     },
     {
       title: t('company'),
       location: isDefaultLanguage ? '/company' : `/${language}/company`,
       icon: <BriefcaseIcon className="h-5 w-5" />,
+      isProducts: false,
     },
     {
       title: t('products'),
       location: isDefaultLanguage ? '/products' : `/${language}/products`,
       icon: <ShoppingCartIcon className="h-5 w-5" />,
+      isProducts: true,
     },
     {
       title: t('contacts'),
       location: isDefaultLanguage ? '/contacts' : `/${language}/contacts`,
       icon: <PhoneArrowDownLeftIcon className="h-5 w-5" />,
+      isProducts: false,
     },
   ]
 
@@ -52,7 +56,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
         'top-0 z-20 w-full px-3 py-3 backdrop-blur lg:px-6 lg:py-4',
         special
           ? 'fixed bg-black/50 text-white dark:bg-black/30'
-          : 'sticky bg-primary text-white dark:bg-navy/80 dark:text-white'
+          : 'sticky bg-primary text-white dark:bg-navy/80 dark:text-white',
       )}
     >
       {({ open }) => {
@@ -61,7 +65,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
             <div
               className={classNames(
                 'relative flex w-full items-center justify-between lg:py-0',
-                open ? 'p-0' : 'p-2'
+                open ? 'p-0' : 'p-2',
               )}
             >
               <Hamburger open={open} />

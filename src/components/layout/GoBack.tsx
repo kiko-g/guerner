@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { ArrowSmallLeftIcon } from '@heroicons/react/24/outline'
+import { t } from 'i18next'
 
 type Props = {
   url: string
@@ -8,6 +9,8 @@ type Props = {
 }
 
 export default function GoBack({ url, text }: Props) {
+  const defaultText = t('back') || 'Back'
+
   return (
     <Link
       to={url}
@@ -15,7 +18,7 @@ export default function GoBack({ url, text }: Props) {
       text-primary transition hover:opacity-80 dark:text-white"
     >
       <ArrowSmallLeftIcon className="h-5 w-5" />
-      <span className="font-bold">{text === undefined ? 'Voltar' : text}</span>
+      <span className="font-bold">{text === undefined ? defaultText : text}</span>
     </Link>
   )
 }
