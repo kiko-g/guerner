@@ -57,9 +57,9 @@ export default function Product({ product }: Props) {
         </div>
 
         {/* Floating bottom right */}
-        <div className="absolute bottom-2 right-4 z-10 flex items-center justify-center gap-x-1.5">
+        <div className="absolute bottom-2 right-2.5 z-10 flex items-center justify-center gap-x-1.5">
           {/* <span className="hidden text-xs font-normal text-white group-hover:flex">See more</span> */}
-          <ArrowLongRightIcon className="h-5 w-5 text-white transition group-hover:-rotate-45 rounded-full group-hover:bg-black/20" />
+          <ArrowLongRightIcon className="h-5 w-5 text-white transition group-hover:-rotate-45 rounded-full group-hover:bg-black/30" />
         </div>
       </Link>
 
@@ -70,7 +70,7 @@ export default function Product({ product }: Props) {
       >
         <p
           title={product.name}
-          className="flex-1 self-stretch truncate text-sm font-normal capitalize leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:text-ellipsis group-hover:whitespace-normal dark:text-white"
+          className="flex-1 self-stretch truncate text-sm font-normal capitalize leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:underline group-hover:text-ellipsis group-hover:whitespace-normal dark:text-white"
         >
           {product.name}
         </p>
