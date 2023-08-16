@@ -4,7 +4,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import type { Category, Colors, ProductFrontmatter } from '../../types'
 import { strIncludes } from '../../utils'
 import { graphql } from 'gatsby'
-import { Layout } from '../../components/layout'
+import { GoBack, Layout } from '../../components/layout'
 import {
   ColorFilter,
   PinToggler,
@@ -124,7 +124,7 @@ export default function ProductsOthersPage({ data }: Props) {
                 'grid gap-x-4 gap-y-4 lg:gap-x-8 lg:gap-y-8',
                 viewType
                   ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'
-                  : 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+                  : 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
               )}
             >
               {products.sort(sortFunction).map((productMd: MarkdownData, productIdx: number) => (
@@ -132,6 +132,10 @@ export default function ProductsOthersPage({ data }: Props) {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
+          <GoBack url="/products" />
         </div>
       </main>
     </Layout>

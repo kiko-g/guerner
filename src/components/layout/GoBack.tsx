@@ -4,9 +4,10 @@ import { ArrowSmallLeftIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   url: string
+  text?: string
 }
 
-export default function GoBack({ url }: Props) {
+export default function GoBack({ url, text }: Props) {
   return (
     <Link
       to={url}
@@ -14,7 +15,7 @@ export default function GoBack({ url }: Props) {
       text-primary transition hover:opacity-80 dark:text-white"
     >
       <ArrowSmallLeftIcon className="h-5 w-5" />
-      <span className="font-bold">Voltar</span>
+      <span className="font-bold">{text === undefined ? 'Voltar' : text}</span>
     </Link>
   )
 }
