@@ -45,7 +45,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
 
             if (link.isProducts && useProductsDropdown) {
               return (
-                <span className="flex items-center group hover:bg-white/10 rounded">
+                <span className="flex items-center group transition hover:bg-white/10 rounded">
                   <Link to={link.location} key={`nav-${index}`} className="relative">
                     <button
                       type="button"
@@ -61,7 +61,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                   <Popover className="relative flex-1 h-full">
                     {({ open }) => (
                       <>
-                        <Popover.Button className="flex-1 h-full hover:bg-secondary/40 dark:hover:bg-secondary/30 px-1 rounded-r">
+                        <Popover.Button className="flex-1 h-full transition hover:bg-secondary/40 dark:hover:bg-secondary/30 px-1 rounded-r">
                           {open ? (
                             <ChevronUpIcon className="h-5 w-5" />
                           ) : (
