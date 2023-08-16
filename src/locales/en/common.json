@@ -22,5 +22,8 @@
   "agriculture": "Agricultura e Jardinagem",
   "construction": "Construção e Indústria",
   "others": "Others",
-  "back": "Go Back"
+  "goback": "Go Back",
+  "Agriculture": "Agriculture",
+  "Construction": "Construction",
+  "Others": "Others"
 }

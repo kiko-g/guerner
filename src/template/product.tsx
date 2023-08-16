@@ -40,7 +40,7 @@ export default function ProductTemplate({ data }: Props) {
       <main className="product">
         <header className="flex w-full flex-col gap-2">
           <div className="flex w-full items-center justify-between gap-2 bg-tertiary/10 px-4 py-4">
-            <GoBack url={routeGoBack} />
+            <GoBack url={routeGoBack} text={t('goback')} />
             <h1 className="hidden lg:block">{frontmatter.name}</h1>
           </div>
 
@@ -261,7 +261,7 @@ export default function ProductTemplate({ data }: Props) {
         </div>
 
         <div className="flex w-full items-start justify-start bg-tertiary/10 px-4 py-4">
-          <GoBack url={routeGoBack} />
+          <GoBack url={routeGoBack} text={t('goback')} />
         </div>
       </main>
     </Layout>

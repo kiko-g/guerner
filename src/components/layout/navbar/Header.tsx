@@ -11,6 +11,8 @@ import {
   ChevronDownIcon,
   ChevronUpDownIcon,
   ChevronUpIcon,
+  EnvelopeIcon,
+  PhoneIcon,
 } from '@heroicons/react/24/outline'
 
 interface HeaderProps {
@@ -84,21 +86,21 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                                   to="/products/agriculture"
                                   className="flex items-center rounded-lg px-3 py-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700 text-gray-700 dark:text-white"
                                 >
-                                  Agriculture
+                                  {t('Agriculture')}
                                 </Link>
 
                                 <Link
                                   to="/products/construction"
                                   className="flex items-center rounded-lg px-3 py-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700 text-gray-700 dark:text-white"
                                 >
-                                  Construction
+                                  {t('Construction')}
                                 </Link>
 
                                 <Link
                                   to="/products/others"
                                   className="flex items-center rounded-lg px-3 py-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700 text-gray-700 dark:text-white"
                                 >
-                                  Others
+                                  {t('Others')}
                                 </Link>
                               </div>
                             </div>
@@ -130,10 +132,32 @@ export default function Header({ title, location, navigation }: HeaderProps) {
 
       {/* Settings */}
       <div className="hidden lg:flex lg:flex-col lg:items-end lg:justify-center lg:gap-y-1">
-        <div className="flex items-center justify-center gap-x-3">
+        <div className="flex items-center justify-center gap-x-4">
+          <MiniContacts />
           <Settings />
         </div>
       </div>
+    </div>
+  )
+}
+
+function MiniContacts() {
+  const email = process.env.GATSBY_GUERNER_EMAIL_ADDRESS
+  const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER
+
+  return (
+    <div className="hidden lg:flex flex-col gap-y-0.5 items-start text-xs font-light">
+      <span className="flex gap-x-1.5 items-center">
+        <PhoneIcon className="h-4 w-4" />
+        <span>{phone}</span>
+      </span>
+
+      <span className="flex gap-x-1.5 items-center">
+        <EnvelopeIcon className="h-4 w-4" />
+        <a className="hover:underline" href={`mailto:${email}`}>
+          {email}
+        </a>
+      </span>
     </div>
   )
 }
