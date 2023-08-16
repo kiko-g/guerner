@@ -3,6 +3,7 @@ import ColorFilter from './filter/ColorFilter'
 import ListboxSort from './filter/ListboxSort'
 import PinToggler from './filter/PinToggler'
 import Search from './filter/Search'
+import ShowSampleToggler from './filter/ShowSampleToggler'
 import ViewToggler from './filter/ViewToggler'
 
 import FeaturedAgriculture from './FeaturedAgriculture'
@@ -20,5 +21,6 @@ export {
   PinToggler,
   Product,
   Search,
+  ShowSampleToggler,
   ViewToggler,
 }

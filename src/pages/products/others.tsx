@@ -13,6 +13,7 @@ import {
   CategoryFilter,
   Product,
   ListboxSort,
+  ShowSampleToggler,
 } from '../../components/products'
 
 type Color = keyof Colors | ''
@@ -38,6 +39,7 @@ export default function ProductsOthersPage({ data }: Props) {
   const description = t('description')
   const categoryKeys = ['a', 'b', 'c']
 
+  const [showSample, setShowSample] = useState(false)
   const [viewType, setViewType] = useState(false)
   const [pinnedOnly, setPinnedOnly] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
@@ -105,6 +107,7 @@ export default function ProductsOthersPage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
+              <ShowSampleToggler hook={[showSample, setShowSample]} />
               <ListboxSort options={sortOptions} pickedHook={[sortPicked, setSortPicked]} />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />
@@ -128,7 +131,11 @@ export default function ProductsOthersPage({ data }: Props) {
               )}
             >
               {products.sort(sortFunction).map((productMd: MarkdownData, productIdx: number) => (
-                <Product product={productMd.frontmatter} key={`product-${productIdx}`} />
+                <Product
+                  product={productMd.frontmatter}
+                  key={`product-${productIdx}`}
+                  showSample={showSample}
+                />
               ))}
             </ul>
           </div>

@@ -9,13 +9,13 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 
 type Props = {
   product: ProductFrontmatter
+  showSample?: boolean
 }
 
-export default function Product({ product }: Props) {
+export default function Product({ product, showSample }: Props) {
   const { t } = useI18next()
   const route = `${product.lang}-${product.slug}`
   const showPinned = false
-  const showSample = false
   const showUnsplashImage = false
   const showCharacteristics = false
 
