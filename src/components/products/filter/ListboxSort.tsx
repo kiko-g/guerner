@@ -2,13 +2,15 @@ import React, { Fragment } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { ChevronUpDownIcon, FunnelIcon } from '@heroicons/react/24/outline'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { t } from 'i18next'
 
 type Props = {
   options: string[]
+  translatedOptions?: string[]
   pickedHook: [string, React.Dispatch<React.SetStateAction<string>>]
 }
 
-export default function ListboxSort({ options, pickedHook }: Props) {
+export default function ListboxSort({ options, translatedOptions, pickedHook }: Props) {
   const [picked, setPicked] = pickedHook
 
   return (
@@ -44,7 +46,7 @@ export default function ListboxSort({ options, pickedHook }: Props) {
                     option === picked ? 'font-semibold' : 'font-normal'
                   }`}
                 >
-                  {option}
+                  {translatedOptions ? translatedOptions[optionIdx] : option}
                 </span>
                 {picked === option ? (
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-teal-500">

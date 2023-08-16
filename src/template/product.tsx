@@ -357,7 +357,7 @@ function UnsplashImageGrid() {
 
 export const pageQuery = graphql`
   fragment imageData on ImageSharp {
-    gatsbyImageData(width: 400, placeholder: DOMINANT_COLOR, formats: [AUTO, AVIF, WEBP])
+    gatsbyImageData(width: 800, placeholder: DOMINANT_COLOR, formats: [AUTO, AVIF, WEBP])
   }
 
   query ($language: String!, $id: String!) {

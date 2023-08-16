@@ -7,5 +7,9 @@
   "categories.b": "b pt",
   "categories.c": "c pt",
   "resultsFound": "resultados encontrados",
-  "goback": "Voltar"
+  "goback": "Voltar",
+  "Alphabetic (A to Z)": "Ordem Alfabética (A-Z)",
+  "Alphabetic (Z to A)": "Ordem Alfabética (Z-A)",
+  "Sample ID (Ascending)": "ID da Amostra (Crescente)",
+  "Sample ID (Descending)": "ID da Amostra (Decrescente)"
 }

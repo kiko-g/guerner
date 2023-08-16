@@ -108,7 +108,11 @@ export default function ProductsOthersPage({ data }: Props) {
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
               <ShowSampleToggler hook={[showSample, setShowSample]} />
-              <ListboxSort options={sortOptions} pickedHook={[sortPicked, setSortPicked]} />
+              <ListboxSort
+                options={sortOptions}
+                translatedOptions={sortOptions.map(option => t(option))}
+                pickedHook={[sortPicked, setSortPicked]}
+              />
               <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ViewToggler hook={[viewType, setViewType]} />
             </div>

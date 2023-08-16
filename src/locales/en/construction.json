@@ -7,5 +7,9 @@
   "categories.b": "b en",
   "categories.c": "c en",
   "resultsFound": "results found",
-  "goback": "Go back"
+  "goback": "Go back",
+  "Alphabetic (A to Z)": "Alphabetic (A-Z)",
+  "Alphabetic (Z to A)": "Alphabetic (Z-A)",
+  "Sample ID (Ascending)": "Sample ID (Ascending)",
+  "Sample ID (Descending)": "Sample ID (Descending)"
 }
