@@ -71,9 +71,9 @@ export default function Production({}: Props) {
           {title}
         </h3>
 
-        <div className="flex w-full flex-col items-start justify-center gap-12">
+        <div className="flex w-full flex-col items-start justify-center gap-y-6 lg:gap-y-12">
           <Tab.Group>
-            <Tab.List className="order-2 mx-auto flex flex-col items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-3 lg:text-sm">
+            <Tab.List className="order-2 mx-auto flex flex-row items-start justify-start gap-1 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-3 lg:text-sm">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
