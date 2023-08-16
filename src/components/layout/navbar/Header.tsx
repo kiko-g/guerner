@@ -49,7 +49,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
               return (
                 <span
                   className={classNames(
-                    'flex items-center group transition hover:bg-white/30 rounded',
+                    'flex items-center group transition hover:bg-white/10 rounded',
                     isActive ? 'bg-white/20' : '',
                   )}
                 >
@@ -82,7 +82,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                           leaveTo="opacity-0 translate-y-1"
                         >
                           <Popover.Panel className="absolute right-0 z-10 mt-3 w-screen max-w-xs transform px-4 sm:px-0">
-                            <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-white dark:ring-opacity-10">
+                            <div className="overflow-hidden rounded-lg shadow-lg ring-black ring-opacity-5 dark:ring-white dark:ring-opacity-10">
                               <div className="relative flex flex-col gap-2 bg-white p-4 dark:bg-slate-800">
                                 <Link
                                   to="/products/agriculture"

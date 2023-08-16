@@ -297,7 +297,7 @@ type ImageGridProps = {
 
 function ImageGrid({ row = false, featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
   return row ? (
-    <div className="w-full flex flex-col lg:flex-row gap-6 dark:bg-white/5">
+    <div className="w-full items-center justify-center flex flex-col lg:flex-row gap-6 dark:bg-white/5">
       <GatsbyImage
         image={featuredImage}
         alt="featured"
