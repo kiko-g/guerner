@@ -43,6 +43,8 @@ export type ProductFrontmatter = {
   color: Color
   category: Category
   featuredImage: IGatsbyImageData
+  secondaryImage?: IGatsbyImageData
+  tertiaryImage?: IGatsbyImageData
   characteristics: string[]
   dimensions: string[][]
   customizable: boolean

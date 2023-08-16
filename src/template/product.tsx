@@ -25,8 +25,15 @@ export default function ProductTemplate({ data }: Props) {
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   const { frontmatter, html } = data.markdownRemark
-  const coverImage = getImage(frontmatter.featuredImage)
   const routeGoBack = `/products/${frontmatter.sector}`
+
+  const { featuredImage, secondaryImage, tertiaryImage } = React.useMemo(() => {
+    const featuredImage = getImage(frontmatter.featuredImage)
+    const secondaryImage = getImage(frontmatter.secondaryImage)
+    const tertiaryImage = getImage(frontmatter.tertiaryImage)
+
+    return { featuredImage, secondaryImage, tertiaryImage }
+  }, [frontmatter])
 
   return (
     <Layout location={frontmatter.name} fullWidth>
@@ -88,7 +95,17 @@ export default function ProductTemplate({ data }: Props) {
         ) : null}
 
         {/* Image Grid */}
-        <UnsplashImageGrid />
+        {featuredImage !== undefined &&
+        secondaryImage !== undefined &&
+        tertiaryImage !== undefined ? (
+          <ImageGrid
+            featuredImage={featuredImage}
+            secondaryImage={secondaryImage}
+            tertiaryImage={tertiaryImage}
+          />
+        ) : (
+          <UnsplashImageGrid />
+        )}
 
         {/* Dimensions */}
         <div className="flow-root w-full overflow-x-auto">
@@ -263,6 +280,29 @@ function MockImageGrid() {
   )
 }
 
+type ImageGridProps = {
+  featuredImage: IGatsbyImageData
+  secondaryImage: IGatsbyImageData
+  tertiaryImage: IGatsbyImageData
+}
+
+function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
+  return (
+    <div className="grid w-full grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
+      <GatsbyImage
+        image={featuredImage}
+        alt="featured"
+        className="max-h-[200px] lg:max-h-[416px]"
+      />
+
+      <div className="hidden w-full lg:grid lg:grid-cols-1 lg:gap-4">
+        <GatsbyImage image={secondaryImage} alt="secondary" className="h-full lg:max-h-[200px]" />
+        <GatsbyImage image={tertiaryImage} alt="tertiary" className="h-full lg:max-h-[200px]" />
+      </div>
+    </div>
+  )
+}
+
 function UnsplashImageGrid() {
   return (
     <div className="grid w-full grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
@@ -304,6 +344,16 @@ export const pageQuery = graphql`
         color
         category
         featuredImage {
+          childImageSharp {
+            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          }
+        }
+        secondaryImage {
+          childImageSharp {
+            gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          }
+        }
+        tertiaryImage {
           childImageSharp {
             gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
           }
