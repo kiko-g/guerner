@@ -66,13 +66,14 @@ export default function Production({}: Props) {
   return (
     <section id={sectionId} className="py-6 lg:py-12">
       {/* Production Centers */}
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 lg:bg-black/20 lg:px-16 lg:py-16">
-        <h3 className="mb-6 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-6 py-6 lg:bg-black/20 lg:px-24 lg:py-20">
+        <h3 className="w-full mb-6 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
           {title}
         </h3>
-        <div className="flex w-full flex-col items-start justify-center gap-6 lg:flex-row">
+
+        <div className="flex w-full flex-col items-start justify-center gap-12">
           <Tab.Group>
-            <Tab.List className="order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:order-2 lg:mx-0 lg:flex-col lg:gap-3 lg:text-sm">
+            <Tab.List className="order-2 mx-auto flex flex-col items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-3 lg:text-sm">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
@@ -81,7 +82,7 @@ export default function Production({}: Props) {
                       'w-full rounded border px-2 py-1 transition lg:border-2 lg:px-4 lg:py-2',
                       selected
                         ? 'border-secondary bg-secondary/50 dark:border-tertiary dark:bg-tertiary/40'
-                        : 'border-transparent hover:bg-secondary/60 dark:hover:bg-tertiary/60'
+                        : 'border-transparent hover:bg-secondary/60 dark:hover:bg-tertiary/60',
                     )
                   }
                 >
@@ -90,38 +91,41 @@ export default function Production({}: Props) {
               ))}
             </Tab.List>
 
-            <article className="order-2 flex flex-col rounded lg:order-1">
-              <Tab.Panels>
-                {tabImages.map((tabImage: IGatsbyImageData, tabIdx: number) => {
-                  const gatsbyImage = getImage(tabImage)
+            <Tab.Panels className="order-1 w-full">
+              {tabImages.map((tabImage: IGatsbyImageData, tabIdx: number) => {
+                const gatsbyImage = getImage(tabImage)
 
-                  return (
-                    <Tab.Panel key={`tab-panel-${tabIdx}`}>
-                      <div className="flex flex-col items-center justify-center text-center">
-                        {gatsbyImage ? (
-                          <GatsbyImage
-                            image={gatsbyImage}
-                            alt={tabList[tabIdx]}
-                            className="max-h-96 rounded-xl shadow"
-                          />
-                        ) : null}
-                        <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-                          {tabList[tabIdx]}
-                        </h2>
-                        <p className="mx-auto mt-2 max-w-2xl text-base font-light text-white dark:text-white lg:text-base">
-                          {tabDescriptions[tabIdx]}
-                        </p>
-                      </div>
-                    </Tab.Panel>
-                  )
-                })}
-              </Tab.Panels>
-              {showLinkToProducts ? (
-                <div className="mx-auto mt-8">
-                  <LinkFill link={routeToProducts} text={takeMeToProducts} light />
-                </div>
-              ) : null}
-            </article>
+                return (
+                  <Tab.Panel
+                    key={`tab-panel-${tabIdx}`}
+                    className="flex flex-col items-center justify-center text-center"
+                  >
+                    <div className="order-2">
+                      <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                        {tabList[tabIdx]}
+                      </h2>
+                      <p className="mx-auto mt-2 max-w-2xl text-base font-light text-white dark:text-white lg:text-base">
+                        {tabDescriptions[tabIdx]}
+                      </p>
+                    </div>
+
+                    {gatsbyImage ? (
+                      <GatsbyImage
+                        image={gatsbyImage}
+                        alt={tabList[tabIdx]}
+                        className="order-1 h-auto w-full rounded-xl shadow"
+                      />
+                    ) : null}
+                  </Tab.Panel>
+                )
+              })}
+            </Tab.Panels>
+
+            {showLinkToProducts ? (
+              <div className="mx-auto mt-8">
+                <LinkFill link={routeToProducts} text={takeMeToProducts} light />
+              </div>
+            ) : null}
           </Tab.Group>
         </div>
       </div>
