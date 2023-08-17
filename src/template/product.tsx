@@ -366,6 +366,7 @@ export const pageQuery = graphql`
       frontmatter {
         lang
         pinned
+        shown
         slug
 
         name

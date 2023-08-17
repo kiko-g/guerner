@@ -36,6 +36,7 @@ export type Category = keyof Categories | ''
 export type ProductFrontmatter = {
   lang: string
   pinned: boolean
+  shown: boolean
   slug: string
   name: string
   sector: string

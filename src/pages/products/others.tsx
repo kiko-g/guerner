@@ -134,13 +134,16 @@ export default function ProductsOthersPage({ data }: Props) {
                   : 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
               )}
             >
-              {products.sort(sortFunction).map((productMd: MarkdownData, productIdx: number) => (
-                <Product
-                  product={productMd.frontmatter}
-                  key={`product-${productIdx}`}
-                  showSample={showSample}
-                />
-              ))}
+              {products
+                .filter(productMd => productMd.frontmatter.shown === true)
+                .sort(sortFunction)
+                .map((productMd: MarkdownData, productIdx: number) => (
+                  <Product
+                    key={`product-${productIdx}`}
+                    product={productMd.frontmatter}
+                    showSample={showSample}
+                  />
+                ))}
             </ul>
           </div>
         </div>

@@ -70,7 +70,7 @@ export default function Product({ product, showSample }: Props) {
       >
         <p
           title={product.name}
-          className="flex-1 self-stretch truncate text-sm font-normal capitalize leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:underline group-hover:text-ellipsis group-hover:whitespace-normal dark:text-white"
+          className="flex-1 self-stretch truncate text-sm font-normal leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:underline group-hover:text-ellipsis group-hover:whitespace-normal dark:text-white"
         >
           {product.name}
         </p>

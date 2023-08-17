@@ -134,13 +134,16 @@ export default function ProductsAgriculturePage({ data }: Props) {
                   : 'grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
               )}
             >
-              {products.sort(sortFunction).map((productMd: MarkdownData, productIdx: number) => (
-                <Product
-                  key={`product-${productIdx}`}
-                  product={productMd.frontmatter}
-                  showSample={showSample}
-                />
-              ))}
+              {products
+                .filter(productMd => productMd.frontmatter.shown === true)
+                .sort(sortFunction)
+                .map((productMd: MarkdownData, productIdx: number) => (
+                  <Product
+                    key={`product-${productIdx}`}
+                    product={productMd.frontmatter}
+                    showSample={showSample}
+                  />
+                ))}
             </ul>
           </div>
         </div>
@@ -167,8 +170,8 @@ export const pageAndLanguageQuery = graphql`
         frontmatter {
           lang
           pinned
+          shown
           slug
-
           name
           sector
           sample
@@ -177,7 +180,7 @@ export const pageAndLanguageQuery = graphql`
           category
           featuredImage {
             childImageSharp {
-              gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+              gatsbyImageData(width: 800, placeholder: DOMINANT_COLOR, formats: [AUTO, AVIF, WEBP])
             }
           }
           dimensions
