@@ -170,8 +170,8 @@ export const pageAndLanguageQuery = graphql`
         frontmatter {
           lang
           pinned
+          shown
           slug
-
           name
           sector
           sample
