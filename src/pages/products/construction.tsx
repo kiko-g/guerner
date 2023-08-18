@@ -78,10 +78,10 @@ export default function ProductsConstructionPage({ data }: Props) {
       default:
       case 'Alphabetic (A to Z)':
         return (a: MarkdownData, b: MarkdownData) =>
-          a.frontmatter.name.localeCompare(b.frontmatter.name) ? -1 : 1
+          a.frontmatter.name.localeCompare(b.frontmatter.name)
       case 'Alphabetic (Z to A)':
         return (a: MarkdownData, b: MarkdownData) =>
-          a.frontmatter.name.localeCompare(b.frontmatter.name) ? 1 : -1
+          -a.frontmatter.name.localeCompare(b.frontmatter.name)
       case 'Sample ID (Ascending)':
         return (a: MarkdownData, b: MarkdownData) =>
           a.frontmatter.sample < b.frontmatter.sample ? -1 : 1
