@@ -60,4 +60,5 @@ if __name__ == "__main__":
         print("Example: python scripts/content.py src/markdown")
         sys.exit(1)
 
-    main(sys.argv[1])
+    base_directory = sys.argv[1]
+    main(base_directory)

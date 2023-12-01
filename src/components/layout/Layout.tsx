@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import { Seo, BackToTopButton, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { inject } from '@vercel/analytics'
 
 type Props = {
   children: ReactNode
@@ -11,13 +12,12 @@ type Props = {
   fullWidth?: boolean
 }
 
-export default function Layout({
-  children,
-  location = 'Unknown',
-  hero = false,
-  fullWidth = false,
-}: Props) {
+export default function Layout(props: Props) {
+  inject()
+
   const { t, language } = useI18next()
+  const { children, location = 'Unknown', hero = false, fullWidth = false } = props
+
   const data = useStaticQuery(graphql`
     query titleQuery {
       site {
