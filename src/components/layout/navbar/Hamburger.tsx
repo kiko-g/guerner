@@ -20,7 +20,7 @@ export default function Hamburger({ open }: HamburgerProps) {
         'z-50 lg:hidden',
         open
           ? 'absolute right-2 top-2 my-auto flex h-6 w-auto items-center justify-end gap-x-2'
-          : 'flex w-full items-center justify-between'
+          : 'flex w-full items-center justify-between',
       )}
     >
       {open ? (

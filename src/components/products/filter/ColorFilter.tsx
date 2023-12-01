@@ -67,7 +67,7 @@ export default function ColorFilter({ hook }: Props) {
                 className={classNames(
                   'z-40 rounded-md p-4 shadow',
                   'border-2 border-white bg-white dark:border-[#434b51] dark:bg-[#2e373d]',
-                  open ? 'absolute right-0 mt-2 w-32' : 'hidden'
+                  open ? 'absolute right-0 mt-2 w-32' : 'hidden',
                 )}
               >
                 <div className="grid grid-cols-3 gap-4">
@@ -77,7 +77,7 @@ export default function ColorFilter({ hook }: Props) {
                     className={classNames(
                       pickedColor === '' ? 'ring-2 ring-primary dark:ring-secondary' : '',
                       'flex h-6 w-6 items-center justify-center rounded-full p-[0px]',
-                      'z-50 bg-white transition hover:cursor-pointer hover:opacity-80'
+                      'z-50 bg-white transition hover:cursor-pointer hover:opacity-80',
                     )}
                   >
                     <XMarkIcon className="h-5 w-5 text-red-700 dark:text-rose-500" />
@@ -94,7 +94,7 @@ export default function ColorFilter({ hook }: Props) {
                           : '',
                         'flex h-6 w-6 items-center justify-center rounded-full p-1',
                         'z-50 shadow-md transition hover:cursor-pointer hover:opacity-80',
-                        color === '' ? 'p-[0px]' : color
+                        color === '' ? 'p-[0px]' : color,
                       )}
                     />
                   ))}

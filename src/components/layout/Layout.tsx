@@ -36,7 +36,7 @@ export default function Layout({
         'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium opacity-[99%]',
         hero
           ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
-          : 'bg-ice text-gray-800 dark:bg-navy dark:text-white'
+          : 'bg-ice text-gray-800 dark:bg-navy dark:text-white',
       )}
     >
       <Seo title={location} />
@@ -44,7 +44,7 @@ export default function Layout({
       <div
         className={classNames(
           'z-10 mx-auto mb-auto flex-1',
-          fullWidth ? 'max-w-full' : 'max-w-6xl px-4'
+          fullWidth ? 'max-w-full' : 'max-w-6xl px-4',
         )}
       >
         {children}

@@ -20,7 +20,7 @@ export default function LinkTranslate({ text, link, alt = false, arrow = false }
         alt
           ? `border-white bg-white/70 text-primary hover:bg-white dark:bg-white/30 dark:text-white dark:hover:bg-white dark:hover:text-tertiary`
           : `border-secondary bg-secondary/70 text-white hover:bg-secondary dark:border-tertiary 
-          dark:bg-tertiary/25 dark:text-white dark:hover:bg-tertiary`
+          dark:bg-tertiary/25 dark:text-white dark:hover:bg-tertiary`,
       )}
     >
       <span>{text}</span>

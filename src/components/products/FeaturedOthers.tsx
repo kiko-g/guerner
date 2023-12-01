@@ -1,6 +1,7 @@
 import React from 'react'
 import { LinkFill } from '../utils'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { Banner2 } from '../../images'
 
 type Props = {}
 
@@ -13,8 +14,12 @@ export default function FeaturedOthers({}: Props) {
 
   return (
     <section className="relative w-full">
-      <div className="absolute left-0 top-0 z-[-1] h-full w-full" />
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 p-8 dark:from-slate-600 dark:to-slate-700 lg:p-12 lg:px-16 lg:py-24">
+      <img
+        src={Banner2}
+        alt="Other Products from Guerner"
+        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover"
+      />
+      <div className="bg-gradient-to-l from-black/75 via-black/50 to-black/25 p-8 lg:p-12 lg:px-16 lg:py-24">
         <div className="flex flex-col items-center text-center sm:text-center lg:items-center">
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl lg:mb-1 lg:text-5xl">
             {header}

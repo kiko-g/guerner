@@ -26,7 +26,7 @@ export default function CopyButton({ text }: Props) {
       onClick={() => handleCopied(text)}
       className={classNames(
         'rounded-full p-1 transition',
-        copied ? '' : 'hover:text-primary dark:hover:text-tertiary'
+        copied ? '' : 'hover:text-primary dark:hover:text-tertiary',
       )}
     >
       {copied ? (

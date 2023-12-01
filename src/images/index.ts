@@ -7,8 +7,8 @@ import CompanyShowcase2 from './company-2.webp'
 import CompanyShowcase3 from './company-3.webp'
 import Banner from './banner-a.webp'
 import Banner2 from './banner-b.webp'
-import Agriculture from './agriculture.webp'
-import Construction from './construction.webp'
+import Agriculture from './agriculture.jpg'
+import Construction from './construction.jpg'
 
 export {
   Agriculture,

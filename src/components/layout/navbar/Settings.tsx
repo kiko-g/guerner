@@ -113,7 +113,7 @@ function LanguageSwitcher() {
                   'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white lg:text-sm',
                   active
                     ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-500 hover:text-white dark:bg-emerald-700/50 dark:text-emerald-200 dark:hover:bg-emerald-500'
-                    : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500'
+                    : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500',
                 )}
               >
                 <Link
@@ -124,7 +124,7 @@ function LanguageSwitcher() {
                   <span
                     className={classNames(
                       'truncate uppercase group-hover:text-white',
-                      active ? 'text-emerald-500' : 'font-normal'
+                      active ? 'text-emerald-500' : 'font-normal',
                     )}
                   >
                     {lang}

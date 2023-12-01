@@ -36,7 +36,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
             className={classNames(
               'z-40 rounded-md px-0 py-1 text-sm shadow-xl',
               'border-2 border-white bg-white dark:border-[#434b51] dark:bg-[#2e373d]',
-              open ? 'absolute right-0 mt-2 w-full lg:w-64' : 'hidden'
+              open ? 'absolute right-0 mt-2 w-full lg:w-64' : 'hidden',
             )}
           >
             {/* Option box header */}
@@ -65,7 +65,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
                     className={({ active }) =>
                       classNames(
                         'relative cursor-default select-none py-2 pl-3 pr-3',
-                        active ? 'bg-slate-200 dark:bg-slate-600' : ''
+                        active ? 'bg-slate-200 dark:bg-slate-600' : '',
                       )
                     }
                   >

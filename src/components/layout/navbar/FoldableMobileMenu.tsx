@@ -37,7 +37,7 @@ export default function FoldableMobileMenu({ location, navigation }: FoldableMob
                   'flex h-auto items-center justify-center lowercase tracking-wide transition',
                   active
                     ? 'font-bold text-white dark:text-white'
-                    : 'font-normal text-white/25 hover:text-white dark:text-white/30 dark:hover:text-white'
+                    : 'font-normal text-white/25 hover:text-white dark:text-white/30 dark:hover:text-white',
                 )}
               >
                 <span className="flex items-center justify-center gap-x-1.5">
