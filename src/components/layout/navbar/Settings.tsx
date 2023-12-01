@@ -38,6 +38,7 @@ export default function Settings() {
                   <LanguageSwitcher />
                   <DarkModeToggler />
                   <AnalyticsLink />
+                  <AdminPageLink />
                 </div>
                 <div className="bg-slate-100 p-4 dark:bg-slate-700">
                   <Feedback />
@@ -85,20 +86,23 @@ function LanguageSwitcher() {
             </svg>
           </svg>
         </div>
-        <div className="ml-2 flex w-full items-center justify-between px-2">
+        <div className="ml-4 flex w-full items-start self-stretch h-full justify-between pr-2">
           <div className="flex flex-col">
             <p className="text-left text-sm font-medium text-gray-900 dark:text-white">
               {t('selectLang')}
             </p>
-            <p className="text-left text-sm text-gray-500 dark:text-gray-300">
+            <p className="text-left text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
               {t('currentLang')} <span className="uppercase">{language}</span>
             </p>
           </div>
-          {open ? (
-            <MinusIcon className="h-5 w-5 text-gray-900 dark:text-white" />
-          ) : (
-            <ChevronDownIcon className="h-5 w-5 text-gray-900 dark:text-white" />
-          )}
+
+          <span className="self-center">
+            {open ? (
+              <MinusIcon className="h-5 w-5 text-gray-900 dark:text-white" />
+            ) : (
+              <ChevronDownIcon className="h-5 w-5 text-gray-900 dark:text-white" />
+            )}
+          </span>
         </div>
       </button>
 
@@ -189,11 +193,11 @@ function DarkModeToggler() {
           )}
         </svg>
       </div>
-      <div className="ml-4">
+      <div className="ml-4 self-stretch h-full flex flex-col items-stretch">
         <p className="text-left text-sm font-medium text-gray-900 dark:text-white">
           {t('darkMode')}
         </p>
-        <p className="text-sm text-gray-500 dark:text-gray-300">
+        <p className="text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
           {enabled ? t('enabled') : t('disabled')}
         </p>
       </div>
@@ -202,9 +206,12 @@ function DarkModeToggler() {
 }
 
 function AnalyticsLink() {
+  const { t } = useI18next()
+
   return (
     <a
       target="_blank"
+      rel="noreferrer"
       href="https://vercel.com/kiko-g-s-team/guerner/analytics?environment=production&period=30d"
       className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
     >
@@ -238,28 +245,77 @@ function AnalyticsLink() {
           <rect x="33" y="12" width="2" height="24" className="fill-[#10b981] dark:fill-tertiary" />
         </svg>
       </div>
-      <div className="ml-4">
-        <p className="text-sm font-medium text-gray-900 dark:text-white">Analytics</p>
-        <p className="text-sm text-gray-500 dark:text-gray-300">Keep track of your growth</p>
+      <div className="ml-4 self-stretch h-full flex flex-col items-stretch">
+        <p className="text-sm font-medium text-gray-900 dark:text-white">{t('analytics')}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
+          {t('analytics.description')}
+        </p>
       </div>
     </a>
   )
 }
 
-function Feedback() {
+function AdminPageLink() {
+  const { t } = useI18next()
+
   return (
     <Link
+      to="/admin"
+      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
+    >
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
+        <svg
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <rect width="48" height="48" rx="8" className="fill-[#ecfdf5] dark:fill-[#e9fff5]" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="-6 -6 36 36"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="fill-trans stroke-[#10b981] dark:fill-[#e9fff5] dark:stroke-tertiary"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.867 19.125h.008v.008h-.008v-.008z"
+            />
+          </svg>
+        </svg>
+      </div>
+      <div className="ml-4 self-stretch h-full flex flex-col items-stretch">
+        <p className="text-sm font-medium text-gray-900 dark:text-white">{t('admin')}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
+          {t('admin.description')}
+        </p>
+      </div>
+    </Link>
+  )
+}
+
+function Feedback() {
+  const { t } = useI18next()
+
+  return (
+    <a
       target="_blank"
       rel="noreferrer"
-      to="https://github.com/kiko-g/guerner/issues"
+      href="https://github.com/kiko-g/guerner/issues"
       className="dark:hover:bg-slate- flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-600"
     >
-      <span className="flex items-center">
-        <span className="text-sm font-medium text-gray-900 dark:text-white">Feedback</span>
-      </span>
-      <span className="block text-sm text-gray-500 dark:text-gray-200">
-        Open an issue to get developer support
-      </span>
-    </Link>
+      <p className="text-sm font-medium text-gray-900 mb-0.5 dark:text-white">{t('feedback')}</p>
+      <p className="text-sm text-gray-500 dark:text-gray-200">{t('feedback.description')}</p>
+    </a>
   )
 }

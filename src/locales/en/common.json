@@ -1,4 +1,10 @@
 {
+  "analytics": "Analytics",
+  "analytics.description": "Keep track of your growth, users and website activity",
+  "admin": "Admin",
+  "admin.description": "Manage your website and content with ease",
+  "feedback": "Help and Feedback",
+  "feedback.description": "Open an issue to get developer support",
   "hello": "Hello",
   "madeBy": "by",
   "home": "Home",

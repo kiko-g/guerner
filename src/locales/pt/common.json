@@ -1,4 +1,10 @@
 {
+  "analytics": "Analíticas",
+  "analytics.description": "Acompanhe o seu crescimento, visitas ao site e outras métricas associadas",
+  "admin": "Administração",
+  "admin.description": "Gira o seu site e conteúdo facilmente",
+  "feedback": "Ajuda e Feedback",
+  "feedback.description": "Abra um ticket de suporte no Github para resolver problemas",
   "hello": "olá",
   "madeBy": "Feito por",
   "home": "Início",
