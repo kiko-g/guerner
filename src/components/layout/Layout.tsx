@@ -53,7 +53,7 @@ export default function Layout(props: Props) {
         {children}
       </div>
       <BackToTopButton />
-      <Footer title={title} special={hero} />
+      <Footer title={title} />
     </div>
   )
 }

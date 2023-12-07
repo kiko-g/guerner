@@ -5,10 +5,9 @@ import classNames from 'classnames'
 
 type Props = {
   title: string
-  special?: boolean
 }
 
-export default function Footer({ title, special }: Props) {
+export default function Footer({ title }: Props) {
   const { t } = useTranslation()
 
   const links = [
@@ -23,12 +22,7 @@ export default function Footer({ title, special }: Props) {
   ]
 
   return (
-    <footer
-      className={classNames(
-        'z-10 flex flex-col px-8 py-8 text-sm text-white lg:px-12 lg:py-12 lg:text-base',
-        special ? 'bg-primary dark:bg-navy' : 'bg-primary dark:bg-gray-800',
-      )}
-    >
+    <footer className="bg-navy dark:bg-gray-800 z-10 flex flex-col px-8 py-8 text-sm text-white lg:px-12 lg:py-12 lg:text-base">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col items-start gap-2 font-normal">
           <Link
