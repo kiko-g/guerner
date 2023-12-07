@@ -3,7 +3,9 @@ import classNames from 'classnames'
 import { Seo, BackToTopButton, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import { inject } from '@vercel/analytics'
+
+import { inject as injectVercelAnalytics } from '@vercel/analytics'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 type Props = {
   children: ReactNode
@@ -13,8 +15,6 @@ type Props = {
 }
 
 export default function Layout(props: Props) {
-  inject()
-
   const { t, language } = useI18next()
   const { children, location = 'Unknown', hero = false, fullWidth = false } = props
 
@@ -29,6 +29,8 @@ export default function Layout(props: Props) {
   `)
   const title = data.site.siteMetadata?.title || 'Site Title'
 
+  injectVercelAnalytics()
+
   return (
     <div
       id="layout"
@@ -39,6 +41,7 @@ export default function Layout(props: Props) {
           : 'bg-ice text-gray-800 dark:bg-navy dark:text-white',
       )}
     >
+      <SpeedInsights />
       <Seo title={location} />
       <Navbar location={location} title={title} special={hero} />
       <div

@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.10",
     "@vercel/analytics": "^1.1.1",
     "@vercel/gatsby-plugin-vercel-analytics": "^1.0.10",
+    "@vercel/speed-insights": "^1.0.0",
     "classnames": "^2.3.2",
     "gatsby": "^5.4.2",
     "gatsby-plugin-gatsby-cloud": "^5.4.0",
