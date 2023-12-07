@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
 import { inject as injectVercelAnalytics } from '@vercel/analytics'
-import { SpeedInsights } from '@vercel/speed-insights/next'
+import { injectSpeedInsights } from '@vercel/speed-insights'
 
 type Props = {
   children: ReactNode
@@ -30,6 +30,7 @@ export default function Layout(props: Props) {
   const title = data.site.siteMetadata?.title || 'Site Title'
 
   injectVercelAnalytics()
+  injectSpeedInsights({ framework: 'gatsby' })
 
   return (
     <div
@@ -41,7 +42,6 @@ export default function Layout(props: Props) {
           : 'bg-ice text-gray-800 dark:bg-navy dark:text-white',
       )}
     >
-      <SpeedInsights />
       <Seo title={location} />
       <Navbar location={location} title={title} special={hero} />
       <div
