@@ -35,9 +35,7 @@ export default function ProductTemplate({ data }: Props) {
     return { featuredImage, secondaryImage, tertiaryImage }
   }, [frontmatter])
 
-  const isImageGridRow = true
   const unsplash = false
-
   const isMockImageGrid =
     !unsplash &&
     featuredImage !== undefined &&
@@ -81,9 +79,15 @@ export default function ProductTemplate({ data }: Props) {
         </header>
 
         {/* Name and description */}
-        <div className="flex flex-col py-4">
-          <h1 className="mb-4 max-w-sm text-4xl font-semibold">{frontmatter.name}</h1>
-          <p className="max-w-md leading-relaxed">{frontmatter.description}</p>
+        <div className="flex py-4 gap-8">
+          <div className="flex flex-col flex-1">
+            <h1 className="mb-4 max-w-sm text-4xl decoration-secondary underline dark:decoration-tertiary font-semibold">
+              {frontmatter.name}
+            </h1>
+            <p className="max-w-lg leading-relaxed">{frontmatter.description}</p>
+          </div>
+
+          <div className="flex flex-col w-4 bg-gradient-to-b from-tertiary to-secondary" />
         </div>
 
         {/* Characteristics Banner */}
@@ -106,7 +110,6 @@ export default function ProductTemplate({ data }: Props) {
         {/* Image Grid */}
         {isMockImageGrid ? (
           <ImageGrid
-            row={isImageGridRow}
             featuredImage={featuredImage}
             secondaryImage={secondaryImage}
             tertiaryImage={tertiaryImage}
@@ -289,42 +292,34 @@ function MockImageGrid() {
 }
 
 type ImageGridProps = {
-  row?: boolean
   featuredImage: IGatsbyImageData
   secondaryImage: IGatsbyImageData
   tertiaryImage: IGatsbyImageData
 }
 
-function ImageGrid({ row = false, featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
-  return row ? (
-    <div className="w-full items-center justify-center flex flex-col lg:flex-row gap-6 bg-gray-50 dark:bg-white/5">
-      <GatsbyImage
-        image={featuredImage}
-        alt="featured"
-        className="w-full h-full lg:h-full lg:w-full object-cover"
-      />
-      <GatsbyImage
-        image={secondaryImage}
-        alt="secondary"
-        className="lg:h-full lg:w-full object-cover hidden lg:flex"
-      />
-      <GatsbyImage
-        image={tertiaryImage}
-        alt="tertiary"
-        className="lg:h-full lg:w-full object-cover hidden lg:flex"
-      />
-    </div>
-  ) : (
-    <div className="grid w-full bg-gray-50 py-4 dark:bg-white/5 grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
-      <GatsbyImage
-        alt="featured"
-        image={featuredImage}
-        className="max-h-[200px] lg:max-h-[416px]"
-      />
-
-      <div className="hidden w-full lg:grid lg:grid-cols-1 lg:gap-4">
-        <GatsbyImage image={secondaryImage} alt="secondary" className="h-full lg:max-h-[200px]" />
-        <GatsbyImage image={tertiaryImage} alt="tertiary" className="h-full lg:max-h-[200px]" />
+function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
+  return (
+    <div className="w-full flex flex-col lg:flex-row gap-8 bg-slate-100 p-8 dark:bg-slate-300/5 rounded">
+      <div className="w-full lg:flex-1 my-auto">
+        <GatsbyImage
+          image={featuredImage}
+          alt="featured"
+          className="w-full my-auto object-cover rounded shadow-xl"
+        />
+      </div>
+      <div className="w-full my-auto lg:flex-1 hidden lg:block">
+        <GatsbyImage
+          image={secondaryImage}
+          alt="secondary"
+          className="w-full object-cover rounded shadow-xl"
+        />
+      </div>
+      <div className="w-full my-auto lg:flex-1 hidden lg:block">
+        <GatsbyImage
+          image={tertiaryImage}
+          alt="tertiary"
+          className="w-full object-cover rounded shadow-xl"
+        />
       </div>
     </div>
   )
@@ -357,7 +352,7 @@ function UnsplashImageGrid() {
 
 export const pageQuery = graphql`
   fragment imageData on ImageSharp {
-    gatsbyImageData(width: 800, placeholder: DOMINANT_COLOR, formats: [AUTO, AVIF, WEBP])
+    gatsbyImageData(width: 396, placeholder: DOMINANT_COLOR, formats: [AUTO])
   }
 
   query ($language: String!, $id: String!) {
