@@ -94,7 +94,7 @@ function Section({ title, topics, iconName }: SectionProps) {
     icon: iconName,
   }
   return (
-    <div className="flex w-full max-w-xl flex-col items-center justify-center gap-4 rounded-xl bg-black/20 px-4 py-8 lg:mx-0">
+    <div className="flex w-full max-w-xl flex-col items-center justify-center gap-4 rounded-xl bg-black/20 dark:bg-white/[4%] px-4 py-8 lg:mx-0">
       <div className="flex items-start justify-center gap-4">
         <icon.icon className="h-12 w-12 lg:h-14 lg:w-14" />
         <span className="ml-0 max-w-[12rem] text-center font-lexend text-lg font-normal leading-6 lg:text-xl">

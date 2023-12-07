@@ -66,7 +66,7 @@ export default function Production({}: Props) {
   return (
     <section id={sectionId} className="py-6 lg:py-12">
       {/* Production Centers */}
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-6 py-6 lg:bg-black/20 lg:px-24 lg:py-20">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-6 py-6 lg:bg-black/20 lg:dark:bg-white/[4%] lg:px-24 lg:py-20">
         <h3 className="w-full mb-6 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
           {title}
         </h3>
@@ -132,7 +132,7 @@ export default function Production({}: Props) {
 
       {/* Production Description */}
       <div className="relative flex flex-col items-center justify-center backdrop-blur">
-        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-black/20 px-8 py-8 text-white dark:bg-black/20 lg:mx-0 lg:px-16 lg:py-16">
+        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-black/20 px-8 py-8 text-white dark:bg-white/[4%] lg:mx-0 lg:px-16 lg:py-16">
           <article
             dangerouslySetInnerHTML={{ __html: html }}
             className="article alt lg:max-w-4xl"
