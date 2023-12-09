@@ -32,7 +32,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
         <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
           <img
             alt="Guerner"
-            src={'/images/icon.png'}
+            src="/images/icon.png"
             className="z-20 inline-flex h-9 w-9 rounded-full transition"
           />
           <span className="max-w-[6rem] text-xs font-semibold leading-3 tracking-tighter duration-150 group-hover:underline lg:text-sm lg:leading-5">

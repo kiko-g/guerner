@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Building } from '../../images'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import { StaticImage } from 'gatsby-plugin-image'
 
 type Frontmatter = {
   lang: string
@@ -56,7 +56,12 @@ export default function Presentation({}: Props) {
         <h3 className="mb-4 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">
           {t('offices')}
         </h3>
-        <img alt="Building" src={Building} className="h-full rounded-3xl object-cover shadow-xl" />
+        <StaticImage
+          alt="Building"
+          src="../../images/building.webp"
+          placeholder="blurred"
+          className="h-full rounded-3xl object-cover shadow-xl"
+        />
       </div>
     </section>
   )

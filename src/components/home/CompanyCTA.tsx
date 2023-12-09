@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { LinkFill } from '../utils'
-import { CompanyShowcase1, CompanyShowcase2 } from '../../images'
+import { StaticImage } from 'gatsby-plugin-image'
 
 type Props = {}
 
@@ -40,9 +40,10 @@ export default function CompanyCTA({}: Props) {
         {/* Images */}
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <Link to={`${routeCompany}#presentation`} className="group relative block bg-black">
-            <img
+            <StaticImage
               alt={`company-showcase-${presentationSectionHeader}`}
-              src={CompanyShowcase1}
+              src="../../images/company-1.webp"
+              placeholder="blurred"
               className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40 xl:h-[32rem]"
             />
 
@@ -60,9 +61,10 @@ export default function CompanyCTA({}: Props) {
           </Link>
 
           <Link to={`${routeCompany}#production`} className="group relative block bg-black">
-            <img
+            <StaticImage
+              src="../../images/company-2.webp"
               alt={`company-showcase-${productionSectionHeader}`}
-              src={CompanyShowcase2}
+              placeholder="blurred"
               className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40 xl:h-[32rem]"
             />
 

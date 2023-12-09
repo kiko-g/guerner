@@ -47,7 +47,7 @@ export default function Hamburger({ open }: HamburgerProps) {
           <Link to="/">
             <img
               alt="Guerner"
-              src={'/images/icon.png'}
+              src="/images/icon.png"
               className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
             />
           </Link>

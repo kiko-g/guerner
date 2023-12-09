@@ -1,8 +1,8 @@
 import React from 'react'
-import { Building } from '../../images'
 import { PhoneIcon, InboxArrowDownIcon, MapPinIcon } from '@heroicons/react/24/solid'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import CopyButton from './CopyButton'
+import { StaticImage } from 'gatsby-plugin-image'
 
 type Props = {}
 
@@ -33,8 +33,9 @@ export default function ContactsBanner({}: Props) {
   return (
     <div className="flex w-full flex-col items-center justify-center gap-x-4 gap-y-4">
       {/* Image */}
-      <img
-        src={Building}
+      <StaticImage
+        src="../../images/building.webp"
+        placeholder="blurred"
         alt="Guerner Building"
         className="h-48 w-full rounded bg-primary object-cover object-center dark:bg-tertiary lg:h-96"
       />

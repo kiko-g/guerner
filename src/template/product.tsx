@@ -330,6 +330,7 @@ function UnsplashImageGrid() {
     <div className="grid w-full grid-cols-1 gap-4 overflow-hidden lg:grid-cols-2">
       <StaticImage
         alt="product-1"
+        placeholder="blurred"
         src="https://source.unsplash.com/random/?agriculture"
         className="max-h-[200px] lg:max-h-[416px]"
       />
@@ -337,11 +338,13 @@ function UnsplashImageGrid() {
       <div className="hidden w-full lg:grid lg:grid-cols-1 lg:gap-4">
         <StaticImage
           alt="product-2"
+          placeholder="blurred"
           src="https://source.unsplash.com/random/?gardening"
           className="h-full lg:max-h-[200px]"
         />
         <StaticImage
           alt="product-3"
+          placeholder="blurred"
           src="https://source.unsplash.com/random/?garden"
           className="h-full lg:max-h-[200px]"
         />

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Link } from 'gatsby'
-import { Banner } from '../../images'
+import { StaticImage } from 'gatsby-plugin-image'
 
 type Props = {}
 
@@ -52,9 +52,10 @@ export default function SendEmailForm({}: Props) {
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
         {/* Desktop header */}
         <div className="relative flex h-32 items-end rounded-t lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
-          <img
+          <StaticImage
             alt="Night Banner"
-            src={Banner}
+            src="../../images/banner-a.webp"
+            placeholder="blurred"
             className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top opacity-80 lg:rounded-none lg:rounded-l"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
@@ -64,8 +65,8 @@ export default function SendEmailForm({}: Props) {
               bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
             >
               <img
-                src={'/images/icon.png'}
                 alt="Guerner"
+                src="/images/icon.png"
                 className="z-20 inline-flex h-full w-full rounded-full transition"
               />
             </Link>
@@ -86,7 +87,7 @@ export default function SendEmailForm({}: Props) {
               bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
               >
                 <img
-                  src={'/images/icon.png'}
+                  src="/images/icon.png"
                   alt="Guerner"
                   className="z-20 inline-flex h-full w-full rounded-full transition"
                 />
