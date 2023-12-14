@@ -5,9 +5,9 @@ const mode = process.env.NODE_ENV
 module.exports = {
   siteMetadata: {
     title: `Guerner & Irmãos S.A.`,
-    description: `Guerner & Irmãos S.A. website`,
+    description: `Website da Guerner & Irmãos S.A.`,
     author: `@kikogoncalves`,
-    siteUrl: `https://guerner.netlify.app/`,
+    siteUrl: `https://guerner.vercel.app/`,
   },
   plugins: [
     `gatsby-plugin-offline`,
@@ -99,10 +99,8 @@ module.exports = {
         supportedLngs: [`pt`, `en`],
         siteUrl:
           mode !== 'production' ? 'http://localhost:8000/' : 'https://guernerpt.netlify.app/',
-        // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
-        trailingSlash: 'always',
+        trailingSlash: 'always', // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         i18nextOptions: {
-          // you can pass any i18next options
           debug: false,
           defaultNS: 'common',
           interpolation: {
@@ -110,13 +108,14 @@ module.exports = {
           },
           keySeparator: false,
           nsSeparator: false,
+          // ... any other i18next options
         },
       },
     },
     {
       resolve: '@vercel/gatsby-plugin-vercel-analytics',
       options: {
-        debug: false, // (optional) Prints metrics in the console when true
+        debug: false,
       },
     },
   ],
