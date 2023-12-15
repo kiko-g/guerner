@@ -32,7 +32,7 @@ The product line is split into 2 main categories: **agricultural** and **constru
 
 The deployment of the website is done on Vercel, which provides the service of a maximum of one website with free analytics per team in account. These are important for the company to understand the traffic and the usage of the website. To use the analytics, make sure you have the correct permissions to do so and head over to the [Vercel Analytics Dashboard for Guener](https://vercel.com/kiko-g-s-team/guerner/analytics). Inside you will see the website and the analytics tab. There you can see the analytics of the website. You can also find a link to this dashboard in the settings popover on the header of the website.
 
-![using-analytics-guerner](https://github.com/kiko-g/guerner/assets/40745490/469e8940-9b19-42a1-8f04-3aef06029264)
+https://github.com/kiko-g/guerner/assets/40745490/469e8940-9b19-42a1-8f04-3aef06029264
 
 ## Developer Support
 
