@@ -1,10 +1,10 @@
 # Guerner & Irmãos S.A.
 
-![Vercel](https://vercelbadge.vercel.app/api/kiko-g/guerner)
+![Vercel](https://vercelbadge.vercel.app/api/kiko-g/guerner?style=for-the-badge)
 
 ## About
 
-Website repository for [Guerner & Irmãos S.A.](https://guerner.vercel.app), a company focused on distributing High-performance technical textiles and fabrics for agriculture and construction, based in Gaia, Porto, Portugal. Built with Gatsby 5 employing React with Typescript.
+This is the repository for the website of [Guerner & Irmãos S.A.](https://guerner.vercel.app), a company focused on distributing High-performance technical textiles and fabrics for agriculture and construction, based in Gaia, Porto, Portugal. The website was built with Gatsby 5 employing React with Typescript.
 
 ## Products
 
@@ -32,8 +32,13 @@ The product line is split into 2 main categories: **agricultural** and **constru
 
 The deployment of the website is done on Vercel, which provides the service of a maximum of one website with free analytics per team in account. These are important for the company to understand the traffic and the usage of the website. To use the analytics, make sure you have the correct permissions to do so and head over to the [Vercel Analytics Dashboard for Guener](https://vercel.com/kiko-g-s-team/guerner/analytics). Inside you will see the website and the analytics tab. There you can see the analytics of the website. You can also find a link to this dashboard in the settings popover on the header of the website.
 
+![using-analytics-guerner](https://github.com/kiko-g/guerner/assets/40745490/469e8940-9b19-42a1-8f04-3aef06029264)
+
 ## Developer Support
 
 If you are a content manager of this website and need developer support, you can [open issues on GitHub](https://github.com/kiko-g/guerner/issues) where the repository of the website is hosted. You can also find a link to this resource in the settings popover on the header of the website.
 
 For more information on development and technical matters read the [development notes](dev.md) file.
+
+<img width="491" alt="image" src="https://github.com/kiko-g/guerner/assets/40745490/e82f563b-4132-4ffe-9b70-96daaeed770d">
+
