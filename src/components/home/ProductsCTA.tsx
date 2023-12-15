@@ -1,8 +1,9 @@
 import React from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
-import { Agriculture, Construction } from '../../images'
 import { LinkFill } from '../utils'
-import NavigateCtaDiv from './NavigateCtaDiv'
+import { StaticImage } from 'gatsby-plugin-image'
+import { Link } from 'gatsby'
+import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 
 type Props = {}
 
@@ -24,16 +25,41 @@ export default function ProductsCTA({}: Props) {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         {/* Products */}
         <div className="order-2 grid grid-cols-2 lg:order-1 lg:grid-cols-1">
-          <NavigateCtaDiv
-            image={Agriculture}
-            link={routeAgriculture}
-            actionText={takeMeThereAgriculture}
-          />
-          <NavigateCtaDiv
-            image={Construction}
-            link={routeConstruction}
-            actionText={takeMeThereConstruction}
-          />
+          <Link to={routeAgriculture} className="group relative overflow-hidden bg-center">
+            <StaticImage
+              src="../../images/agriculture.jpg"
+              placeholder="blurred"
+              alt={`guerner-nav-agriculture`}
+              className="max-h-full min-h-[16rem] w-full object-cover blur-sm transition duration-300 group-hover:blur-0 lg:min-h-[20rem]"
+            />
+            <div className="absolute inset-0 flex h-full w-full items-center justify-center">
+              <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
+              <div className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center font-lexend text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
+                <span className="transition hover:opacity-80 group-hover:translate-x-2">
+                  {takeMeThereAgriculture}
+                </span>
+                <ArrowLongRightIcon className="hidden h-8 w-8 transition group-hover:translate-x-2 lg:flex" />
+              </div>
+            </div>
+          </Link>
+
+          <Link to={routeConstruction} className="group relative overflow-hidden bg-center">
+            <StaticImage
+              src="../../images/construction.jpg"
+              placeholder="blurred"
+              alt={`guerner-nav-construction`}
+              className="max-h-full min-h-[16rem] w-full object-cover blur-sm transition duration-300 group-hover:blur-0 lg:min-h-[20rem]"
+            />
+            <div className="absolute inset-0 flex h-full w-full items-center justify-center">
+              <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
+              <div className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center font-lexend text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
+                <span className="transition hover:opacity-80 group-hover:translate-x-2">
+                  {takeMeThereConstruction}
+                </span>
+                <ArrowLongRightIcon className="hidden h-8 w-8 transition group-hover:translate-x-2 lg:flex" />
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* CTA */}
