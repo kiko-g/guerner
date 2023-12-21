@@ -4,11 +4,13 @@ from PIL import Image, ImageFilter
 
 
 def enhance_image(image_path):
+    width_threshold = 512
+    height_threshold = 512
     with Image.open(image_path) as img:
         width, height = img.size
 
-        if width < 512 or height < 512:
-            ratio = max(512 / width, 512 / height)
+        if width < width_threshold or height < height_threshold:
+            ratio = max(width_threshold / width, height_threshold / height)
             new_size = (int(width * ratio), int(height * ratio))
             # Resize the image with ANTIALIAS filter to reduce jaggies
             enhanced_img = img.resize(new_size, Image.ANTIALIAS)
