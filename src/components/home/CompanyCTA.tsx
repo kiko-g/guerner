@@ -42,7 +42,7 @@ export default function CompanyCTA({}: Props) {
           <Link to={`${routeCompany}#presentation`} className="group relative block bg-black">
             <StaticImage
               alt={`company-showcase-${presentationSectionHeader}`}
-              src="../../images/company-1.webp"
+              src="../../images/company-3.jpg"
               placeholder="blurred"
               className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40 xl:h-[32rem]"
             />
@@ -62,7 +62,7 @@ export default function CompanyCTA({}: Props) {
 
           <Link to={`${routeCompany}#production`} className="group relative block bg-black">
             <StaticImage
-              src="../../images/company-2.webp"
+              src="../../images/company-2.png"
               alt={`company-showcase-${productionSectionHeader}`}
               placeholder="blurred"
               className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40 xl:h-[32rem]"

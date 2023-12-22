@@ -61,7 +61,7 @@ export default function Values({}: Props) {
   const section3Topics = node!.frontmatter.section3Topics
 
   return (
-    <div className="px-4 py-16 text-white lg:px-0">
+    <div className="px-4 py-16 text-white lg:px-0 bg-black/20 dark:bg-white/[4%] rounded-3xl">
       <h2 className="mb-3 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">
         {title}
       </h2>
@@ -69,7 +69,7 @@ export default function Values({}: Props) {
         dangerouslySetInnerHTML={{ __html: html }}
         className="mx-auto mb-8 max-w-md text-center text-sm lg:text-base"
       />
-      <div className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center space-y-10">
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center space-y-4">
         <Section title={section1} topics={section1Topics} iconName={GlobeEuropeAfricaIcon} />
         <Section title={section2} topics={section2Topics} iconName={SparklesIcon} />
         <Section title={section3} topics={section3Topics} iconName={PencilSquareIcon} />
@@ -94,17 +94,17 @@ function Section({ title, topics, iconName }: SectionProps) {
     icon: iconName,
   }
   return (
-    <div className="flex w-full max-w-xl flex-col items-center justify-center gap-4 rounded-xl bg-black/20 dark:bg-white/[4%] px-4 py-8 lg:mx-0">
-      <div className="flex items-start justify-center gap-4">
+    <div className="flex w-full flex-col items-center justify-start gap-2 rounded-xl px-4 py-8 lg:mx-0">
+      <div className="flex items-center justify-center gap-4">
         <icon.icon className="h-12 w-12 lg:h-14 lg:w-14" />
-        <span className="ml-0 max-w-[12rem] text-center font-lexend text-lg font-normal leading-6 lg:text-xl">
+        <h5 className="text-center font-lexend uppercase text-lg font-normal leading-6 lg:text-xl">
           {title}
-        </span>
+        </h5>
       </div>
 
-      <ul className="list-inside text-center text-sm font-normal tracking-tight">
+      <ul className="w-full list-inside text-center text-sm font-normal tracking-tight">
         {topics.map((topic, topicIdx) => (
-          <li key={`topic-1.${topicIdx}`} className="">
+          <li key={`topic-${topicIdx}`} className="ml-4">
             {topic}
           </li>
         ))}

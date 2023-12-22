@@ -46,7 +46,7 @@ export default function Production({}: Props) {
             facilitiesNames
             facilitiesImages {
               childImageSharp {
-                gatsbyImageData(width: 800, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+                gatsbyImageData(width: 600, placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
               }
             }
             facilitiesDescriptions
@@ -71,18 +71,18 @@ export default function Production({}: Props) {
           {title}
         </h3>
 
-        <div className="flex w-full flex-col items-start justify-center gap-y-6 lg:gap-y-12">
+        <div className="flex w-full flex-col items-start justify-center">
           <Tab.Group>
-            <Tab.List className="order-2 mx-auto flex flex-row items-start justify-start gap-1 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-3 lg:text-sm">
+            <Tab.List className="mb-4 order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-4 lg:text-sm">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
                     classNames(
-                      'w-full rounded border px-2 py-1 transition lg:border-2 lg:px-4 lg:py-2',
+                      'w-full rounded border px-2 py-1 transition lg:border-2 lg:px-4 lg:py-2 hover:bg-secondary/60 dark:hover:bg-tertiary/60',
                       selected
-                        ? 'border-secondary bg-secondary/50 dark:border-tertiary dark:bg-tertiary/40'
-                        : 'border-transparent hover:bg-secondary/60 dark:hover:bg-tertiary/60',
+                        ? 'border-secondary bg-secondary/50 dark:bg-tertiary/50 dark:border-tertiary'
+                        : 'border-transparent bg-white/5 dark:bg-white/5',
                     )
                   }
                 >
@@ -127,16 +127,6 @@ export default function Production({}: Props) {
               </div>
             ) : null}
           </Tab.Group>
-        </div>
-      </div>
-
-      {/* Production Description */}
-      <div className="relative flex flex-col items-center justify-center backdrop-blur">
-        <div className="mx-4 my-32 overflow-hidden rounded-3xl bg-black/20 px-8 py-8 text-white dark:bg-white/[4%] lg:mx-0 lg:px-16 lg:py-16">
-          <article
-            dangerouslySetInnerHTML={{ __html: html }}
-            className="article alt lg:max-w-4xl"
-          />
         </div>
       </div>
     </section>
