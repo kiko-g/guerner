@@ -26,7 +26,7 @@ The product line is split into 2 main categories: **agricultural** and **constru
 - **customizableText**: the text to display if the product is customizable
 - **benefits**: array of benefits of the product
 - **specifications**: the specifications of the product
-- **comp**: array of facts related to the composition and nature of the product
+- **composition**: array of facts related to the composition and nature of the product
 
 ## Using Analytics
 
@@ -41,4 +41,3 @@ If you are a content manager of this website and need developer support, you can
 For more information on development and technical matters read the [development notes](dev.md) file.
 
 <img width="491" alt="image" src="https://github.com/kiko-g/guerner/assets/40745490/e82f563b-4132-4ffe-9b70-96daaeed770d">
-

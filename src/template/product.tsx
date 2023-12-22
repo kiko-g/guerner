@@ -229,9 +229,9 @@ export default function ProductTemplate({ data }: Props) {
             {t('composition')}
           </h5>
           <ul className="grid w-full grid-flow-row grid-cols-1 gap-x-12 lg:grid-cols-1">
-            {frontmatter.comp.map((c, cIdx) => (
+            {frontmatter.composition.map((c, cIdx) => (
               <li
-                key={`comp-${cIdx}`}
+                key={`composition-${cIdx}`}
                 className={classNames(
                   'flex items-center gap-2 border-b border-primary/20 py-4 dark:border-white/20',
                   isMobile ? cIdx < 1 && 'border-t' : cIdx < 2 && 'border-t',
@@ -394,7 +394,7 @@ export const pageQuery = graphql`
         customizableText
         benefits
         specifications
-        comp
+        composition
       }
     }
     locales: allLocale(filter: { ns: { in: ["common"] }, language: { eq: $language } }) {

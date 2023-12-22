@@ -187,7 +187,7 @@ export const pageAndLanguageQuery = graphql`
           customizableText
           benefits
           specifications
-          comp
+          composition
         }
       }
     }

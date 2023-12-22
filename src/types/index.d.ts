@@ -53,5 +53,5 @@ export type ProductFrontmatter = {
   customizableText: string
   benefits: string[]
   specifications: string
-  comp: string[]
+  composition: string[]
 }
