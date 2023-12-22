@@ -13,7 +13,7 @@ export default function FeaturedOthers({}: Props) {
   const takeMeThere = t('othersTakeMeThere')
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full h-96 overflow-hidden">
       <StaticImage
         src="../../images/banner-b.webp"
         alt="Other Products from Guerner"

@@ -13,7 +13,7 @@ export default function FeaturedConstruction({}: Props) {
   const takeMeThere = t('constructionTakeMeThere')
 
   return (
-    <section className="relative w-full">
+    <section className="relative w-full h-96 overflow-hidden">
       <StaticImage
         src="../../images/construction.jpg"
         alt="Construction @ Guerner"
