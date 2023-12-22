@@ -18,9 +18,9 @@ export default function FeaturedConstruction({}: Props) {
         src="../../images/construction.jpg"
         alt="Construction @ Guerner"
         placeholder="blurred"
-        className="absolute left-0 top-0 z-[-1] h-full w-full object-cover"
+        className="absolute left-0 top-0 z-0 h-full w-full object-cover"
       />
-      <div className="bg-gradient-to-l from-black/60 via-black/50 to-black/40 p-8 lg:p-12 lg:px-16 lg:py-24">
+      <div className="bg-gradient-to-l absolute w-full h-full top-0 left-0 from-black/60 via-black/50 to-black/40 p-8 lg:p-12 lg:px-16 lg:py-24 z-10">
         <div className="flex flex-col items-center text-center sm:text-right lg:items-end">
           <h2 className="mb-2 text-2xl font-bold text-white sm:text-3xl lg:mb-1 lg:text-5xl">
             {header}
