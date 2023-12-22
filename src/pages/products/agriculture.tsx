@@ -8,12 +8,10 @@ import { Layout } from '../../components/layout'
 import ListboxSort from '../../components/products/filter/ListboxSort'
 import GoBack from '../../components/layout/GoBack'
 import {
-  ColorFilter,
   PinToggler,
   Search,
   ViewToggler,
-  CategoryFilter,
-  Product,
+  ProductCard,
   ShowSampleToggler,
 } from '../../components/products'
 
@@ -107,14 +105,14 @@ export default function ProductsAgriculturePage({ data }: Props) {
           <div className="flex flex-col items-center justify-between gap-x-3 gap-y-3 lg:flex-row">
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
+              <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
               <ShowSampleToggler hook={[showSample, setShowSample]} />
+              <ViewToggler hook={[viewType, setViewType]} />
               <ListboxSort
                 options={sortOptions}
                 translatedOptions={sortOptions.map(option => t(option))}
                 pickedHook={[sortPicked, setSortPicked]}
               />
-              <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
-              <ViewToggler hook={[viewType, setViewType]} />
             </div>
           </div>
 
@@ -138,7 +136,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
                 .filter(productMd => productMd.frontmatter.shown === true)
                 .sort(sortFunction)
                 .map((productMd: MarkdownData, productIdx: number) => (
-                  <Product
+                  <ProductCard
                     key={`product-${productIdx}`}
                     product={productMd.frontmatter}
                     showSample={showSample}

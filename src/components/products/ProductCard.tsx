@@ -1,10 +1,8 @@
 import React from 'react'
-import classNames from 'classnames'
 import { Link } from 'gatsby'
 import { ProductFrontmatter } from '../../types'
-import { GatsbyImage, IGatsbyImageData, StaticImage, getImage } from 'gatsby-plugin-image'
-import { ArrowTopRightOnSquareIcon, PaintBrushIcon, StarIcon } from '@heroicons/react/24/solid'
-import { useI18next } from 'gatsby-plugin-react-i18next'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import { StarIcon } from '@heroicons/react/24/solid'
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 
 type Props = {
@@ -12,8 +10,7 @@ type Props = {
   showSample?: boolean
 }
 
-export default function Product({ product, showSample }: Props) {
-  const { t } = useI18next()
+export default function ProductCard({ product, showSample }: Props) {
   const route = `${product.lang}-${product.slug}`
   const showPinned = false
   const showUnsplashImage = false
@@ -29,27 +26,27 @@ export default function Product({ product, showSample }: Props) {
           <CoverImage key={`product-${product.name}`} product={product} />
         )}
 
-        {/* Floating top left */}
-        <div className="absolute left-3 top-3 z-20 flex items-center justify-center gap-x-1.5">
+        {/* Floating top right */}
+        <div className="absolute right-2 top-2 z-20 flex items-center justify-center gap-x-1.5">
           {product.pinned && showPinned ? (
-            <div className="rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-700 p-1 shadow">
+            <div className="rounded bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 p-1">
               <StarIcon className="h-4 w-4 text-white" />
             </div>
           ) : null}
         </div>
 
-        {/* Floating top right */}
-        <div className="absolute right-3 top-3 z-10 flex items-center justify-center gap-x-1.5">
+        {/* Floating top left */}
+        <div className="absolute left-2 top-2 z-10 flex items-center justify-center gap-x-1.5">
           {showSample ? (
             product.sample ? (
               <div
                 title={product.sample}
-                className="rounded-md bg-gray-800 px-2 py-1 font-lexend text-xs font-light text-white shadow"
+                className="bg-black/70 px-2 py-1 font-lexend text-xs font-light text-white shadow"
               >
                 {product.sample}
               </div>
             ) : (
-              <div className="rounded-md bg-gray-800 px-2 py-1 text-xs text-rose-500 shadow">
+              <div className="rounded-md bg-rose-700/70 px-2 py-1 text-xs text-white shadow">
                 N/A
               </div>
             )

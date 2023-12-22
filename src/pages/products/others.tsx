@@ -6,12 +6,10 @@ import { strIncludes } from '../../utils'
 import { graphql } from 'gatsby'
 import { GoBack, Layout } from '../../components/layout'
 import {
-  ColorFilter,
   PinToggler,
   Search,
   ViewToggler,
-  CategoryFilter,
-  Product,
+  ProductCard,
   ListboxSort,
   ShowSampleToggler,
 } from '../../components/products'
@@ -108,13 +106,13 @@ export default function ProductsOthersPage({ data }: Props) {
             <Search hook={[searchQuery, setSearchQuery]} />
             <div className="flex w-full items-center justify-end gap-x-2 lg:w-auto">
               <ShowSampleToggler hook={[showSample, setShowSample]} />
+              <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
+              <ViewToggler hook={[viewType, setViewType]} />
               <ListboxSort
                 options={sortOptions}
                 translatedOptions={sortOptions.map(option => t(option))}
                 pickedHook={[sortPicked, setSortPicked]}
               />
-              <PinToggler hook={[pinnedOnly, setPinnedOnly]} />
-              <ViewToggler hook={[viewType, setViewType]} />
             </div>
           </div>
 
@@ -138,7 +136,7 @@ export default function ProductsOthersPage({ data }: Props) {
                 .filter(productMd => productMd.frontmatter.shown === true)
                 .sort(sortFunction)
                 .map((productMd: MarkdownData, productIdx: number) => (
-                  <Product
+                  <ProductCard
                     key={`product-${productIdx}`}
                     product={productMd.frontmatter}
                     showSample={showSample}
