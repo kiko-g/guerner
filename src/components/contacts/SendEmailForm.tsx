@@ -54,15 +54,14 @@ export default function SendEmailForm({}: Props) {
         <div className="relative flex h-32 items-end rounded-t lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
           <StaticImage
             alt="Night Banner"
-            src="../../images/banner-a.webp"
+            src="../../images/contact.jpg"
             placeholder="blurred"
-            className="absolute inset-0 h-full w-full rounded-t object-cover object-left-top opacity-80 lg:rounded-none lg:rounded-l"
+            className="absolute left-0 top-0 h-full w-full rounded-t object-cover object-center lg:rounded-none lg:rounded-l"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
               to={routeHome}
-              className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary
-              bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
+              className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary bg-primary p-0.5 shadow-xl transition hover:opacity-90 sm:h-20 sm:w-20"
             >
               <img
                 alt="Guerner"

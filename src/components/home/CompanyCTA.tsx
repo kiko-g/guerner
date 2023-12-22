@@ -47,8 +47,8 @@ export default function CompanyCTA({}: Props) {
               className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40 xl:h-[32rem]"
             />
 
-            <div className="relative p-8">
-              <p className="text-sm font-medium uppercase tracking-widest text-secondary dark:text-tertiary">
+            <div className="absolute top-0 left-0 p-8">
+              <p className="text-sm font-extrabold uppercase tracking-widest text-secondary dark:text-secondary">
                 {presentationSectionHeader}
               </p>
               <p className="text-2xl font-bold text-white">{presentationSectionSubeader}</p>
@@ -68,8 +68,8 @@ export default function CompanyCTA({}: Props) {
               className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-40 xl:h-[32rem]"
             />
 
-            <div className="relative p-8">
-              <p className="text-sm font-medium uppercase tracking-widest text-secondary dark:text-tertiary">
+            <div className="absolute top-0 left-0 p-8">
+              <p className="text-sm font-extrabold uppercase tracking-widest text-secondary dark:text-secondary">
                 {productionSectionHeader}
               </p>
               <p className="text-2xl font-bold text-white">{productionSectionSubeader}</p>
