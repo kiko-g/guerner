@@ -118,7 +118,7 @@ export default function Values({}: Props) {
   ]
 
   return (
-    <div className="max-w-5xl rounded-3xl bg-black/20 px-4 py-16 text-white dark:bg-white/[4%] lg:px-0">
+    <div className="max-w-5xl rounded-none bg-black/20 px-4 py-16 text-white dark:bg-white/[4%] lg:rounded-3xl lg:px-0">
       <h2 className="mb-3 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">
         {title}
       </h2>
@@ -139,7 +139,7 @@ export default function Values({}: Props) {
               actionIdx === actions.length - 1
                 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none'
                 : '',
-              'group relative p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-white hover:bg-white/10 dark:bg-secondary/5 dark:hover:bg-secondary/20',
+              'group relative bg-white/5 p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-white hover:bg-white/10 dark:bg-secondary/5 dark:hover:bg-secondary/20',
             )}
           >
             <span
