@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline'
@@ -54,11 +54,26 @@ export default function History() {
   const title = node!.frontmatter.title
   const history = node!.frontmatter.history
 
-  const [index, setIndex] = React.useState(0)
-  const slides = React.useMemo(() => (isMobile ? 1 : 3), [isMobile])
-  const disabledLeft = React.useMemo(() => index === 0, [index])
-  const disabledRight = React.useMemo(() => index > history.length - 2, [index, history])
-  const historySliced = React.useMemo(() => history.slice(index, index + slides), [index, slides])
+  const skipTime = 7500 // 7.5 seconds
+  const [index, setIndex] = useState(0)
+  const [slides, setSlides] = useState(isMobile ? 1 : 3)
+  const disabledLeft = useMemo(() => index === 0, [index])
+  const disabledRight = useMemo(() => index > history.length - 2, [index, history])
+  const historySliced = useMemo(() => history.slice(index, index + slides), [index, slides])
+
+  useEffect(() => {
+    const updateSlides = () => setSlides(isMobile ? 1 : 3)
+    window.addEventListener('resize', updateSlides)
+    return () => window.removeEventListener('resize', updateSlides)
+  }, [isMobile])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex(prevIndex => (prevIndex < history.length - slides ? prevIndex + 1 : 0))
+    }, skipTime)
+
+    return () => clearInterval(interval)
+  }, [history.length, slides])
 
   const previousItem = () => {
     setIndex(prev => prev - 1)
@@ -78,17 +93,17 @@ export default function History() {
     return Array.from({ length: end - start }, (_, i) => start + i)
   }
 
-  const paginationButtons = calculatePagination().map(pageNum => (
+  const renderPaginationButtons = calculatePagination().map(pageNum => (
     <button
       key={pageNum}
+      aria-current={index === pageNum ? 'page' : undefined}
       onClick={() => setIndex(pageNum)}
       className={classNames(
-        'inline-flex items-center px-4 py-2 text-sm font-medium text-white transition',
+        'inline-flex items-center px-4 py-2 text-sm font-medium text-white transition-all',
         index === pageNum
           ? 'bg-secondary/70 hover:opacity-80 dark:bg-tertiary/50'
           : 'hover:bg-white/10 dark:hover:bg-white/10',
       )}
-      aria-current={index === pageNum ? 'page' : undefined}
     >
       {pageNum + 1}
     </button>
@@ -101,7 +116,10 @@ export default function History() {
 
         <ul className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
           {historySliced.map((entry, entryIdx) => (
-            <li className="relative mb-6 sm:mb-0" key={`history-entry-${entry.date}-${entryIdx}`}>
+            <li
+              key={`history-entry-${entry.date}-${entryIdx}`}
+              className="animate-opacity-transition relative mb-6 transform transition-all ease-in-out sm:mb-0"
+            >
               <div className="flex items-center">
                 <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
                   <svg
@@ -134,7 +152,7 @@ export default function History() {
           ))}
         </ul>
 
-        <nav className="flex w-full items-center justify-between border-t border-gray-200 lg:border-transparent">
+        <nav className="flex w-full items-center justify-between border-t border-gray-200 transition-all lg:border-transparent">
           <div className="flex w-0 flex-1">
             <button
               disabled={disabledLeft}
@@ -145,7 +163,7 @@ export default function History() {
             </button>
           </div>
 
-          <div className="hidden md:flex md:self-stretch">{paginationButtons}</div>
+          <div className="hidden md:flex md:self-stretch">{renderPaginationButtons}</div>
 
           <div className="flex w-0 flex-1 justify-end">
             <button

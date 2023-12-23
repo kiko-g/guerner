@@ -92,6 +92,10 @@ module.exports = {
           '50%': { transform: 'translateX(-7px) translateY(14px) rotate(-3deg)' },
           '75%': { transform: 'translateX(7px) translateY(7px) rotate(-6deg)' },
         },
+        opacityHalfToFull: {
+          '0%': { opacity: 0.25 },
+          '100%': { opacity: 1 },
+        },
       },
       animation: {
         lava: 'lava 5s ease infinite',
@@ -103,6 +107,7 @@ module.exports = {
         'pulse-slow': 'pulse 8s ease-in-out infinite',
         floating: 'floating 3s ease-in-out infinite',
         sway: 'sway 3s infinite',
+        'opacity-transition': 'opacityHalfToFull 500ms ease-in-out',
       },
       backgroundPosition: {
         'center-half': '60% 27%',
