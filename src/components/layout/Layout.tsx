@@ -44,12 +44,7 @@ export default function Layout(props: Props) {
     >
       <Seo title={location} />
       <Navbar location={location} title={title} special={hero} />
-      <div
-        className={classNames(
-          'z-10 mx-auto mb-auto flex-1',
-          fullWidth ? 'max-w-full' : 'max-w-6xl px-4',
-        )}
-      >
+      <div className={classNames('z-10 mx-auto mb-auto flex-1', fullWidth ? 'max-w-full' : 'max-w-6xl px-4')}>
         {children}
       </div>
       <BackToTopButton />

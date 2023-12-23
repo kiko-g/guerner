@@ -1,12 +1,7 @@
 import React from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
-import {
-  ArrowLongLeftIcon,
-  ArrowLongRightIcon,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-} from '@heroicons/react/24/outline'
+import { ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/outline'
 import { useMediaQuery } from 'usehooks-ts'
 import classNames from 'classnames'
 
@@ -32,9 +27,7 @@ type Data = {
   }
 }
 
-type Props = {}
-
-export default function History({}: Props) {
+export default function History() {
   const { t, language } = useI18next()
   const isMobile = useMediaQuery('(max-width: 768px)')
 
@@ -58,7 +51,6 @@ export default function History({}: Props) {
   `)
 
   const node = data.allMarkdownRemark.nodes.find(node => node.frontmatter.lang === language)
-  const html = node!.html
   const title = node!.frontmatter.title
   const history = node!.frontmatter.history
 
@@ -105,9 +97,7 @@ export default function History({}: Props) {
   return (
     <section className="py-6 lg:py-12">
       <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-8 py-4 lg:bg-black/20 lg:px-16 lg:py-12 lg:dark:bg-white/[4%]">
-        <h3 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
-          {title}
-        </h3>
+        <h3 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">{title}</h3>
 
         <ul className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
           {historySliced.map((entry, entryIdx) => (
@@ -132,9 +122,7 @@ export default function History({}: Props) {
               </div>
 
               <div className="mt-3 sm:pr-8">
-                <h3 className="text-lg font-semibold text-white dark:text-white">
-                  #{index + entryIdx + 1}
-                </h3>
+                <h3 className="text-lg font-semibold text-white dark:text-white">#{index + entryIdx + 1}</h3>
                 <time className="mb-2 block font-lexend text-base font-bold leading-none text-secondary dark:text-secondary">
                   {entry.date}
                 </time>

@@ -97,8 +97,7 @@ module.exports = {
         lng: `pt`,
         fallbackLng: `pt`,
         supportedLngs: [`pt`, `en`],
-        siteUrl:
-          mode !== 'production' ? 'http://localhost:8000/' : 'https://guernerpt.netlify.app/',
+        siteUrl: mode !== 'production' ? 'http://localhost:8000/' : 'https://guernerpt.netlify.app/',
         trailingSlash: 'always', // if you are using trailingSlash gatsby config include it here, as well (the default is 'always')
         i18nextOptions: {
           debug: false,

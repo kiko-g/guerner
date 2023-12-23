@@ -37,10 +37,7 @@ export default function ProductTemplate({ data }: Props) {
 
   const unsplash = false
   const isMockImageGrid =
-    !unsplash &&
-    featuredImage !== undefined &&
-    secondaryImage !== undefined &&
-    tertiaryImage !== undefined
+    !unsplash && featuredImage !== undefined && secondaryImage !== undefined && tertiaryImage !== undefined
 
   return (
     <Layout location={frontmatter.name} fullWidth>
@@ -109,11 +106,7 @@ export default function ProductTemplate({ data }: Props) {
 
         {/* Image Grid */}
         {isMockImageGrid ? (
-          <ImageGrid
-            featuredImage={featuredImage}
-            secondaryImage={secondaryImage}
-            tertiaryImage={tertiaryImage}
-          />
+          <ImageGrid featuredImage={featuredImage} secondaryImage={secondaryImage} tertiaryImage={tertiaryImage} />
         ) : (
           <UnsplashImageGrid />
         )}
@@ -137,40 +130,22 @@ export default function ProductTemplate({ data }: Props) {
                       >
                         {a}
                       </th>
-                      <th
-                        scope="col"
-                        className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold"
-                      >
+                      <th scope="col" className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold">
                         {b}
                       </th>
-                      <th
-                        scope="col"
-                        className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold"
-                      >
+                      <th scope="col" className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold">
                         {c}
                       </th>
-                      <th
-                        scope="col"
-                        className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold"
-                      >
+                      <th scope="col" className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold">
                         {d}
                       </th>
-                      <th
-                        scope="col"
-                        className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold"
-                      >
+                      <th scope="col" className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold">
                         {e}
                       </th>
-                      <th
-                        scope="col"
-                        className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold"
-                      >
+                      <th scope="col" className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold">
                         {f}
                       </th>
-                      <th
-                        scope="col"
-                        className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold"
-                      >
+                      <th scope="col" className="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold">
                         {g}
                       </th>
                     </tr>
@@ -178,36 +153,22 @@ export default function ProductTemplate({ data }: Props) {
                 })}
               </thead>
               <tbody className="divide-y divide-primary/10 dark:divide-white/10">
-                {frontmatter.dimensions
-                  .slice(1, frontmatter.dimensions.length)
-                  .map((row, rowIdx) => {
-                    const [a, b, c, d, e, f, g] = row
-                    return (
-                      <tr key={`dimension-row-${rowIdx}`}>
-                        <td className="w-0 whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 dark:text-white lg:pl-0">
-                          {a}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                          {b}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                          {c}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                          {d}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                          {e}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                          {f}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                          {g}
-                        </td>
-                      </tr>
-                    )
-                  })}
+                {frontmatter.dimensions.slice(1, frontmatter.dimensions.length).map((row, rowIdx) => {
+                  const [a, b, c, d, e, f, g] = row
+                  return (
+                    <tr key={`dimension-row-${rowIdx}`}>
+                      <td className="w-0 whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 dark:text-white lg:pl-0">
+                        {a}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{b}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{c}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{d}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{e}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{f}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{g}</td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
@@ -301,25 +262,13 @@ function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridPr
   return (
     <div className="flex w-full flex-col gap-8 rounded bg-slate-100 p-8 dark:bg-slate-300/5 lg:flex-row">
       <div className="my-auto w-full lg:flex-1">
-        <GatsbyImage
-          image={featuredImage}
-          alt="featured"
-          className="my-auto w-full rounded object-cover shadow-xl"
-        />
+        <GatsbyImage image={featuredImage} alt="featured" className="my-auto w-full rounded object-cover shadow-xl" />
       </div>
       <div className="my-auto hidden w-full lg:block lg:flex-1">
-        <GatsbyImage
-          image={secondaryImage}
-          alt="secondary"
-          className="w-full rounded object-cover shadow-xl"
-        />
+        <GatsbyImage image={secondaryImage} alt="secondary" className="w-full rounded object-cover shadow-xl" />
       </div>
       <div className="my-auto hidden w-full lg:block lg:flex-1">
-        <GatsbyImage
-          image={tertiaryImage}
-          alt="tertiary"
-          className="w-full rounded object-cover shadow-xl"
-        />
+        <GatsbyImage image={tertiaryImage} alt="tertiary" className="w-full rounded object-cover shadow-xl" />
       </div>
     </div>
   )

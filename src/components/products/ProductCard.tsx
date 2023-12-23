@@ -46,9 +46,7 @@ export default function ProductCard({ product, showSample }: Props) {
                 {product.sample}
               </div>
             ) : (
-              <div className="rounded-md bg-rose-700/70 px-2 py-1 text-xs text-white shadow">
-                N/A
-              </div>
+              <div className="rounded-md bg-rose-700/70 px-2 py-1 text-xs text-white shadow">N/A</div>
             )
           ) : null}
         </div>
@@ -61,10 +59,7 @@ export default function ProductCard({ product, showSample }: Props) {
       </Link>
 
       {/* Card footer */}
-      <Link
-        to={route}
-        className="mt-2 flex flex-col items-start justify-between space-y-1 truncate"
-      >
+      <Link to={route} className="mt-2 flex flex-col items-start justify-between space-y-1 truncate">
         <p
           title={product.name}
           className="flex-1 self-stretch truncate text-sm font-normal leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:text-ellipsis group-hover:whitespace-normal group-hover:underline dark:text-white"
@@ -78,8 +73,7 @@ export default function ProductCard({ product, showSample }: Props) {
           >
             {product.characteristics.length === 0
               ? 'N/A'
-              : product.characteristics.join(', ').slice(0, 40) +
-                (product.characteristics.length > 40 ? '...' : '')}
+              : product.characteristics.join(', ').slice(0, 40) + (product.characteristics.length > 40 ? '...' : '')}
           </p>
         ) : null}
       </Link>

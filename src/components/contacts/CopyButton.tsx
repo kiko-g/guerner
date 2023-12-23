@@ -24,10 +24,7 @@ export default function CopyButton({ text }: Props) {
   return (
     <button
       onClick={() => handleCopied(text)}
-      className={classNames(
-        'rounded-full p-1 transition',
-        copied ? '' : 'hover:text-primary dark:hover:text-tertiary',
-      )}
+      className={classNames('rounded-full p-1 transition', copied ? '' : 'hover:text-primary dark:hover:text-tertiary')}
     >
       {copied ? (
         <CheckCircleIcon className="h-5 w-5 text-teal-600 lg:h-6 lg:w-6" />

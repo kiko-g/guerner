@@ -5,11 +5,7 @@ import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { CheckCircleIcon, Cog8ToothIcon as Cog8ToothIconSolid } from '@heroicons/react/24/solid'
-import {
-  ChevronDownIcon,
-  Cog8ToothIcon as Cog8ToothIconOutline,
-  MinusIcon,
-} from '@heroicons/react/24/outline'
+import { ChevronDownIcon, Cog8ToothIcon as Cog8ToothIconOutline, MinusIcon } from '@heroicons/react/24/outline'
 
 export default function Settings() {
   return (
@@ -88,9 +84,7 @@ function LanguageSwitcher() {
         </div>
         <div className="ml-4 flex h-full w-full items-start justify-between self-stretch pr-2">
           <div className="flex flex-col">
-            <p className="text-left text-sm font-medium text-gray-900 dark:text-white">
-              {t('selectLang')}
-            </p>
+            <p className="text-left text-sm font-medium text-gray-900 dark:text-white">{t('selectLang')}</p>
             <p className="text-left text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
               {t('currentLang')} <span className="uppercase">{language}</span>
             </p>
@@ -120,11 +114,7 @@ function LanguageSwitcher() {
                     : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500',
                 )}
               >
-                <Link
-                  to={originalPath}
-                  language={lang}
-                  className="flex items-center justify-start gap-x-1"
-                >
+                <Link to={originalPath} language={lang} className="flex items-center justify-start gap-x-1">
                   <span
                     className={classNames(
                       'truncate uppercase group-hover:text-white',
@@ -194,9 +184,7 @@ function DarkModeToggler() {
         </svg>
       </div>
       <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
-        <p className="text-left text-sm font-medium text-gray-900 dark:text-white">
-          {t('darkMode')}
-        </p>
+        <p className="text-left text-sm font-medium text-gray-900 dark:text-white">{t('darkMode')}</p>
         <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
           {enabled ? t('enabled') : t('disabled')}
         </p>
@@ -227,20 +215,8 @@ function AnalyticsLink() {
           <rect width="48" height="48" rx="8" className="fill-[#ecfdf5] dark:fill-[#e9fff5]" />
           <rect x="13" y="32" width="2" height="4" className="fill-[#6ee7b7] dark:fill-[#7febb7]" />
           <rect x="17" y="28" width="2" height="8" className="fill-[#6ee7b7] dark:fill-[#7febb7]" />
-          <rect
-            x="21"
-            y="24"
-            width="2"
-            height="12"
-            className="fill-[#6ee7b7] dark:fill-[#7febb7]"
-          />
-          <rect
-            x="25"
-            y="20"
-            width="2"
-            height="16"
-            className="fill-[#6ee7b7] dark:fill-[#7febb7]"
-          />
+          <rect x="21" y="24" width="2" height="12" className="fill-[#6ee7b7] dark:fill-[#7febb7]" />
+          <rect x="25" y="20" width="2" height="16" className="fill-[#6ee7b7] dark:fill-[#7febb7]" />
           <rect x="29" y="16" width="2" height="20" className="fill-[#10b981] dark:fill-tertiary" />
           <rect x="33" y="12" width="2" height="24" className="fill-[#10b981] dark:fill-tertiary" />
         </svg>
@@ -286,11 +262,7 @@ function AdminPageLink() {
               strokeLinejoin="round"
               d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z"
             />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.867 19.125h.008v.008h-.008v-.008z"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008z" />
           </svg>
         </svg>
       </div>

@@ -69,9 +69,7 @@ export default function SendEmailForm({}: Props) {
                 className="z-20 inline-flex h-full w-full rounded-full transition"
               />
             </Link>
-            <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-              {header}
-            </h2>
+            <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">{header}</h2>
             <p className="mt-2 leading-relaxed text-white/90">{instructions}</p>
           </div>
         </div>

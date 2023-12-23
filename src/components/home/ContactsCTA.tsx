@@ -19,9 +19,7 @@ export default function ContactsCTA({}: Props) {
         <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary dark:text-tertiary lg:text-4xl">
           {header}
         </h2>
-        <p className="block w-full px-2 py-2 text-center tracking-tighter text-white">
-          {description}
-        </p>
+        <p className="block w-full px-2 py-2 text-center tracking-tighter text-white">{description}</p>
         <LinkFill text={takeMeThere} link={routeContacts} light />
       </div>
     </section>

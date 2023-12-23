@@ -37,9 +37,7 @@ export default function ColorFilter({ hook }: Props) {
             px-2 py-1 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             {pickedColor !== '' ? (
-              <span
-                className={classNames(pickedColor, 'h-5 w-5 rounded-full border-[2px] shadow')}
-              />
+              <span className={classNames(pickedColor, 'h-5 w-5 rounded-full border-[2px] shadow')} />
             ) : (
               <span className="h-5 w-5 rounded-full bg-white shadow">
                 <XMarkIcon className="h-5 w-5 text-red-700 dark:text-rose-500" />
@@ -89,9 +87,7 @@ export default function ColorFilter({ hook }: Props) {
                       key={`color-${colorIdx}`}
                       className={classNames(
                         color === 'white' ? 'border-[2px] border-gray-400' : 'border-0',
-                        color === pickedColor
-                          ? 'ring-2 ring-primary ring-offset-2 dark:ring-secondary'
-                          : '',
+                        color === pickedColor ? 'ring-2 ring-primary ring-offset-2 dark:ring-secondary' : '',
                         'flex h-6 w-6 items-center justify-center rounded-full p-1',
                         'z-50 shadow-md transition hover:cursor-pointer hover:opacity-80',
                         color === '' ? 'p-[0px]' : color,

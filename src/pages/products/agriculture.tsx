@@ -7,13 +7,7 @@ import { graphql } from 'gatsby'
 import { Layout } from '../../components/layout'
 import ListboxSort from '../../components/products/filter/ListboxSort'
 import GoBack from '../../components/layout/GoBack'
-import {
-  PinToggler,
-  Search,
-  ViewToggler,
-  ProductCard,
-  ShowSampleToggler,
-} from '../../components/products'
+import { PinToggler, Search, ViewToggler, ProductCard, ShowSampleToggler } from '../../components/products'
 
 type Color = keyof Colors | ''
 
@@ -57,35 +51,25 @@ export default function ProductsAgriculturePage({ data }: Props) {
     if (pinnedOnly) pinnedMatch = product.pinned
 
     if (categoryMatch) {
-      categoryMatch =
-        pickedCategories.length === 0 ? true : pickedCategories.includes(product.category)
+      categoryMatch = pickedCategories.length === 0 ? true : pickedCategories.includes(product.category)
     }
 
     return textMatch && colorMatch && pinnedMatch && categoryMatch
   })
 
-  const sortOptions = [
-    'Alphabetic (A to Z)',
-    'Alphabetic (Z to A)',
-    'Sample ID (Ascending)',
-    'Sample ID (Descending)',
-  ]
+  const sortOptions = ['Alphabetic (A to Z)', 'Alphabetic (Z to A)', 'Sample ID (Ascending)', 'Sample ID (Descending)']
 
   const getSortFunction = (picked: any) => {
     switch (picked) {
       default:
       case 'Alphabetic (A to Z)':
-        return (a: MarkdownData, b: MarkdownData) =>
-          a.frontmatter.name.localeCompare(b.frontmatter.name)
+        return (a: MarkdownData, b: MarkdownData) => a.frontmatter.name.localeCompare(b.frontmatter.name)
       case 'Alphabetic (Z to A)':
-        return (a: MarkdownData, b: MarkdownData) =>
-          -a.frontmatter.name.localeCompare(b.frontmatter.name)
+        return (a: MarkdownData, b: MarkdownData) => -a.frontmatter.name.localeCompare(b.frontmatter.name)
       case 'Sample ID (Ascending)':
-        return (a: MarkdownData, b: MarkdownData) =>
-          a.frontmatter.sample < b.frontmatter.sample ? -1 : 1
+        return (a: MarkdownData, b: MarkdownData) => (a.frontmatter.sample < b.frontmatter.sample ? -1 : 1)
       case 'Sample ID (Descending)':
-        return (a: MarkdownData, b: MarkdownData) =>
-          a.frontmatter.sample < b.frontmatter.sample ? 1 : -1
+        return (a: MarkdownData, b: MarkdownData) => (a.frontmatter.sample < b.frontmatter.sample ? 1 : -1)
     }
   }
 
@@ -136,11 +120,7 @@ export default function ProductsAgriculturePage({ data }: Props) {
                 .filter(productMd => productMd.frontmatter.shown === true)
                 .sort(sortFunction)
                 .map((productMd: MarkdownData, productIdx: number) => (
-                  <ProductCard
-                    key={`product-${productIdx}`}
-                    product={productMd.frontmatter}
-                    showSample={showSample}
-                  />
+                  <ProductCard key={`product-${productIdx}`} product={productMd.frontmatter} showSample={showSample} />
                 ))}
             </ul>
           </div>
@@ -158,10 +138,7 @@ export const pageAndLanguageQuery = graphql`
   query pageQuery($language: String!) {
     allMarkdownRemark(
       sort: [{ frontmatter: { name: ASC } }]
-      filter: {
-        fileAbsolutePath: { regex: "/(agriculture)/" }
-        frontmatter: { lang: { eq: $language } }
-      }
+      filter: { fileAbsolutePath: { regex: "/(agriculture)/" }, frontmatter: { lang: { eq: $language } } }
     ) {
       nodes {
         id
@@ -191,9 +168,7 @@ export const pageAndLanguageQuery = graphql`
         }
       }
     }
-    locales: allLocale(
-      filter: { ns: { in: ["agriculture", "common"] }, language: { eq: $language } }
-    ) {
+    locales: allLocale(filter: { ns: { in: ["agriculture", "common"] }, language: { eq: $language } }) {
       edges {
         node {
           ns

@@ -30,11 +30,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
       <div className="relative hidden h-auto transition lg:flex lg:items-center">
         {/* Logo Link */}
         <Link to="/" className="group flex items-center gap-x-3 transition hover:opacity-80">
-          <img
-            alt="Guerner"
-            src="/images/icon.png"
-            className="z-20 inline-flex h-9 w-9 rounded-full transition"
-          />
+          <img alt="Guerner" src="/images/icon.png" className="z-20 inline-flex h-9 w-9 rounded-full transition" />
           <span className="max-w-[6rem] text-xs font-semibold leading-3 tracking-tighter duration-150 group-hover:underline lg:text-sm lg:leading-5">
             {title}
           </span>
@@ -67,11 +63,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                     {({ open }) => (
                       <>
                         <Popover.Button className="h-full flex-1 rounded-r px-1 transition hover:bg-secondary/40 dark:hover:bg-secondary/30">
-                          {open ? (
-                            <ChevronUpIcon className="h-4 w-4" />
-                          ) : (
-                            <ChevronDownIcon className="h-4 w-4" />
-                          )}
+                          {open ? <ChevronUpIcon className="h-4 w-4" /> : <ChevronDownIcon className="h-4 w-4" />}
                         </Popover.Button>
                         <Transition
                           as={Fragment}

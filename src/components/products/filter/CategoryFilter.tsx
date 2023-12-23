@@ -16,13 +16,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
   const text = t('categories')
 
   return (
-    <Listbox
-      as="div"
-      multiple
-      value={pickedCategories}
-      onChange={setPickedCategories}
-      className="relative w-full"
-    >
+    <Listbox as="div" multiple value={pickedCategories} onChange={setPickedCategories} className="relative w-full">
       {({ open }) => (
         <>
           <Listbox.Button
@@ -78,9 +72,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
                         ) : (
                           <span className="h-5 w-5 text-teal-500"></span>
                         )}
-                        <span
-                          className={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}
-                        >
+                        <span className={`block truncate ${selected ? 'font-bold' : 'font-normal'}`}>
                           {translatedCategory}
                         </span>
                       </span>

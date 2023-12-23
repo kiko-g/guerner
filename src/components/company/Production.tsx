@@ -67,9 +67,7 @@ export default function Production({}: Props) {
     <section id={sectionId} className="py-6 lg:py-12">
       {/* Production Centers */}
       <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-6 py-6 lg:bg-black/20 lg:px-24 lg:py-20 lg:dark:bg-white/[4%]">
-        <h3 className="mb-6 w-full text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
-          {title}
-        </h3>
+        <h3 className="mb-6 w-full text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">{title}</h3>
 
         <div className="flex w-full flex-col items-start justify-center">
           <Tab.Group>

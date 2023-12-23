@@ -35,9 +35,7 @@ export default function ProductsCTA({}: Props) {
             <div className="absolute inset-0 flex h-full w-full items-center justify-center">
               <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
               <div className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center font-lexend text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
-                <span className="transition hover:opacity-80 group-hover:translate-x-2">
-                  {takeMeThereAgriculture}
-                </span>
+                <span className="transition hover:opacity-80 group-hover:translate-x-2">{takeMeThereAgriculture}</span>
                 <ArrowLongRightIcon className="hidden h-8 w-8 transition group-hover:translate-x-2 lg:flex" />
               </div>
             </div>
@@ -53,9 +51,7 @@ export default function ProductsCTA({}: Props) {
             <div className="absolute inset-0 flex h-full w-full items-center justify-center">
               <div className="absolute h-full w-full bg-black/60 transition group-hover:bg-black/40" />
               <div className="z-50 flex h-full w-auto items-center justify-center gap-x-2 px-4 text-center font-lexend text-lg font-normal text-white opacity-80 duration-500 group-hover:opacity-100 lg:w-full lg:text-3xl lg:opacity-50">
-                <span className="transition hover:opacity-80 group-hover:translate-x-2">
-                  {takeMeThereConstruction}
-                </span>
+                <span className="transition hover:opacity-80 group-hover:translate-x-2">{takeMeThereConstruction}</span>
                 <ArrowLongRightIcon className="hidden h-8 w-8 transition group-hover:translate-x-2 lg:flex" />
               </div>
             </div>
@@ -68,9 +64,7 @@ export default function ProductsCTA({}: Props) {
             <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary dark:text-tertiary lg:text-4xl">
               {headerText}
             </h2>
-            <p className="block px-2 py-2 text-center tracking-tighter text-white">
-              {productsText}
-            </p>
+            <p className="block px-2 py-2 text-center tracking-tighter text-white">{productsText}</p>
             <LinkFill text={takeMeThere} link={routeProducts} light />
           </div>
         </div>

@@ -22,30 +22,19 @@ export default function ListboxSort({ options, translatedOptions, pickedHook }: 
         >
           <FunnelIcon className="h-6 w-6" />
         </Listbox.Button>
-        <Transition
-          as={Fragment}
-          leave="transition ease-in duration-100"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
+        <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
           <Listbox.Options className="absolute right-0 z-50 mt-2 w-72 overflow-auto rounded border border-gray-300 bg-gray-100 py-2 shadow xl:w-72">
             {options.map((option: string, optionIdx: number) => (
               <Listbox.Option
                 key={`option-${optionIdx}`}
                 className={({ active }) =>
                   `relative cursor-pointer select-none py-1.5 pl-10 pr-5 text-sm font-normal tracking-tight ${
-                    active
-                      ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary'
-                      : 'text-gray-800'
+                    active ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary' : 'text-gray-800'
                   }`
                 }
                 value={option}
               >
-                <span
-                  className={`block whitespace-nowrap ${
-                    option === picked ? 'font-semibold' : 'font-normal'
-                  }`}
-                >
+                <span className={`block whitespace-nowrap ${option === picked ? 'font-semibold' : 'font-normal'}`}>
                   {translatedOptions ? translatedOptions[optionIdx] : option}
                 </span>
                 {picked === option ? (

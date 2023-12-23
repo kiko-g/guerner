@@ -24,9 +24,7 @@ export default function LinkTranslate({ text, link, alt = false, arrow = false }
       )}
     >
       <span>{text}</span>
-      {arrow ? (
-        <ArrowLongRightIcon className="mt-[1px] h-5 w-5 opacity-25 transition group-hover:opacity-100" />
-      ) : null}
+      {arrow ? <ArrowLongRightIcon className="mt-[1px] h-5 w-5 opacity-25 transition group-hover:opacity-100" /> : null}
     </Link>
   )
 }

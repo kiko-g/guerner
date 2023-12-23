@@ -1,12 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Disclosure } from '@headlessui/react'
-import {
-  HomeModernIcon,
-  BriefcaseIcon,
-  ShoppingCartIcon,
-  PhoneArrowDownLeftIcon,
-} from '@heroicons/react/24/outline'
+import { HomeModernIcon, BriefcaseIcon, ShoppingCartIcon, PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline'
 import Header from './navbar/Header'
 import Hamburger from './navbar/Hamburger'
 import FoldableMobileMenu from './navbar/FoldableMobileMenu'
@@ -63,10 +58,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
         return (
           <>
             <div
-              className={classNames(
-                'relative flex w-full items-center justify-between lg:py-0',
-                open ? 'p-0' : 'p-2',
-              )}
+              className={classNames('relative flex w-full items-center justify-between lg:py-0', open ? 'p-0' : 'p-2')}
             >
               <Hamburger open={open} />
               <Header title={title} location={location} navigation={navigation} />

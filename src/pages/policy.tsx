@@ -42,10 +42,7 @@ export const pageAndLanguageQuery = graphql`
   query pageQuery($language: String!) {
     allMarkdownRemark(
       sort: [{ frontmatter: { name: ASC } }]
-      filter: {
-        fileAbsolutePath: { regex: "/(policy)/" }
-        frontmatter: { lang: { eq: $language } }
-      }
+      filter: { fileAbsolutePath: { regex: "/(policy)/" }, frontmatter: { lang: { eq: $language } } }
     ) {
       nodes {
         id

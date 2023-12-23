@@ -27,9 +27,7 @@ export default function ProductsPage() {
 
 export const query = graphql`
   query ($language: String!) {
-    locales: allLocale(
-      filter: { ns: { in: ["products", "common"] }, language: { eq: $language } }
-    ) {
+    locales: allLocale(filter: { ns: { in: ["products", "common"] }, language: { eq: $language } }) {
       edges {
         node {
           ns

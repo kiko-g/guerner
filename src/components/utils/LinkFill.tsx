@@ -19,9 +19,7 @@ export default function LinkFill({ text, link, light = false }: Props) {
       )}
     >
       <span className="absolute inset-y-0 left-0 w-[4px] bg-tertiary/60 transition-all group-hover:w-full dark:bg-tertiary/60"></span>
-      <span className="relative text-sm font-medium text-white transition-colors group-hover:text-white">
-        {text}
-      </span>
+      <span className="relative text-sm font-medium text-white transition-colors group-hover:text-white">{text}</span>
       <ArrowLongRightIcon className="z-20 mt-[1px] inline-flex h-5 w-5 text-white transition" />
     </Link>
   )

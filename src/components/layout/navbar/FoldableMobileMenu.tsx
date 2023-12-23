@@ -26,11 +26,7 @@ export default function FoldableMobileMenu({ location, navigation }: FoldableMob
         {navigation.map((link, index) => {
           const active = t(location).toLowerCase() === t(link.title).toLowerCase()
           return (
-            <Link
-              to={link.location}
-              className="relative z-50 h-auto w-min px-4"
-              key={`mobile-nav-${index}`}
-            >
+            <Link to={link.location} className="relative z-50 h-auto w-min px-4" key={`mobile-nav-${index}`}>
               <button
                 type="button"
                 className={classNames(
