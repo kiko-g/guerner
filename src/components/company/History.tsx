@@ -1,8 +1,14 @@
 import React from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import {
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from '@heroicons/react/24/outline'
 import { useMediaQuery } from 'usehooks-ts'
+import classNames from 'classnames'
 
 type Frontmatter = {
   lang: string
@@ -59,7 +65,7 @@ export default function History({}: Props) {
   const [index, setIndex] = React.useState(0)
   const slides = React.useMemo(() => (isMobile ? 1 : 3), [isMobile])
   const disabledLeft = React.useMemo(() => index === 0, [index])
-  const disabledRight = React.useMemo(() => index > history.length - 1 - slides, [index, history])
+  const disabledRight = React.useMemo(() => index > history.length - 2, [index, history])
   const historySliced = React.useMemo(() => history.slice(index, index + slides), [index, slides])
 
   const previousItem = () => {
@@ -70,67 +76,99 @@ export default function History({}: Props) {
     setIndex(prev => prev + 1)
   }
 
+  const calculatePagination = () => {
+    let start = Math.max(index - 1, 0)
+    let end = Math.min(start + slides, history.length)
+    if (end >= history.length) {
+      start = Math.max(history.length - slides, 0)
+      end = history.length
+    }
+    return Array.from({ length: end - start }, (_, i) => start + i)
+  }
+
+  const paginationButtons = calculatePagination().map(pageNum => (
+    <button
+      key={pageNum}
+      onClick={() => setIndex(pageNum)}
+      className={classNames(
+        'inline-flex items-center px-4 py-2 text-sm font-medium text-white transition',
+        index === pageNum
+          ? 'bg-secondary/70 hover:opacity-80 dark:bg-tertiary/50'
+          : 'hover:bg-white/10 dark:hover:bg-white/10',
+      )}
+      aria-current={index === pageNum ? 'page' : undefined}
+    >
+      {pageNum + 1}
+    </button>
+  ))
+
   return (
     <section className="py-6 lg:py-12">
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 lg:bg-black/20 lg:px-8 lg:py-12 lg:dark:bg-white/[4%]">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-8 py-4 lg:bg-black/20 lg:px-16 lg:py-12 lg:dark:bg-white/[4%]">
         <h3 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
           {title}
         </h3>
 
-        <div className="flex items-center justify-center gap-4 text-white">
-          <button
-            onClick={previousItem}
-            disabled={disabledLeft}
-            className="flex flex-1 items-center justify-center self-stretch rounded-l px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
-          >
-            <ChevronLeftIcon className="h-6 w-6 lg:h-8 lg:w-8" />
-          </button>
-
-          <ul className="mx-auto grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {historySliced.map((entry, entryIdx) => (
-              <li className="relative mb-6 sm:mb-0" key={`history-entry-${entry.date}-${entryIdx}`}>
-                <div className="flex items-center">
-                  <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
-                    <svg
-                      aria-hidden="true"
-                      className="h-3 w-3 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                  </div>
-                  <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
+        <ul className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
+          {historySliced.map((entry, entryIdx) => (
+            <li className="relative mb-6 sm:mb-0" key={`history-entry-${entry.date}-${entryIdx}`}>
+              <div className="flex items-center">
+                <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
+                  <svg
+                    aria-hidden="true"
+                    className="h-3 w-3 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                      clipRule="evenodd"
+                    ></path>
+                  </svg>
                 </div>
+                <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
+              </div>
 
-                <div className="mt-3 sm:pr-8">
-                  <h3 className="text-lg font-semibold text-white dark:text-white">
-                    #{index + entryIdx + 1}
-                  </h3>
-                  <time className="mb-2 block font-lexend text-base font-bold leading-none text-secondary dark:text-secondary">
-                    {entry.date}
-                  </time>
-                  <p className="min-h-[10rem] text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400">
-                    {entry.text}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ul>
+              <div className="mt-3 sm:pr-8">
+                <h3 className="text-lg font-semibold text-white dark:text-white">
+                  #{index + entryIdx + 1}
+                </h3>
+                <time className="mb-2 block font-lexend text-base font-bold leading-none text-secondary dark:text-secondary">
+                  {entry.date}
+                </time>
+                <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400 md:min-h-[10rem]">
+                  {entry.text}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
 
-          <button
-            onClick={nextItem}
-            disabled={disabledRight}
-            className="flex flex-1 items-center justify-center self-stretch rounded-r px-1 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-20"
-          >
-            <ChevronRightIcon className="h-8 w-8" />
-          </button>
-        </div>
+        <nav className="flex w-full items-center justify-between border-t border-gray-200 lg:border-transparent">
+          <div className="flex w-0 flex-1">
+            <button
+              disabled={disabledLeft}
+              onClick={previousItem}
+              className="inline-flex items-center gap-2 py-3 pr-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pr-1"
+            >
+              <ArrowLongLeftIcon className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </div>
+
+          <div className="hidden md:flex md:self-stretch">{paginationButtons}</div>
+
+          <div className="flex w-0 flex-1 justify-end">
+            <button
+              disabled={disabledRight}
+              onClick={nextItem}
+              className="inline-flex items-center gap-2 py-3 pl-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pl-1"
+            >
+              <ArrowLongRightIcon className="h-5 w-5" aria-hidden="true" />
+            </button>
+          </div>
+        </nav>
       </div>
     </section>
   )
