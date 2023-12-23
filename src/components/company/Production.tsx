@@ -66,22 +66,22 @@ export default function Production({}: Props) {
   return (
     <section id={sectionId} className="py-6 lg:py-12">
       {/* Production Centers */}
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-6 py-6 lg:bg-black/20 lg:dark:bg-white/[4%] lg:px-24 lg:py-20">
-        <h3 className="w-full mb-6 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-6 py-6 lg:bg-black/20 lg:px-24 lg:py-20 lg:dark:bg-white/[4%]">
+        <h3 className="mb-6 w-full text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
           {title}
         </h3>
 
         <div className="flex w-full flex-col items-start justify-center">
           <Tab.Group>
-            <Tab.List className="mb-4 order-1 mx-auto flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-4 lg:text-sm">
+            <Tab.List className="order-1 mx-auto mb-4 flex flex-row items-start justify-start gap-2 self-stretch rounded text-xs font-normal tracking-tighter lg:mx-0 lg:flex-row lg:gap-4 lg:text-sm">
               {tabList.map((tab: string, tabIdx: number) => (
                 <Tab
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
                     classNames(
-                      'w-full rounded border px-2 py-1 transition lg:border-2 lg:px-4 lg:py-2 hover:bg-secondary/60 dark:hover:bg-tertiary/60',
+                      'w-full rounded border px-2 py-1 transition hover:bg-secondary/60 dark:hover:bg-tertiary/60 lg:border-2 lg:px-4 lg:py-2',
                       selected
-                        ? 'border-secondary bg-secondary/50 dark:bg-tertiary/50 dark:border-tertiary'
+                        ? 'border-secondary bg-secondary/50 dark:border-tertiary dark:bg-tertiary/50'
                         : 'border-transparent bg-white/5 dark:bg-white/5',
                     )
                   }

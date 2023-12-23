@@ -86,12 +86,12 @@ function LanguageSwitcher() {
             </svg>
           </svg>
         </div>
-        <div className="ml-4 flex w-full items-start self-stretch h-full justify-between pr-2">
+        <div className="ml-4 flex h-full w-full items-start justify-between self-stretch pr-2">
           <div className="flex flex-col">
             <p className="text-left text-sm font-medium text-gray-900 dark:text-white">
               {t('selectLang')}
             </p>
-            <p className="text-left text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
+            <p className="text-left text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
               {t('currentLang')} <span className="uppercase">{language}</span>
             </p>
           </div>
@@ -193,11 +193,11 @@ function DarkModeToggler() {
           )}
         </svg>
       </div>
-      <div className="ml-4 self-stretch h-full flex flex-col items-stretch">
+      <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
         <p className="text-left text-sm font-medium text-gray-900 dark:text-white">
           {t('darkMode')}
         </p>
-        <p className="text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
+        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
           {enabled ? t('enabled') : t('disabled')}
         </p>
       </div>
@@ -245,9 +245,9 @@ function AnalyticsLink() {
           <rect x="33" y="12" width="2" height="24" className="fill-[#10b981] dark:fill-tertiary" />
         </svg>
       </div>
-      <div className="ml-4 self-stretch h-full flex flex-col items-stretch">
+      <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
         <p className="text-sm font-medium text-gray-900 dark:text-white">{t('analytics')}</p>
-        <p className="text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
+        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
           {t('analytics.description')}
         </p>
       </div>
@@ -294,9 +294,9 @@ function AdminPageLink() {
           </svg>
         </svg>
       </div>
-      <div className="ml-4 self-stretch h-full flex flex-col items-stretch">
+      <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
         <p className="text-sm font-medium text-gray-900 dark:text-white">{t('admin')}</p>
-        <p className="text-sm text-gray-500 dark:text-gray-300 leading-tight font-normal tracking-tight">
+        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
           {t('admin.description')}
         </p>
       </div>
@@ -314,7 +314,7 @@ function Feedback() {
       href="https://github.com/kiko-g/guerner/issues"
       className="dark:hover:bg-slate- flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-600"
     >
-      <p className="text-sm font-medium text-gray-900 mb-0.5 dark:text-white">{t('feedback')}</p>
+      <p className="mb-0.5 text-sm font-medium text-gray-900 dark:text-white">{t('feedback')}</p>
       <p className="text-sm text-gray-500 dark:text-gray-200">{t('feedback.description')}</p>
     </a>
   )

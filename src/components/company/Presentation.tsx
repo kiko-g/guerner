@@ -42,7 +42,7 @@ export default function Presentation({}: Props) {
 
   return (
     <section id={sectionId} className="flex flex-col py-12 text-white lg:py-20">
-      <div className="flex flex-col rounded-xl max-w-4xl mx-auto items-center justify-center px-16 py-16 bg-black/20 dark:bg-white/[4%]">
+      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center rounded-xl bg-black/20 px-16 py-16 dark:bg-white/[4%]">
         <h3 className="mb-4 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">
           {t('who')}
         </h3>

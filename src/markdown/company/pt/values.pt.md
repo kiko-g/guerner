@@ -25,6 +25,14 @@ section3Topics:
     'Consciência sustentável e ecológica',
     'Parceiro de novos métodos de produção Biológica e Orgânica',
   ]
+section4: 'Responsabilidade Social e Ambiental'
+section4Topics:
+  [
+    'Respeito pelo meio ambiente',
+    'Responsabilidade social',
+    'Compromisso com a comunidade',
+    'Compromisso com a segurança e saúde',
+  ]
 ---
 
 Com foco constante na inovação e customização, ajudamos a criar o futuro dos nossos clientes

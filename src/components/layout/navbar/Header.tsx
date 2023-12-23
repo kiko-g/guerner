@@ -50,23 +50,23 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                 <span
                   key={`nav-${index}`}
                   className={classNames(
-                    'flex items-center group transition hover:bg-white/10 rounded',
+                    'group flex items-center rounded transition hover:bg-white/10',
                     isActive ? 'bg-white/20' : '',
                   )}
                 >
                   <Link to={link.location} key={`nav-${index}`} className="relative">
                     <button
                       type="button"
-                      className="flex items-center justify-center group-hover:rounded-l pl-3 pr-3 py-1.5 font-normal transition"
+                      className="flex items-center justify-center py-1.5 pl-3 pr-3 font-normal transition group-hover:rounded-l"
                     >
                       <span className="capitalize tracking-tight">{link.title}</span>
                     </button>
                   </Link>
 
-                  <Popover className="relative flex-1 h-full">
+                  <Popover className="relative h-full flex-1">
                     {({ open }) => (
                       <>
-                        <Popover.Button className="flex-1 h-full transition hover:bg-secondary/40 dark:hover:bg-secondary/30 px-1 rounded-r">
+                        <Popover.Button className="h-full flex-1 rounded-r px-1 transition hover:bg-secondary/40 dark:hover:bg-secondary/30">
                           {open ? (
                             <ChevronUpIcon className="h-4 w-4" />
                           ) : (
@@ -87,21 +87,21 @@ export default function Header({ title, location, navigation }: HeaderProps) {
                               <div className="relative flex flex-col gap-2 bg-white p-4 dark:bg-slate-800">
                                 <Link
                                   to="/products/agriculture"
-                                  className="flex items-center rounded-lg px-3 py-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700 text-gray-700 dark:text-white"
+                                  className="flex items-center rounded-lg px-3 py-2 text-gray-700 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:text-white dark:hover:bg-slate-700"
                                 >
                                   {t('Agriculture')}
                                 </Link>
 
                                 <Link
                                   to="/products/construction"
-                                  className="flex items-center rounded-lg px-3 py-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700 text-gray-700 dark:text-white"
+                                  className="flex items-center rounded-lg px-3 py-2 text-gray-700 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:text-white dark:hover:bg-slate-700"
                                 >
                                   {t('Construction')}
                                 </Link>
 
                                 <Link
                                   to="/products/others"
-                                  className="flex items-center rounded-lg px-3 py-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700 text-gray-700 dark:text-white"
+                                  className="flex items-center rounded-lg px-3 py-2 text-gray-700 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:text-white dark:hover:bg-slate-700"
                                 >
                                   {t('Others')}
                                 </Link>
@@ -149,13 +149,13 @@ function MiniContacts() {
   const phone = process.env.GATSBY_GUERNER_PHONE_NUMBER
 
   return (
-    <div className="hidden lg:flex flex-col gap-y-0.5 items-start text-xs font-light">
-      <span className="flex gap-x-1.5 items-center">
+    <div className="hidden flex-col items-start gap-y-0.5 text-xs font-light lg:flex">
+      <span className="flex items-center gap-x-1.5">
         <PhoneIcon className="h-4 w-4" />
         <span>{phone}</span>
       </span>
 
-      <span className="flex gap-x-1.5 items-center">
+      <span className="flex items-center gap-x-1.5">
         <EnvelopeIcon className="h-4 w-4" />
         <a className="hover:underline" href={`mailto:${email}`}>
           {email}

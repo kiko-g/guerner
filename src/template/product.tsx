@@ -79,15 +79,15 @@ export default function ProductTemplate({ data }: Props) {
         </header>
 
         {/* Name and description */}
-        <div className="flex py-4 gap-8">
-          <div className="flex flex-col flex-1">
-            <h1 className="mb-4 max-w-sm text-4xl decoration-secondary underline dark:decoration-tertiary font-semibold">
+        <div className="flex gap-8 py-4">
+          <div className="flex flex-1 flex-col">
+            <h1 className="mb-4 max-w-sm text-4xl font-semibold underline decoration-secondary dark:decoration-tertiary">
               {frontmatter.name}
             </h1>
             <p className="max-w-lg leading-relaxed">{frontmatter.description}</p>
           </div>
 
-          <div className="flex flex-col w-4 bg-gradient-to-b from-tertiary to-secondary" />
+          <div className="flex w-4 flex-col bg-gradient-to-b from-tertiary to-secondary" />
         </div>
 
         {/* Characteristics Banner */}
@@ -299,26 +299,26 @@ type ImageGridProps = {
 
 function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
   return (
-    <div className="w-full flex flex-col lg:flex-row gap-8 bg-slate-100 p-8 dark:bg-slate-300/5 rounded">
-      <div className="w-full lg:flex-1 my-auto">
+    <div className="flex w-full flex-col gap-8 rounded bg-slate-100 p-8 dark:bg-slate-300/5 lg:flex-row">
+      <div className="my-auto w-full lg:flex-1">
         <GatsbyImage
           image={featuredImage}
           alt="featured"
-          className="w-full my-auto object-cover rounded shadow-xl"
+          className="my-auto w-full rounded object-cover shadow-xl"
         />
       </div>
-      <div className="w-full my-auto lg:flex-1 hidden lg:block">
+      <div className="my-auto hidden w-full lg:block lg:flex-1">
         <GatsbyImage
           image={secondaryImage}
           alt="secondary"
-          className="w-full object-cover rounded shadow-xl"
+          className="w-full rounded object-cover shadow-xl"
         />
       </div>
-      <div className="w-full my-auto lg:flex-1 hidden lg:block">
+      <div className="my-auto hidden w-full lg:block lg:flex-1">
         <GatsbyImage
           image={tertiaryImage}
           alt="tertiary"
-          className="w-full object-cover rounded shadow-xl"
+          className="w-full rounded object-cover shadow-xl"
         />
       </div>
     </div>

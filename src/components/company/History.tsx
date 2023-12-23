@@ -72,7 +72,7 @@ export default function History({}: Props) {
 
   return (
     <section className="py-6 lg:py-12">
-      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 lg:bg-black/20 lg:dark:bg-white/[4%] lg:px-8 lg:py-12">
+      <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-4 py-4 lg:bg-black/20 lg:px-8 lg:py-12 lg:dark:bg-white/[4%]">
         <h3 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">
           {title}
         </h3>

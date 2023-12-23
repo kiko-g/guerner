@@ -25,6 +25,14 @@ section3Topics:
     'Sustainable and Ecological Awareness',
     'Partner of new organic and biological production methods',
   ]
+section4: 'Social and Environmental Responsibility'
+section4Topics:
+  [
+    'Respect for the environment',
+    'Social responsibility',
+    'Commitment to the community',
+    'Commitment to safety and health',
+  ]
 ---
 
 With a constant focus on innovation and customization we help create the future of our customers
