@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Disclosure } from '@headlessui/react'
 import { HomeModernIcon, BriefcaseIcon, ShoppingCartIcon, PhoneArrowDownLeftIcon } from '@heroicons/react/24/outline'
 import Header from './navbar/Header'
@@ -47,7 +47,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
     <Disclosure
       as="nav"
       defaultOpen={false}
-      className={classNames(
+      className={clsx(
         'top-0 z-20 w-full px-3 py-3 backdrop-blur lg:px-6 lg:py-4',
         special
           ? 'fixed bg-black/50 text-white dark:bg-black/30'
@@ -57,9 +57,7 @@ export default function Navbar({ title, location, special }: NavbarProps) {
       {({ open }) => {
         return (
           <>
-            <div
-              className={classNames('relative flex w-full items-center justify-between lg:py-0', open ? 'p-0' : 'p-2')}
-            >
+            <div className={clsx('relative flex w-full items-center justify-between lg:py-0', open ? 'p-0' : 'p-2')}>
               <Hamburger open={open} />
               <Header title={title} location={location} navigation={navigation} />
             </div>

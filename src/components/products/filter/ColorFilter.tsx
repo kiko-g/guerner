@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { XMarkIcon, PaintBrushIcon as PaintBrushIconOutline } from '@heroicons/react/24/outline'
 import { PaintBrushIcon as PaintBrushIconSolid } from '@heroicons/react/24/solid'
@@ -37,7 +37,7 @@ export default function ColorFilter({ hook }: Props) {
             px-2 py-1 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             {pickedColor !== '' ? (
-              <span className={classNames(pickedColor, 'h-5 w-5 rounded-full border-[2px] shadow')} />
+              <span className={clsx(pickedColor, 'h-5 w-5 rounded-full border-[2px] shadow')} />
             ) : (
               <span className="h-5 w-5 rounded-full bg-white shadow">
                 <XMarkIcon className="h-5 w-5 text-red-700 dark:text-rose-500" />
@@ -62,7 +62,7 @@ export default function ColorFilter({ hook }: Props) {
               leaveTo="transform opacity-0 scale-95"
             >
               <Menu.Items
-                className={classNames(
+                className={clsx(
                   'z-40 rounded-md p-4 shadow',
                   'border-2 border-white bg-white dark:border-[#434b51] dark:bg-[#2e373d]',
                   open ? 'absolute right-0 mt-2 w-32' : 'hidden',
@@ -72,7 +72,7 @@ export default function ColorFilter({ hook }: Props) {
                   <Menu.Item
                     as="button"
                     onClick={() => setPickedColor('')}
-                    className={classNames(
+                    className={clsx(
                       pickedColor === '' ? 'ring-2 ring-primary dark:ring-secondary' : '',
                       'flex h-6 w-6 items-center justify-center rounded-full p-[0px]',
                       'z-50 bg-white transition hover:cursor-pointer hover:opacity-80',
@@ -85,7 +85,7 @@ export default function ColorFilter({ hook }: Props) {
                       as="button"
                       onClick={() => setPickedColor(color)}
                       key={`color-${colorIdx}`}
-                      className={classNames(
+                      className={clsx(
                         color === 'white' ? 'border-[2px] border-gray-400' : 'border-0',
                         color === pickedColor ? 'ring-2 ring-primary ring-offset-2 dark:ring-secondary' : '',
                         'flex h-6 w-6 items-center justify-center rounded-full p-1',

@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Disclosure, Transition } from '@headlessui/react'
@@ -29,7 +29,7 @@ export default function FoldableMobileMenu({ location, navigation }: FoldableMob
             <Link to={link.location} className="relative z-50 h-auto w-min px-4" key={`mobile-nav-${index}`}>
               <button
                 type="button"
-                className={classNames(
+                className={clsx(
                   'flex h-auto items-center justify-center lowercase tracking-wide transition',
                   active
                     ? 'font-bold text-white dark:text-white'

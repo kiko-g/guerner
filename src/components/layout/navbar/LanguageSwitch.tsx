@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import { CheckCircleIcon, CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/solid'
 
@@ -25,14 +25,19 @@ export default function LanguageSwitch({}: Props) {
             return (
               <li
                 key={langIdx}
-                className={classNames(
+                className={clsx(
                   'group relative z-50 cursor-pointer select-none px-2.5 py-1 text-sm transition hover:bg-primary/80 hover:text-white dark:hover:bg-tertiary/80 lg:px-2.5 lg:py-2 lg:text-sm',
                   active ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary' : 'text-gray-800',
                 )}
               >
-                <Link to={originalPath} language={lang} className="flex items-center justify-start gap-x-1">
+                <Link
+                  to={originalPath}
+                  language={lang}
+                  placeholder="Language Switch"
+                  className="flex items-center justify-start gap-x-1"
+                >
                   <span
-                    className={classNames(
+                    className={clsx(
                       'truncate uppercase group-hover:text-white',
                       active ? 'font-bold text-primary dark:text-tertiary' : 'font-normal',
                     )}

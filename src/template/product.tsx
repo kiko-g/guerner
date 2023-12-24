@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import type { ProductFrontmatter } from '../types'
 import { useMediaQuery } from 'usehooks-ts'
 import { useI18next } from 'gatsby-plugin-react-i18next'
@@ -193,7 +193,7 @@ export default function ProductTemplate({ data }: Props) {
             {frontmatter.composition.map((c, cIdx) => (
               <li
                 key={`composition-${cIdx}`}
-                className={classNames(
+                className={clsx(
                   'flex items-center gap-2 border-b border-primary/20 py-4 dark:border-white/20',
                   isMobile ? cIdx < 1 && 'border-t' : cIdx < 2 && 'border-t',
                 )}

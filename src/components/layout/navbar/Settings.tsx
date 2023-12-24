@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import useDarkMode from '../../../hooks/useDarkMode'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
 import { Popover, Transition } from '@headlessui/react'
@@ -107,7 +107,7 @@ function LanguageSwitcher() {
             return (
               <li
                 key={langIdx}
-                className={classNames(
+                className={clsx(
                   'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white lg:text-sm',
                   active
                     ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-500 hover:text-white dark:bg-emerald-700/50 dark:text-emerald-200 dark:hover:bg-emerald-500'
@@ -116,7 +116,7 @@ function LanguageSwitcher() {
               >
                 <Link to={originalPath} language={lang} className="flex items-center justify-start gap-x-1">
                   <span
-                    className={classNames(
+                    className={clsx(
                       'truncate uppercase group-hover:text-white',
                       active ? 'text-emerald-500' : 'font-normal',
                     )}

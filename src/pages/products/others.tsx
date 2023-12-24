@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import type { Category, Colors, ProductFrontmatter } from '../../types'
 import { strIncludes } from '../../utils'
@@ -108,7 +108,7 @@ export default function ProductsOthersPage({ data }: Props) {
             </div>
 
             <ul
-              className={classNames(
+              className={clsx(
                 'grid gap-x-4 gap-y-4 lg:gap-x-8 lg:gap-y-8',
                 viewType
                   ? 'grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'

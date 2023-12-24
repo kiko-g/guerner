@@ -14,7 +14,7 @@
     "@vercel/analytics": "^1.1.1",
     "@vercel/gatsby-plugin-vercel-analytics": "^1.0.10",
     "@vercel/speed-insights": "^1.0.0",
-    "classnames": "^2.3.2",
+    "clsx": "^2.0.0",
     "gatsby": "^5.4.2",
     "gatsby-plugin-gatsby-cloud": "^5.4.0",
     "gatsby-plugin-image": "^3.4.0",

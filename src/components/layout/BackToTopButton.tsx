@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { useMediaQuery } from 'usehooks-ts'
 import { ChevronDoubleUpIcon } from '@heroicons/react/24/outline'
 
@@ -19,7 +19,7 @@ export default function BackToTopButton() {
     <button
       hidden={hidden || isMobile}
       onClick={() => document.getElementById('layout')!.scrollIntoView()}
-      className={classNames(
+      className={clsx(
         centered ? 'bottom-3 left-[calc(50%-1.25rem)]' : 'bottom-6 right-6',
         'fixed z-50 rounded-full bg-primary/30 p-1.5 text-white transition-all hover:-translate-y-1 hover:bg-secondary/75 dark:bg-black/30 dark:hover:bg-tertiary/50',
       )}

@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -16,7 +16,7 @@ export default function Hamburger({ open }: HamburgerProps) {
 
   return (
     <div
-      className={classNames(
+      className={clsx(
         'z-50 lg:hidden',
         open
           ? 'absolute right-2 top-2 my-auto flex h-6 w-auto items-center justify-end gap-x-2'
@@ -45,11 +45,7 @@ export default function Hamburger({ open }: HamburgerProps) {
       ) : (
         <>
           <Link to="/">
-            <img
-              alt="Guerner"
-              src="/images/icon.png"
-              className={classNames('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')}
-            />
+            <img alt="Guerner" src="/images/icon.png" className={clsx('rounded-full', open ? 'h-5 w-5' : 'h-6 w-6')} />
           </Link>
 
           <div className="flex items-center gap-x-1">

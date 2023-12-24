@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 
@@ -13,7 +13,7 @@ export default function LinkFill({ text, link, light = false }: Props) {
   return (
     <Link
       to={link}
-      className={classNames(
+      className={clsx(
         'group relative flex items-center justify-center gap-x-2 rounded-sm border-2 border-primary px-8 py-3',
         light ? 'border-tertiary dark:border-tertiary' : 'border-primary dark:border-tertiary',
       )}

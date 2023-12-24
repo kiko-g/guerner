@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Listbox } from '@headlessui/react'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 import { Category } from '../../../types'
@@ -27,7 +27,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
           </Listbox.Button>
 
           <Listbox.Options
-            className={classNames(
+            className={clsx(
               'z-40 rounded-md px-0 py-1 text-sm shadow-xl',
               'border-2 border-white bg-white dark:border-[#434b51] dark:bg-[#2e373d]',
               open ? 'absolute right-0 mt-2 w-full lg:w-64' : 'hidden',
@@ -57,7 +57,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
                     key={`category-${categoryIdx}`}
                     value={category}
                     className={({ active }) =>
-                      classNames(
+                      clsx(
                         'relative cursor-default select-none py-2 pl-3 pr-3',
                         active ? 'bg-slate-200 dark:bg-slate-600' : '',
                       )

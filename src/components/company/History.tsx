@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { useMediaQuery } from 'usehooks-ts'
 import { PlayCircleIcon as PlayCircleIconSolid, ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/solid'
 import { CalendarDaysIcon, PlayCircleIcon as PlayCircleIconOutline } from '@heroicons/react/24/outline'
+import { t } from 'i18next'
 
 type Frontmatter = {
   lang: string
@@ -28,7 +29,7 @@ type Data = {
 }
 
 export default function History() {
-  const { t, language } = useI18next()
+  const { language } = useI18next()
 
   const data: Data = useStaticQuery(graphql`
     query HistoryQuery {
@@ -83,12 +84,13 @@ export default function History() {
 
 function HistoryMoving({ history }: { history: HistoryEntry[] }) {
   const isMobile = useMediaQuery('(max-width: 768px)')
+  const { t } = useI18next()
   const autoAdvanceTimer = useRef<NodeJS.Timeout | null>(null)
 
-  const radius = 14
-  const strokeWidth = 2
-  const skipTime = 5000 // 5 seconds
-  const updateRate = 100 // 100ms seconds
+  const radius = 18
+  const strokeWidth = 4
+  const skipTime = 8000 // 8 seconds
+  const updateRate = 100 // 100 milliseconds
   const slides = isMobile ? 1 : 3
   const normalizedRadius = radius - strokeWidth * 2
   const circumference = normalizedRadius * 2 * Math.PI
@@ -146,12 +148,24 @@ function HistoryMoving({ history }: { history: HistoryEntry[] }) {
     <div>
       {/* Progress Circle */}
       <div className="absolute left-8 top-8">
-        <svg width={radius * 2} height={radius * 2} viewBox={`0 0 ${radius * 2} ${radius * 2}`}>
+        <svg width={radius * 2} height={radius * 2} viewBox={`0 0 ${radius * 2} ${radius * 2}`} className="absolute">
           <circle
-            className="fill-transparent stroke-white"
+            className="fill-transparent stroke-white dark:stroke-emerald-400"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={circumference - progress}
+            r={normalizedRadius}
+            cx={radius}
+            cy={radius}
+          />
+        </svg>
+
+        <svg width={radius * 2} height={radius * 2} viewBox={`0 0 ${radius * 2} ${radius * 2}`} className="absolute">
+          <circle
+            className="fill-transparent stroke-white/20 dark:stroke-emerald-400/10"
+            strokeWidth={strokeWidth}
+            strokeDasharray={circumference}
+            strokeDashoffset={0}
             r={normalizedRadius}
             cx={radius}
             cy={radius}
@@ -173,6 +187,12 @@ function HistoryMoving({ history }: { history: HistoryEntry[] }) {
         >
           <ArrowLongLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>
+
+        <div>
+          <p className="text-sm font-light text-white">
+            {index + 1} {t('of')} {history.length - slides + 1}
+          </p>
+        </div>
 
         <button
           disabled={disabledRight}
@@ -236,7 +256,7 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
   return historySliced.map((entry, entryIdx) => (
     <li
       key={`history-entry-${entry.date}-${entryIdx}`}
-      className="animate-opacity-transition relative mb-6 transform transition-all ease-in-out sm:mb-0"
+      className="relative mb-6 transform animate-opacity-transition transition-all ease-in-out sm:mb-0"
     >
       <div className="flex items-center">
         <div className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
@@ -245,12 +265,14 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
         <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
       </div>
 
-      <div className="mt-3 sm:pr-8">
-        <h3 className="text-lg font-semibold text-white dark:text-white">#{index + entryIdx + 1}</h3>
-        <time className="mb-2 block font-lexend text-base font-bold leading-none text-secondary dark:text-secondary">
-          {entry.date}
-        </time>
-        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400 md:min-h-[8rem]">
+      <div className="mt-3 w-full">
+        <div className="mb-0 flex w-full items-center gap-x-1">
+          <time className="block text-base font-bold leading-none text-orange-500 dark:text-orange-200">
+            {entry.date}
+          </time>
+          <span className="text-base font-light text-white opacity-30 dark:text-white">({index + entryIdx + 1})</span>
+        </div>
+        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400 sm:pr-4 md:min-h-[7rem]">
           {entry.text}
         </p>
       </div>

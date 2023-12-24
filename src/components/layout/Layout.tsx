@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Seo, BackToTopButton, Navbar, Footer } from '.'
 import { useStaticQuery, graphql } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
@@ -35,7 +35,7 @@ export default function Layout(props: Props) {
   return (
     <div
       id="layout"
-      className={classNames(
+      className={clsx(
         'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium opacity-[99%]',
         hero
           ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
@@ -44,9 +44,7 @@ export default function Layout(props: Props) {
     >
       <Seo title={location} />
       <Navbar location={location} title={title} special={hero} />
-      <div className={classNames('z-10 mx-auto mb-auto flex-1', fullWidth ? 'max-w-full' : 'max-w-6xl px-4')}>
-        {children}
-      </div>
+      <div className={clsx('z-10 mx-auto mb-auto flex-1', fullWidth ? 'max-w-full' : 'max-w-6xl px-4')}>{children}</div>
       <BackToTopButton />
       <Footer title={title} />
     </div>

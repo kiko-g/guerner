@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Tab } from '@headlessui/react'
@@ -76,7 +76,7 @@ export default function Production({}: Props) {
                 <Tab
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
-                    classNames(
+                    clsx(
                       'w-full rounded border px-2 py-1 transition hover:bg-secondary/60 dark:hover:bg-tertiary/60 lg:border-2 lg:px-4 lg:py-2',
                       selected
                         ? 'border-secondary bg-secondary/50 dark:border-tertiary dark:bg-tertiary/50'

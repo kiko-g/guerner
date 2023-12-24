@@ -1,5 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 
@@ -14,7 +14,7 @@ export default function LinkTranslate({ text, link, alt = false, arrow = false }
   return (
     <Link
       to={link}
-      className={classNames(
+      className={clsx(
         `group flex w-full items-center justify-center gap-x-1 rounded border-2 px-8 py-3 text-sm 
         font-medium shadow transition hover:-translate-y-1 sm:w-auto lg:gap-x-2`,
         alt

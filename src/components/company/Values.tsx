@@ -8,7 +8,7 @@ import {
   PencilSquareIcon,
   ViewfinderCircleIcon,
 } from '@heroicons/react/24/outline'
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 type NavAction = {
   title: string
@@ -130,7 +130,7 @@ export default function Values({}: Props) {
           <Link
             to={action.href}
             key={action.title}
-            className={classNames(
+            className={clsx(
               actionIdx === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '',
               actionIdx === 1 ? 'sm:rounded-tr-lg' : '',
               actionIdx === actions.length - 2 ? 'sm:rounded-bl-lg' : '',
@@ -138,7 +138,7 @@ export default function Values({}: Props) {
               'group relative bg-white/5 p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-white hover:bg-white/10 dark:bg-secondary/5 dark:hover:bg-secondary/20',
             )}
           >
-            <span className={classNames(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
+            <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
               <action.icon className="h-6 w-6" aria-hidden="true" />
             </span>
             <span className="mt-3 block font-lexend text-base font-semibold leading-6 text-gray-200 dark:text-white">

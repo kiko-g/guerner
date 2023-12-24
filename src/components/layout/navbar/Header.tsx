@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { Link } from 'gatsby'
 import { NavItem } from '../../../types'
 import { useI18next } from 'gatsby-plugin-react-i18next'
@@ -45,7 +45,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
               return (
                 <span
                   key={`nav-${index}`}
-                  className={classNames(
+                  className={clsx(
                     'group flex items-center rounded transition hover:bg-white/10',
                     isActive ? 'bg-white/20' : '',
                   )}
@@ -112,7 +112,7 @@ export default function Header({ title, location, navigation }: HeaderProps) {
               <Link to={link.location} key={`nav-${index}`} className="relative">
                 <button
                   type="button"
-                  className={classNames(
+                  className={clsx(
                     'flex items-center justify-center rounded px-3 py-1.5 font-normal transition',
                     isActive ? 'bg-white/20' : 'hover:bg-white/10',
                   )}

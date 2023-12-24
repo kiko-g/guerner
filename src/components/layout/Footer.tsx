@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Trans, useTranslation } from 'gatsby-plugin-react-i18next'
-import classNames from 'classnames'
+import clsx from 'clsx'
 
 type Props = {
   title: string
