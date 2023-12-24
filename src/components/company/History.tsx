@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useMediaQuery } from 'usehooks-ts'
@@ -29,7 +29,6 @@ type Data = {
 
 export default function History() {
   const { t, language } = useI18next()
-  const isMobile = useMediaQuery('(max-width: 768px)')
 
   const data: Data = useStaticQuery(graphql`
     query HistoryQuery {
@@ -54,7 +53,7 @@ export default function History() {
   const title = node!.frontmatter.title
   const history = node!.frontmatter.history
 
-  const [autoplay, setAutoplay] = useState(false)
+  const [autoplay, setAutoplay] = useState(true)
 
   return (
     <section className="py-6 lg:py-12">
@@ -76,17 +75,16 @@ export default function History() {
         </div>
 
         <h3 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">{title}</h3>
-        {autoplay ? (
-          <HistoryMoving history={history} isMobile={isMobile} />
-        ) : (
-          <HistoryStatic history={history} isMobile={isMobile} />
-        )}
+        {autoplay ? <HistoryMoving history={history} /> : <HistoryStatic history={history} />}
       </div>
     </section>
   )
 }
 
-function HistoryMoving({ history, isMobile }: { history: HistoryEntry[]; isMobile: boolean }) {
+function HistoryMoving({ history }: { history: HistoryEntry[] }) {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  const autoAdvanceTimer = useRef<NodeJS.Timeout | null>(null)
+
   const radius = 14
   const strokeWidth = 2
   const skipTime = 5000 // 5 seconds
@@ -98,15 +96,40 @@ function HistoryMoving({ history, isMobile }: { history: HistoryEntry[]; isMobil
   const [index, setIndex] = useState(0)
   const [progress, setProgress] = useState(0)
 
-  useEffect(() => {
-    // interval for auto-advancing slides
-    const interval = setInterval(() => {
-      setIndex(prevIndex => (prevIndex < history.length - slides ? prevIndex + 1 : 0))
-      setProgress(0) // reset progress on index change
-    }, skipTime)
+  const historySliced = useMemo(() => history.slice(index, index + slides), [index, slides])
+  const disabledLeft = useMemo(() => index === 0, [index])
+  const disabledRight = useMemo(() => index === history.length - slides, [index, history.length, slides])
 
-    return () => clearInterval(interval)
-  }, [history.length, slides, skipTime])
+  const resetAutoAdvanceTimer = () => {
+    if (autoAdvanceTimer.current) {
+      clearInterval(autoAdvanceTimer.current)
+    }
+    autoAdvanceTimer.current = setInterval(() => {
+      setIndex(prevIndex => (prevIndex < history.length - slides ? prevIndex + 1 : 0))
+      setProgress(0)
+    }, skipTime)
+  }
+
+  const previousItem = () => {
+    setProgress(0) // reset progress on index change
+    setIndex(prev => (prev > 0 ? prev - 1 : 0))
+    resetAutoAdvanceTimer()
+  }
+
+  const nextItem = () => {
+    setProgress(0) // reset progress on index change
+    setIndex(prev => (prev < history.length - slides ? prev + 1 : prev))
+    resetAutoAdvanceTimer()
+  }
+
+  useEffect(() => {
+    resetAutoAdvanceTimer()
+    return () => {
+      if (autoAdvanceTimer.current) {
+        clearInterval(autoAdvanceTimer.current)
+      }
+    }
+  }, [history.length, slides])
 
   useEffect(() => {
     const progressInterval = setInterval(() => {
@@ -117,9 +140,7 @@ function HistoryMoving({ history, isMobile }: { history: HistoryEntry[]; isMobil
     }, updateRate)
 
     return () => clearInterval(progressInterval)
-  }, [circumference, skipTime])
-
-  const historySliced = useMemo(() => history.slice(index, index + slides), [index, slides])
+  }, [circumference, skipTime, updateRate])
 
   return (
     <div>
@@ -142,26 +163,45 @@ function HistoryMoving({ history, isMobile }: { history: HistoryEntry[]; isMobil
       <ul className="grid w-full grid-cols-1 gap-8 lg:grid-cols-3">
         <HistoryContent historySliced={historySliced} index={index} />
       </ul>
+
+      {/* Navigation Arrows */}
+      <nav className="flex w-full items-center justify-between border-t border-gray-200 transition-all lg:border-transparent">
+        <button
+          disabled={disabledLeft}
+          onClick={previousItem}
+          className="inline-flex items-center gap-2 py-3 pr-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pr-1"
+        >
+          <ArrowLongLeftIcon className="h-5 w-5" aria-hidden="true" />
+        </button>
+
+        <button
+          disabled={disabledRight}
+          onClick={nextItem}
+          className="inline-flex items-center gap-2 py-3 pl-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pl-1"
+        >
+          <ArrowLongRightIcon className="h-5 w-5" aria-hidden="true" />
+        </button>
+      </nav>
     </div>
   )
 }
 
-function HistoryStatic({ history, isMobile }: { history: HistoryEntry[]; isMobile: boolean }) {
-  const [index, setIndex] = useState(0)
+function HistoryStatic({ history }: { history: HistoryEntry[] }) {
+  const isMobile = useMediaQuery('(max-width: 768px)')
   const slides = isMobile ? 1 : 3
 
+  const [index, setIndex] = useState(0)
+  const historySliced = useMemo(() => history.slice(index, index + slides), [index, slides])
   const disabledLeft = useMemo(() => index === 0, [index])
-  const disabledRight = useMemo(() => index > history.length - slides, [index, history.length, slides])
+  const disabledRight = useMemo(() => index === history.length - slides, [index, history.length, slides])
 
-  const previousItem = () => {
+  function previousItem() {
     setIndex(prev => (prev > 0 ? prev - 1 : 0))
   }
 
-  const nextItem = () => {
+  function nextItem() {
     setIndex(prev => (prev < history.length - slides ? prev + 1 : prev))
   }
-
-  const historySliced = useMemo(() => history.slice(index, index + slides), [index, slides])
 
   return (
     <div>
