@@ -3,7 +3,7 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useMediaQuery } from 'usehooks-ts'
 import { PlayCircleIcon as PlayCircleIconSolid, ArrowLongLeftIcon, ArrowLongRightIcon } from '@heroicons/react/24/solid'
-import { PlayCircleIcon as PlayCircleIconOutline } from '@heroicons/react/24/outline'
+import { CalendarDaysIcon, PlayCircleIcon as PlayCircleIconOutline } from '@heroicons/react/24/outline'
 
 type Frontmatter = {
   lang: string
@@ -54,29 +54,29 @@ export default function History() {
   const title = node!.frontmatter.title
   const history = node!.frontmatter.history
 
-  const [isMoving, setIsMoving] = useState(true)
+  const [autoplay, setAutoplay] = useState(false)
 
   return (
     <section className="py-6 lg:py-12">
       <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-8 py-4 lg:bg-black/20 lg:px-16 lg:py-12 lg:dark:bg-white/[4%]">
         <div className="absolute right-8 top-8">
           <button
-            onClick={() => setIsMoving(prev => !prev)}
+            onClick={() => setAutoplay(prev => !prev)}
             className="flex flex-col gap-0 text-white transition hover:scale-125 hover:opacity-80"
           >
             <span>
-              {isMoving ? (
+              {autoplay ? (
                 <PlayCircleIconSolid className="h-7 w-7" aria-hidden="true" strokeWidth={1.5} />
               ) : (
                 <PlayCircleIconOutline className="h-7 w-7" aria-hidden="true" strokeWidth={1.5} />
               )}
             </span>
-            <span className="text-xs font-light uppercase">{isMoving ? 'ON' : 'OFF'}</span>
+            <span className="text-xs font-light uppercase">{autoplay ? 'ON' : 'OFF'}</span>
           </button>
         </div>
 
         <h3 className="mb-8 text-center text-3xl font-bold tracking-tighter text-white lg:text-4xl">{title}</h3>
-        {isMoving ? (
+        {autoplay ? (
           <HistoryMoving history={history} isMobile={isMobile} />
         ) : (
           <HistoryStatic history={history} isMobile={isMobile} />
@@ -199,20 +199,8 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
       className="animate-opacity-transition relative mb-6 transform transition-all ease-in-out sm:mb-0"
     >
       <div className="flex items-center">
-        <div className="z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
-          <svg
-            aria-hidden="true"
-            className="h-3 w-3 text-white"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
+        <div className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
+          <CalendarDaysIcon className="h-4 w-4 text-white" />
         </div>
         <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
       </div>
