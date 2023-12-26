@@ -1,15 +1,15 @@
 {
-  "location": "Others",
-  "title": "Other Products",
-  "description": "Guerner & Irmãos S.A has a diversified range of agricultural accessories, agro-textiles, articles for greenhouses, silage, harvests and grape harvests. The bet on the quality of our products is a fundamental criterion for the selection of the products marketed, thus enhancing the performance of our partners.",
+  "Alphabetic (A to Z)": "Alphabetic (A-Z)",
+  "Alphabetic (Z to A)": "Alphabetic (Z-A)",
+  "Sample ID (Ascending)": "Sample ID (Ascending)",
+  "Sample ID (Descending)": "Sample ID (Descending)",
   "categories": "categories",
   "categories.d": "d en",
   "categories.e": "e en",
   "categories.f": "f en",
-  "resultsFound": "result(s) found",
+  "description": "Guerner & Irmãos S.A has a diversified range of agricultural accessories, agro-textiles, articles for greenhouses, silage, harvests and grape harvests. The bet on the quality of our products is a fundamental criterion for the selection of the products marketed, thus enhancing the performance of our partners.",
   "goback": "Go back",
-  "Alphabetic (A to Z)": "Alphabetic (A-Z)",
-  "Alphabetic (Z to A)": "Alphabetic (Z-A)",
-  "Sample ID (Ascending)": "Sample ID (Ascending)",
-  "Sample ID (Descending)": "Sample ID (Descending)"
+  "location": "Others",
+  "resultsFound": "result(s) found",
+  "title": "Other Products"
 }

@@ -1,14 +1,14 @@
 {
-  "location": "Products",
-  "title": "Products",
-  "description": "Guerner & Irmãos S.A. has a wide range of specialized and commercialized products. Despite the strong emphasis on the agricultural sector, offering a varied range of agrotextile products and accessories for agriculture, the company continues to bet on other industries, namely construction, packaging, gardening and cordage.",
-  "agricultureHeader": "Agriculture",
   "agricultureDescription": "Discover our diversified list of agrotextile products and agricultural accessories.",
+  "agricultureHeader": "Agriculture",
   "agricultureTakeMeThere": "See agriculture products",
-  "constructionHeader": "Construction",
   "constructionDescription": "Discover our selection of accessories for the construction industry.",
+  "constructionHeader": "Construction",
   "constructionTakeMeThere": "See construction products",
-  "othersHeader": "Others",
+  "description": "Guerner & Irmãos S.A. has a wide range of specialized and commercialized products. Despite the strong emphasis on the agricultural sector, offering a varied range of agrotextile products and accessories for agriculture, the company continues to bet on other industries, namely construction, packaging, gardening and cordage.",
+  "location": "Products",
   "othersDescription": "Discover our selection of products for other industries.",
-  "othersTakeMeThere": "See other products"
+  "othersHeader": "Others",
+  "othersTakeMeThere": "See other products",
+  "title": "Products"
 }

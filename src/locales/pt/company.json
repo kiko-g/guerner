@@ -1,16 +1,16 @@
 {
+  "center": "Centro de",
+  "description": "Conheça a nossa empresa e os nossos métodos",
   "location": "Empresa",
-  "sectionIdWelcome": "welcome",
+  "of": "de",
+  "offices": "O Nosso Estabelecimento",
   "sectionIdPresentation": "presentation",
   "sectionIdProduction": "production",
-  "titleTop": "Empresa",
-  "titleBottom": "Guerner & Irmãos",
-  "description": "Conheça a nossa empresa e os nossos métodos",
+  "sectionIdWelcome": "welcome",
   "takeMeToPresentation": "Apresentação da empresa",
   "takeMeToProduction": "Processos de produção",
   "takeMeToProducts": "Ver produtos e ofertas",
-  "center": "Centro de",
-  "who": "Sobre Nós",
-  "offices": "O Nosso Estabelecimento",
-  "of": "de"
+  "titleBottom": "Guerner & Irmãos",
+  "titleTop": "Empresa",
+  "who": "Sobre Nós"
 }

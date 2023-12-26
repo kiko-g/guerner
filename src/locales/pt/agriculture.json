@@ -1,15 +1,15 @@
 {
-  "location": "Agricultura",
-  "title": "Agricultura e Jardinagem",
-  "description": "A Guerner & Irmãos S.A dispõe de uma oferta diversificada de acessórios agrícolas, agrotêxteis, artigos direcionados a estufas, silagem, colheitas e vindimas. A aposta na qualidade dos nossos produtos é critério fundamental para a seleção dos produtos comercializados, potenciando assim o desempenho dos nossos parceiros. Os nossos produtos de alta performance, fabricados por meio de um controlo rigoroso e de um serviço personalizado, aumentam a produtividade e a qualidade de cada um dos nossos clientes. A nossa consciência sustentável faz com que toda a nossa gama seja 100% reciclável e apresente diversas vantagens para a agricultura orgânica, reduzindo a necessidade de agrotóxicos.",
+  "Alphabetic (A to Z)": "Ordem Alfabética (A-Z)",
+  "Alphabetic (Z to A)": "Ordem Alfabética (Z-A)",
+  "Sample ID (Ascending)": "ID da Amostra (Crescente)",
+  "Sample ID (Descending)": "ID da Amostra (Decrescente)",
   "categories": "categorias",
   "categories.d": "d pt",
   "categories.e": "e pt",
   "categories.f": "f pt",
-  "resultsFound": "resultados encontrados",
+  "description": "A Guerner & Irmãos S.A dispõe de uma oferta diversificada de acessórios agrícolas, agrotêxteis, artigos direcionados a estufas, silagem, colheitas e vindimas. A aposta na qualidade dos nossos produtos é critério fundamental para a seleção dos produtos comercializados, potenciando assim o desempenho dos nossos parceiros. Os nossos produtos de alta performance, fabricados por meio de um controlo rigoroso e de um serviço personalizado, aumentam a produtividade e a qualidade de cada um dos nossos clientes. A nossa consciência sustentável faz com que toda a nossa gama seja 100% reciclável e apresente diversas vantagens para a agricultura orgânica, reduzindo a necessidade de agrotóxicos.",
   "goback": "Voltar",
-  "Alphabetic (A to Z)": "Ordem Alfabética (A-Z)",
-  "Alphabetic (Z to A)": "Ordem Alfabética (Z-A)",
-  "Sample ID (Ascending)": "ID da Amostra (Crescente)",
-  "Sample ID (Descending)": "ID da Amostra (Decrescente)"
+  "location": "Agricultura",
+  "resultsFound": "resultados encontrados",
+  "title": "Agricultura e Jardinagem"
 }

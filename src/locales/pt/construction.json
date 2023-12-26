@@ -1,15 +1,15 @@
 {
-  "location": "Construção",
-  "title": "Construção e Indústria",
-  "description": "A Guerner & Irmãos S.A dispõe de uma oferta diversificada de acessórios agrícolas, agrotêxteis, artigos direcionados a estufas, silagem, colheitas e vindimas. A aposta na qualidade dos nossos produtos é critério fundamental para a seleção dos produtos comercializados, potenciando assim o desempenho dos nossos parceiros. A nossa seleção de produtos para construção garante uma maior eficiência, qualidade e segurança aos processos construtivos, cumprindo com a exigência dos nossos clientes. Porque nos preocupamos com a segurança das equipas e com a qualidade global dos projectos, toda a nossa gama é testada, certificada e homologada pelas principais entidades.",
+  "Alphabetic (A to Z)": "Ordem Alfabética (A-Z)",
+  "Alphabetic (Z to A)": "Ordem Alfabética (Z-A)",
+  "Sample ID (Ascending)": "ID da Amostra (Crescente)",
+  "Sample ID (Descending)": "ID da Amostra (Decrescente)",
   "categories": "categorias",
   "categories.a": "a pt",
   "categories.b": "b pt",
   "categories.c": "c pt",
-  "resultsFound": "resultados encontrados",
+  "description": "A Guerner & Irmãos S.A dispõe de uma oferta diversificada de acessórios agrícolas, agrotêxteis, artigos direcionados a estufas, silagem, colheitas e vindimas. A aposta na qualidade dos nossos produtos é critério fundamental para a seleção dos produtos comercializados, potenciando assim o desempenho dos nossos parceiros. A nossa seleção de produtos para construção garante uma maior eficiência, qualidade e segurança aos processos construtivos, cumprindo com a exigência dos nossos clientes...",
   "goback": "Voltar",
-  "Alphabetic (A to Z)": "Ordem Alfabética (A-Z)",
-  "Alphabetic (Z to A)": "Ordem Alfabética (Z-A)",
-  "Sample ID (Ascending)": "ID da Amostra (Crescente)",
-  "Sample ID (Descending)": "ID da Amostra (Decrescente)"
+  "location": "Construção",
+  "resultsFound": "resultados encontrados",
+  "title": "Construção e Indústria"
 }

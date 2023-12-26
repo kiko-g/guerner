@@ -1,16 +1,16 @@
 {
+  "center": "Center of",
+  "description": "Discover the story behind Guerner & Irmãos and how our legacy of excellence can inspire you today.",
   "location": "Company",
-  "sectionIdWelcome": "welcome",
+  "of": "of",
+  "offices": "Meet Our Building",
   "sectionIdPresentation": "presentation",
   "sectionIdProduction": "production",
-  "titleTop": "Get to know",
-  "titleBottom": "Guerner & Irmãos",
-  "description": "Discover the story behind Guerner & Irmãos and how our legacy of excellence can inspire you today.",
+  "sectionIdWelcome": "welcome",
   "takeMeToPresentation": "Get to know us",
   "takeMeToProduction": "Production methodology",
   "takeMeToProducts": "Show me products and offers",
-  "center": "Center of",
-  "who": "About Us",
-  "offices": "Meet Our Building",
-  "of": "of"
+  "titleBottom": "Guerner & Irmãos",
+  "titleTop": "Get to know",
+  "who": "About Us"
 }
