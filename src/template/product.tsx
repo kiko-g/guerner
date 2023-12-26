@@ -48,7 +48,7 @@ export default function ProductTemplate({ data }: Props) {
             <h1 className="hidden lg:block">{frontmatter.name}</h1>
           </div>
 
-          <div className="mt-4 flex w-full flex-col border-b border-primary/20 dark:border-white/20 lg:flex-row">
+          <div className="mt-4 flex w-full flex-col border-b border-primary/20 lg:flex-row dark:border-white/20">
             {/* For more info */}
             <div className="flex flex-1 items-center gap-4 py-3">
               <span className="h-12 w-12 bg-tertiary dark:bg-tertiary"></span>
@@ -59,7 +59,7 @@ export default function ProductTemplate({ data }: Props) {
             </div>
 
             {/* Metadata */}
-            <div className="flex items-start justify-start gap-8 border-l-0 border-t border-primary/20 py-4 pl-0 text-left text-sm tracking-tighter dark:border-white/20 lg:items-center lg:justify-end lg:border-l lg:border-t-0 lg:py-0 lg:pl-8">
+            <div className="flex items-start justify-start gap-8 border-l-0 border-t border-primary/20 py-4 pl-0 text-left text-sm tracking-tighter lg:items-center lg:justify-end lg:border-l lg:border-t-0 lg:py-0 lg:pl-8 dark:border-white/20">
               <div className="flex flex-col">
                 <span>{t('sector')}</span>
                 <span className="max-w-[8rem] text-sm font-bold tracking-tighter lg:max-w-full">
@@ -89,7 +89,7 @@ export default function ProductTemplate({ data }: Props) {
 
         {/* Characteristics Banner */}
         {frontmatter.characteristics !== null && frontmatter.characteristics.length > 0 ? (
-          <ul className="mt-4 flex flex-col flex-wrap gap-4 border-y border-primary/20 py-4 dark:border-white/20 lg:flex-row lg:gap-8">
+          <ul className="mt-4 flex flex-col flex-wrap gap-4 border-y border-primary/20 py-4 lg:flex-row lg:gap-8 dark:border-white/20">
             {frontmatter.characteristics
               .sort((a, b) => (a < b ? 1 : -1))
               .map((c, cIdx) => (
@@ -118,7 +118,7 @@ export default function ProductTemplate({ data }: Props) {
           </h5>
 
           <div className="inline-block min-w-full py-2 align-middle">
-            <table className="min-w-full divide-y divide-primary/20 text-xs tracking-tighter dark:divide-white/20 lg:text-sm">
+            <table className="min-w-full divide-y divide-primary/20 text-xs tracking-tighter lg:text-sm dark:divide-white/20">
               <thead className="w-full min-w-full">
                 {frontmatter.dimensions.slice(0, 1).map((row, rowIdx) => {
                   const [a, b, c, d, e, f, g] = row
@@ -157,7 +157,7 @@ export default function ProductTemplate({ data }: Props) {
                   const [a, b, c, d, e, f, g] = row
                   return (
                     <tr key={`dimension-row-${rowIdx}`}>
-                      <td className="w-0 whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 dark:text-white lg:pl-0">
+                      <td className="w-0 whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 lg:pl-0 dark:text-white">
                         {a}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{b}</td>
@@ -176,9 +176,9 @@ export default function ProductTemplate({ data }: Props) {
 
         {/* Customizable Success Banner */}
         {frontmatter.customizable && (
-          <div className="flex w-full flex-col items-start gap-2 rounded bg-emerald-600/10 px-4 py-4 dark:bg-emerald-500/20 lg:flex-row lg:items-center lg:gap-4">
-            <PencilIcon className="hidden h-6 w-6 text-emerald-700 dark:text-emerald-400 lg:flex lg:h-8 lg:w-8" />
-            <p className="text-sm font-normal tracking-tighter text-emerald-900 dark:text-white lg:font-medium lg:tracking-normal">
+          <div className="flex w-full flex-col items-start gap-2 rounded bg-emerald-600/10 px-4 py-4 lg:flex-row lg:items-center lg:gap-4 dark:bg-emerald-500/20">
+            <PencilIcon className="hidden h-6 w-6 text-emerald-700 lg:flex lg:h-8 lg:w-8 dark:text-emerald-400" />
+            <p className="text-sm font-normal tracking-tighter text-emerald-900 lg:font-medium lg:tracking-normal dark:text-white">
               {frontmatter.customizableText}
             </p>
           </div>
@@ -260,7 +260,7 @@ type ImageGridProps = {
 
 function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
   return (
-    <div className="flex w-full flex-col gap-8 rounded bg-slate-100 p-8 dark:bg-slate-300/5 lg:flex-row">
+    <div className="flex w-full flex-col gap-8 rounded bg-slate-100 p-8 lg:flex-row dark:bg-slate-300/5">
       <div className="my-auto w-full lg:flex-1">
         <GatsbyImage image={featuredImage} alt="featured" className="my-auto w-full rounded object-cover shadow-xl" />
       </div>

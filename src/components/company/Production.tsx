@@ -77,7 +77,7 @@ export default function Production({}: Props) {
                   key={`tab-${tabIdx}`}
                   className={({ selected }) =>
                     clsx(
-                      'w-full rounded border px-2 py-1 transition hover:bg-secondary/60 dark:hover:bg-tertiary/60 lg:border-2 lg:px-4 lg:py-2',
+                      'w-full rounded border px-2 py-1 transition hover:bg-secondary/60 lg:border-2 lg:px-4 lg:py-2 dark:hover:bg-tertiary/60',
                       selected
                         ? 'border-secondary bg-secondary/50 dark:border-tertiary dark:bg-tertiary/50'
                         : 'border-transparent bg-white/5 dark:bg-white/5',
@@ -102,7 +102,7 @@ export default function Production({}: Props) {
                       <h2 className="mt-6 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                         {tabList[tabIdx]}
                       </h2>
-                      <p className="mx-auto mt-2 max-w-2xl text-base font-light text-white dark:text-white lg:text-base">
+                      <p className="mx-auto mt-2 max-w-2xl text-base font-light text-white lg:text-base dark:text-white">
                         {tabDescriptions[tabIdx]}
                       </p>
                     </div>

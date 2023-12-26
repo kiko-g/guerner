@@ -56,5 +56,5 @@
 }
 
 .article.alt blockquote {
-  @apply my-8 rounded border-l-4 border-secondary bg-secondary/20 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-tertiary/10 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-8 rounded border-l-4 border-secondary bg-secondary/20 py-1 pl-4 pr-3 text-left font-normal tracking-tight text-white lg:pl-4 lg:pr-6 lg:tracking-normal dark:border-tertiary dark:bg-tertiary/10;
 }

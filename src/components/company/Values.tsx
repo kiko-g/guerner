@@ -118,14 +118,14 @@ export default function Values({}: Props) {
   ]
 
   return (
-    <div className="max-w-5xl rounded-none bg-black/20 px-4 py-16 text-white dark:bg-white/[4%] lg:rounded-3xl lg:px-0">
+    <div className="max-w-5xl rounded-none bg-black/20 px-4 py-16 text-white lg:rounded-3xl lg:px-0 dark:bg-white/[4%]">
       <h2 className="mb-3 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">{title}</h2>
       <p
         dangerouslySetInnerHTML={{ __html: html }}
         className="mx-auto mb-8 max-w-xl text-center text-sm lg:text-base"
       />
 
-      <div className="mx-8 flex flex-col divide-y divide-white/10 overflow-hidden rounded-lg border border-transparent bg-transparent dark:border-secondary/0 dark:bg-secondary/10 md:grid md:grid-cols-2 md:gap-px md:divide-y-0 lg:mx-16">
+      <div className="mx-8 flex flex-col divide-y divide-white/10 overflow-hidden rounded-lg border border-transparent bg-transparent md:grid md:grid-cols-2 md:gap-px md:divide-y-0 lg:mx-16 dark:border-secondary/0 dark:bg-secondary/10">
         {actions.map((action, actionIdx) => (
           <Link
             to={action.href}

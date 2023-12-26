@@ -29,7 +29,7 @@ export default function CompanyCTA({}: Props) {
         {/* CTA */}
         <div className="relative z-0 w-full p-12 lg:px-16 lg:py-24">
           <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
-            <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary dark:text-tertiary lg:text-4xl">
+            <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary lg:text-4xl dark:text-tertiary">
               {header}
             </h2>
             <p className="block px-2 py-2 text-center tracking-tighter text-white">{text}</p>

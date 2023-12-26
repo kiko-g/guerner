@@ -27,7 +27,7 @@ export default function Hamburger({ open }: HamburgerProps) {
         <div className="flex items-center justify-center gap-x-1.5">
           <LanguageSwitch />
           <DarkModeSwitch />
-          <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white lg:hidden">
+          <Disclosure.Button className="group text-white transition duration-200 ease-in lg:hidden dark:text-white">
             <span className="sr-only">Open nav menu</span>
             {open ? (
               <XMarkIcon
@@ -50,7 +50,7 @@ export default function Hamburger({ open }: HamburgerProps) {
 
           <div className="flex items-center gap-x-1">
             <DarkModeSwitch />
-            <Disclosure.Button className="group text-white transition duration-200 ease-in dark:text-white lg:hidden">
+            <Disclosure.Button className="group text-white transition duration-200 ease-in lg:hidden dark:text-white">
               <span className="sr-only">Open nav menu</span>
               {open ? (
                 <XMarkIcon

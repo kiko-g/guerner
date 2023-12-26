@@ -22,7 +22,7 @@ export default function Footer({ title }: Props) {
   ]
 
   return (
-    <footer className="z-10 flex flex-col bg-navy px-8 py-8 text-sm text-white dark:bg-gray-800 lg:px-12 lg:py-12 lg:text-base">
+    <footer className="z-10 flex flex-col bg-navy px-8 py-8 text-sm text-white lg:px-12 lg:py-12 lg:text-base dark:bg-gray-800">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col items-start gap-2 font-normal">
           <Link to={'/'} className="group flex items-center justify-center gap-x-4 transition hover:opacity-80">

@@ -259,10 +259,10 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
       className="relative mb-6 transform animate-opacity-transition transition-all ease-in-out sm:mb-0"
     >
       <div className="flex items-center">
-        <div className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white dark:bg-tertiary dark:ring-gray-800 sm:ring-8">
+        <div className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white sm:ring-8 dark:bg-tertiary dark:ring-gray-800">
           <CalendarDaysIcon className="h-4 w-4 text-white" />
         </div>
-        <div className="hidden h-0.5 w-full bg-gray-200 dark:bg-gray-700 sm:flex"></div>
+        <div className="hidden h-0.5 w-full bg-gray-200 sm:flex dark:bg-gray-700"></div>
       </div>
 
       <div className="mt-3 w-full">
@@ -272,7 +272,7 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
           </time>
           <span className="text-base font-light text-white opacity-30 dark:text-white">({index + entryIdx + 1})</span>
         </div>
-        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 dark:text-gray-400 sm:pr-4 md:min-h-[7rem]">
+        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 sm:pr-4 md:min-h-[7rem] dark:text-gray-400">
           {entry.text}
         </p>
       </div>

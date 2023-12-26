@@ -1,5 +1,5 @@
 .product {
-  @apply mx-auto space-y-4 bg-white px-4 py-8 font-normal dark:bg-navy lg:px-12 lg:py-16;
+  @apply mx-auto space-y-4 bg-white px-4 py-8 font-normal lg:px-12 lg:py-16 dark:bg-navy;
 }
 
 /* Markdown */
@@ -16,17 +16,17 @@
 }
 
 .product .content table {
-  @apply w-full max-w-full table-auto border-2 border-primary bg-white text-xs tracking-[-0.06rem] dark:border-tertiary/50 dark:bg-transparent lg:text-base lg:tracking-tight;
+  @apply w-full max-w-full table-auto border-2 border-primary bg-white text-xs tracking-[-0.06rem] lg:text-base lg:tracking-tight dark:border-tertiary/50 dark:bg-transparent;
 }
 
 .product .content table tr th {
-  @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-sans font-medium text-white dark:bg-tertiary/40 lg:px-3 lg:py-2 lg:font-lexend;
+  @apply truncate whitespace-pre-wrap border-primary bg-primary/90 px-0.5 py-2 font-sans font-medium text-white lg:px-3 lg:py-2 lg:font-lexend dark:bg-tertiary/40;
 }
 
 .product .content table tr td {
-  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 dark:border-tertiary/50 lg:px-3 lg:py-2;
+  @apply truncate whitespace-pre-wrap border-2 border-primary px-[0.1rem] py-2 lg:px-3 lg:py-2 dark:border-tertiary/50;
 }
 
 .product .content blockquote {
-  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 pr-3 text-left font-normal tracking-tight text-white dark:border-tertiary dark:bg-ice/5 lg:pl-4 lg:pr-6 lg:tracking-normal;
+  @apply my-4 border-l-4 border-primary bg-primary/50 py-2 pl-4 pr-3 text-left font-normal tracking-tight text-white lg:pl-4 lg:pr-6 lg:tracking-normal dark:border-tertiary dark:bg-ice/5;
 }

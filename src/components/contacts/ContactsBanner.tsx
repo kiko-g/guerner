@@ -37,14 +37,14 @@ export default function ContactsBanner({}: Props) {
         src="../../images/building.webp"
         placeholder="blurred"
         alt="Guerner Building"
-        className="h-48 w-full rounded bg-primary object-cover object-center dark:bg-tertiary lg:h-96"
+        className="h-48 w-full rounded bg-primary object-cover object-center lg:h-96 dark:bg-tertiary"
       />
 
       {/* Contacts */}
       <ul className="flex h-full w-full flex-col items-start justify-start gap-1 font-normal lg:gap-2">
         {contacts.map((item, index) => (
           <li key={`contact-${index}`} className="flex w-full items-center gap-2 lg:gap-3">
-            <item.icon className="h-5 w-5 text-teal-600 dark:text-tertiary lg:h-6 lg:w-6" />
+            <item.icon className="h-5 w-5 text-teal-600 lg:h-6 lg:w-6 dark:text-tertiary" />
             <ContactDescription link={item.link} text={item.text} />
             <CopyButton text={item.text} />
           </li>
@@ -61,7 +61,7 @@ function ContactDescription({ link, text }: { link: string | null; text: string 
     <a
       href={link}
       target="_blank"
-      className="w-full text-sm leading-tight tracking-tight transition hover:text-primary hover:underline dark:text-white dark:hover:text-tertiary lg:text-base"
+      className="w-full text-sm leading-tight tracking-tight transition hover:text-primary hover:underline lg:text-base dark:text-white dark:hover:text-tertiary"
     >
       {text}
     </a>

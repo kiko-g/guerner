@@ -22,7 +22,7 @@ export default function ContactsPage() {
         </header>
 
         <div className="flex flex-col gap-4 lg:gap-8">
-          <div className="flex flex-col gap-4 rounded bg-lighter px-4 py-4 shadow-xl dark:bg-white/5 lg:flex-row lg:gap-4">
+          <div className="flex flex-col gap-4 rounded bg-lighter px-4 py-4 shadow-xl lg:flex-row lg:gap-4 dark:bg-white/5">
             <GoogleMapsLocation height={isMobile ? 240 : 'auto'} />
             <ContactsBanner />
           </div>
