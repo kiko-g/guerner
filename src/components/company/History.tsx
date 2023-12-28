@@ -272,7 +272,7 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
           </time>
           <span className="text-base font-light text-white opacity-30 dark:text-white">({index + entryIdx + 1})</span>
         </div>
-        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 sm:pr-4 md:min-h-[7rem] dark:text-gray-400">
+        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 sm:pr-4 md:min-h-[8rem] dark:text-gray-400">
           {entry.text}
         </p>
       </div>

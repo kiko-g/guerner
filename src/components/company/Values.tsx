@@ -125,7 +125,7 @@ export default function Values({}: Props) {
         className="mx-auto mb-8 max-w-xl text-center text-sm lg:text-base"
       />
 
-      <div className="mx-8 flex flex-col divide-y divide-white/10 overflow-hidden rounded-lg border border-transparent bg-transparent md:grid md:grid-cols-2 md:gap-px md:divide-y-0 lg:mx-16 dark:border-secondary/0 dark:bg-secondary/10">
+      <div className="mx-8 flex flex-col divide-y divide-white/10 overflow-hidden rounded-lg border border-transparent bg-transparent md:grid md:grid-cols-2 md:gap-px md:divide-y-0 lg:mx-16 dark:border-secondary/0 dark:bg-secondary/0">
         {actions.map((action, actionIdx) => (
           <Link
             to={action.href}
@@ -135,7 +135,7 @@ export default function Values({}: Props) {
               actionIdx === 1 ? 'sm:rounded-tr-lg' : '',
               actionIdx === actions.length - 2 ? 'sm:rounded-bl-lg' : '',
               actionIdx === actions.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '',
-              'group relative bg-white/5 p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-white hover:bg-white/10 dark:bg-secondary/5 dark:hover:bg-secondary/20',
+              'group relative bg-white/5 p-6 transition focus-within:ring-2 focus-within:ring-inset focus-within:ring-white hover:bg-white/10 dark:bg-secondary/0 dark:hover:bg-secondary/20',
             )}
           >
             <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>

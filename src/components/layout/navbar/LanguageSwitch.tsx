@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import clsx from 'clsx'
 import { Link, useI18next } from 'gatsby-plugin-react-i18next'
-import { CheckCircleIcon, CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, ChevronUpDownIcon } from '@heroicons/react/24/solid'
 
 type Props = {}
 

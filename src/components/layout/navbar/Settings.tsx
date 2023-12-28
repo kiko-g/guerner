@@ -34,7 +34,7 @@ export default function Settings() {
                   <LanguageSwitcher />
                   <DarkModeToggler />
                   <AnalyticsLink />
-                  <AdminPageLink />
+                  {/* <AdminPageLink /> */}
                 </div>
                 <div className="bg-slate-100 p-4 dark:bg-slate-700">
                   <Feedback />
@@ -114,7 +114,12 @@ function LanguageSwitcher() {
                     : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500',
                 )}
               >
-                <Link to={originalPath} language={lang} className="flex items-center justify-start gap-x-1">
+                <Link
+                  placeholder="current"
+                  to={originalPath}
+                  language={lang}
+                  className="flex items-center justify-start gap-x-1"
+                >
                   <span
                     className={clsx(
                       'truncate uppercase group-hover:text-white',
@@ -237,6 +242,7 @@ function AdminPageLink() {
   return (
     <Link
       to="/admin"
+      placeholder="current"
       className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
