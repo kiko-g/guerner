@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
+import { Contact } from '../../images'
 
 type Props = {}
 
@@ -51,12 +51,11 @@ export default function SendEmailForm({}: Props) {
     <section className="rounded bg-light shadow-xl dark:bg-white/5">
       <div className="rounded-t lg:grid lg:grid-cols-12 lg:rounded-none lg:rounded-l">
         {/* Desktop header */}
-        <div className="relative flex h-32 items-end rounded-t lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
-          <StaticImage
+        <div className="relative flex items-end rounded-t lg:col-span-5 lg:h-full lg:rounded-none lg:rounded-l xl:col-span-6">
+          <img
             alt="Night Banner"
-            src="../../images/contact.jpg"
-            placeholder="blurred"
-            className="absolute left-0 top-0 h-full w-full rounded-t object-cover object-center lg:rounded-none lg:rounded-l"
+            src={Contact}
+            className="absolute inset-0 h-full w-full rounded-t object-cover object-center lg:rounded-none lg:rounded-l"
           />
           <div className="hidden lg:relative lg:block lg:p-8">
             <Link
