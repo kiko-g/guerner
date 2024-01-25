@@ -118,7 +118,10 @@ export default function Values({}: Props) {
   ]
 
   return (
-    <div className="max-w-5xl rounded-none bg-black/20 px-4 py-16 text-white lg:rounded-3xl lg:px-0 dark:bg-white/[4%]">
+    <section
+      id="values"
+      className="max-w-5xl rounded-none bg-black/20 px-4 py-16 text-white lg:rounded-3xl lg:px-0 dark:bg-white/[4%]"
+    >
       <h2 className="mb-3 text-center text-3xl font-semibold tracking-tighter lg:mb-6 lg:text-4xl">{title}</h2>
       <p
         dangerouslySetInnerHTML={{ __html: html }}
@@ -163,6 +166,6 @@ export default function Values({}: Props) {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

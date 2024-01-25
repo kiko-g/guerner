@@ -57,7 +57,7 @@ export default function History() {
   const [autoplay, setAutoplay] = useState(true)
 
   return (
-    <section className="py-6 lg:py-12">
+    <section id="presentation" className="py-6 lg:py-12">
       <div className="relative mx-auto flex max-w-5xl flex-col items-center rounded-3xl bg-transparent px-8 py-4 lg:bg-black/20 lg:px-16 lg:py-12 lg:dark:bg-white/[4%]">
         <div className="absolute right-8 top-8">
           <button
