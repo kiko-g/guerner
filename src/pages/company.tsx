@@ -14,7 +14,7 @@ export default function CompanyPage() {
       <main>
         <Presentation />
         <Values />
-        <History />
+        {/* <History /> */}
         <Production />
       </main>
     </Layout>
