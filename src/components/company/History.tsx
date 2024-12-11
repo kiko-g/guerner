@@ -179,11 +179,11 @@ function HistoryMoving({ history }: { history: HistoryEntry[] }) {
       </ul>
 
       {/* Navigation Arrows */}
-      <nav className="flex w-full items-center justify-between border-t border-gray-200 transition-all lg:border-transparent">
+      <nav className="flex w-full items-center justify-between border-t border-zinc-200 transition-all lg:border-transparent">
         <button
           disabled={disabledLeft}
           onClick={previousItem}
-          className="inline-flex items-center gap-2 py-3 pr-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pr-1"
+          className="inline-flex items-center gap-2 py-3 pr-0 text-sm font-medium text-zinc-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pr-1"
         >
           <ArrowLongLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -197,7 +197,7 @@ function HistoryMoving({ history }: { history: HistoryEntry[] }) {
         <button
           disabled={disabledRight}
           onClick={nextItem}
-          className="inline-flex items-center gap-2 py-3 pl-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pl-1"
+          className="inline-flex items-center gap-2 py-3 pl-0 text-sm font-medium text-zinc-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pl-1"
         >
           <ArrowLongRightIcon className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -231,11 +231,11 @@ function HistoryStatic({ history }: { history: HistoryEntry[] }) {
       </ul>
 
       {/* Navigation Arrows */}
-      <nav className="flex w-full items-center justify-between border-t border-gray-200 transition-all lg:border-transparent">
+      <nav className="flex w-full items-center justify-between border-t border-zinc-200 transition-all lg:border-transparent">
         <button
           disabled={disabledLeft}
           onClick={previousItem}
-          className="inline-flex items-center gap-2 py-3 pr-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pr-1"
+          className="inline-flex items-center gap-2 py-3 pr-0 text-sm font-medium text-zinc-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pr-1"
         >
           <ArrowLongLeftIcon className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -243,7 +243,7 @@ function HistoryStatic({ history }: { history: HistoryEntry[] }) {
         <button
           disabled={disabledRight}
           onClick={nextItem}
-          className="inline-flex items-center gap-2 py-3 pl-0 text-sm font-medium text-gray-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pl-1"
+          className="inline-flex items-center gap-2 py-3 pl-0 text-sm font-medium text-zinc-300 hover:text-white enabled:hover:scale-105 disabled:cursor-not-allowed disabled:opacity-20 md:pl-1"
         >
           <ArrowLongRightIcon className="h-5 w-5" aria-hidden="true" />
         </button>
@@ -259,10 +259,10 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
       className="relative mb-6 transform animate-opacity-transition transition-all ease-in-out sm:mb-0"
     >
       <div className="flex items-center">
-        <div className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white sm:ring-8 dark:bg-tertiary dark:ring-gray-800">
+        <div className="z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-teal-600 ring-2 ring-white sm:ring-8 dark:bg-tertiary dark:ring-zinc-800">
           <CalendarDaysIcon className="h-4 w-4 text-white" />
         </div>
-        <div className="hidden h-0.5 w-full bg-gray-200 sm:flex dark:bg-gray-700"></div>
+        <div className="hidden h-0.5 w-full bg-zinc-200 sm:flex dark:bg-zinc-700"></div>
       </div>
 
       <div className="mt-3 w-full">
@@ -272,7 +272,7 @@ function HistoryContent({ index, historySliced }: { index: number; historySliced
           </time>
           <span className="text-base font-light text-white opacity-30 dark:text-white">({index + entryIdx + 1})</span>
         </div>
-        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-gray-300 sm:pr-4 md:min-h-[8rem] dark:text-gray-400">
+        <p className="min-h-full min-w-full text-sm font-normal tracking-tight text-zinc-300 sm:pr-4 md:min-h-[8rem] dark:text-zinc-400">
           {entry.text}
         </p>
       </div>

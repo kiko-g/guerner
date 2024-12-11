@@ -22,7 +22,7 @@ export default function Footer({ title }: Props) {
   ]
 
   return (
-    <footer className="z-10 flex flex-col bg-navy px-8 py-8 text-sm text-white lg:px-12 lg:py-12 lg:text-base dark:bg-gray-800">
+    <footer className="dark:bg-zinc-925 z-10 flex flex-col bg-navy px-8 py-8 text-sm text-white lg:px-12 lg:py-12 lg:text-base">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col items-start gap-2 font-normal">
           <Link to={'/'} className="group flex items-center justify-center gap-x-4 transition hover:opacity-80">
@@ -38,7 +38,7 @@ export default function Footer({ title }: Props) {
         </div>
 
         <div className="mt-4">
-          <p className="text-center text-sm tracking-tight text-gray-200 dark:text-gray-300">
+          <p className="text-center text-sm tracking-tight text-zinc-200 dark:text-zinc-300">
             © {new Date().getFullYear()} Guerner & Irmãos S.A. All rights reserved.
           </p>
         </div>
@@ -64,7 +64,7 @@ export default function Footer({ title }: Props) {
               href="https://github.com/kiko-g"
               className="flex w-full items-center justify-center gap-x-1 transition hover:opacity-60"
             >
-              <span className="lowercase text-gray-400">{t('madeBy')} </span>
+              <span className="lowercase text-zinc-400">{t('madeBy')} </span>
               <span className="font-bold">Francisco Gonçalves</span>
             </a>
           </li>

@@ -56,16 +56,16 @@
 }
 
 .silver {
-  @apply bg-gradient-to-br from-gray-500 to-gray-700;
+  @apply bg-gradient-to-br from-zinc-500 to-zinc-700;
 }
 
 .gray {
-  @apply bg-gray-400;
+  @apply bg-zinc-400;
 }
 
 /* Backlog */
 .slate {
-  @apply bg-gray-600;
+  @apply bg-zinc-600;
 }
 
 .pink {

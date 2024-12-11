@@ -14,7 +14,7 @@ export default function ContactsCTA({}: Props) {
   const routeContacts = '/contacts'
 
   return (
-    <section className="relative z-0 w-full animate-gradient bg-teal-800 px-12 py-12 lg:px-16 lg:py-24 dark:bg-[#1c2230]">
+    <section className="relative z-0 w-full animate-gradient bg-teal-800 px-12 py-12 lg:px-16 lg:py-24 dark:bg-zinc-900">
       <div className="mx-auto flex h-full max-w-md flex-col items-center justify-center gap-y-3">
         <h2 className="w-full text-center font-lexend text-3xl font-bold tracking-tighter text-secondary lg:text-4xl dark:text-tertiary">
           {header}

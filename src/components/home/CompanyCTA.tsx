@@ -24,7 +24,7 @@ export default function CompanyCTA({}: Props) {
   const routeCompany = '/company'
 
   return (
-    <section className="w-full overflow-hidden bg-teal-800 dark:bg-gray-800">
+    <section className="w-full overflow-hidden bg-teal-800 dark:bg-black/20">
       <div className="grid grid-cols-1 xl:grid-cols-2">
         {/* CTA */}
         <div className="relative z-0 w-full p-12 lg:px-16 lg:py-24">

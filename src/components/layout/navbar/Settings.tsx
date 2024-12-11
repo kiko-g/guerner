@@ -35,14 +35,14 @@ export default function Settings() {
           >
             <Popover.Panel className="absolute right-0 z-10 mt-3 w-screen max-w-md transform px-4 sm:px-0">
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:ring-white dark:ring-opacity-10">
-                <div className="relative flex flex-col gap-2 bg-white p-4 dark:bg-slate-800">
+                <div className="relative flex flex-col gap-2 bg-white p-4 dark:bg-zinc-800">
                   <LanguageSwitcher />
                   <DarkModeToggler />
                   <ComplaintsLink />
                   {/* <AnalyticsLink /> */}
                   {/* <AdminPageLink /> */}
                 </div>
-                <div className="bg-slate-100 p-4 dark:bg-slate-700">
+                <div className="bg-zinc-100 p-4 dark:bg-zinc-700">
                   <Feedback />
                 </div>
               </div>
@@ -62,7 +62,7 @@ function LanguageSwitcher() {
     <div className="flex flex-col">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
+        className="flex w-full items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-zinc-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-zinc-700"
       >
         <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
           <svg
@@ -90,17 +90,17 @@ function LanguageSwitcher() {
         </div>
         <div className="ml-4 flex h-full w-full items-start justify-between self-stretch pr-2">
           <div className="flex flex-col">
-            <p className="text-left text-sm font-medium text-gray-900 dark:text-white">{t('selectLang')}</p>
-            <p className="text-left text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
+            <p className="text-left text-sm font-medium text-zinc-900 dark:text-white">{t('selectLang')}</p>
+            <p className="text-left text-sm font-normal leading-tight tracking-tight text-zinc-500 dark:text-zinc-300">
               {t('currentLang')} <span className="uppercase">{language}</span>
             </p>
           </div>
 
           <span className="self-center">
             {open ? (
-              <MinusIcon className="h-5 w-5 text-gray-900 dark:text-white" />
+              <MinusIcon className="h-5 w-5 text-zinc-900 dark:text-white" />
             ) : (
-              <ChevronDownIcon className="h-5 w-5 text-gray-900 dark:text-white" />
+              <ChevronDownIcon className="h-5 w-5 text-zinc-900 dark:text-white" />
             )}
           </span>
         </div>
@@ -117,7 +117,7 @@ function LanguageSwitcher() {
                   'group relative z-50 cursor-pointer select-none px-3 py-2 text-sm transition hover:text-white lg:text-sm',
                   active
                     ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-500 hover:text-white dark:bg-emerald-700/50 dark:text-emerald-200 dark:hover:bg-emerald-500'
-                    : 'text-gray-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500',
+                    : 'text-zinc-800 hover:bg-emerald-500 dark:text-white dark:hover:bg-emerald-500',
                 )}
               >
                 <Link
@@ -157,7 +157,7 @@ function DarkModeToggler() {
   return (
     <button
       onClick={() => setEnabled(!enabled)}
-      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
+      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-zinc-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-zinc-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
         <svg
@@ -195,8 +195,8 @@ function DarkModeToggler() {
         </svg>
       </div>
       <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
-        <p className="text-left text-sm font-medium text-gray-900 dark:text-white">{t('darkMode')}</p>
-        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
+        <p className="text-left text-sm font-medium text-zinc-900 dark:text-white">{t('darkMode')}</p>
+        <p className="text-sm font-normal leading-tight tracking-tight text-zinc-500 dark:text-zinc-300">
           {enabled ? t('enabled') : t('disabled')}
         </p>
       </div>
@@ -212,7 +212,7 @@ function AnalyticsLink() {
       target="_blank"
       rel="noreferrer"
       href="https://vercel.com/kiko-g-s-team/guerner/analytics?environment=production&period=30d"
-      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
+      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-zinc-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-zinc-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
         <svg
@@ -233,8 +233,8 @@ function AnalyticsLink() {
         </svg>
       </div>
       <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
-        <p className="text-sm font-medium text-gray-900 dark:text-white">{t('analytics')}</p>
-        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
+        <p className="text-sm font-medium text-zinc-900 dark:text-white">{t('analytics')}</p>
+        <p className="text-sm font-normal leading-tight tracking-tight text-zinc-500 dark:text-zinc-300">
           {t('analytics.description')}
         </p>
       </div>
@@ -250,7 +250,7 @@ function ComplaintsLink() {
       target="_blank"
       rel="noreferrer"
       href="https://guerner.workky.com/portal-denuncias"
-      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
+      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-zinc-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-zinc-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
         <svg
@@ -279,8 +279,8 @@ function ComplaintsLink() {
         </svg>
       </div>
       <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
-        <p className="text-sm font-medium text-gray-900 dark:text-white">{t('complaints')}</p>
-        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
+        <p className="text-sm font-medium text-zinc-900 dark:text-white">{t('complaints')}</p>
+        <p className="text-sm font-normal leading-tight tracking-tight text-zinc-500 dark:text-zinc-300">
           {t('complaints.description')}
         </p>
       </div>
@@ -295,7 +295,7 @@ function AdminPageLink() {
     <Link
       to="/admin"
       placeholder="current"
-      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-slate-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-700"
+      className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-zinc-100 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-zinc-700"
     >
       <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
         <svg
@@ -325,8 +325,8 @@ function AdminPageLink() {
         </svg>
       </div>
       <div className="ml-4 flex h-full flex-col items-stretch self-stretch">
-        <p className="text-sm font-medium text-gray-900 dark:text-white">{t('admin')}</p>
-        <p className="text-sm font-normal leading-tight tracking-tight text-gray-500 dark:text-gray-300">
+        <p className="text-sm font-medium text-zinc-900 dark:text-white">{t('admin')}</p>
+        <p className="text-sm font-normal leading-tight tracking-tight text-zinc-500 dark:text-zinc-300">
           {t('admin.description')}
         </p>
       </div>
@@ -342,10 +342,10 @@ function Feedback() {
       target="_blank"
       rel="noreferrer"
       href="https://github.com/kiko-g/guerner/issues"
-      className="dark:hover:bg-slate- flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-slate-200 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-slate-600"
+      className="dark:hover:bg-zinc- flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-zinc-200 focus:outline-none focus-visible:ring focus-visible:ring-secondary focus-visible:ring-opacity-50 dark:hover:bg-zinc-600"
     >
-      <p className="mb-0.5 text-sm font-medium text-gray-900 dark:text-white">{t('feedback')}</p>
-      <p className="text-sm text-gray-500 dark:text-gray-200">{t('feedback.description')}</p>
+      <p className="mb-0.5 text-sm font-medium text-zinc-900 dark:text-white">{t('feedback')}</p>
+      <p className="text-sm text-zinc-500 dark:text-zinc-200">{t('feedback.description')}</p>
     </a>
   )
 }

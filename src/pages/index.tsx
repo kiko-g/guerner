@@ -14,7 +14,7 @@ export default function IndexPage() {
         <HeroBanner />
         <CompanyCTA />
         <ProductsCTA />
-        <ContactsCTA />
+        {/* <ContactsCTA /> */}
       </div>
     </Layout>
   )

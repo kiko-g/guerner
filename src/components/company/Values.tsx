@@ -144,10 +144,10 @@ export default function Values({}: Props) {
             <span className={clsx(action.iconClasses, 'inline-flex rounded-lg p-4 transition')}>
               <action.icon className="h-6 w-6" aria-hidden="true" />
             </span>
-            <span className="mt-3 block font-lexend text-base font-semibold leading-6 text-gray-200 dark:text-white">
+            <span className="mt-3 block font-lexend text-base font-semibold leading-6 text-zinc-200 dark:text-white">
               {action.title}
             </span>
-            <ul className="mt-2 text-sm tracking-tight text-gray-300 dark:text-gray-200">
+            <ul className="mt-2 text-sm tracking-tight text-zinc-300 dark:text-zinc-200">
               {action.topics.map(topic => (
                 <li key={topic} className="flex items-start">
                   <span className="flex h-5 items-center">
@@ -158,7 +158,7 @@ export default function Values({}: Props) {
               ))}
             </ul>
             <span
-              className="pointer-events-none absolute right-6 top-6 text-gray-400 group-hover:text-gray-300 dark:text-gray-300 dark:group-hover:text-white"
+              className="pointer-events-none absolute right-6 top-6 text-zinc-400 group-hover:text-zinc-300 dark:text-zinc-300 dark:group-hover:text-white"
               aria-hidden="true"
             >
               <ArrowLongRightIcon className="h-5 w-5 transition group-hover:-rotate-45 md:h-6 md:w-6" />

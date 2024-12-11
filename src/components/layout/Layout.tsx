@@ -38,8 +38,8 @@ export default function Layout(props: Props) {
       className={clsx(
         'mb-auto flex min-h-screen flex-col overflow-clip font-sans font-medium opacity-[99%]',
         hero
-          ? 'bg-primary text-gray-800 dark:bg-navy dark:text-white'
-          : 'bg-ice text-gray-800 dark:bg-navy dark:text-white',
+          ? 'dark:bg-zinc-925 bg-primary text-zinc-800 dark:text-white'
+          : 'bg-ice text-zinc-800 dark:bg-zinc-900 dark:text-white',
       )}
     >
       <Seo title={location} />

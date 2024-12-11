@@ -123,7 +123,7 @@ export default function ProductTemplate({ data }: Props) {
                 {frontmatter.dimensions.slice(0, 1).map((row, rowIdx) => {
                   const [a, b, c, d, e, f, g] = row
                   return (
-                    <tr key={`dimension-head-${rowIdx}`} className="text-gray-900 dark:text-white">
+                    <tr key={`dimension-head-${rowIdx}`} className="text-zinc-900 dark:text-white">
                       <th
                         scope="col"
                         className="whitespace-nowrap py-3.5 pl-0 pr-3 text-left text-sm font-semibold lg:pl-0"
@@ -157,15 +157,15 @@ export default function ProductTemplate({ data }: Props) {
                   const [a, b, c, d, e, f, g] = row
                   return (
                     <tr key={`dimension-row-${rowIdx}`}>
-                      <td className="w-0 whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-gray-900 lg:pl-0 dark:text-white">
+                      <td className="w-0 whitespace-nowrap py-4 pl-0 pr-3 text-sm font-medium text-zinc-900 lg:pl-0 dark:text-white">
                         {a}
                       </td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{b}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{c}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{d}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{e}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{f}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">{g}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-zinc-500 dark:text-zinc-400">{b}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-zinc-500 dark:text-zinc-400">{c}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-zinc-500 dark:text-zinc-400">{d}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-zinc-500 dark:text-zinc-400">{e}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-zinc-500 dark:text-zinc-400">{f}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-zinc-500 dark:text-zinc-400">{g}</td>
                     </tr>
                   )
                 })}
@@ -260,7 +260,7 @@ type ImageGridProps = {
 
 function ImageGrid({ featuredImage, secondaryImage, tertiaryImage }: ImageGridProps) {
   return (
-    <div className="flex w-full flex-col gap-8 rounded bg-slate-100 p-8 lg:flex-row dark:bg-slate-300/5">
+    <div className="flex w-full flex-col gap-8 rounded bg-zinc-100 p-8 lg:flex-row dark:bg-zinc-300/5">
       <div className="my-auto w-full lg:flex-1">
         <GatsbyImage image={featuredImage} alt="featured" className="my-auto w-full rounded object-cover shadow-xl" />
       </div>

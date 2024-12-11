@@ -16,7 +16,7 @@ export default function LanguageSwitch({}: Props) {
         className="relative flex w-full cursor-pointer items-center justify-center gap-x-0.5 rounded-sm bg-secondary/40 py-1 pl-3 pr-2 text-sm transition hover:bg-secondary/70 lg:gap-x-0 lg:pl-3 lg:pr-1.5 dark:bg-tertiary/50 dark:hover:bg-tertiary/70"
       >
         <span className="block truncate uppercase tracking-wide">{language}</span>
-        <ChevronUpDownIcon className="mt-[1px] h-[1.1rem] w-[1.1rem] text-gray-300 lg:h-5 lg:w-5" aria-hidden="true" />
+        <ChevronUpDownIcon className="mt-[1px] h-[1.1rem] w-[1.1rem] text-zinc-300 lg:h-5 lg:w-5" aria-hidden="true" />
       </button>
       {open ? (
         <ul className="absolute mt-2 w-full overflow-auto rounded bg-white py-1.5 text-base ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
@@ -27,7 +27,7 @@ export default function LanguageSwitch({}: Props) {
                 key={langIdx}
                 className={clsx(
                   'group relative z-50 cursor-pointer select-none px-2.5 py-1 text-sm transition hover:bg-primary/80 hover:text-white lg:px-2.5 lg:py-2 lg:text-sm dark:hover:bg-tertiary/80',
-                  active ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary' : 'text-gray-800',
+                  active ? 'bg-primary/10 text-primary dark:bg-tertiary/10 dark:text-tertiary' : 'text-zinc-800',
                 )}
               >
                 <Link

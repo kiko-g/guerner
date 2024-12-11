@@ -20,7 +20,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
       {({ open }) => (
         <>
           <Listbox.Button
-            className="flex w-full items-center justify-center gap-x-0.5 rounded border-2 border-primary bg-primary/80 
+            className="flex w-full items-center justify-center gap-x-0.5 rounded border-2 border-primary bg-primary/80
             px-2 py-1.5 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             <span className="text-sm font-normal">{text}</span>
@@ -35,7 +35,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
           >
             {/* Option box header */}
             <div
-              className="flex w-full items-center justify-between border-b 
+              className="flex w-full items-center justify-between border-b
               px-3 pb-2 pt-1 font-normal tracking-tighter"
             >
               <span>{pickedCategories.length} selected</span>
@@ -59,7 +59,7 @@ export default function CategoryFilter({ categories, hook }: Props) {
                     className={({ active }) =>
                       clsx(
                         'relative cursor-default select-none py-2 pl-3 pr-3',
-                        active ? 'bg-slate-200 dark:bg-slate-600' : '',
+                        active ? 'bg-zinc-200 dark:bg-zinc-600' : '',
                       )
                     }
                   >

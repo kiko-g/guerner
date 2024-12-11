@@ -7,6 +7,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        zinc: {
+          925: '#121217',
+        },
         ice: '#ecf3f6', // dce4f0
         dim: '#181d29', // 121721
         navy: '#121926',

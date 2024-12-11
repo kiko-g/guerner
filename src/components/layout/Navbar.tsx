@@ -48,10 +48,10 @@ export default function Navbar({ title, location, special }: NavbarProps) {
       as="nav"
       defaultOpen={false}
       className={clsx(
-        'top-0 z-20 w-full px-3 py-3 backdrop-blur lg:px-6 lg:py-4',
+        'top-0 z-20 w-full border-b border-white/10 px-3 py-3 backdrop-blur lg:px-6 lg:py-4 dark:border-white/10',
         special
           ? 'fixed bg-black/50 text-white dark:bg-black/30'
-          : 'sticky bg-primary text-white dark:bg-navy/80 dark:text-white',
+          : 'sticky bg-primary text-white dark:bg-zinc-900/80 dark:text-white',
       )}
     >
       {({ open }) => {

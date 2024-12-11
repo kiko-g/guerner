@@ -33,7 +33,7 @@ export default function ColorFilter({ hook }: Props) {
       {({ open }) => (
         <>
           <Menu.Button
-            className="flex items-center gap-x-3 rounded border-2 border-primary bg-primary/80 
+            className="flex items-center gap-x-3 rounded border-2 border-primary bg-primary/80
             px-2 py-1 text-white transition hover:opacity-80 dark:border-white/10 dark:bg-white/10"
           >
             {pickedColor !== '' ? (
@@ -86,7 +86,7 @@ export default function ColorFilter({ hook }: Props) {
                       onClick={() => setPickedColor(color)}
                       key={`color-${colorIdx}`}
                       className={clsx(
-                        color === 'white' ? 'border-[2px] border-gray-400' : 'border-0',
+                        color === 'white' ? 'border-[2px] border-zinc-400' : 'border-0',
                         color === pickedColor ? 'ring-2 ring-primary ring-offset-2 dark:ring-secondary' : '',
                         'flex h-6 w-6 items-center justify-center rounded-full p-1',
                         'z-50 shadow-md transition hover:cursor-pointer hover:opacity-80',

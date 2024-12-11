@@ -38,7 +38,7 @@
 }
 
 .article blockquote {
-  @apply my-8 rounded border-l-4 border-primary bg-light py-1 pl-4 pr-6 font-medium text-gray-800 dark:border-secondary dark:bg-ice/5 dark:text-white;
+  @apply my-8 rounded border-l-4 border-primary bg-light py-1 pl-4 pr-6 font-medium text-zinc-800 dark:border-secondary dark:bg-ice/5 dark:text-white;
 }
 
 /* Alternate styles*/

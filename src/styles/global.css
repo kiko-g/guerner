@@ -27,7 +27,7 @@ input[type='tel'],
 input[type='text'],
 input[type='email'],
 input[type='search'] {
-  @apply w-full rounded border border-white bg-white text-sm font-normal shadow placeholder:font-normal placeholder:text-gray-400 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-white/10 dark:focus:border-tertiary dark:focus:ring-tertiary;
+  @apply w-full rounded border border-white bg-white text-sm font-normal shadow placeholder:font-normal placeholder:text-zinc-400 focus:border-primary focus:ring-primary dark:border-white/10 dark:bg-white/10 dark:focus:border-tertiary dark:focus:ring-tertiary;
 }
 
 input[type='checkbox'] {

@@ -62,14 +62,14 @@ export default function ProductCard({ product, showSample }: Props) {
       <Link to={route} className="mt-2 flex flex-col items-start justify-between space-y-1 truncate">
         <p
           title={product.name}
-          className="flex-1 self-stretch truncate text-sm font-normal leading-snug tracking-tighter text-gray-700 group-hover:overflow-visible group-hover:text-ellipsis group-hover:whitespace-normal group-hover:underline dark:text-white"
+          className="flex-1 self-stretch truncate text-sm font-normal leading-snug tracking-tighter text-zinc-700 group-hover:overflow-visible group-hover:text-ellipsis group-hover:whitespace-normal group-hover:underline dark:text-white"
         >
           {product.name}
         </p>
         {showCharacteristics ? (
           <p
             title={product.characteristics.join(', ')}
-            className="truncate text-xs font-normal capitalize leading-snug tracking-tighter text-gray-500 dark:text-gray-400"
+            className="truncate text-xs font-normal capitalize leading-snug tracking-tighter text-zinc-500 dark:text-zinc-400"
           >
             {product.characteristics.length === 0
               ? 'N/A'

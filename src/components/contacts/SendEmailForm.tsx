@@ -194,7 +194,7 @@ export default function SendEmailForm({}: Props) {
                     onChange={e => setConsentTerms(e.target.checked)}
                   />
 
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                  <span className="text-sm text-zinc-500 dark:text-zinc-400">
                     {placeholders.terms}{' '}
                     <Link
                       to={routeTerms}
