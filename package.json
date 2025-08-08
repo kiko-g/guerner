@@ -4,6 +4,9 @@
   "description": "Guerner website",
   "version": "0.1.0",
   "author": "Francisco Gonçalves <kikojpgoncalves@gmail.com>",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.2",
     "@heroicons/react": "^2.0.11",
